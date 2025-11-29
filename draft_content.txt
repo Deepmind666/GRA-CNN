@@ -1,0 +1,792 @@
+Pattern Recognition Letters  
+GRA-CNN: A Novel Convolutional Neural Network Method with Gray Relational
+Analysis 
+--Manuscript Draft-- 
+ 
+Manuscript Number: PRLETTERS-D-25-01152
+Article Type: Regular Article
+Keywords: Deep Learning, Convolutional Neural Network, Gray Relational Analysis, Image
+Recognition.
+Corresponding Author: Kangrui Li
+Guangdong University of Technology
+CHINA
+First Author: Xiaobo Zhang
+Order of Authors: Xiaobo Zhang
+Kangrui Li
+Junyi Lin
+Yuting Wen
+Abstract: Deep convolutional neural network is one of the most important deep learning models,
+widely used in image recognition, speech recognition and other fields. In the research
+and application of convolutional neural networks, the number of hidden layers and
+nodes is generally determined by experience and expert knowledge. In this sense,
+achieving optimal network architecture with excellent generalization capabilities and
+low model complexity is time consuming and even impossible. In order to solve this
+problem, this paper proposes a gray correlation analysis method to optimize the
+convolutional neural network (GRA-CNN). The method evaluates the correlation
+between hidden nodes and output nodes in the network model and selects hidden
+nodes with higher correlation. Deleting hidden nodes with smaller degrees ensures that
+the final convolutional neural network can have better recognition accuracy while
+maintaining higher training performance and higher system stability and adaptability.
+Experiments on several benchmark datasets show that the proposed method is
+superior to many other methods in terms of model performance or model complexity.
+Powered by Editorial Manager® and ProduXion Manager® from Aries Systems Corporation
+
+1 
+Confirmation of Authorship  
+Pattern Recognition Letters  
+Authorship Confirmation  
+ 
+Please save a copy of this file, complete and upload as the “Confirmation of Authorship ” file. 
+ 
+As corresponding author I,__ Kangrui Li __________________, hereby confirm on behalf of all authors that:  
+ 
+1. This manuscript, or a large part of it, has not been published, was not, and is not being submitted to  
+any other journal.   
+2. If presented  at or submitted  to or published at a conference(s), the conference(s) is (are) identified 
+and substantial justification for re -publication  is presented below. A copy of conference paper(s) is(are) 
+uploaded with the manuscript.  
+3. If the manuscript appears as a preprint anywhere on the web, e.g. arXiv, etc., it is identified below. 
+The preprint sho uld include a statement that the paper is under consideration at Pattern Recognition 
+Letters . 
+4. All text and graphics, except for those marked with sources, are original works  of the authors, and all 
+necessary permissions for publication were secured prior t o submission of the manuscript.  
+5. All authors each made a significant contribution to the research reported and have read and approved  
+the submitted manuscript.     
+    
+  Signature___________________________Date_____3 November 2025_____________________  
+ 
+ 
+List any pre -prints:  
+Nones 
+ 
+ 
+ 
+ 
+Relevant Conference publication(s) (submitted, accepted, or published):  
+None  
+ 
+ 
+Justification for re -publication:  
+Not applicable  
+ 
+Authorship Confirmation
+
+ 
+ 
+
+Cover Letter  
+Dear Editor -in-Chief,  
+We are pleased to submit our manuscript entitled “GRA -CNN: A Novel 
+Convolutional Neural Network Method with Gray Relational Analysis”  for 
+consideration for publication in Pattern Recognition Letters . 
+This paper proposes a convolutional neural network optimization framework 
+integrating Gray Relational Analysis (GRA) for adaptive pruning and feature 
+correlation evaluation. The proposed GRA -CNN model improves recognition 
+accuracy and computational efficiency by reducing redu ndant hidden nodes. 
+Experimental validation on benchmark datasets demonstrates the superiority 
+of GRA -CNN over conventional CNNs in terms of accuracy, stability, and 
+model compactness.  
+This manuscript has not been published or submitted elsewhere, and all 
+authors have approved the submission. We confirm that all figures and tables 
+are original and that no part of this work has been published previously.  
+We believe that our work fits well within the scope of Pattern Recognition 
+Letters , contributing to the u nderstanding of deep learning model optimization 
+and gray relational methods in pattern recognition.  
+Thank you for considering our submission.  
+Sincerely,  
+Kangrui Li * (Corresponding Author)  
+Faculty of Automation, Guangdong University of Technology  
+Guangzhou , China  
+E-mail:  1403073295@mails.gdut.edu.cn  
+ 
+ 
+ 
+ Cover Letter
+
+Main Manuscript  
+  
+Pattern Recognition Letters  
+journal homepage: www.elsevier.com   
+GRA -CNN: A  Novel Convolutional Neural Network Method with Gray Relational 
+Analysis  
+Xiaobo  Zhang a, Kangrui Li a,, Junyi Lin a, Yuting Wen b 
+aFaculty of Automation, Guangdong University of Technology, Guangzhou, 510006 , China  
+bGuangzhou Goaland Energy Conservation Tech.Co.,Ltd.,510663, China  
+ 
+                                                 
+ Corresponding author : 1403073295@mails.gdut.edu.cn(K. Li)  
+E-mails: zxb_leng@gdut.edu.cn (X. Zhang),, 3123001378@mail2.gdut.edu.cn(J. Lin), 3223001408@mail2.gdut.edu.cn(Y. Wen).  
+ AB ST R ACT  
+Deep convolutional neural network is one of the most important deep learning models, widely used in image 
+recognition, speech recognition and other fields. In the research and application of convolutional neural networks, 
+the number of hidden layers and nodes is generally determined by experience and expert knowledge. In this sense, 
+achieving optimal network a rchitecture with excellent generalization capabilities and low model complexity is 
+time consuming and even impossible. In order to solve this problem, this paper proposes a gray correlation 
+analysis method to optimize the convolutional neural network (GRA -CNN). The method evaluates the correlation 
+between hidden nodes and output nodes in the network model and selects hidden nodes with higher correlation. 
+Deleting hidden nodes with smaller degrees ensures that the final convolutional neural network can have better 
+recognition accuracy while maintaining higher training performance and higher system stability and adaptability. 
+Experiments on several benchmark datasets show that the proposed method is superior to many other methods in 
+terms of model performance or model complexity.  
+Keywords : Deep Learning, Convolutional Neural Network, Gray Relational Analysis, Image Recognition.  Main Manuscript
+ Click here to access/download;Manuscript [Word or 
+(La)TeX];Main Manuscript.docx 
+Click here to view linked References
+
+1 
+1. Introduction  
+Deep learning is an active and exciting branch in machine 
+learning and artificial intelligence research  [1], [2]. The intuition 
+of deep learning originates from the biological research of human 
+brains. Deep network simulates the connection and activation of 
+nerve cells in a brain. By si gnificantly increasing the layers 
+between input and output units, deep models obtain the ability of 
+learning complexity functions, recognizing abstract concepts and 
+processing many intelligent tasks. Deep learning models can 
+learn essential characteristics  from massive data , sparking 
+innovations across medicine and finance  [3], [4]. The successful 
+applications of deep learning models are now changing people's 
+lives and making our world increasingly intelligent  [5]-[7]. A 
+systematic comparison between conventional feature -engineering 
+pipelines and modern deep learning approaches further cla rifies 
+this transition  [6]. 
+On the other hand, since images are widely used in 
+information transmission and knowledge sharing through 
+internet, classification, reco gnition or grading become great 
+challenge when building intelligent image processing 
+applications. The low training and testing cost of the model are 
+preferred especially in real -time and customer -friendly 
+applications. The process of image recognition inc ludes image 
+preprocessing, segmentation, feature extraction and model 
+training  [8]. With the help of image recognition and 
+classification, the fast retrieval of ima ge information can be 
+achieved that has a widely range of application such as face 
+recognition  [9], [10] safety protection  [11], autonomous driving 
+[12], and medical image [13] and so on.  
+The traditional image recognition model usually adopts a 
+domain -specific feature extractor and a shallow model for 
+recognition. Figure 1 sketches the main steps of a traditional 
+image recognition model.   
+ 
+Fig. 1. Main steps of traditional image recognition model  
+Roughly speaking, traditional image recognition model 
+generates clusters of similar images in the feature space induced 
+by the feature representation, and achieves image recognition by 
+classifiers such as KNN and SVM  [14]-[15]. For example, HOG 
+features are widely used in pedestrian detection, LBP features in 
+face recognition, and SIFT features in object recognition, etc.  
+The mai n steps of image recognition based on deep learning 
+are as follows. Raw pixels of a test image are directly fed to the 
+deep network model. In the training stage, the network 
+parameters, i.e. weights and biases, are updated according to the 
+back -propagated training errors and the training rate. When the 
+evaluation errors tend to be stable, the model converges and can 
+be used as a recognition model  [16]. Figure 2 shows  the main 
+steps of the deep learning -based image recognition model.  
+ 
+ 
+  
+Fig. 2. Main steps of the deep learning -based image recognition model  
+Commonly, deep learning -based image recognition system 
+includes feature extraction module and image recognition 
+module. To achieve good performance, these two modules should 
+be jointly trained and optimized. In this paper, we proposed an 
+image recognition model based on convolutional neural network 
+using gray relational analysis method (GRA -CNN).  
+2. Related Works  
+Machi ne learning models can be divided into shallow model 
+and deep level. Traditional machine learning model usually 
+adopts a shallow structure with 2 -3 layers. For example, 
+Gaussian mixture model, K -means clustering, support vector 
+machine are representative o f traditional machine learning [17]. 
+These shallow models can achieve good results in solving simple 
+practical problems, but they are not effective in expressing 
+complex real -world problems [18]. 
+From a narrow perspective, deep learning is a neural 
+network that contains several hidden layers and has certain 
+training methods and structures [19]. From a broad perspective, it 
+is well accepted that any machine learning model with a deep 
+hierarchical structure can be regarded as a deep lea rning model 
+[20]. In the process of deep learning, the unsupervised learning 
+method is used to process the input image and learn the features 
+of the image. Then, th e supervising sequence is used to update 
+the entire network structure parameters. Finally, the classification 
+result of the image is output at the output layer. In recent years, 
+with the rapid development of deep learning, it has been widely 
+used in voice recognition, image classification, natural language 
+processing and other fields.  
+In 1974, Paul Werbos proposed a back -propagation (BP) 
+algorithm to solve the linear inseparable problem of neural 
+network applied to deep layers. However, when the number of 
+network layers increase, BP neural network will also encounter 
+problems such as "gradient disappearance" or instability of 
+training structure, which leads to the inability of deep neural 
+network [21]. A famous deep model called Deep Belief Network 
+(DBN) was proposed and successfully applied to many 
+classification tasks. A typical DBN model has a deep belief 
+network by stacking several Restricted Boltzmann Machines 
+(RBM), and solved the problems of gradient disappearance and 
+local optimization by unsupervised layer -wise greedy algorithms 
+[22]. Vincent et al. proposed the deep str ucture of the denoising 
+Stacked Automatic Encoder (SAE) [23] to further improve the 
+accuracy of unsupervised pre -training. LeCun proposed a 
+Convolutional Neural Net work (CNN) based on DBN and SAE 
+[24]. DBN, SAE and CNN constitute the three fundamental 
+frameworks for deep learning and have made great achievements 
+in natural ima ge processing and face recognition.  
+
+
+2 
+With the evolution of CNN architectures such as VGG net [20], 
+deeper and more uniform convolutional layers demonstrated that 
+increasing network depth can significantly improve image 
+recognition performance, laying the foundation for later 
+architecture optimization.  
+3. The Proposed GRA -CNN Method  
+3.1. Challenges of convolutional neural network construction  
+The number of hidden nodes is  one of the most important 
+factors for the network structure. The hidden feature map 
+determines the number of hidden nodes in the network. The less 
+hidden feature maps are the less information network obtains. 
+The lower accuracy is the slower convergence r ate is.  On the 
+contrary, the more hidden feature maps are, the higher accuracy 
+of network is, but it maybe leads to training time too long and 
+overtraining that result in worse recognition.  
+In the process of research and application of convolutional 
+neural  network, the hidden nodes are generally obtained by 
+experience. By constructing and training a network structure that 
+contains different numbers of hidden nodes, the best network 
+structure is selected as the final network structure. This method 
+of constru cting a network structure has limited capability for it is 
+difficult to find an optimal network structure. In addition, in the 
+convolutional neural network, the influence of different feature 
+graph units on the output layer nodes is different, some of the 
+feature graph units have a greater impact on the output nodes, 
+and the other part of the feature graph units have a smaller one. 
+Therefore, it is possible to improve the performance of 
+convolutional neural network by deleting the unit with small 
+influence without affecting the training effect.  Moreover, 
+improvements on activation behavior —such as introducing 
+sparse regularization for ReLU —have been shown to enhance 
+generalization and convergence stability  [25]. 
+3.2. The structure optimization of CNN  
+In view of the difficulty of convolutional neural network, 
+this paper uses gray relational analysis to determine the number 
+of feature graphs. The key of this process is to use the gray 
+relational analysis method to calculate the correlation degree 
+between hidden nodes and output nodes, and sort these hidden 
+nodes to retain those with high correlation degree. The hidden 
+nodes with smaller degrees are del eted to ensure the final 
+network structure can have better recognition accuracy while 
+maintaining higher training performance and higher system 
+stability and adaptability.  
+The application method of gray relational analysis to 
+improve convolutional neural network is shown in Figure 3. 
+Fig. 3. The improved flow chart of convolutional neural network based on 
+gray relational analysis  
+In this paper, the structure of convolutional neural network 
+is shown in Figure  3. In the process of constructing the 
+convoluti onal neural network, the number of nodes in each 
+hidden layer is calculated by the gray correlation method. Taking 
+the S4 layer as an example, the improvement process is as 
+follows . 1) Correlation coefficient calculation  
+The initial convolutional neural netwo rk is used to process a 
+batch of sample images and the result of the sample image 
+processing and the identification data in the process are obtained. 
+At the same time, a weight matrix of the output value from the S4 
+layer to the output layer is extracted f rom the identification data, 
+and is set as a database. And then use the gray correlation method 
+to calculate the output of each feature map in the S4 layer and its 
+correlation coefficient with the output of the entire network.  
+It is assumed that there are a total of N sample images to be 
+processed in the process of convolutional neural network 
+optimization, and the number of feature maps in S4 layer is n and 
+ is the output of the network (referred to as 
+a reference sequence). The output of each feature map  of S4 layer 
+is denoted by 
+  
+(called the comparison sequence). The formula of the correlation 
+coefficient between network output 
+  and the output of feature 
+map is shown in Eq. ( 1). 
+ (1)       
+is the resolution coefficient in the process of 
+calculating the correlation coefficient and its default value is set 
+to 0.5.  
+2) Correlation degree calculation  
+The correlation coefficient is the correlation degree between 
+the reference sequence and the comparison sequence under 
+different image samples. For the N sample  images to be 
+processed there are N correlation coefficients. In order to 
+analyze, it is necessary to transfer N correlation coefficients into 
+a value such as correlation degree. The formula of correlation 
+degree calculation is shown in Eq. ( 2). 
+                         (2) 
+3) Ranking of correlation degree  
+After the processing of N sample images, the correlation 
+degree of all the hidden features of the network is obtained, and 
+then all the hidden features are arranged in descending order and 
+a threshold value  is set as 
+ , the feature maps smaller than the 
+threshold value are omitted. Through this method convolutional 
+neural network could be optimized and the performance could be 
+improved.  
+4. Experiment And Evaluation  
+Based on the optimization of convolutional neu ral network, 
+taking the road traffic sign as an example, the experiment of the 
+optimized convolutional neural network in image recognition is 
+studied.  
+4.1. Evaluation Dataset Description  
+The German Traffic Sign Recognition Benchmark (GTSRB) 
+dataset [26] is used to evaluate the proposed method. There are 
+totally 43 categories of traffic signs in the GTSRB. The dataset 
+has been divided into training set and test set, whose sizes are 
+39209 an d 12630. As is shown in Figure 4. 
+ 
+ 
+
+
+3 
+ 
+ 
+ 
+Fig 4. Selected 10 types of traffic sign images  
+This data set is used for experiments because it is a publicly 
+available data set for researchers to experiment with. The data set 
+is relatively in line with internatio nal standards. Using this data 
+set to verify our method can improve the standard and generality 
+of our method.  
+After performing the following preprocessing, the selected 
+6,000 sample images are used as the graphic database for this 
+convolutional neural net work experiment.  
+1) Binarization  
+Traffic sign images in GTSRB image database are shot 
+randomly. In order to facilitate the processing, it is necessary to 
+binarize the whole dataset for efficient information extraction and 
+image recognition.  
+The binarization m ethod involves  setting a threshold value, 
+setting  pixels in the image that are less than the threshold to 0 , 
+and setting the  others to 1.  
+2) Uniform pixel size  
+The image samples to be processed are stretched and 
+compressed so that the 6000 samples to be processed have the 
+same pixel row and column size to facilitate the experiment.  
+4.2. Settings of Network Structure And Parameters  
+The setting of all parameters in this experiment uses 
+universal parameter settings to verify our proposed method. This 
+can prove as  much as possible that our proposed method has the 
+advantages and versatility, and reduces special cases.  
+1) Network structure layer and convolution kernel size setting  
+Set the number of convolutional neural network layer as 
+shown in Figure 2 to 4, set the co nvolution kernel size to 5 × 5, 
+set the size of input image to 28 × 28, set the size of output 
+feature map passing through the C1 convolution layer to 24 × 24, 
+set the size of output feature map passing through the S2 
+sampling layer to 12 × 12, set the siz e of output feature map 
+passing through the C3 convolution layer to 8 × 8, and set the 
+size of output feature map passing through the S4 sampling layer 
+to 4 × 4.  
+2) Batch size setting  
+As mentioned above, the training sample for the 
+convolutional neural networ k experiment is 39209, the test 
+sample is 12630. To clearly show the impact of batch size, we set 
+the batch size to the following values: 10, 20, 40, 50, 100, 250 
+and 500. The error rates and experimental run times obtained by 
+iterating different times are  shown in Figure 5 and Figure 6 
+respectively.  
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig. 5. Batch training results of image samples  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig. 6. Run time results of different batches of samples  
+As indicated in Figure 5 and Figure 6, the batch size is 
+smaller; the time to get a higher accurate rate is longer. 
+According to the above error rate and operational performance, 
+the number of batch samples determined in this experiment is 40.  
+3) Rounds of iteration  
+In this evaluation, the batch size is set to 40. The 
+experimental resu lts for the iteration times are shown in Figure 7. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig. 7. Experimental results for iteration times  
+As shown in Figure 7, more rounds of iterations mean better 
+recognition performance, but the training time would increase 
+accordingly. We leverage  the model performance and the 
+computational cost by setting the number of rounds to 300.  
+4) Number setting of hidden feature map  
+
+
+4 
+This paper chooses the convolutional neural network 
+structure as shown in Figure 1, including two convolution layers 
+and two samp ling layers. The feature maps number of the 
+sampling layer is determined by the number of the convolution 
+layer. The feature maps number of convolution layer is generally 
+determined experimentally, and the feature maps number of the 
+C1 convolution layer is  kept unchanged. By changing the feature 
+maps number of C3 convolution layer, we can observe the 
+change of error rate and select the optimal network structure.  
+During the experiment, the value of C1 convolution layer is 
+[1, 10], the C3 convolution layer is [1,40]. With the value test, we 
+select the value combinations of lowest error rate and better time 
+cost. The results are shown in Figure 8 and Figure 9. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig. 8. The experimental results of convolution layer feature 
+maps with error rate  
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+  
+Fig. 9. The experimental results of convolution layer feature 
+maps with time cost  
+As shown in Figure 8 and Figure 9, the feature maps for C1 
+convolution layer are selected as 8 and C3 convolution layer as 
+18, the network image recognition error rate begins to converge 
+to around 5% and has good performance in terms of time cost.  
+4.3. Optimization Of Network Structure  
+This experiment uses the aforementioned optimization 
+method to determine the number of hidden layer features by the 
+following three parts: Fir st, the number of S4 layer feature maps 
+is determined according to the correlation degree between the S4 
+layer and the output layer. Then, according to the correlation 
+degree between the S2 layer and the C3 layer, the number of S2 
+layer feature maps is det ermined. Finally, we perform experiment 
+on the accuracy of the network structure.  
+1) Determine the feature map numbers of C3, S4 layer  
+The initial structure is set as
+ , the resolution 
+coefficient ρ is set to 0.5 and by the training of the network, and the correlation rank of C3 and S4 layers is obtained as 
+shown in Table 1.  
+Table 1. Related Correlation Of S4 Hidden Layer Features  
+No. Corr.  No. Corr.  No. Corr.  
+1 0.5791  2 0.5770  3 0.5747  
+4 0.5721  5 0.5544  6 0.5509  
+7 0.5494  8 0.5445  9 0.5349  
+10 0.5319  11 0.5254  12 0.5237  
+13 0.5213  14 90.5185  15 0.5181  
+16 0.5164  17 0.5158  18 0.5142  
+19 0.5139  20 0.5105  21 0.5100  
+22 0.5091  23 0.5090  24 0.5017  
+25 0.5014  26 0.4983  27 0.4977  
+28 0.4946  29 0.4942  30 0.4934  
+The threshold ε is set to 0.514 by average, select the first 18 
+features of Table 1, and adjust the network structure 
+as
+ , and then train the adjusted network. The training 
+results are shown in Table 2.  
+Table 2. Relat ed Correlation Of Adjusted S4 Hidden Layer Features  
+No. Corr.  No. Corr.  No. Corr.  
+1 0.6464  2 0.6328  3 0.6252  
+4 0.6147  5 0.6128  6 0.6057  
+7 0.6044  8 0.5794  9 0.5769  
+10 0.5747  11 0.5671  12 0.5641  
+13 0.5601  14 0.5526  15 0.5468  
+16 0.5344  17 0.5275  18 0.5214  
+As shown in Table 2, the 18 selected feature maps have 
+greater impact on the result. That is, the adjustment for network 
+structure is reasonable.  
+2) Determine the number of feature maps of C1 and S2 layers  
+After determining the number of feature maps of C3 and S4, 
+the number of feature maps of C1 and S2 layers is determined in 
+the same way. The ranking of the first C1 and S2 correlations is 
+as shown in Table 3.  
+Table 3 . Related Correlation Of S2 Hidden Layer Feature  
+No. Corr.  No. Corr.  No. Corr.  
+1 0.6665  2 0.6650  3 0.6634  
+4 0.6439  5 0.6418  6 0.6391  
+7 0.6340  8 0.6339  9 0.6228  
+10 0.6045      
+The threshold ε is set to 0.630 by average and the first 8 
+features of Table 3 adjust the network structure as 
+  
+and train the adjusted network. The training results are shown in 
+Table 4.  
+Table 4. Related Cor relation Of Adjusted S2 Hidden Layer Features  
+
+
+5 
+No. Corr.  No. Corr.  No. Corr.  
+1 0.6813  2 0.6722  3 0.6619  
+4 0.6592  5 0.6499  6 0.6487  
+7 0.6402  8 0.6355    
+As shown in Table 4, when the number of S2 feature maps 
+is 8, each feature map has a significant impact on the result, so 
+the final adjusted network structure is 1 -8-18-10. 
+4.4. Testing For Optimized Convolutional Neural Network  
+1) Test process  
+The entire testing process is divided into three steps: 
+network structure training, feature extraction and network t esting.  
+（1） Network structure training  
+The process of training is as follows:  
+a. According to different traffic sign image category, set the 
+classification label.  
+b. Initialization of network parameters and learning rate. 
+According to the above study, the numb er of layers of 
+convolutional neural network is set as 4(1 -8-18-10), and the 
+number of batch samples is set to 40 and the number of iterations 
+is set to 60. Using Grey Relational Analysis to determine the 
+number of hidden feature maps.  
+c. Take batch sample s from the graphic experiment library 
+and train the batch samples using the convolutional neural 
+network to obtain the entire actual output vector and the output 
+vector of the middle layer.  
+d. Calculate the output error of the entire network and the 
+output  error of the hidden layer.  
+e. Calculate the adjustment 
+  and the bias 
+  of the 
+weight.  
+f. Update bias and weight of convolutional neural network.  
+g. Complete this iteration. If the total number  of iterations 
+reaches 60, then the training ends up, or else go to step C, 
+continue the next iteration.  
+（2） Feature extraction  
+Taking the traffic sign of "speed limit" as an example, the 
+process  of extracting implicit features of convolutional neural 
+network is described, as is shown in Figure 1 0. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig. 1 0. Feature extraction of layers  
+The sample image as input data, propagated layer by layer 
+until the output results. After the input image samples passed through 8 filters in the C1 convolution layer, 8 feature 
+images are formed, and after 2 × 2 down -sampling, the S2 layer 
+is obtained. Then, by passing the C3 convolution layer with 18 
+kernels, 18 4 × 4 images are obtained in the S4 layer and 
+propagated to the output layer of the 10 × 1 convolutional neu ral 
+network by the fully connected method.  
+（3） Network testing  
+After training by 5000 image samples, a trained 
+convolutional neural network structure is obtained. Now we 
+select the remaining 1000 image samples from the graphic 
+experiment library to test the ne twork structure. The test steps are 
+as follows:  
+a. Select the image samples to be tested, and perform image 
+recognition by trained convolutional neural network.  
+b. According to the recognition result, compare with the real 
+label of the image sample.  
+c. Aft er testing the 1000 image samples, perform statistical 
+accuracy and error rates.  
+2) Evaluation results  
+First, according to the above experimental procedure, we 
+use a convolutional neural network with a network structure of 
+ to train and test. During the experiment, the number 
+of feature maps of C1 and S2 remained the same, while the 
+number of feature ma ps of C3 and S4 increased from 1 to 30, and 
+the error rates and the time spent in 60 iterations were calculated 
+respectively for different feature maps. The test results are shown 
+in Figure 1 1. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig. 1 1. Runtime and error rate of the test  
+As can be  seen from the experimental results in Figure 1 1, 
+when the number of feature maps in C3 and S4 layers is too large, 
+the error rate will increase and the iteration will take too long. 
+When the number of features maps in C3 and S4 layers is too 
+small, the er ror rate will also be high. After adopting the gray 
+relational analysis method to optimize the structure, the 
+convolutional neural network structure is finally determined 
+as
+ . 
+All of the above shows that using gray relational analysis to 
+optimize the hidden layer feature map of convolutional neural 
+network, a convolutional neural network structure wit h small 
+error rate and short running time can be obtained. Therefore, it is 
+very significant for improving the accuracy and efficiency of 
+image recognition to use the gray relational analysis method to 
+optimize the convolutional neural network.  
+5. Conclusion  
+Image classification is an important field in pattern 
+recognition. It is necessary to find an image classification method 
+that can be used universally and has good performance on 
+
+
+6 
+different classification problems. At present, the image 
+classification metho ds are mainly to extract the image 
+information by manual feature extraction method. For different 
+image classification problems, we need use different feature 
+extraction methods, and the most effective method of a certain 
+class is not necessarily valid on other issues. The emergence of 
+convolutional neural network brings a new research idea to image 
+classification. It adopts local experience in structure, weight 
+sharing and down -sampling technology to take full account of the 
+translation, rotation and zoom invariance of the image in space. 
+Even if the attitude and shape of the object have changed, the 
+recognition task can still be completed. In addition, it combines 
+the feature extraction and classification of the traditional image 
+classification technology,  and the image is classified by using the 
+hierarchical structure to gradually abstract the implicit features of 
+the original image.  
+References  
+[1] Mathew, A., Amudha, P., Sivakumari, S., 2021. Deep 
+learning techniques: an overview, in: Satapathy, S.C., 
+Bhateja , V., Mohanty, J.R. (Eds.), Advances in Machine 
+Learning and Computational Intelligence (AMLTA 2020). 
+Springer, Singapore, pp. 599 –608. 
+[2] Bhatt, D., Patel, C., Talsania, H., Patel, J., Vaghela, R., 
+Pandya, S., Modi, K., Ghayvat, H., 2021. CNN variants for 
+computer vision: history, architecture, application, 
+challenges and future scope. Electronics 10(20), 2470.  
+[3] Jiang, W., 2021. Applications of deep learning in stock 
+market prediction: recent progress. Expert Systems with 
+Applications 184, 115537.  
+[4] Gheisari, F. , Wang, G., Shirmohammadi, A., Shah, S.L., 
+Aghaei, M., 2023. Deep learning: applications, 
+architectures, models, tools, and frameworks: a 
+comprehensive survey. CAAI Transactions on Intelligence 
+Technology 8(3), 581 –606. 
+[5] Sit, M., Demiray, B.Z., Xiang, Z., E wing, G.J., Sermet, Y., 
+Demir, I., 2020. A comprehensive review of deep learning 
+applications in hydrology and water resources. Water 
+Science and Technology 82(12), 2635 –2670.  
+[6] O’Mahony, N., Campbell, S., Carvalho, A., Harapanahalli, 
+S., Hernandez, G.V., Kr palkova, L., Riordan, D., Walsh, J., 
+2019. Deep learning vs. traditional computer vision, in: 
+Arai, K., Kapoor, S., Bhatia, R. (Eds.), Advances in 
+Computer Vision. Springer, Cham, pp. 128 –144. 
+[7] Minaee, S., Kalchbrenner, N., Cambria, E., Nikzad, N., 
+Chenaghl u, M., Socher, R., 2021. Deep learning -based text 
+classification: a comprehensive review. ACM Computing 
+Surveys 54(3), 1 –40. 
+[8] Minaee, S., Boykov, Y., Porikli, F., Plaza, A.J., 
+Kehtarnavaz, N., Terzopoulos, D., 2022. Image 
+segmentation using deep learning: a  survey. IEEE 
+Transactions on Pattern Analysis and Machine Intelligence 
+44(7), 3523 –3542.  
+[9] Li, L., Mu, X., Li, S., Peng, H., 2020. A review of face 
+recognition technology. IEEE Access 8, 139110 –139120.  
+[10] Kortli, Y., Jridi, M., Al Falou, A., Atri, M., 2020. Fa ce 
+recognition systems: a survey. Sensors 20(2), 342.  
+[11] Nath, N.D., Behzadan, A.H., Paal, S.G., 2020. Deep 
+learning for site safety: real -time detection of personal protective equipment. Automation in Construction 
+112, 103085.  
+[12] Grigorescu, S., Trasnea, B., Co cias, T., Macesanu, G., 2020. 
+A survey of deep learning techniques for autonomous 
+driving. Journal of Field Robotics 37(3), 362 –386. 
+[13] Cai, L., Gao, J., Zhao, D., 2020. A review of the application 
+of deep learning in medical image classification and 
+segmenta tion. Annals of Translational Medicine 8(11), 713.  
+[14] Wang, P., Fan, E., Wang, P., 2021. Comparative analysis of 
+image classification algorithms based on traditional 
+machine learning and deep learning. Pattern Recognition 
+Letters 141, 61 –67. 
+[15] Khan, A.A., Lagha ri, A.A., Awan, S.A., 2021. Machine 
+learning in computer vision: a review. EAI Endorsed 
+Transactions on Scalable Information Systems 8(32), e4.  
+[16] Hinton, G.E., Salakhutdinov, R.R., 2006. Reducing the 
+dimensionality of data with neural networks. Science 
+313(5786), 504 –507. 
+[17] Sinaga, K.P., Yang, M.S., 2020. Unsupervised K -means 
+clustering algorithm. IEEE Access 8, 80716 –80727.  
+[18] Sarker, I.H., 2021. Machine learning: algorithms, real -
+world applications and research directions. SN Computer 
+Science 2(3), 160.  
+[19] Taye, M.M., 2023. Understanding of machine learning with 
+deep learning: architectures, workflow, applications and 
+future directions. Computers 12(5), 91.  
+[20] Simonyan, K., Zisserman, A., 2015. Very deep 
+convolutional networks for large -scale image recognition, 
+in: International Conference on Learning Representations 
+(ICLR 2015). San Diego, USA.  
+[21] Bishop, C.M., 2006. Pattern recognition and machine 
+learning, first ed. Springer, New York.  
+[22] Hua, Y., Guo, Z., Zhao, H., 2015. Deep belief networks and 
+deep learning, in: 20 15 International Conference on 
+Intelligent Computing and Internet of Things (ICIT). IEEE, 
+Harbin, China, pp. 1 –4. 
+[23] Vincent, P., Larochelle, H., Bengio, Y., Manzagol, P.A., 
+2008. Extracting and composing robust features with 
+denoising autoencoders, in: Proce edings of the 25th 
+International Conference on Machine Learning (ICML ’08). 
+ACM, Helsinki, Finland, pp. 1096 –1103.  
+[24] Sercu, T., Puhrsch, C., Kingsbury, B., LeCun, Y., 2016. 
+Very deep multilingual convolutional neural networks for 
+LVCSR, in: 2016 IEEE Interna tional Conference on 
+Acoustics, Speech and Signal Processing (ICASSP). IEEE, 
+Shanghai, China, pp. 4955 –4959.  
+[25] Ide, H., Kurita, T., 2017. Improvement of learning for CNN 
+with ReLU activation by sparse regularization, in: 2017 
+International Joint Conference o n Neural Networks 
+(IJCNN). IEEE, Anchorage, USA, pp. 2684 –2691.  
+[26] Stallkamp, J., Schlipsing, M., Salmen, J., Igel, C., 2012. 
+Man vs. computer: benchmarking machine learning 
+algorithms for traffic sign recognition. Neural Networks 32, 
+323–332. 
+ 
+ 
+
+Highlights  
+ Introduces GRA -CNN, a CNN enhanced with Gray Relational Analysis.  
+ Improves understanding of correlations between hidden and output layers.  
+ Dynamically prunes low -correlation nodes to boost efficiency.  
+ Achieves higher accuracy and robustness on benchmark datasets.  
+ Outperforms conventional CNN baselines in accuracy and compactness.  
+ Highlights
+
+Declaration of Interest Statement  
+Declaration of interests  
+  
+☒ The authors declare that they have no known competing financial interests or personal relationships 
+that could have appeared to influence the work reported in this paper.  
+  
+☐ The authors declare the following financial interests/personal relationships which may be considered 
+as potential competing interests:  
+ 
+ 
+  
+  
+  
+ Declaration Statement
+

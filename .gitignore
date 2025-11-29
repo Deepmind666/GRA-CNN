@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.DS_Store
+.ipynb_checkpoints/
+*.pth
+*.pt
+data/
+APIN_Submission/*.pdf
+APIN_Submission/*.log
+APIN_Submission/*.aux
+APIN_Submission/*.out
+APIN_Submission/*.synctex.gz
