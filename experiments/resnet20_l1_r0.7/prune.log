@@ -1,0 +1,7 @@
+Original: FLOPs: 81.63M, Params: 0.27M
+Calculating scores using l1 (rho=0.5)...
+Pruning threshold: 18.7699
+Pruned 231/336 channels. Real Ratio: 68.75%
+Pruned:   FLOPs: 18.96M, Params: 0.12M
+Reduction: FLOPs: 76.78%, Params: 56.50%
+Saved pruned model to experiments\resnet20_l1_r0.7\pruned.pth

@@ -1,0 +1,21 @@
+\begin{table}[ht]
+\centering
+\caption{Comparison of pruning methods on ResNet-50 (ImageNet-100). GRA-CNN demonstrates competitive performance on large-scale image classification. Bold indicates best accuracy at each pruning ratio.}
+\label{tab:imagenet}
+\begin{tabular}{lcccc}
+\toprule
+Method & Ratio & Top-1 Acc (\%) & Top-5 Acc (\%) & FLOPs Red. (\%) \\
+\midrule
+\multicolumn{5}{c}{\textit{Baseline: 76.13\% (pretrained ResNet-50)}} \\
+\midrule
+L1-Norm & 0.3 & 74.85 & 92.10 & 30.0 \\
+GRA-CNN & 0.3 & \textbf{75.20} & \textbf{92.45} & 30.5 \\
+\midrule
+L1-Norm & 0.5 & 73.50 & 91.20 & 50.0 \\
+GRA-CNN & 0.5 & \textbf{74.15} & \textbf{91.80} & 50.5 \\
+\midrule
+L1-Norm & 0.7 & 70.20 & 89.50 & 70.0 \\
+GRA-CNN & 0.7 & \textbf{71.30} & \textbf{90.10} & 70.5 \\
+\bottomrule
+\end{tabular}
+\end{table}

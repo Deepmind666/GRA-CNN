@@ -1,0 +1,8 @@
+Original: FLOPs: 251.50M, Params: 0.85M
+Calculating scores using correlation...
+Collecting activations for correlation (batches=10)...
+Pruning threshold: 0.0514
+Pruned 504/1008 channels. Real Ratio: 50.00%
+Pruned:   FLOPs: 119.08M, Params: 0.44M
+Reduction: FLOPs: 52.65%, Params: 47.98%
+Saved pruned model to C:\GRA-CNN\experiments\day2\comparative_correlation\pruned.pth

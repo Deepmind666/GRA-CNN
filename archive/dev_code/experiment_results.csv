@@ -1,0 +1,5 @@
+Method,Pruning Ratio,Accuracy,FLOPs Reduction,Params Reduction
+L1,30%,81.54,30.0%,30.0%
+GRA,30%,82.6,30.0%,30.0%
+L1,50%,78.93,50.0%,50.0%
+GRA,50%,80.7,50.0%,50.0%

@@ -1,0 +1,42 @@
+\documentclass[11pt]{letter}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+
+\signature{Xiaobo Zhang, Kangrui Li, Junyi Lin, Yuting Wen}
+\address{Faculty of Automation\\Guangdong University of Technology\\Guangzhou, China\\Email: 1403073295@mails.gdut.edu.cn}
+
+\begin{document}
+
+\begin{letter}{Editor-in-Chief\\Applied Intelligence\\Springer}
+
+\opening{Dear Professor Fujita,}
+
+We are pleased to submit our manuscript entitled ``\textbf{GRA-CNN: Structured Channel Pruning of CNNs via Gray Relational Analysis}'' for consideration in \emph{Applied Intelligence}.
+
+\textbf{Research Motivation.}
+Deep convolutional neural networks are powerful but often computationally prohibitive for real-world deployment. This manuscript addresses the crucial problem of CNN model compression via structured channel pruning, aiming to significantly reduce computation while preserving accuracy.
+
+\textbf{Key Innovation.}
+We propose a novel pruning criterion based on \emph{Gray Relational Analysis} (GRA), a technique from grey system theory, to evaluate the semantic importance of CNN channels. Unlike traditional magnitude-based or geometric criteria, our method quantifies the functional coupling between channel activations and classification logits---identifying channels that are semantically aligned with the network's decision process.
+
+To our knowledge, this is the \textbf{first work} to integrate Gray Relational Analysis into CNN structured pruning. The contributions are distinct from existing pruning studies, as we tackle the problem from a semantic alignment perspective rather than traditional magnitude or similarity criteria.
+
+\textbf{Key Results.}
+\begin{itemize}
+    \item On ResNet-110, GRA-CNN reduces FLOPs by over 50\% with negligible accuracy loss.
+    \item On Tiny-ImageNet, GRA-CNN achieves a 1.65\% accuracy gain over the L1-Norm baseline.
+    \item GRA captures an importance signal nearly orthogonal to classical criteria, revealing previously overlooked semantically important channels.
+\end{itemize}
+
+\textbf{Fit with Applied Intelligence.}
+This work fits well within the scope of \emph{Applied Intelligence}, which publishes innovative intelligent systems methodologies and their applications. Our approach introduces a new intelligent analysis technique (GRA) into deep learning model optimization, and demonstrates improved real-life deployment potential of AI models---aligning with the journal's focus on intelligent solutions to complex real-world problems.
+
+\textbf{Declarations.}
+The manuscript is our original work and has not been published or submitted elsewhere. All authors have approved the submission. We have no conflicts of interest to disclose, and the study did not involve any ethical issues. The implementation code is publicly available at \url{https://github.com/Deepmind666/GRA-CNN}.
+
+We appreciate your consideration of our manuscript. We believe the readers of \emph{Applied Intelligence} will find our findings interesting and valuable. We are available to address any questions or revisions as needed.
+
+\closing{Sincerely,}
+
+\end{letter}
+\end{document}

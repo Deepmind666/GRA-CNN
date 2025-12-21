@@ -1,0 +1,134 @@
+Running Multi-Seed Experiment: fpgm on resnet56/cifar100 ratio=0.5 seeds=[0, 1, 2]
+--- Seed 0 ---
+Calculating scores using fpgm (rho=0.5)...
+Pruning threshold: 75.7536
+Building new resnet56...
+Epoch 1/40 | Train Loss: 1.8264 Acc: 51.69% | Test Loss: 1.7004 Acc: 54.65% | Best: 54.65%
+Epoch 2/40 | Train Loss: 1.2236 Acc: 64.89% | Test Loss: 1.6352 Acc: 56.13% | Best: 56.13%
+Epoch 3/40 | Train Loss: 1.1094 Acc: 67.72% | Test Loss: 1.5060 Acc: 59.64% | Best: 59.64%
+Epoch 4/40 | Train Loss: 1.0495 Acc: 69.08% | Test Loss: 1.6437 Acc: 58.08% | Best: 59.64%
+Epoch 5/40 | Train Loss: 0.9969 Acc: 70.40% | Test Loss: 1.5756 Acc: 59.02% | Best: 59.64%
+Epoch 6/40 | Train Loss: 0.9644 Acc: 71.33% | Test Loss: 1.4507 Acc: 60.88% | Best: 60.88%
+Epoch 7/40 | Train Loss: 0.9368 Acc: 72.25% | Test Loss: 1.4923 Acc: 60.62% | Best: 60.88%
+Epoch 8/40 | Train Loss: 0.9184 Acc: 72.61% | Test Loss: 1.4637 Acc: 61.21% | Best: 61.21%
+Epoch 9/40 | Train Loss: 0.8848 Acc: 73.61% | Test Loss: 1.4316 Acc: 61.79% | Best: 61.79%
+Epoch 10/40 | Train Loss: 0.8774 Acc: 73.63% | Test Loss: 1.4512 Acc: 61.22% | Best: 61.79%
+Epoch 11/40 | Train Loss: 0.8543 Acc: 74.16% | Test Loss: 1.4173 Acc: 62.26% | Best: 62.26%
+Epoch 12/40 | Train Loss: 0.8377 Acc: 74.84% | Test Loss: 1.4589 Acc: 61.65% | Best: 62.26%
+Epoch 13/40 | Train Loss: 0.8278 Acc: 75.00% | Test Loss: 1.6374 Acc: 58.43% | Best: 62.26%
+Epoch 14/40 | Train Loss: 0.8214 Acc: 75.29% | Test Loss: 1.4074 Acc: 62.45% | Best: 62.45%
+Epoch 15/40 | Train Loss: 0.8102 Acc: 75.54% | Test Loss: 1.4221 Acc: 62.49% | Best: 62.49%
+Epoch 16/40 | Train Loss: 0.7943 Acc: 76.03% | Test Loss: 1.4125 Acc: 62.60% | Best: 62.60%
+Epoch 17/40 | Train Loss: 0.7850 Acc: 76.17% | Test Loss: 1.4169 Acc: 62.31% | Best: 62.60%
+Epoch 18/40 | Train Loss: 0.7828 Acc: 76.14% | Test Loss: 1.4441 Acc: 62.21% | Best: 62.60%
+Epoch 19/40 | Train Loss: 0.7650 Acc: 76.67% | Test Loss: 1.5108 Acc: 60.61% | Best: 62.60%
+Epoch 20/40 | Train Loss: 0.7676 Acc: 76.62% | Test Loss: 1.4826 Acc: 61.56% | Best: 62.60%
+Epoch 21/40 | Train Loss: 0.5723 Acc: 82.88% | Test Loss: 1.1617 Acc: 68.43% | Best: 68.43%
+Epoch 22/40 | Train Loss: 0.5054 Acc: 85.23% | Test Loss: 1.1582 Acc: 68.51% | Best: 68.51%
+Epoch 23/40 | Train Loss: 0.4859 Acc: 85.89% | Test Loss: 1.1625 Acc: 68.63% | Best: 68.63%
+Epoch 24/40 | Train Loss: 0.4665 Acc: 86.51% | Test Loss: 1.1728 Acc: 68.19% | Best: 68.63%
+Epoch 25/40 | Train Loss: 0.4535 Acc: 86.87% | Test Loss: 1.1696 Acc: 68.58% | Best: 68.63%
+Epoch 26/40 | Train Loss: 0.4421 Acc: 87.17% | Test Loss: 1.1777 Acc: 68.55% | Best: 68.63%
+Epoch 27/40 | Train Loss: 0.4341 Acc: 87.32% | Test Loss: 1.1858 Acc: 68.30% | Best: 68.63%
+Epoch 28/40 | Train Loss: 0.4265 Acc: 87.62% | Test Loss: 1.1905 Acc: 68.35% | Best: 68.63%
+Epoch 29/40 | Train Loss: 0.4191 Acc: 87.85% | Test Loss: 1.1946 Acc: 68.60% | Best: 68.63%
+Epoch 30/40 | Train Loss: 0.4105 Acc: 88.00% | Test Loss: 1.1885 Acc: 68.74% | Best: 68.74%
+Epoch 31/40 | Train Loss: 0.3926 Acc: 88.74% | Test Loss: 1.1835 Acc: 68.72% | Best: 68.74%
+Epoch 32/40 | Train Loss: 0.3889 Acc: 88.80% | Test Loss: 1.1844 Acc: 68.68% | Best: 68.74%
+Epoch 33/40 | Train Loss: 0.3848 Acc: 88.88% | Test Loss: 1.1788 Acc: 68.77% | Best: 68.77%
+Epoch 34/40 | Train Loss: 0.3858 Acc: 88.83% | Test Loss: 1.1803 Acc: 68.68% | Best: 68.77%
+Epoch 35/40 | Train Loss: 0.3817 Acc: 88.96% | Test Loss: 1.1834 Acc: 68.68% | Best: 68.77%
+Epoch 36/40 | Train Loss: 0.3825 Acc: 89.06% | Test Loss: 1.1866 Acc: 68.69% | Best: 68.77%
+Epoch 37/40 | Train Loss: 0.3809 Acc: 89.11% | Test Loss: 1.1827 Acc: 68.57% | Best: 68.77%
+Epoch 38/40 | Train Loss: 0.3808 Acc: 89.10% | Test Loss: 1.1881 Acc: 68.51% | Best: 68.77%
+Epoch 39/40 | Train Loss: 0.3790 Acc: 89.11% | Test Loss: 1.1889 Acc: 68.73% | Best: 68.77%
+Epoch 40/40 | Train Loss: 0.3805 Acc: 89.04% | Test Loss: 1.1851 Acc: 68.66% | Best: 68.77%
+--- Seed 1 ---
+Calculating scores using fpgm (rho=0.5)...
+Pruning threshold: 75.7536
+Building new resnet56...
+Epoch 1/40 | Train Loss: 1.8365 Acc: 51.61% | Test Loss: 1.6726 Acc: 55.29% | Best: 55.29%
+Epoch 2/40 | Train Loss: 1.2310 Acc: 64.59% | Test Loss: 1.6516 Acc: 55.34% | Best: 55.34%
+Epoch 3/40 | Train Loss: 1.1090 Acc: 67.66% | Test Loss: 1.5257 Acc: 58.61% | Best: 58.61%
+Epoch 4/40 | Train Loss: 1.0320 Acc: 69.79% | Test Loss: 1.5529 Acc: 58.75% | Best: 58.75%
+Epoch 5/40 | Train Loss: 0.9939 Acc: 70.58% | Test Loss: 1.4573 Acc: 59.86% | Best: 59.86%
+Epoch 6/40 | Train Loss: 0.9573 Acc: 71.66% | Test Loss: 1.4430 Acc: 61.83% | Best: 61.83%
+Epoch 7/40 | Train Loss: 0.9328 Acc: 72.09% | Test Loss: 1.4736 Acc: 60.95% | Best: 61.83%
+Epoch 8/40 | Train Loss: 0.9014 Acc: 72.95% | Test Loss: 1.4303 Acc: 61.49% | Best: 61.83%
+Epoch 9/40 | Train Loss: 0.8872 Acc: 73.33% | Test Loss: 1.4748 Acc: 61.09% | Best: 61.83%
+Epoch 10/40 | Train Loss: 0.8753 Acc: 73.93% | Test Loss: 1.5500 Acc: 60.08% | Best: 61.83%
+Epoch 11/40 | Train Loss: 0.8606 Acc: 74.15% | Test Loss: 1.5990 Acc: 59.29% | Best: 61.83%
+Epoch 12/40 | Train Loss: 0.8451 Acc: 74.79% | Test Loss: 1.5150 Acc: 60.86% | Best: 61.83%
+Epoch 13/40 | Train Loss: 0.8263 Acc: 75.03% | Test Loss: 1.4191 Acc: 62.24% | Best: 62.24%
+Epoch 14/40 | Train Loss: 0.8270 Acc: 74.96% | Test Loss: 1.5097 Acc: 60.32% | Best: 62.24%
+Epoch 15/40 | Train Loss: 0.8048 Acc: 75.78% | Test Loss: 1.4525 Acc: 62.30% | Best: 62.30%
+Epoch 16/40 | Train Loss: 0.7921 Acc: 76.13% | Test Loss: 1.4197 Acc: 62.41% | Best: 62.41%
+Epoch 17/40 | Train Loss: 0.7834 Acc: 76.16% | Test Loss: 1.4903 Acc: 61.11% | Best: 62.41%
+Epoch 18/40 | Train Loss: 0.7825 Acc: 76.33% | Test Loss: 1.4831 Acc: 62.31% | Best: 62.41%
+Epoch 19/40 | Train Loss: 0.7716 Acc: 76.58% | Test Loss: 1.4509 Acc: 62.00% | Best: 62.41%
+Epoch 20/40 | Train Loss: 0.7630 Acc: 76.92% | Test Loss: 1.4152 Acc: 62.42% | Best: 62.42%
+Epoch 21/40 | Train Loss: 0.5652 Acc: 83.14% | Test Loss: 1.1703 Acc: 68.52% | Best: 68.52%
+Epoch 22/40 | Train Loss: 0.4984 Acc: 85.25% | Test Loss: 1.1704 Acc: 68.53% | Best: 68.53%
+Epoch 23/40 | Train Loss: 0.4793 Acc: 85.90% | Test Loss: 1.1682 Acc: 68.31% | Best: 68.53%
+Epoch 24/40 | Train Loss: 0.4588 Acc: 86.77% | Test Loss: 1.1681 Acc: 68.31% | Best: 68.53%
+Epoch 25/40 | Train Loss: 0.4472 Acc: 86.83% | Test Loss: 1.1773 Acc: 68.67% | Best: 68.67%
+Epoch 26/40 | Train Loss: 0.4396 Acc: 87.05% | Test Loss: 1.1859 Acc: 68.33% | Best: 68.67%
+Epoch 27/40 | Train Loss: 0.4269 Acc: 87.50% | Test Loss: 1.1828 Acc: 68.73% | Best: 68.73%
+Epoch 28/40 | Train Loss: 0.4212 Acc: 87.62% | Test Loss: 1.1802 Acc: 68.80% | Best: 68.80%
+Epoch 29/40 | Train Loss: 0.4128 Acc: 88.03% | Test Loss: 1.1960 Acc: 68.45% | Best: 68.80%
+Epoch 30/40 | Train Loss: 0.4111 Acc: 87.99% | Test Loss: 1.1980 Acc: 68.52% | Best: 68.80%
+Epoch 31/40 | Train Loss: 0.3879 Acc: 88.82% | Test Loss: 1.1964 Acc: 68.56% | Best: 68.80%
+Epoch 32/40 | Train Loss: 0.3853 Acc: 88.89% | Test Loss: 1.1927 Acc: 68.38% | Best: 68.80%
+Epoch 33/40 | Train Loss: 0.3841 Acc: 88.93% | Test Loss: 1.1909 Acc: 68.59% | Best: 68.80%
+Epoch 34/40 | Train Loss: 0.3840 Acc: 88.92% | Test Loss: 1.1934 Acc: 68.57% | Best: 68.80%
+Epoch 35/40 | Train Loss: 0.3782 Acc: 89.10% | Test Loss: 1.1948 Acc: 68.39% | Best: 68.80%
+Epoch 36/40 | Train Loss: 0.3766 Acc: 89.19% | Test Loss: 1.1943 Acc: 68.55% | Best: 68.80%
+Epoch 37/40 | Train Loss: 0.3792 Acc: 89.07% | Test Loss: 1.1914 Acc: 68.69% | Best: 68.80%
+Epoch 38/40 | Train Loss: 0.3771 Acc: 89.07% | Test Loss: 1.1931 Acc: 68.61% | Best: 68.80%
+Epoch 39/40 | Train Loss: 0.3764 Acc: 89.07% | Test Loss: 1.1917 Acc: 68.62% | Best: 68.80%
+Epoch 40/40 | Train Loss: 0.3743 Acc: 89.16% | Test Loss: 1.1955 Acc: 68.79% | Best: 68.80%
+--- Seed 2 ---
+Calculating scores using fpgm (rho=0.5)...
+Pruning threshold: 75.7536
+Building new resnet56...
+Epoch 1/40 | Train Loss: 1.7827 Acc: 52.87% | Test Loss: 1.7716 Acc: 53.58% | Best: 53.58%
+Epoch 2/40 | Train Loss: 1.2262 Acc: 64.63% | Test Loss: 1.5734 Acc: 57.69% | Best: 57.69%
+Epoch 3/40 | Train Loss: 1.1065 Acc: 67.71% | Test Loss: 1.4941 Acc: 59.87% | Best: 59.87%
+Epoch 4/40 | Train Loss: 1.0402 Acc: 69.44% | Test Loss: 1.5746 Acc: 58.50% | Best: 59.87%
+Epoch 5/40 | Train Loss: 0.9928 Acc: 70.78% | Test Loss: 1.4301 Acc: 61.79% | Best: 61.79%
+Epoch 6/40 | Train Loss: 0.9609 Acc: 71.61% | Test Loss: 1.4800 Acc: 60.72% | Best: 61.79%
+Epoch 7/40 | Train Loss: 0.9338 Acc: 72.24% | Test Loss: 1.4569 Acc: 60.77% | Best: 61.79%
+Epoch 8/40 | Train Loss: 0.9142 Acc: 72.70% | Test Loss: 1.5040 Acc: 60.76% | Best: 61.79%
+Epoch 9/40 | Train Loss: 0.8921 Acc: 73.46% | Test Loss: 1.3820 Acc: 62.85% | Best: 62.85%
+Epoch 10/40 | Train Loss: 0.8709 Acc: 73.94% | Test Loss: 1.3844 Acc: 62.87% | Best: 62.87%
+Epoch 11/40 | Train Loss: 0.8635 Acc: 74.21% | Test Loss: 1.5399 Acc: 59.32% | Best: 62.87%
+Epoch 12/40 | Train Loss: 0.8499 Acc: 74.43% | Test Loss: 1.4880 Acc: 61.59% | Best: 62.87%
+Epoch 13/40 | Train Loss: 0.8231 Acc: 75.17% | Test Loss: 1.5331 Acc: 60.29% | Best: 62.87%
+Epoch 14/40 | Train Loss: 0.8272 Acc: 75.31% | Test Loss: 1.3763 Acc: 63.00% | Best: 63.00%
+Epoch 15/40 | Train Loss: 0.8141 Acc: 75.60% | Test Loss: 1.6069 Acc: 59.05% | Best: 63.00%
+Epoch 16/40 | Train Loss: 0.7967 Acc: 75.95% | Test Loss: 1.5027 Acc: 61.15% | Best: 63.00%
+Epoch 17/40 | Train Loss: 0.7937 Acc: 76.20% | Test Loss: 1.4285 Acc: 62.23% | Best: 63.00%
+Epoch 18/40 | Train Loss: 0.7869 Acc: 76.07% | Test Loss: 1.4273 Acc: 62.93% | Best: 63.00%
+Epoch 19/40 | Train Loss: 0.7702 Acc: 76.58% | Test Loss: 1.4551 Acc: 61.97% | Best: 63.00%
+Epoch 20/40 | Train Loss: 0.7683 Acc: 76.92% | Test Loss: 1.4275 Acc: 62.10% | Best: 63.00%
+Epoch 21/40 | Train Loss: 0.5675 Acc: 83.13% | Test Loss: 1.1740 Acc: 68.55% | Best: 68.55%
+Epoch 22/40 | Train Loss: 0.5036 Acc: 85.26% | Test Loss: 1.1689 Acc: 68.85% | Best: 68.85%
+Epoch 23/40 | Train Loss: 0.4820 Acc: 85.94% | Test Loss: 1.1745 Acc: 68.97% | Best: 68.97%
+Epoch 24/40 | Train Loss: 0.4693 Acc: 86.15% | Test Loss: 1.1800 Acc: 68.62% | Best: 68.97%
+Epoch 25/40 | Train Loss: 0.4541 Acc: 86.81% | Test Loss: 1.1841 Acc: 68.87% | Best: 68.97%
+Epoch 26/40 | Train Loss: 0.4397 Acc: 87.13% | Test Loss: 1.2037 Acc: 68.16% | Best: 68.97%
+Epoch 27/40 | Train Loss: 0.4338 Acc: 87.40% | Test Loss: 1.2021 Acc: 68.36% | Best: 68.97%
+Epoch 28/40 | Train Loss: 0.4248 Acc: 87.73% | Test Loss: 1.2043 Acc: 68.60% | Best: 68.97%
+Epoch 29/40 | Train Loss: 0.4169 Acc: 87.85% | Test Loss: 1.2030 Acc: 68.74% | Best: 68.97%
+Epoch 30/40 | Train Loss: 0.4114 Acc: 88.02% | Test Loss: 1.2080 Acc: 68.53% | Best: 68.97%
+Epoch 31/40 | Train Loss: 0.3923 Acc: 88.53% | Test Loss: 1.2083 Acc: 68.59% | Best: 68.97%
+Epoch 32/40 | Train Loss: 0.3868 Acc: 88.79% | Test Loss: 1.2079 Acc: 68.73% | Best: 68.97%
+Epoch 33/40 | Train Loss: 0.3862 Acc: 88.75% | Test Loss: 1.2097 Acc: 68.77% | Best: 68.97%
+Epoch 34/40 | Train Loss: 0.3844 Acc: 88.99% | Test Loss: 1.2039 Acc: 68.68% | Best: 68.97%
+Epoch 35/40 | Train Loss: 0.3821 Acc: 89.04% | Test Loss: 1.2041 Acc: 68.76% | Best: 68.97%
+Epoch 36/40 | Train Loss: 0.3812 Acc: 88.98% | Test Loss: 1.2079 Acc: 68.58% | Best: 68.97%
+Epoch 37/40 | Train Loss: 0.3814 Acc: 89.06% | Test Loss: 1.2097 Acc: 68.74% | Best: 68.97%
+Epoch 38/40 | Train Loss: 0.3819 Acc: 89.05% | Test Loss: 1.2115 Acc: 68.55% | Best: 68.97%
+Epoch 39/40 | Train Loss: 0.3788 Acc: 89.21% | Test Loss: 1.2054 Acc: 68.84% | Best: 68.97%
+Epoch 40/40 | Train Loss: 0.3745 Acc: 89.31% | Test Loss: 1.2080 Acc: 68.67% | Best: 68.97%
+Final Result: 68.85 +/- 0.09

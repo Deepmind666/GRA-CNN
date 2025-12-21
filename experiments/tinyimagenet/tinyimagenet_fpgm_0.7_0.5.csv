@@ -1,0 +1,2 @@
+method,prune_ratio,rho,baseline_acc,pruned_acc,final_acc,finetune_epochs,timestamp
+fpgm,0.7,0.5,61.16,0.5,61.6,50,2025-12-21T10:08:50.446929

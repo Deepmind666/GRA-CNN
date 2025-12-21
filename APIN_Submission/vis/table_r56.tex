@@ -1,0 +1,25 @@
+\begin{table}[ht]
+\centering
+\caption{Comparison of pruning methods on ResNet-56 (CIFAR-10). Bold indicates best accuracy at each pruning ratio. GRA-CNN demonstrates superior accuracy retention especially at high pruning ratios.}
+\label{tab:cifar10_results}
+\begin{tabular}{lcccc}
+\toprule
+Method & Ratio & Top-1 Acc (\%) & FLOPs Red. (\%) & Params Red. (\%) \\
+\midrule
+L1-Norm & 0.3 & 92.43 & 48.6 & 16.3 \\
+FPGM & 0.3 & \textbf{92.82} & 50.2 & 15.2 \\
+HRank & 0.3 & 90.05 & 48.6 & 16.3 \\
+GRA-CNN & 0.3 & 92.25 & 26.4 & 32.7 \\
+\midrule
+L1-Norm & 0.5 & 91.19 & 67.0 & 34.1 \\
+FPGM & 0.5 & 83.38 & 67.7 & 32.7 \\
+HRank & 0.5 & 91.19 & 67.0 & 34.1 \\
+GRA-CNN & 0.5 & \textbf{92.00} & 50.5 & 50.7 \\
+\midrule
+L1-Norm & 0.7 & 90.32 & 78.5 & 57.7 \\
+FPGM & 0.7 & 90.74 & 79.4 & 59.7 \\
+HRank & 0.7 & 88.55 & 78.5 & 57.7 \\
+GRA-CNN & 0.7 & \textbf{90.97} & 73.1 & 67.3 \\
+\bottomrule
+\end{tabular}
+\end{table}

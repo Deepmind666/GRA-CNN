@@ -1,0 +1,2 @@
+method,prune_ratio,baseline_acc,pruned_acc,final_acc,num_classes
+gra,0.5,1.0,1.0,2.0,100

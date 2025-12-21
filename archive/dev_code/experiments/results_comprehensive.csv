@@ -1,0 +1,7 @@
+Dataset,Model,Method,PruningRatio,Rho,Accuracy,FLOPs,Params,FLOPs_Red,Params_Red
+cifar10,resnet20,l1,0.3,0.5,15.0000,54199562,213450,33.60,21.21
+cifar10,resnet20,hrank,0.3,0.5,89.7600,76981514,234618,5.69,13.40
+cifar10,resnet20,hrank,0.5,0.5,89.6600,76981514,234618,5.69,13.40
+cifar10,resnet20,hrank,0.7,0.5,85.7400,48928010,57354,40.06,78.83
+cifar100,resnet20,fpgm,0.5,0.5,63.9000,27300452,193956,66.56,29.92
+cifar100,resnet20,l1,0.5,0.5,64.9700,31318628,185604,61.64,32.94

@@ -1,0 +1,5 @@
+Dataset,Model,Method,PruningRatio,Accuracy,FLOPs_Reduction
+CIFAR-100,ResNet-20,L1-Norm,0.5,62.66,54.1
+CIFAR-100,ResNet-20,GRA-CNN,0.5,63.38,54.1
+Tiny-ImageNet,ResNet-18,L1-Norm,0.4,55.21,42.3
+Tiny-ImageNet,ResNet-18,GRA-CNN,0.4,56.85,42.3

@@ -1,0 +1,13 @@
+Running Multi-Seed Experiment: l1 on vgg16/cifar10 ratio=0.7 seeds=[0, 1, 2]
+--- Seed 0 ---
+Calculating scores using l1 (rho=0.5)...
+Traceback (most recent call last):
+  File "C:\GRA-CNN\run_multi_seed.py", line 128, in <module>
+    main()
+  File "C:\GRA-CNN\run_multi_seed.py", line 97, in main
+    pruned_model = prune_model(
+                   ^^^^^^^^^^^^
+  File "C:\GRA-CNN\pruning\prune_model.py", line 102, in prune_model
+    all_scores = np.concatenate([s.flatten() for s in valid_scores.values()])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: need at least one array to concatenate

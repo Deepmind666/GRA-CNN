@@ -1,0 +1,2 @@
+Architecture,Method,PruningRatio,Rho,Accuracy
+resnet20,gra,0.5,0.3,64.28

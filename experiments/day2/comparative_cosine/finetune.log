@@ -1,0 +1,43 @@
+Loading pruned model from C:\GRA-CNN\experiments\day2\comparative_cosine\pruned.pth
+Found configuration: [13, 14, 13, 7, 4, 5, 6, 7, 4, 22, 19, 13, 13, 2, 10, 8, 8, 17, 35, 40, 36, 27, 34, 26, 27, 33, 61]
+Epoch 1/40 | Train Acc: 83.23% | Test Acc: 83.76%
+Epoch 2/40 | Train Acc: 89.82% | Test Acc: 87.93%
+Epoch 3/40 | Train Acc: 90.86% | Test Acc: 86.40%
+Epoch 4/40 | Train Acc: 91.56% | Test Acc: 89.25%
+Epoch 5/40 | Train Acc: 92.17% | Test Acc: 88.28%
+Epoch 6/40 | Train Acc: 92.53% | Test Acc: 87.81%
+Epoch 7/40 | Train Acc: 92.76% | Test Acc: 86.66%
+Epoch 8/40 | Train Acc: 93.10% | Test Acc: 88.38%
+Epoch 9/40 | Train Acc: 93.20% | Test Acc: 87.29%
+Epoch 10/40 | Train Acc: 93.42% | Test Acc: 87.39%
+Epoch 11/40 | Train Acc: 93.61% | Test Acc: 90.44%
+Epoch 12/40 | Train Acc: 93.86% | Test Acc: 87.51%
+Epoch 13/40 | Train Acc: 93.92% | Test Acc: 85.89%
+Epoch 14/40 | Train Acc: 94.00% | Test Acc: 88.59%
+Epoch 15/40 | Train Acc: 94.09% | Test Acc: 88.37%
+Epoch 16/40 | Train Acc: 94.15% | Test Acc: 89.76%
+Epoch 17/40 | Train Acc: 94.51% | Test Acc: 87.95%
+Epoch 18/40 | Train Acc: 94.33% | Test Acc: 89.79%
+Epoch 19/40 | Train Acc: 94.70% | Test Acc: 89.81%
+Epoch 20/40 | Train Acc: 94.79% | Test Acc: 90.30%
+Epoch 21/40 | Train Acc: 96.82% | Test Acc: 92.56%
+Epoch 22/40 | Train Acc: 97.61% | Test Acc: 92.50%
+Epoch 23/40 | Train Acc: 97.74% | Test Acc: 92.66%
+Epoch 24/40 | Train Acc: 98.01% | Test Acc: 92.65%
+Epoch 25/40 | Train Acc: 98.22% | Test Acc: 92.52%
+Epoch 26/40 | Train Acc: 98.22% | Test Acc: 92.55%
+Epoch 27/40 | Train Acc: 98.34% | Test Acc: 92.76%
+Epoch 28/40 | Train Acc: 98.47% | Test Acc: 92.64%
+Epoch 29/40 | Train Acc: 98.48% | Test Acc: 92.54%
+Epoch 30/40 | Train Acc: 98.57% | Test Acc: 92.82%
+Epoch 31/40 | Train Acc: 98.70% | Test Acc: 92.74%
+Epoch 32/40 | Train Acc: 98.66% | Test Acc: 92.78%
+Epoch 33/40 | Train Acc: 98.74% | Test Acc: 92.82%
+Epoch 34/40 | Train Acc: 98.83% | Test Acc: 92.75%
+Epoch 35/40 | Train Acc: 98.79% | Test Acc: 92.67%
+Epoch 36/40 | Train Acc: 98.80% | Test Acc: 92.85%
+Epoch 37/40 | Train Acc: 98.81% | Test Acc: 92.78%
+Epoch 38/40 | Train Acc: 98.79% | Test Acc: 92.86%
+Epoch 39/40 | Train Acc: 98.86% | Test Acc: 92.91%
+Epoch 40/40 | Train Acc: 98.81% | Test Acc: 92.88%
+Finetuning finished. Best accuracy: 92.91%

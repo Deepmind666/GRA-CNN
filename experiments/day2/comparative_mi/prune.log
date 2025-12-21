@@ -1,0 +1,8 @@
+Original: FLOPs: 251.50M, Params: 0.85M
+Calculating scores using mi...
+Collecting activations for mi (batches=10)...
+Pruning threshold: 0.0046
+Pruned 504/1008 channels. Real Ratio: 50.00%
+Pruned:   FLOPs: 122.36M, Params: 0.44M
+Reduction: FLOPs: 51.35%, Params: 48.82%
+Saved pruned model to C:\GRA-CNN\experiments\day2\comparative_mi\pruned.pth

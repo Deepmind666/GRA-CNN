@@ -1,0 +1,23 @@
+Epoch 0: New best accuracy: 78.77%
+Epoch 1: New best accuracy: 81.09%
+Epoch 2: New best accuracy: 82.14%
+Epoch 3: New best accuracy: 82.89%
+Epoch 4: New best accuracy: 84.02%
+Epoch 5: New best accuracy: 84.09%
+Epoch 9: New best accuracy: 84.57%
+Epoch 10/100 | Test Acc: 84.57%
+Epoch 18: New best accuracy: 85.68%
+Epoch 20/100 | Test Acc: 84.01%
+Epoch 30/100 | Test Acc: 84.49%
+Epoch 31: New best accuracy: 86.10%
+Epoch 40/100 | Test Acc: 85.10%
+Epoch 50/100 | Test Acc: 85.00%
+Epoch 50: New best accuracy: 88.38%
+Epoch 51: New best accuracy: 88.59%
+Epoch 55: New best accuracy: 88.66%
+Epoch 60/100 | Test Acc: 88.51%
+Epoch 70/100 | Test Acc: 88.57%
+Epoch 80/100 | Test Acc: 88.56%
+Epoch 90/100 | Test Acc: 88.47%
+Epoch 100/100 | Test Acc: 88.50%
+Finetuning finished. Best accuracy: 88.66%

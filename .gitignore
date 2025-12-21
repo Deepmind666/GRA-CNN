@@ -10,3 +10,7 @@ APIN_Submission/*.log
 APIN_Submission/*.aux
 APIN_Submission/*.out
 APIN_Submission/*.synctex.gz
+
+# Allow specific final deliverables
+!APIN_Submission/manuscript_apin_final.pdf
+!APIN_Submission/cover_letter.pdf

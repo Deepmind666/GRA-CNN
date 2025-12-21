@@ -1,0 +1,16 @@
+\begin{table}[h]
+\caption{Pruning Results Comparison}\label{tab:results}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+ & & \multicolumn{2}{c}{ResNet-20} & \multicolumn{2}{c}{ResNet-56} \\
+Method & Ratio & Acc(\%) & FLOPs\downarrow & Acc(\%) & FLOPs\downarrow \\
+\midrule
+L1-Norm & 30\% & 90.36 & 30\% & 92.43 & 30\% \\
+GRA-CNN & 30\% & \textbf{90.84} & 30\% & \textbf{92.25} & 30\% \\
+L1-Norm & 50\% & 88.66 & 50\% & 91.19 & 50\% \\
+GRA-CNN & 50\% & \textbf{89.48} & 50\% & \textbf{92.00} & 50\% \\
+L1-Norm & 70\% & 87.43 & 70\% & 90.32 & 70\% \\
+GRA-CNN & 70\% & \textbf{88.75} & 70\% & \textbf{90.97} & 70\% \\
+\bottomrule
+\end{tabular}
+\end{table}

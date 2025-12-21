@@ -1,0 +1,19 @@
+\begin{table}[ht]
+\centering
+\caption{Comparison of pruning methods on ResNet-56 (CIFAR-100). Bold indicates best accuracy. GRA-CNN consistently outperforms L1-Norm on this challenging 100-class dataset.}
+\label{tab:cifar100_r56}
+\begin{tabular}{lcccc}
+\toprule
+Method & Ratio & Top-1 Acc (\%) & $\Delta$ vs L1 \\
+\midrule
+L1-Norm & 0.3 & 70.65 & --- \\
+GRA-CNN & 0.3 & \textbf{71.22} & +0.57 \\
+\midrule
+L1-Norm & 0.5 & 70.18 & --- \\
+GRA-CNN & 0.5 & \textbf{70.78} & +0.60 \\
+\midrule
+L1-Norm & 0.7 & 66.07 & --- \\
+GRA-CNN & 0.7 & \textbf{67.39} & +1.32 \\
+\bottomrule
+\end{tabular}
+\end{table}

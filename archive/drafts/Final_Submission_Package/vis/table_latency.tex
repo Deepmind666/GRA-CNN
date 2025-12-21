@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\caption{Inference Latency on RTX 5090 (Batch Size=128). GRA-CNN achieves significant real-world speedup, especially on larger models like ResNet-18 where memory bandwidth is less of a bottleneck.}
+\label{tab:latency}
+\begin{tabular}{lccccc}
+\toprule
+Dataset & Model & Pruned? & Latency (ms) & FPS (img/s) & Speedup \\
+\midrule
+CIFAR-10 & ResNet-20 & No & 1.74 & 73413 & 1.00x \\
+ & & Yes (50\%) & 1.62 & 78826 & 1.07x \\
+\midrule
+CIFAR-10 & ResNet-56 & No & 4.06 & 31566 & 1.00x \\
+ & & Yes (50\%) & 3.83 & 33446 & 1.06x \\
+\midrule
+Tiny-ImageNet & ResNet-18 & No & 12.04 & 10631 & 1.00x \\
+ & & Yes (50\%) & 7.24 & 17689 & 1.66x \\
+\bottomrule
+\end{tabular}
+\end{table}

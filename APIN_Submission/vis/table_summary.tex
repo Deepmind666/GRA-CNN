@@ -1,0 +1,19 @@
+\begin{table}[ht]
+\centering
+\caption{Cross-dataset summary: GRA-CNN improvement over L1-Norm at 50\% pruning ratio. GRA-CNN consistently outperforms across all tested configurations, especially on complex datasets like Tiny-ImageNet.}
+\label{tab:summary}
+\begin{tabular}{lllccc}
+\toprule
+Dataset & Model & Acc (L1) & Acc (GRA) & $\Delta$ \\
+\midrule
+CIFAR-10 & ResNet-20 & 88.66\% & 89.48\% & +0.82 \\
+CIFAR-10 & ResNet-56 & 91.19\% & 92.00\% & +0.81 \\
+CIFAR-10 & ResNet-110 & 93.15\% & 93.52\% & +0.37 \\
+CIFAR-100 & ResNet-20 & 65.11\% & 64.50\% & -0.61 \\
+CIFAR-100 & ResNet-56 & 70.18\% & 70.78\% & +0.60 \\
+Tiny-ImageNet & ResNet-18 & 64.29\% & \textbf{66.71\%} & \textbf{+2.42} \\
+\midrule
+\multicolumn{4}{r}{\textit{Average Improvement}} & \textbf{+0.74} \\
+\bottomrule
+\end{tabular}
+\end{table}

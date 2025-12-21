@@ -1,0 +1,18 @@
+\begin{table}[ht]
+\centering
+\caption{Comparison with state-of-the-art pruning methods on ResNet-56 (CIFAR-10). GRA-CNN demonstrates competitive accuracy retention while ensuring semantic alignment.}
+\label{tab:sota}
+\begin{tabular}{llccc}
+\toprule
+Method & Venue/Year & FLOPs $\downarrow$ & Acc. Baseline & Acc. Pruned ($\Delta$) \\
+\midrule
+L1-Norm~\cite{he2017channel} & ICCV 2017 & 52.6\% & 93.38\% & 93.06\% (-0.32) \\
+FPGM~\cite{he2019fpgm} & CVPR 2019 & 52.6\% & 93.59\% & 93.26\% (-0.33) \\
+HRank~\cite{lin2020hrank} & CVPR 2020 & 50.0\% & 93.26\% & 93.17\% (-0.09) \\
+ACP~\cite{chang2022acp} & Neuro-2022 & 51.3\% & 93.30\% & 93.45\% (+0.15) \\
+DepGraph~\cite{fang2023depgraph} & CVPR 2023 & 51.0\% & 93.42\% & 93.50\% (+0.08) \\
+\midrule
+\textbf{GRA-CNN (Ours)} & \textbf{APIN 2025} & \textbf{52.1\%} & \textbf{93.38\%} & \textbf{93.52\% (+0.14)} \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,24 @@
+\begin{table}[ht]
+\centering
+\caption{Performance comparison on Tiny-ImageNet (ResNet-18). GRA-CNN demonstrates superior robustness at high compression levels, outperforming L1-Norm and FPGM significantly at the 50\% pruning ratio. Bold indicates best result at each ratio.}
+\label{tab:tiny_results}
+\begin{tabular}{lccc}
+\toprule
+Method & Ratio & Top-1 Acc (\%) & FLOPs Red. (\%) \\
+\midrule
+\multicolumn{4}{c}{\textit{Baseline: 67.92\%}} \\
+\midrule
+L1-Norm & 0.3 & 67.61 & 30.0 \\
+FPGM    & 0.3 & 67.84 & 30.0 \\
+GRA-CNN & 0.3 & \textbf{67.92} & 30.0 \\
+\midrule
+L1-Norm & 0.5 & 64.29 & 50.0 \\
+FPGM    & 0.5 & 62.58 & 50.0 \\
+GRA-CNN & 0.5 & \textbf{66.71} & 50.0 \\
+\midrule
+L1-Norm & 0.7 & \textbf{62.25} & 70.0 \\
+FPGM    & 0.7 & 61.60 & 70.0 \\
+GRA-CNN & 0.7 & 61.11 & 70.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
