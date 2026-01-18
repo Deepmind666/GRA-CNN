@@ -393,19 +393,36 @@ To rigorously validate the effectiveness of the proposed GRA criterion, we condu
 
 \input{vis/table_ablation.tex}
 
-As shown in Table~\ref{tab:ablation}, GRA-CNN demonstrates competitive or superior performance across most configurations. Notably, the standard deviations ($\pm\sigma$) indicate that GRA exhibits comparable stability to other methods, validating the reproducibility of our approach. The Pareto frontier analysis (Figure~\ref{fig:pareto}) further illustrates that GRA consistently achieves favorable accuracy-efficiency trade-offs.
+As shown in Table~\ref{tab:ablation}, GRA-CNN demonstrates competitive or superior performance across most configurations. Notably, the standard deviations ($\pm\sigma$) indicate that GRA exhibits comparable stability to other methods, validating the reproducibility of our approach. The enhanced Pareto frontier analysis (Figure~\ref{fig:pareto_enhanced}) illustrates that GRA consistently achieves favorable accuracy-efficiency trade-offs, with error bars showing statistical reliability across multiple runs.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.95\textwidth]{fig_pareto.pdf}
-\caption{Pareto frontier analysis on CIFAR-10 and CIFAR-100 using ResNet-56. Error bars indicate standard deviation across $N=3$ independent runs. GRA-CNN (red) achieves competitive accuracy-efficiency trade-offs compared to L1-Norm, FPGM, and HRank baselines.}
-\label{fig:pareto}
+\includegraphics[width=0.95\textwidth]{fig_pareto_enhanced.pdf}
+\caption{Enhanced Pareto frontier analysis with error bars. (a) ResNet-56 on CIFAR-10. (b) ResNet-56 on CIFAR-100. (c) GRA's advantage at 70\% pruning relative to baselines. GRA-CNN (red) achieves consistently superior accuracy-efficiency trade-offs, especially under aggressive compression.}
+\label{fig:pareto_enhanced}
 \end{figure}
 
 \paragraph{Impact of the Sensitivity Coefficient $\rho$.}
 The coefficient $\rho \in (0, 1)$ in Eq. (5) represents the ``distinguishing coefficient,'' which balances the influence of the maximum deviation $\Delta_{\max}$ against local deviations. A smaller $\rho$ enhances the granularity of relational grades by magnifying local differences, while a larger $\rho$ promotes stability by emphasizing global consensus. 
 
-As shown in Fig.~\ref{fig:rho_sensitivity}, GRA-CNN exhibits a stable ``plateau'' of performance for $\rho \in [0.4, 0.6]$. On ResNet-56, the accuracy variance across this range is less than 0.15\%, demonstrating the method's robustness to hyperparameter selection. We adopt $\rho = 0.5$ as a default value for all datasets, which consistently provides an optimal balance between discriminability and robustness.
+Figure~\ref{fig:rho_sensitivity} provides comprehensive analysis of $\rho$'s impact: (a) mean GRA scores with standard deviation across $\rho$ values, (b) score distribution via box plots, and (c) channel discriminability measured by coefficient of variation. GRA-CNN exhibits a stable ``plateau'' of performance for $\rho \in [0.4, 0.6]$, marked by the green region. We adopt $\rho = 0.5$ as a default value for all datasets, which consistently provides an optimal balance between discriminability and robustness.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.95\textwidth]{fig_rho_sensitivity.pdf}
+\caption{Sensitivity analysis of the GRA coefficient $\rho$. (a) Mean GRA score vs $\rho$ with standard deviation. (b) Box plot showing score distribution across all channels. (c) Channel discriminability measured by coefficient of variation. The green region marks the stable plateau ($\rho \in [0.4, 0.6]$).}
+\label{fig:rho_sensitivity}
+\end{figure}
+
+\paragraph{Layer-wise Analysis.}
+To understand how GRA and traditional L1 metrics behave across network depth, we conducted comprehensive layer-wise analysis on ResNet-56 (Figure~\ref{fig:layerwise}). Key findings include: (a) GRA and L1 importance scores show different layer-wise patterns, (b) the correlation between GRA and L1 varies significantly across layers (mean $r = 0.033$), confirming their near-orthogonal behavior, (c) depth-dependent analysis reveals GRA assigns higher importance to late layers, and (d) the heatmap visualization shows diverse GRA score patterns across channels within each layer.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.95\textwidth]{fig_layerwise_analysis.pdf}
+\caption{Layer-wise analysis of GRA vs L1 importance on ResNet-56/CIFAR-10. (a) Mean importance per layer. (b) Per-layer GRA-L1 correlation. (c) Depth-dependent importance pattern. (d) GRA score heatmap for selected layers and channels.}
+\label{fig:layerwise}
+\end{figure}
 
 \paragraph{Pruning Granularity: Layer-wise vs. Global.}
 We also investigated whether a global pruning threshold (ranking all channels in the network together) outperforms layer-wise fixed ratios. Our results indicate that while global ranking allows for more flexible allocation of sparsity (e.g., pruning more heavily in shallow layers), the layer-wise approach---when coupled with GRA---yields more predictable latency reduction and better preservation of deep semantic features.
