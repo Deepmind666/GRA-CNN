@@ -117,8 +117,8 @@ def main():
         return
     
     # ========== 创建丰富的综合图 ==========
-    fig = plt.figure(figsize=(14, 10))
-    gs = fig.add_gridspec(2, 3, hspace=0.30, wspace=0.25)
+    fig = plt.figure(figsize=(15, 12))
+    gs = fig.add_gridspec(2, 3, hspace=0.35, wspace=0.30)
     
     # 4 个散点图
     for idx, r in enumerate(results[:4]):
