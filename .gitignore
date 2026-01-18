@@ -1,16 +1,95 @@
+# ===========================================
+# GRA-CNN .gitignore - Clean Repository
+# ===========================================
+
+# Python
 __pycache__/
 *.pyc
-.DS_Store
-.ipynb_checkpoints/
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.eggs/
+*.egg
+.pytest_cache/
+
+# PyTorch model files (too large for git)
 *.pth
 *.pt
+*.ckpt
+
+# Data directories
 data/
-APIN_Submission/*.pdf
-APIN_Submission/*.log
+experiments/data/
+experiments/cifar*/
+experiments/resnet*/
+experiments/tiny*/
+experiments/prior_experiments/
+checkpoints/
+
+# LaTeX temporary files
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.toc
+*.nav
+*.snm
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+*.log
+hs_err_*.log
+
+# APIN Submission - ignore most, keep finals
 APIN_Submission/*.aux
+APIN_Submission/*.log
 APIN_Submission/*.out
+APIN_Submission/*.blg
+APIN_Submission/*.bbl
 APIN_Submission/*.synctex.gz
 
-# Allow specific final deliverables
+# Temporary/numbered PDFs
+APIN_Submission/1.pdf
+APIN_Submission/2.pdf
+
+# Old manuscript versions (keep only final)
+APIN_Submission/GRA-CNN_Final_Report.pdf
+APIN_Submission/GRA-CNN_Manuscript_Final.pdf
+APIN_Submission/GRA_CNN_Pro_Figures.pdf
+APIN_Submission/GRA_CNN_Review_Draft.pdf
+
+# PNG duplicates of PDFs (optional, comment out if needed)
+# APIN_Submission/*.png
+
+# Experiment outputs (reproducible)
+experiments/*.csv
+experiments/queue_log.txt
+
+# Archive
+archive/
+
+# ===========================================
+# Keep specific final deliverables
+# ===========================================
+!APIN_Submission/manuscript_apin.pdf
 !APIN_Submission/manuscript_apin_final.pdf
 !APIN_Submission/cover_letter.pdf
+!APIN_Submission/fig1.pdf
+!APIN_Submission/fig*_enhanced.pdf
+!APIN_Submission/fig_comprehensive*.pdf
+!APIN_Submission/fig_performance*.pdf
+!APIN_Submission/fig_radar*.pdf
+!README.md
+!reproduction_guide.md

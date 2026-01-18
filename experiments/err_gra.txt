@@ -1,0 +1,4 @@
+usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]
+                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]
+                           [--batch]
+run_real_pruning.py: error: unrecognized arguments: --parallel-method

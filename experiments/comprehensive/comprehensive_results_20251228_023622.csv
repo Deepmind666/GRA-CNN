@@ -1,0 +1,10 @@
+architecture,dataset,method,ratio,seed,baseline_acc,pruned_acc,acc_drop
+vgg16,cifar10,gra,0.3,0,10.0,92.03,-82.03
+vgg16,cifar10,gra,0.3,1,10.0,91.71,-81.71
+vgg16,cifar10,gra,0.3,2,10.0,91.56,-81.56
+vgg16,cifar10,gra,0.5,0,10.0,91.64,-81.64
+vgg16,cifar10,gra,0.5,1,10.0,92.12,-82.12
+vgg16,cifar10,gra,0.5,2,10.0,91.7,-81.7
+vgg16,cifar10,gra,0.7,0,10.0,91.86,-81.86
+vgg16,cifar10,gra,0.7,1,10.0,91.88,-81.88
+vgg16,cifar10,gra,0.7,2,10.0,91.87,-81.87

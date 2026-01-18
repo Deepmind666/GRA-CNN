@@ -1,0 +1,31 @@
+\begin{table}[htbp]
+\centering
+\caption{Ablation Study: Comparison of Pruning Criteria. Accuracy (\%) reported as mean $\pm$ std over $N=3$ independent runs. Best results per row are in \textbf{bold}.}
+\label{tab:ablation}
+\small
+\begin{tabular}{@{}lcc|rrrr@{}}
+\toprule
+\textbf{Model} & \textbf{Data} & $\bm{r}$ & \textbf{GRA} & \textbf{L1} & \textbf{FPGM} & \textbf{HRank} \\
+\midrule
+\multirow{3}{*}{ResNet-56} & \multirow{3}{*}{C10} 
+    & 0.3 & 93.26$\pm$0.2 & \textbf{93.51$\pm$0.0} & 93.45$\pm$0.1 & 93.13$\pm$0.2 \\
+  & & 0.5 & 91.12$\pm$0.6 & \textbf{93.00$\pm$0.1} & 92.94$\pm$0.0 & 89.78$\pm$0.5 \\
+  & & 0.7 & 88.64$\pm$0.4 & 90.21$\pm$0.4 & \textbf{90.73$\pm$0.5} & 87.65$\pm$0.5 \\
+\midrule
+\multirow{3}{*}{ResNet-56} & \multirow{3}{*}{C100} 
+    & 0.3 & 71.09$\pm$0.2 & 71.09$\pm$0.5 & \textbf{71.39$\pm$0.2} & 70.29$\pm$0.2 \\
+  & & 0.5 & 68.57$\pm$0.3 & 70.04$\pm$0.4 & \textbf{70.25$\pm$0.1} & 67.43$\pm$0.2 \\
+  & & 0.7 & 60.98$\pm$0.5 & 66.21$\pm$0.1 & \textbf{66.27$\pm$0.6} & 59.98$\pm$0.4 \\
+\midrule
+\multirow{3}{*}{VGG-16} & \multirow{3}{*}{C10} 
+    & 0.3 & 93.25$\pm$0.3 & 93.33$\pm$0.0 & \textbf{93.38$\pm$0.4} & 93.11$\pm$0.1 \\
+  & & 0.5 & 92.41$\pm$0.5 & 92.41$\pm$0.1 & \textbf{92.56$\pm$0.1} & 92.41$\pm$0.1 \\
+  & & 0.7 & 87.93$\pm$0.4 & \textbf{90.32$\pm$0.4} & 89.83$\pm$0.2 & 89.66$\pm$0.1 \\
+\midrule
+\multirow{3}{*}{VGG-16} & \multirow{3}{*}{C100} 
+    & 0.3 & 72.13$\pm$0.2 & 72.85$\pm$0.2 & \textbf{73.05$\pm$0.2} & 72.17$\pm$0.2 \\
+  & & 0.5 & 69.41$\pm$0.3 & \textbf{70.89$\pm$0.3} & 70.54$\pm$0.3 & 69.18$\pm$0.3 \\
+  & & 0.7 & 62.68$\pm$0.4 & \textbf{64.20$\pm$0.3} & 63.96$\pm$0.4 & 62.47$\pm$0.4 \\
+\bottomrule
+\end{tabular}
+\end{table}

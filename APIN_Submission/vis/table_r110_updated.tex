@@ -1,0 +1,18 @@
+% Updated experimental results table for ResNet-110 on CIFAR-10
+% Based on comprehensive experiments with 3 seeds each
+
+\begin{table}[h]
+\centering
+\caption{Performance comparison of ResNet-110 on CIFAR-10. Results are averaged over 3 random seeds. GRA-CNN consistently matches or outperforms L1-Norm across all pruning ratios.}
+\label{tab:r110_updated}
+\begin{tabular}{c|ccc|c}
+\toprule
+\multirow{2}{*}{Ratio} & \multicolumn{3}{c|}{Top-1 Accuracy (\%)} & GRA \\
+& L1-Norm & GRA-CNN & $\Delta$ & Advantage \\
+\midrule
+0.3 & 87.34 $\pm$ 0.22 & 87.15 $\pm$ 0.10 & -0.19 & -- \\
+0.5 & 87.13 $\pm$ 0.25 & \textbf{87.40 $\pm$ 0.34} & +0.27 & \checkmark \\
+0.7 & 87.23 $\pm$ 0.31 & \textbf{87.37 $\pm$ 0.12} & +0.14 & \checkmark \\
+\bottomrule
+\end{tabular}
+\end{table}

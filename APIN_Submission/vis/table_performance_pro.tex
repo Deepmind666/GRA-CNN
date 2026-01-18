@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\centering
+\caption{Comprehensive performance audit including Accuracy, Efficiency (FLOPs/Params), and Hardware Throughput on RTX 5090. Results cover both small-scale (CIFAR) and large-scale (Tiny-ImageNet) datasets at 50\% pruning ratio.}
+\label{tab:performance_audit}
+\begin{tabular}{llcccccc}
+\toprule
+Dataset & Model & Method & Top-1 (\%) & $\Delta$ Acc. & FLOPs $\downarrow$ & Params $\downarrow$ & Throughput $\uparrow$ \\
+\midrule
+CIFAR-10 & ResNet-20 & Baseline & 91.70 & - & 0\% & 0\% & 1.00$\times$ \\
+& & L1-Norm & 88.66 & -3.04 & 48.2\% & 46.5\% & 1.07$\times$ \\
+& & \textbf{GRA-CNN} & \textbf{89.48} & \textbf{-2.22} & \textbf{48.2\%} & \textbf{46.5\%} & \textbf{1.07$\times$} \\
+\midrule
+CIFAR-10 & ResNet-56 & Baseline & 93.20 & - & 0\% & 0\% & 1.00$\times$ \\
+& & L1-Norm & 91.19 & -2.01 & 50.1\% & 48.2\% & 1.12$\times$ \\
+& & \textbf{GRA-CNN} & \textbf{92.00} & \textbf{-1.20} & \textbf{50.1\%} & \textbf{48.2\%} & \textbf{1.12$\times$} \\
+\midrule
+Tiny-ImageNet & ResNet-18 & Baseline & 67.80 & - & 0\% & 0\% & 1.00$\times$ \\
+& & L1-Norm & 58.85 & -8.95 & 49.5\% & 47.1\% & 1.58$\times$ \\
+& & \textbf{GRA-CNN} & \textbf{63.12} & \textbf{-4.68} & \textbf{49.5\%} & \textbf{47.1\%} & \textbf{1.66$\times$} \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,680 @@
+[
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-10",
+    "method": "GRA",
+    "ratio": 0.3,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-10",
+    "method": "GRA",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-10",
+    "method": "GRA",
+    "ratio": 0.7,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-10",
+    "method": "L1",
+    "ratio": 0.3,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-10",
+    "method": "L1",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-10",
+    "method": "L1",
+    "ratio": 0.7,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-10",
+    "method": "FPGM",
+    "ratio": 0.3,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-10",
+    "method": "FPGM",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-10",
+    "method": "FPGM",
+    "ratio": 0.7,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-10",
+    "method": "HRank",
+    "ratio": 0.3,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-10",
+    "method": "HRank",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-10",
+    "method": "HRank",
+    "ratio": 0.7,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-100",
+    "method": "GRA",
+    "ratio": 0.3,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-100",
+    "method": "GRA",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-100",
+    "method": "GRA",
+    "ratio": 0.7,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-100",
+    "method": "L1",
+    "ratio": 0.3,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-100",
+    "method": "L1",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-100",
+    "method": "L1",
+    "ratio": 0.7,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-100",
+    "method": "FPGM",
+    "ratio": 0.3,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-100",
+    "method": "FPGM",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-100",
+    "method": "FPGM",
+    "ratio": 0.7,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-100",
+    "method": "HRank",
+    "ratio": 0.3,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-100",
+    "method": "HRank",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-100",
+    "method": "HRank",
+    "ratio": 0.7,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "VGG-16",
+    "dataset": "CIFAR-10",
+    "method": "GRA",
+    "ratio": 0.3,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "VGG-16",
+    "dataset": "CIFAR-10",
+    "method": "GRA",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "VGG-16",
+    "dataset": "CIFAR-10",
+    "method": "GRA",
+    "ratio": 0.7,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "VGG-16",
+    "dataset": "CIFAR-10",
+    "method": "L1",
+    "ratio": 0.3,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "VGG-16",
+    "dataset": "CIFAR-10",
+    "method": "L1",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "VGG-16",
+    "dataset": "CIFAR-10",
+    "method": "L1",
+    "ratio": 0.7,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "VGG-16",
+    "dataset": "CIFAR-10",
+    "method": "FPGM",
+    "ratio": 0.3,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "VGG-16",
+    "dataset": "CIFAR-10",
+    "method": "FPGM",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "VGG-16",
+    "dataset": "CIFAR-10",
+    "method": "FPGM",
+    "ratio": 0.7,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "VGG-16",
+    "dataset": "CIFAR-10",
+    "method": "HRank",
+    "ratio": 0.3,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "VGG-16",
+    "dataset": "CIFAR-10",
+    "method": "HRank",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "VGG-16",
+    "dataset": "CIFAR-10",
+    "method": "HRank",
+    "ratio": 0.7,
+    "epochs": 40,
+    "type": "ablation"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-10",
+    "method": "GRA",
+    "ratio": 0.5,
+    "epochs": 40,
+    "seed": 42,
+    "type": "multiseed"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-10",
+    "method": "GRA",
+    "ratio": 0.5,
+    "epochs": 40,
+    "seed": 123,
+    "type": "multiseed"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-10",
+    "method": "GRA",
+    "ratio": 0.5,
+    "epochs": 40,
+    "seed": 456,
+    "type": "multiseed"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-10",
+    "method": "L1",
+    "ratio": 0.5,
+    "epochs": 40,
+    "seed": 42,
+    "type": "multiseed"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-10",
+    "method": "L1",
+    "ratio": 0.5,
+    "epochs": 40,
+    "seed": 123,
+    "type": "multiseed"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-10",
+    "method": "L1",
+    "ratio": 0.5,
+    "epochs": 40,
+    "seed": 456,
+    "type": "multiseed"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-100",
+    "method": "GRA",
+    "ratio": 0.5,
+    "epochs": 40,
+    "seed": 42,
+    "type": "multiseed"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-100",
+    "method": "GRA",
+    "ratio": 0.5,
+    "epochs": 40,
+    "seed": 123,
+    "type": "multiseed"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-100",
+    "method": "GRA",
+    "ratio": 0.5,
+    "epochs": 40,
+    "seed": 456,
+    "type": "multiseed"
+  },
+  {
+    "arch": "VGG-16",
+    "dataset": "CIFAR-10",
+    "method": "GRA",
+    "ratio": 0.5,
+    "epochs": 40,
+    "seed": 42,
+    "type": "multiseed"
+  },
+  {
+    "arch": "VGG-16",
+    "dataset": "CIFAR-10",
+    "method": "GRA",
+    "ratio": 0.5,
+    "epochs": 40,
+    "seed": 123,
+    "type": "multiseed"
+  },
+  {
+    "arch": "VGG-16",
+    "dataset": "CIFAR-10",
+    "method": "GRA",
+    "ratio": 0.5,
+    "epochs": 40,
+    "seed": 456,
+    "type": "multiseed"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-10",
+    "method": "GRA",
+    "ratio": 0.5,
+    "rho": 0.1,
+    "epochs": 40,
+    "type": "rho_sensitivity"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-10",
+    "method": "GRA",
+    "ratio": 0.5,
+    "rho": 0.3,
+    "epochs": 40,
+    "type": "rho_sensitivity"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-10",
+    "method": "GRA",
+    "ratio": 0.5,
+    "rho": 0.5,
+    "epochs": 40,
+    "type": "rho_sensitivity"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-10",
+    "method": "GRA",
+    "ratio": 0.5,
+    "rho": 0.7,
+    "epochs": 40,
+    "type": "rho_sensitivity"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-10",
+    "method": "GRA",
+    "ratio": 0.5,
+    "rho": 0.9,
+    "epochs": 40,
+    "type": "rho_sensitivity"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-100",
+    "method": "GRA",
+    "ratio": 0.5,
+    "rho": 0.1,
+    "epochs": 40,
+    "type": "rho_sensitivity"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-100",
+    "method": "GRA",
+    "ratio": 0.5,
+    "rho": 0.3,
+    "epochs": 40,
+    "type": "rho_sensitivity"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-100",
+    "method": "GRA",
+    "ratio": 0.5,
+    "rho": 0.5,
+    "epochs": 40,
+    "type": "rho_sensitivity"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-100",
+    "method": "GRA",
+    "ratio": 0.5,
+    "rho": 0.7,
+    "epochs": 40,
+    "type": "rho_sensitivity"
+  },
+  {
+    "arch": "ResNet-56",
+    "dataset": "CIFAR-100",
+    "method": "GRA",
+    "ratio": 0.5,
+    "rho": 0.9,
+    "epochs": 40,
+    "type": "rho_sensitivity"
+  },
+  {
+    "arch": "ResNet-20",
+    "dataset": "CIFAR-10",
+    "method": "GRA",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  },
+  {
+    "arch": "ResNet-20",
+    "dataset": "CIFAR-10",
+    "method": "L1",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  },
+  {
+    "arch": "ResNet-20",
+    "dataset": "CIFAR-10",
+    "method": "FPGM",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  },
+  {
+    "arch": "ResNet-20",
+    "dataset": "CIFAR-10",
+    "method": "HRank",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  },
+  {
+    "arch": "ResNet-32",
+    "dataset": "CIFAR-10",
+    "method": "GRA",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  },
+  {
+    "arch": "ResNet-32",
+    "dataset": "CIFAR-10",
+    "method": "L1",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  },
+  {
+    "arch": "ResNet-32",
+    "dataset": "CIFAR-10",
+    "method": "FPGM",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  },
+  {
+    "arch": "ResNet-32",
+    "dataset": "CIFAR-10",
+    "method": "HRank",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  },
+  {
+    "arch": "ResNet-44",
+    "dataset": "CIFAR-10",
+    "method": "GRA",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  },
+  {
+    "arch": "ResNet-44",
+    "dataset": "CIFAR-10",
+    "method": "L1",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  },
+  {
+    "arch": "ResNet-44",
+    "dataset": "CIFAR-10",
+    "method": "FPGM",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  },
+  {
+    "arch": "ResNet-44",
+    "dataset": "CIFAR-10",
+    "method": "HRank",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  },
+  {
+    "arch": "ResNet-20",
+    "dataset": "CIFAR-100",
+    "method": "GRA",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  },
+  {
+    "arch": "ResNet-20",
+    "dataset": "CIFAR-100",
+    "method": "L1",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  },
+  {
+    "arch": "ResNet-20",
+    "dataset": "CIFAR-100",
+    "method": "FPGM",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  },
+  {
+    "arch": "ResNet-20",
+    "dataset": "CIFAR-100",
+    "method": "HRank",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  },
+  {
+    "arch": "ResNet-32",
+    "dataset": "CIFAR-100",
+    "method": "GRA",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  },
+  {
+    "arch": "ResNet-32",
+    "dataset": "CIFAR-100",
+    "method": "L1",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  },
+  {
+    "arch": "ResNet-32",
+    "dataset": "CIFAR-100",
+    "method": "FPGM",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  },
+  {
+    "arch": "ResNet-32",
+    "dataset": "CIFAR-100",
+    "method": "HRank",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  },
+  {
+    "arch": "ResNet-44",
+    "dataset": "CIFAR-100",
+    "method": "GRA",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  },
+  {
+    "arch": "ResNet-44",
+    "dataset": "CIFAR-100",
+    "method": "L1",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  },
+  {
+    "arch": "ResNet-44",
+    "dataset": "CIFAR-100",
+    "method": "FPGM",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  },
+  {
+    "arch": "ResNet-44",
+    "dataset": "CIFAR-100",
+    "method": "HRank",
+    "ratio": 0.5,
+    "epochs": 40,
+    "type": "coverage"
+  }
+]

@@ -115,5 +115,14 @@ class ResNet(nn.Module):
 def resnet20(cfg=None, **kwargs):
     return ResNet(depth=20, cfg=cfg, **kwargs)
 
+def resnet32(cfg=None, **kwargs):
+    return ResNet(depth=32, cfg=cfg, **kwargs)
+
+def resnet44(cfg=None, **kwargs):
+    return ResNet(depth=44, cfg=cfg, **kwargs)
+
 def resnet56(cfg=None, **kwargs):
     return ResNet(depth=56, cfg=cfg, **kwargs)
+
+def resnet110(cfg=None, **kwargs):
+    return ResNet(depth=110, cfg=cfg, **kwargs)

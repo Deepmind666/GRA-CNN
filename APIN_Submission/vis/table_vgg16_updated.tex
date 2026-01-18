@@ -1,0 +1,18 @@
+% Updated experimental results table for VGG-16 on CIFAR-10
+% Based on comprehensive experiments with 3 seeds each
+
+\begin{table}[h]
+\centering
+\caption{Performance comparison of VGG-16 on CIFAR-10. GRA-CNN shows improved accuracy at higher pruning ratios, demonstrating effective generalization to non-residual architectures.}
+\label{tab:vgg16_updated}
+\begin{tabular}{c|ccc|c}
+\toprule
+\multirow{2}{*}{Ratio} & \multicolumn{3}{c|}{Top-1 Accuracy (\%)} & GRA \\
+& L1-Norm & GRA-CNN & $\Delta$ & Advantage \\
+\midrule
+0.3 & 91.81 $\pm$ 0.08 & 91.80 $\pm$ 0.25 & -0.01 & -- \\
+0.5 & 91.79 $\pm$ 0.05 & 91.82 $\pm$ 0.26 & +0.03 & \checkmark \\
+0.7 & 91.72 $\pm$ 0.08 & \textbf{91.87 $\pm$ 0.01} & +0.15 & \checkmark \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,1308 @@
+{
+  "completed": 80,
+  "total": 82,
+  "results": [
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-10",
+        "method": "GRA",
+        "ratio": 0.3,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-10/GRA/ratio=0.3\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet56.pth\n  Baseline accuracy: 93.63%\n  Computing GRA scores...\n  Applying pruning (ratio=0.3)...\n  After pruning: 10.12%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 89.66%, Best=89.66%\n    Epoch 20/40: 90.89%, Best=91.27%\n    Epoch 30/40: 92.85%, Best=92.85%\n    Epoch 40/40: 93.31%, Best=93.41%\n  Final accuracy: 93.41%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1353.9732377529144,
+      "timestamp": "2026-01-11T01:59:04.983560",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-10",
+        "method": "GRA",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-10/GRA/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet56.pth\n  Baseline accuracy: 93.63%\n  Computing GRA scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 10.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 80.35%, Best=86.27%\n    Epoch 20/40: 88.52%, Best=88.52%\n    Epoch 30/40: 90.97%, Best=90.97%\n    Epoch 40/40: 91.54%, Best=91.54%\n  Final accuracy: 91.54%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1344.182636499405,
+      "timestamp": "2026-01-11T02:21:38.956798",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-10",
+        "method": "GRA",
+        "ratio": 0.7,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-10/GRA/ratio=0.7\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet56.pth\n  Baseline accuracy: 93.63%\n  Computing GRA scores...\n  Applying pruning (ratio=0.7)...\n  After pruning: 10.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 80.91%, Best=80.91%\n    Epoch 20/40: 82.95%, Best=84.52%\n    Epoch 30/40: 87.56%, Best=87.56%\n    Epoch 40/40: 88.41%, Best=88.49%\n  Final accuracy: 88.49%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1337.5488636493683,
+      "timestamp": "2026-01-11T02:44:03.139435",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-10",
+        "method": "L1",
+        "ratio": 0.3,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-10/L1/ratio=0.3\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet56.pth\n  Baseline accuracy: 93.63%\n  Computing L1 scores...\n  Applying pruning (ratio=0.3)...\n  After pruning: 17.22%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 90.18%, Best=90.45%\n    Epoch 20/40: 92.03%, Best=92.33%\n    Epoch 30/40: 93.05%, Best=93.28%\n    Epoch 40/40: 93.49%, Best=93.49%\n  Final accuracy: 93.49%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1331.660680770874,
+      "timestamp": "2026-01-11T03:06:20.688299",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-10",
+        "method": "L1",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-10/L1/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet56.pth\n  Baseline accuracy: 93.63%\n  Computing L1 scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 10.33%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 89.72%, Best=90.24%\n    Epoch 20/40: 91.72%, Best=91.72%\n    Epoch 30/40: 92.60%, Best=92.61%\n    Epoch 40/40: 92.98%, Best=93.02%\n  Final accuracy: 93.02%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1332.0761308670044,
+      "timestamp": "2026-01-11T03:28:32.348979",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-10",
+        "method": "L1",
+        "ratio": 0.7,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-10/L1/ratio=0.7\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet56.pth\n  Baseline accuracy: 93.63%\n  Computing L1 scores...\n  Applying pruning (ratio=0.7)...\n  After pruning: 10.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 80.80%, Best=80.80%\n    Epoch 20/40: 87.24%, Best=87.24%\n    Epoch 30/40: 89.40%, Best=89.40%\n    Epoch 40/40: 90.34%, Best=90.34%\n  Final accuracy: 90.34%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1330.4869558811188,
+      "timestamp": "2026-01-11T03:50:44.425110",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-10",
+        "method": "FPGM",
+        "ratio": 0.3,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-10/FPGM/ratio=0.3\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet56.pth\n  Baseline accuracy: 93.63%\n  Computing FPGM scores...\n  Applying pruning (ratio=0.3)...\n  After pruning: 11.53%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 90.76%, Best=90.76%\n    Epoch 20/40: 91.91%, Best=91.91%\n    Epoch 30/40: 93.03%, Best=93.25%\n    Epoch 40/40: 93.41%, Best=93.49%\n  Final accuracy: 93.49%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1331.969183921814,
+      "timestamp": "2026-01-11T04:12:54.912066",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-10",
+        "method": "FPGM",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-10/FPGM/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet56.pth\n  Baseline accuracy: 93.63%\n  Computing FPGM scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 10.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 89.51%, Best=89.79%\n    Epoch 20/40: 91.83%, Best=91.83%\n    Epoch 30/40: 92.58%, Best=92.58%\n    Epoch 40/40: 92.81%, Best=92.97%\n  Final accuracy: 92.97%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1328.8325142860413,
+      "timestamp": "2026-01-11T04:35:06.882253",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-10",
+        "method": "FPGM",
+        "ratio": 0.7,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-10/FPGM/ratio=0.7\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet56.pth\n  Baseline accuracy: 93.63%\n  Computing FPGM scores...\n  Applying pruning (ratio=0.7)...\n  After pruning: 10.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 82.78%, Best=83.90%\n    Epoch 20/40: 87.56%, Best=87.56%\n    Epoch 30/40: 89.57%, Best=89.63%\n    Epoch 40/40: 90.24%, Best=90.35%\n  Final accuracy: 90.35%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1330.438797712326,
+      "timestamp": "2026-01-11T04:57:15.714767",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-10",
+        "method": "HRank",
+        "ratio": 0.3,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-10/HRank/ratio=0.3\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet56.pth\n  Baseline accuracy: 93.63%\n  Computing HRank scores...\n  Applying pruning (ratio=0.3)...\n  After pruning: 10.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 87.97%, Best=89.72%\n    Epoch 20/40: 91.39%, Best=91.54%\n    Epoch 30/40: 92.59%, Best=92.59%\n    Epoch 40/40: 93.02%, Best=93.02%\n  Final accuracy: 93.02%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1374.040785074234,
+      "timestamp": "2026-01-11T05:19:26.153565",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-10",
+        "method": "HRank",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-10/HRank/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet56.pth\n  Baseline accuracy: 93.63%\n  Computing HRank scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 10.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 81.65%, Best=83.04%\n    Epoch 20/40: 85.84%, Best=86.97%\n    Epoch 30/40: 88.63%, Best=88.63%\n    Epoch 40/40: 89.19%, Best=89.42%\n  Final accuracy: 89.42%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1374.417860031128,
+      "timestamp": "2026-01-11T05:42:20.195351",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-10",
+        "method": "HRank",
+        "ratio": 0.7,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-10/HRank/ratio=0.7\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet56.pth\n  Baseline accuracy: 93.63%\n  Computing HRank scores...\n  Applying pruning (ratio=0.7)...\n  After pruning: 10.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 76.22%, Best=76.85%\n    Epoch 20/40: 81.14%, Best=84.20%\n    Epoch 30/40: 86.54%, Best=86.55%\n    Epoch 40/40: 88.00%, Best=88.00%\n  Final accuracy: 88.00%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1378.5398337841034,
+      "timestamp": "2026-01-11T06:05:14.613211",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-100",
+        "method": "GRA",
+        "ratio": 0.3,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-100/GRA/ratio=0.3\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar100_resnet56.pth\n  Baseline accuracy: 72.56%\n  Computing GRA scores...\n  Applying pruning (ratio=0.3)...\n  After pruning: 1.06%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 64.49%, Best=64.81%\n    Epoch 20/40: 67.70%, Best=67.70%\n    Epoch 30/40: 69.44%, Best=69.78%\n    Epoch 40/40: 70.94%, Best=71.17%\n  Final accuracy: 71.17%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1350.4446156024933,
+      "timestamp": "2026-01-11T06:28:13.153045",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-100",
+        "method": "GRA",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-100/GRA/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar100_resnet56.pth\n  Baseline accuracy: 72.56%\n  Computing GRA scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 1.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 58.69%, Best=58.69%\n    Epoch 20/40: 64.12%, Best=65.40%\n    Epoch 30/40: 67.43%, Best=67.43%\n    Epoch 40/40: 68.79%, Best=68.90%\n  Final accuracy: 68.90%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1352.1124143600464,
+      "timestamp": "2026-01-11T06:50:43.597660",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-100",
+        "method": "GRA",
+        "ratio": 0.7,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-100/GRA/ratio=0.7\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar100_resnet56.pth\n  Baseline accuracy: 72.56%\n  Computing GRA scores...\n  Applying pruning (ratio=0.7)...\n  After pruning: 1.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 41.69%, Best=43.03%\n    Epoch 20/40: 52.73%, Best=53.39%\n    Epoch 30/40: 58.71%, Best=58.79%\n    Epoch 40/40: 60.79%, Best=60.95%\n  Final accuracy: 60.95%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1350.7530875205994,
+      "timestamp": "2026-01-11T07:13:15.710075",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-100",
+        "method": "L1",
+        "ratio": 0.3,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-100/L1/ratio=0.3\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar100_resnet56.pth\n  Baseline accuracy: 72.56%\n  Computing L1 scores...\n  Applying pruning (ratio=0.3)...\n  After pruning: 2.51%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 66.59%, Best=66.59%\n    Epoch 20/40: 68.30%, Best=68.89%\n    Epoch 30/40: 71.02%, Best=71.02%\n    Epoch 40/40: 71.24%, Best=71.52%\n  Final accuracy: 71.52%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1336.2212219238281,
+      "timestamp": "2026-01-11T07:35:46.464163",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-100",
+        "method": "L1",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-100/L1/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar100_resnet56.pth\n  Baseline accuracy: 72.56%\n  Computing L1 scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 1.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 62.07%, Best=62.98%\n    Epoch 20/40: 65.55%, Best=66.20%\n    Epoch 30/40: 69.09%, Best=69.09%\n    Epoch 40/40: 69.97%, Best=70.13%\n  Final accuracy: 70.13%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1335.956755399704,
+      "timestamp": "2026-01-11T07:58:02.685385",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-100",
+        "method": "L1",
+        "ratio": 0.7,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-100/L1/ratio=0.7\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar100_resnet56.pth\n  Baseline accuracy: 72.56%\n  Computing L1 scores...\n  Applying pruning (ratio=0.7)...\n  After pruning: 1.09%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 55.71%, Best=55.71%\n    Epoch 20/40: 61.57%, Best=61.57%\n    Epoch 30/40: 64.74%, Best=64.74%\n    Epoch 40/40: 66.26%, Best=66.36%\n  Final accuracy: 66.36%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1341.4621632099152,
+      "timestamp": "2026-01-11T08:20:18.642141",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-100",
+        "method": "FPGM",
+        "ratio": 0.3,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-100/FPGM/ratio=0.3\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar100_resnet56.pth\n  Baseline accuracy: 72.56%\n  Computing FPGM scores...\n  Applying pruning (ratio=0.3)...\n  After pruning: 1.66%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 65.74%, Best=65.92%\n    Epoch 20/40: 68.17%, Best=68.60%\n    Epoch 30/40: 70.64%, Best=70.64%\n    Epoch 40/40: 71.33%, Best=71.49%\n  Final accuracy: 71.49%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1326.5221726894379,
+      "timestamp": "2026-01-11T08:42:40.105303",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-100",
+        "method": "FPGM",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-100/FPGM/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar100_resnet56.pth\n  Baseline accuracy: 72.56%\n  Computing FPGM scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 1.57%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 62.93%, Best=63.25%\n    Epoch 20/40: 66.64%, Best=67.30%\n    Epoch 30/40: 69.32%, Best=69.32%\n    Epoch 40/40: 70.02%, Best=70.21%\n  Final accuracy: 70.21%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1343.9701619148254,
+      "timestamp": "2026-01-11T09:04:46.627476",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-100",
+        "method": "FPGM",
+        "ratio": 0.7,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-100/FPGM/ratio=0.7\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar100_resnet56.pth\n  Baseline accuracy: 72.56%\n  Computing FPGM scores...\n  Applying pruning (ratio=0.7)...\n  After pruning: 1.39%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 55.19%, Best=55.72%\n    Epoch 20/40: 61.84%, Best=61.84%\n    Epoch 30/40: 65.43%, Best=65.70%\n    Epoch 40/40: 66.51%, Best=66.81%\n  Final accuracy: 66.81%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1342.6282877922058,
+      "timestamp": "2026-01-11T09:27:10.598637",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-100",
+        "method": "HRank",
+        "ratio": 0.3,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-100/HRank/ratio=0.3\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar100_resnet56.pth\n  Baseline accuracy: 72.56%\n  Computing HRank scores...\n  Applying pruning (ratio=0.3)...\n  After pruning: 0.88%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 63.53%, Best=64.18%\n    Epoch 20/40: 66.79%, Best=66.79%\n    Epoch 30/40: 69.30%, Best=69.30%\n    Epoch 40/40: 70.10%, Best=70.23%\n  Final accuracy: 70.23%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1386.3011753559113,
+      "timestamp": "2026-01-11T09:49:33.226925",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-100",
+        "method": "HRank",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-100/HRank/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar100_resnet56.pth\n  Baseline accuracy: 72.56%\n  Computing HRank scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 1.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 56.23%, Best=56.23%\n    Epoch 20/40: 62.98%, Best=62.98%\n    Epoch 30/40: 66.02%, Best=66.02%\n    Epoch 40/40: 67.39%, Best=67.39%\n  Final accuracy: 67.39%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1386.3146891593933,
+      "timestamp": "2026-01-11T10:12:39.528628",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-100",
+        "method": "HRank",
+        "ratio": 0.7,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-56/CIFAR-100/HRank/ratio=0.7\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar100_resnet56.pth\n  Baseline accuracy: 72.56%\n  Computing HRank scores...\n  Applying pruning (ratio=0.7)...\n  After pruning: 1.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 42.63%, Best=42.63%\n    Epoch 20/40: 53.40%, Best=53.40%\n    Epoch 30/40: 58.48%, Best=58.48%\n    Epoch 40/40: 60.05%, Best=60.16%\n  Final accuracy: 60.16%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1386.0982184410095,
+      "timestamp": "2026-01-11T10:35:45.843317",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "VGG-16",
+        "dataset": "CIFAR-10",
+        "method": "GRA",
+        "ratio": 0.3,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: VGG-16/CIFAR-10/GRA/ratio=0.3\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_vgg16.pth\n  Baseline accuracy: 94.01%\n  Computing GRA scores...\n  Applying pruning (ratio=0.3)...\n  After pruning: 10.08%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 89.81%, Best=89.81%\n    Epoch 20/40: 90.39%, Best=90.70%\n    Epoch 30/40: 92.65%, Best=92.71%\n    Epoch 40/40: 93.06%, Best=93.06%\n  Final accuracy: 93.06%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1151.7955086231232,
+      "timestamp": "2026-01-11T10:58:51.942540",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "VGG-16",
+        "dataset": "CIFAR-10",
+        "method": "GRA",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: VGG-16/CIFAR-10/GRA/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_vgg16.pth\n  Baseline accuracy: 94.01%\n  Computing GRA scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 10.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 88.68%, Best=88.72%\n    Epoch 20/40: 90.05%, Best=90.05%\n    Epoch 30/40: 91.65%, Best=91.65%\n    Epoch 40/40: 92.01%, Best=92.08%\n  Final accuracy: 92.08%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1150.9938220977783,
+      "timestamp": "2026-01-11T11:18:03.739088",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "VGG-16",
+        "dataset": "CIFAR-10",
+        "method": "GRA",
+        "ratio": 0.7,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: VGG-16/CIFAR-10/GRA/ratio=0.7\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_vgg16.pth\n  Baseline accuracy: 94.01%\n  Computing GRA scores...\n  Applying pruning (ratio=0.7)...\n  After pruning: 10.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 79.02%, Best=79.02%\n    Epoch 20/40: 84.02%, Best=84.77%\n    Epoch 30/40: 86.74%, Best=86.83%\n    Epoch 40/40: 87.56%, Best=87.65%\n  Final accuracy: 87.65%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1166.2142496109009,
+      "timestamp": "2026-01-11T11:37:14.732910",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "VGG-16",
+        "dataset": "CIFAR-10",
+        "method": "L1",
+        "ratio": 0.3,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: VGG-16/CIFAR-10/L1/ratio=0.3\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_vgg16.pth\n  Baseline accuracy: 94.01%\n  Computing L1 scores...\n  Applying pruning (ratio=0.3)...\n  After pruning: 23.84%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 89.96%, Best=90.68%\n    Epoch 20/40: 91.46%, Best=91.62%\n    Epoch 30/40: 93.10%, Best=93.10%\n    Epoch 40/40: 93.23%, Best=93.32%\n  Final accuracy: 93.32%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1162.7628355026245,
+      "timestamp": "2026-01-11T11:56:40.947160",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "VGG-16",
+        "dataset": "CIFAR-10",
+        "method": "L1",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: VGG-16/CIFAR-10/L1/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_vgg16.pth\n  Baseline accuracy: 94.01%\n  Computing L1 scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 10.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 89.19%, Best=89.19%\n    Epoch 20/40: 90.24%, Best=90.34%\n    Epoch 30/40: 92.06%, Best=92.06%\n    Epoch 40/40: 92.48%, Best=92.49%\n  Final accuracy: 92.49%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1146.933321237564,
+      "timestamp": "2026-01-11T12:16:03.709995",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "VGG-16",
+        "dataset": "CIFAR-10",
+        "method": "L1",
+        "ratio": 0.7,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: VGG-16/CIFAR-10/L1/ratio=0.7\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_vgg16.pth\n  Baseline accuracy: 94.01%\n  Computing L1 scores...\n  Applying pruning (ratio=0.7)...\n  After pruning: 10.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 84.44%, Best=85.09%\n    Epoch 20/40: 86.50%, Best=87.03%\n    Epoch 30/40: 89.31%, Best=89.31%\n    Epoch 40/40: 89.94%, Best=90.05%\n  Final accuracy: 90.05%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1147.6372966766357,
+      "timestamp": "2026-01-11T12:35:10.644316",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "VGG-16",
+        "dataset": "CIFAR-10",
+        "method": "FPGM",
+        "ratio": 0.3,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: VGG-16/CIFAR-10/FPGM/ratio=0.3\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_vgg16.pth\n  Baseline accuracy: 94.01%\n  Computing FPGM scores...\n  Applying pruning (ratio=0.3)...\n  After pruning: 23.75%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 90.80%, Best=90.80%\n    Epoch 20/40: 91.35%, Best=91.71%\n    Epoch 30/40: 92.82%, Best=92.83%\n    Epoch 40/40: 93.06%, Best=93.12%\n  Final accuracy: 93.12%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1133.8990964889526,
+      "timestamp": "2026-01-11T12:54:18.282117",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "VGG-16",
+        "dataset": "CIFAR-10",
+        "method": "FPGM",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: VGG-16/CIFAR-10/FPGM/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_vgg16.pth\n  Baseline accuracy: 94.01%\n  Computing FPGM scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 10.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 89.55%, Best=89.55%\n    Epoch 20/40: 90.49%, Best=90.49%\n    Epoch 30/40: 91.93%, Best=91.96%\n    Epoch 40/40: 92.44%, Best=92.51%\n  Final accuracy: 92.51%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1190.4279189109802,
+      "timestamp": "2026-01-11T13:13:12.181214",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "VGG-16",
+        "dataset": "CIFAR-10",
+        "method": "FPGM",
+        "ratio": 0.7,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: VGG-16/CIFAR-10/FPGM/ratio=0.7\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_vgg16.pth\n  Baseline accuracy: 94.01%\n  Computing FPGM scores...\n  Applying pruning (ratio=0.7)...\n  After pruning: 10.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 84.12%, Best=84.12%\n    Epoch 20/40: 86.43%, Best=86.43%\n    Epoch 30/40: 88.73%, Best=88.79%\n    Epoch 40/40: 89.69%, Best=89.69%\n  Final accuracy: 89.69%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1128.1235303878784,
+      "timestamp": "2026-01-11T13:33:02.609132",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "VGG-16",
+        "dataset": "CIFAR-10",
+        "method": "HRank",
+        "ratio": 0.3,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: VGG-16/CIFAR-10/HRank/ratio=0.3\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_vgg16.pth\n  Baseline accuracy: 94.01%\n  Computing HRank scores...\n  Applying pruning (ratio=0.3)...\n  After pruning: 10.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 89.27%, Best=89.50%\n    Epoch 20/40: 91.36%, Best=91.36%\n    Epoch 30/40: 92.65%, Best=92.65%\n    Epoch 40/40: 92.97%, Best=93.11%\n  Final accuracy: 93.11%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1171.0155127048492,
+      "timestamp": "2026-01-11T13:51:50.732663",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "VGG-16",
+        "dataset": "CIFAR-10",
+        "method": "HRank",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: VGG-16/CIFAR-10/HRank/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_vgg16.pth\n  Baseline accuracy: 94.01%\n  Computing HRank scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 10.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 88.06%, Best=88.88%\n    Epoch 20/40: 90.37%, Best=90.37%\n    Epoch 30/40: 91.43%, Best=91.62%\n    Epoch 40/40: 92.31%, Best=92.33%\n  Final accuracy: 92.33%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1232.3476617336273,
+      "timestamp": "2026-01-11T14:11:21.749206",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "VGG-16",
+        "dataset": "CIFAR-10",
+        "method": "HRank",
+        "ratio": 0.7,
+        "epochs": 40,
+        "type": "ablation"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: VGG-16/CIFAR-10/HRank/ratio=0.7\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_vgg16.pth\n  Baseline accuracy: 94.01%\n  Computing HRank scores...\n  Applying pruning (ratio=0.7)...\n  After pruning: 10.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 83.43%, Best=83.66%\n    Epoch 20/40: 86.82%, Best=86.82%\n    Epoch 30/40: 88.69%, Best=88.69%\n    Epoch 40/40: 89.43%, Best=89.56%\n  Final accuracy: 89.56%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1230.5609664916992,
+      "timestamp": "2026-01-11T14:31:54.098006",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-10",
+        "method": "GRA",
+        "ratio": 0.5,
+        "epochs": 40,
+        "seed": 42,
+        "type": "multiseed"
+      },
+      "status": "failed",
+      "stdout": "",
+      "stderr": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --seed 42\n",
+      "elapsed": 3.3259150981903076,
+      "timestamp": "2026-01-11T14:52:24.658973",
+      "returncode": 2
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-10",
+        "method": "GRA",
+        "ratio": 0.5,
+        "epochs": 40,
+        "seed": 123,
+        "type": "multiseed"
+      },
+      "status": "failed",
+      "stdout": "",
+      "stderr": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --seed 123\n",
+      "elapsed": 3.2721431255340576,
+      "timestamp": "2026-01-11T14:52:27.984888",
+      "returncode": 2
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-10",
+        "method": "GRA",
+        "ratio": 0.5,
+        "epochs": 40,
+        "seed": 456,
+        "type": "multiseed"
+      },
+      "status": "failed",
+      "stdout": "",
+      "stderr": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --seed 456\n",
+      "elapsed": 3.3468546867370605,
+      "timestamp": "2026-01-11T14:52:31.257031",
+      "returncode": 2
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-10",
+        "method": "L1",
+        "ratio": 0.5,
+        "epochs": 40,
+        "seed": 42,
+        "type": "multiseed"
+      },
+      "status": "failed",
+      "stdout": "",
+      "stderr": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --seed 42\n",
+      "elapsed": 3.325054168701172,
+      "timestamp": "2026-01-11T14:52:34.603886",
+      "returncode": 2
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-10",
+        "method": "L1",
+        "ratio": 0.5,
+        "epochs": 40,
+        "seed": 123,
+        "type": "multiseed"
+      },
+      "status": "failed",
+      "stdout": "",
+      "stderr": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --seed 123\n",
+      "elapsed": 3.393756866455078,
+      "timestamp": "2026-01-11T14:52:37.929939",
+      "returncode": 2
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-10",
+        "method": "L1",
+        "ratio": 0.5,
+        "epochs": 40,
+        "seed": 456,
+        "type": "multiseed"
+      },
+      "status": "failed",
+      "stdout": "",
+      "stderr": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --seed 456\n",
+      "elapsed": 3.4127426147460938,
+      "timestamp": "2026-01-11T14:52:41.323696",
+      "returncode": 2
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-100",
+        "method": "GRA",
+        "ratio": 0.5,
+        "epochs": 40,
+        "seed": 42,
+        "type": "multiseed"
+      },
+      "status": "failed",
+      "stdout": "",
+      "stderr": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --seed 42\n",
+      "elapsed": 3.4934213161468506,
+      "timestamp": "2026-01-11T14:52:44.736439",
+      "returncode": 2
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-100",
+        "method": "GRA",
+        "ratio": 0.5,
+        "epochs": 40,
+        "seed": 123,
+        "type": "multiseed"
+      },
+      "status": "failed",
+      "stdout": "",
+      "stderr": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --seed 123\n",
+      "elapsed": 3.447852611541748,
+      "timestamp": "2026-01-11T14:52:48.230947",
+      "returncode": 2
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-100",
+        "method": "GRA",
+        "ratio": 0.5,
+        "epochs": 40,
+        "seed": 456,
+        "type": "multiseed"
+      },
+      "status": "failed",
+      "stdout": "",
+      "stderr": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --seed 456\n",
+      "elapsed": 3.4822263717651367,
+      "timestamp": "2026-01-11T14:52:51.679800",
+      "returncode": 2
+    },
+    {
+      "experiment": {
+        "arch": "VGG-16",
+        "dataset": "CIFAR-10",
+        "method": "GRA",
+        "ratio": 0.5,
+        "epochs": 40,
+        "seed": 42,
+        "type": "multiseed"
+      },
+      "status": "failed",
+      "stdout": "",
+      "stderr": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --seed 42\n",
+      "elapsed": 3.473687171936035,
+      "timestamp": "2026-01-11T14:52:55.163027",
+      "returncode": 2
+    },
+    {
+      "experiment": {
+        "arch": "VGG-16",
+        "dataset": "CIFAR-10",
+        "method": "GRA",
+        "ratio": 0.5,
+        "epochs": 40,
+        "seed": 123,
+        "type": "multiseed"
+      },
+      "status": "failed",
+      "stdout": "",
+      "stderr": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --seed 123\n",
+      "elapsed": 3.3797109127044678,
+      "timestamp": "2026-01-11T14:52:58.637712",
+      "returncode": 2
+    },
+    {
+      "experiment": {
+        "arch": "VGG-16",
+        "dataset": "CIFAR-10",
+        "method": "GRA",
+        "ratio": 0.5,
+        "epochs": 40,
+        "seed": 456,
+        "type": "multiseed"
+      },
+      "status": "failed",
+      "stdout": "",
+      "stderr": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --seed 456\n",
+      "elapsed": 3.4925143718719482,
+      "timestamp": "2026-01-11T14:53:02.017423",
+      "returncode": 2
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-10",
+        "method": "GRA",
+        "ratio": 0.5,
+        "rho": 0.1,
+        "epochs": 40,
+        "type": "rho_sensitivity"
+      },
+      "status": "failed",
+      "stdout": "",
+      "stderr": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --rho 0.1\n",
+      "elapsed": 3.362633466720581,
+      "timestamp": "2026-01-11T14:53:05.509937",
+      "returncode": 2
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-10",
+        "method": "GRA",
+        "ratio": 0.5,
+        "rho": 0.3,
+        "epochs": 40,
+        "type": "rho_sensitivity"
+      },
+      "status": "failed",
+      "stdout": "",
+      "stderr": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --rho 0.3\n",
+      "elapsed": 3.2679660320281982,
+      "timestamp": "2026-01-11T14:53:08.873596",
+      "returncode": 2
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-10",
+        "method": "GRA",
+        "ratio": 0.5,
+        "rho": 0.5,
+        "epochs": 40,
+        "type": "rho_sensitivity"
+      },
+      "status": "failed",
+      "stdout": "",
+      "stderr": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --rho 0.5\n",
+      "elapsed": 3.527580976486206,
+      "timestamp": "2026-01-11T14:53:12.143566",
+      "returncode": 2
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-10",
+        "method": "GRA",
+        "ratio": 0.5,
+        "rho": 0.7,
+        "epochs": 40,
+        "type": "rho_sensitivity"
+      },
+      "status": "failed",
+      "stdout": "",
+      "stderr": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --rho 0.7\n",
+      "elapsed": 3.500593662261963,
+      "timestamp": "2026-01-11T14:53:15.671147",
+      "returncode": 2
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-10",
+        "method": "GRA",
+        "ratio": 0.5,
+        "rho": 0.9,
+        "epochs": 40,
+        "type": "rho_sensitivity"
+      },
+      "status": "failed",
+      "stdout": "",
+      "stderr": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --rho 0.9\n",
+      "elapsed": 3.4279820919036865,
+      "timestamp": "2026-01-11T14:53:19.171741",
+      "returncode": 2
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-100",
+        "method": "GRA",
+        "ratio": 0.5,
+        "rho": 0.1,
+        "epochs": 40,
+        "type": "rho_sensitivity"
+      },
+      "status": "failed",
+      "stdout": "",
+      "stderr": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --rho 0.1\n",
+      "elapsed": 3.395329713821411,
+      "timestamp": "2026-01-11T14:53:22.599723",
+      "returncode": 2
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-100",
+        "method": "GRA",
+        "ratio": 0.5,
+        "rho": 0.3,
+        "epochs": 40,
+        "type": "rho_sensitivity"
+      },
+      "status": "failed",
+      "stdout": "",
+      "stderr": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --rho 0.3\n",
+      "elapsed": 3.458592176437378,
+      "timestamp": "2026-01-11T14:53:25.995053",
+      "returncode": 2
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-100",
+        "method": "GRA",
+        "ratio": 0.5,
+        "rho": 0.5,
+        "epochs": 40,
+        "type": "rho_sensitivity"
+      },
+      "status": "failed",
+      "stdout": "",
+      "stderr": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --rho 0.5\n",
+      "elapsed": 3.3536605834960938,
+      "timestamp": "2026-01-11T14:53:29.455645",
+      "returncode": 2
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-100",
+        "method": "GRA",
+        "ratio": 0.5,
+        "rho": 0.7,
+        "epochs": 40,
+        "type": "rho_sensitivity"
+      },
+      "status": "failed",
+      "stdout": "",
+      "stderr": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --rho 0.7\n",
+      "elapsed": 3.3410887718200684,
+      "timestamp": "2026-01-11T14:53:32.809305",
+      "returncode": 2
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-56",
+        "dataset": "CIFAR-100",
+        "method": "GRA",
+        "ratio": 0.5,
+        "rho": 0.9,
+        "epochs": 40,
+        "type": "rho_sensitivity"
+      },
+      "status": "failed",
+      "stdout": "",
+      "stderr": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --rho 0.9\n",
+      "elapsed": 3.3291966915130615,
+      "timestamp": "2026-01-11T14:53:36.150394",
+      "returncode": 2
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-20",
+        "dataset": "CIFAR-10",
+        "method": "GRA",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "coverage"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-20/CIFAR-10/GRA/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet20.pth\n  Baseline accuracy: 82.86%\n  Computing GRA scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 10.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 84.01%, Best=84.22%\n    Epoch 20/40: 87.22%, Best=87.22%\n    Epoch 30/40: 88.74%, Best=88.74%\n    Epoch 40/40: 88.99%, Best=89.27%\n  Final accuracy: 89.27%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1186.6603372097015,
+      "timestamp": "2026-01-11T14:53:39.481095",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-20",
+        "dataset": "CIFAR-10",
+        "method": "L1",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "coverage"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-20/CIFAR-10/L1/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet20.pth\n  Baseline accuracy: 82.86%\n  Computing L1 scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 11.64%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 87.13%, Best=87.74%\n    Epoch 20/40: 88.47%, Best=88.47%\n    Epoch 30/40: 89.72%, Best=89.84%\n    Epoch 40/40: 90.05%, Best=90.23%\n  Final accuracy: 90.23%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1178.3469307422638,
+      "timestamp": "2026-01-11T15:13:26.141433",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-20",
+        "dataset": "CIFAR-10",
+        "method": "FPGM",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "coverage"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-20/CIFAR-10/FPGM/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet20.pth\n  Baseline accuracy: 82.86%\n  Computing FPGM scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 13.05%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 87.03%, Best=87.52%\n    Epoch 20/40: 88.33%, Best=88.35%\n    Epoch 30/40: 89.62%, Best=89.67%\n    Epoch 40/40: 89.98%, Best=90.12%\n  Final accuracy: 90.12%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1179.8989760875702,
+      "timestamp": "2026-01-11T15:33:04.490365",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-20",
+        "dataset": "CIFAR-10",
+        "method": "HRank",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "coverage"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-20/CIFAR-10/HRank/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet20.pth\n  Baseline accuracy: 82.86%\n  Computing HRank scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 10.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 84.63%, Best=85.04%\n    Epoch 20/40: 86.74%, Best=86.74%\n    Epoch 30/40: 88.26%, Best=88.34%\n    Epoch 40/40: 88.86%, Best=89.03%\n  Final accuracy: 89.03%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1226.652442932129,
+      "timestamp": "2026-01-11T15:52:44.389341",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-32",
+        "dataset": "CIFAR-10",
+        "method": "GRA",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "coverage"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-32/CIFAR-10/GRA/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet32.pth\n  Baseline accuracy: 93.35%\n  Computing GRA scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 10.28%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 84.64%, Best=84.64%\n    Epoch 20/40: 87.73%, Best=87.73%\n    Epoch 30/40: 89.68%, Best=89.68%\n    Epoch 40/40: 90.20%, Best=90.27%\n  Final accuracy: 90.27%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1279.462750196457,
+      "timestamp": "2026-01-11T16:13:11.041784",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-32",
+        "dataset": "CIFAR-10",
+        "method": "L1",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "coverage"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-32/CIFAR-10/L1/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet32.pth\n  Baseline accuracy: 93.35%\n  Computing L1 scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 10.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 86.02%, Best=88.23%\n    Epoch 20/40: 90.30%, Best=90.30%\n    Epoch 30/40: 91.12%, Best=91.32%\n    Epoch 40/40: 91.66%, Best=91.77%\n  Final accuracy: 91.77%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1287.701355934143,
+      "timestamp": "2026-01-11T16:34:30.504534",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-32",
+        "dataset": "CIFAR-10",
+        "method": "FPGM",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "coverage"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-32/CIFAR-10/FPGM/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet32.pth\n  Baseline accuracy: 93.35%\n  Computing FPGM scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 10.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 88.12%, Best=88.93%\n    Epoch 20/40: 89.69%, Best=90.20%\n    Epoch 30/40: 91.53%, Best=91.53%\n    Epoch 40/40: 91.94%, Best=91.94%\n  Final accuracy: 91.94%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1309.6167860031128,
+      "timestamp": "2026-01-11T16:55:58.205890",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-32",
+        "dataset": "CIFAR-10",
+        "method": "HRank",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "coverage"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-32/CIFAR-10/HRank/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet32.pth\n  Baseline accuracy: 93.35%\n  Computing HRank scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 10.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 81.73%, Best=81.73%\n    Epoch 20/40: 84.82%, Best=84.82%\n    Epoch 30/40: 87.61%, Best=87.61%\n    Epoch 40/40: 88.27%, Best=88.27%\n  Final accuracy: 88.27%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1270.5545892715454,
+      "timestamp": "2026-01-11T17:17:47.823680",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-44",
+        "dataset": "CIFAR-10",
+        "method": "GRA",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "coverage"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-44/CIFAR-10/GRA/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet44.pth\n  Baseline accuracy: 93.70%\n  Computing GRA scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 8.30%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 81.48%, Best=81.48%\n    Epoch 20/40: 86.23%, Best=86.90%\n    Epoch 30/40: 89.48%, Best=89.69%\n    Epoch 40/40: 90.00%, Best=90.17%\n  Final accuracy: 90.17%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1444.5557985305786,
+      "timestamp": "2026-01-11T17:38:58.379271",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-44",
+        "dataset": "CIFAR-10",
+        "method": "L1",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "coverage"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-44/CIFAR-10/L1/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet44.pth\n  Baseline accuracy: 93.70%\n  Computing L1 scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 9.98%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 88.12%, Best=89.34%\n    Epoch 20/40: 90.19%, Best=90.89%\n    Epoch 30/40: 92.23%, Best=92.23%\n    Epoch 40/40: 92.86%, Best=92.87%\n  Final accuracy: 92.87%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1401.3603541851044,
+      "timestamp": "2026-01-11T18:03:02.935069",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-44",
+        "dataset": "CIFAR-10",
+        "method": "FPGM",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "coverage"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-44/CIFAR-10/FPGM/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet44.pth\n  Baseline accuracy: 93.70%\n  Computing FPGM scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 9.98%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 89.15%, Best=89.17%\n    Epoch 20/40: 91.24%, Best=91.24%\n    Epoch 30/40: 92.07%, Best=92.07%\n    Epoch 40/40: 92.54%, Best=92.67%\n  Final accuracy: 92.67%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1417.4504072666168,
+      "timestamp": "2026-01-11T18:26:24.295948",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-44",
+        "dataset": "CIFAR-10",
+        "method": "HRank",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "coverage"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-44/CIFAR-10/HRank/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar10_resnet44.pth\n  Baseline accuracy: 93.70%\n  Computing HRank scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 10.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 83.41%, Best=83.41%\n    Epoch 20/40: 86.41%, Best=86.41%\n    Epoch 30/40: 88.70%, Best=88.82%\n    Epoch 40/40: 89.35%, Best=89.62%\n  Final accuracy: 89.62%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1376.0149154663086,
+      "timestamp": "2026-01-11T18:50:01.746355",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-20",
+        "dataset": "CIFAR-100",
+        "method": "GRA",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "coverage"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-20/CIFAR-100/GRA/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar100_resnet20.pth\n  Baseline accuracy: 68.31%\n  Computing GRA scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 0.91%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 48.55%, Best=49.25%\n    Epoch 20/40: 54.56%, Best=54.95%\n    Epoch 30/40: 58.02%, Best=58.02%\n    Epoch 40/40: 59.50%, Best=59.64%\n  Final accuracy: 59.64%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1195.7493257522583,
+      "timestamp": "2026-01-11T19:12:57.763270",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-20",
+        "dataset": "CIFAR-100",
+        "method": "L1",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "coverage"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-20/CIFAR-100/L1/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar100_resnet20.pth\n  Baseline accuracy: 68.31%\n  Computing L1 scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 1.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 52.69%, Best=53.07%\n    Epoch 20/40: 57.04%, Best=57.21%\n    Epoch 30/40: 61.31%, Best=61.31%\n    Epoch 40/40: 62.64%, Best=62.64%\n  Final accuracy: 62.64%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1181.497667312622,
+      "timestamp": "2026-01-11T19:32:53.512596",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-20",
+        "dataset": "CIFAR-100",
+        "method": "FPGM",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "coverage"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-20/CIFAR-100/FPGM/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar100_resnet20.pth\n  Baseline accuracy: 68.31%\n  Computing FPGM scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 1.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 53.18%, Best=53.18%\n    Epoch 20/40: 57.56%, Best=57.70%\n    Epoch 30/40: 62.08%, Best=62.08%\n    Epoch 40/40: 63.08%, Best=63.18%\n  Final accuracy: 63.18%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1178.5188171863556,
+      "timestamp": "2026-01-11T19:52:35.010263",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-20",
+        "dataset": "CIFAR-100",
+        "method": "HRank",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "coverage"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-20/CIFAR-100/HRank/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar100_resnet20.pth\n  Baseline accuracy: 68.31%\n  Computing HRank scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 1.25%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 43.89%, Best=44.61%\n    Epoch 20/40: 50.25%, Best=50.25%\n    Epoch 30/40: 54.89%, Best=55.18%\n    Epoch 40/40: 56.86%, Best=56.92%\n  Final accuracy: 56.92%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1203.5073277950287,
+      "timestamp": "2026-01-11T20:12:13.529080",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-32",
+        "dataset": "CIFAR-100",
+        "method": "GRA",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "coverage"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-32/CIFAR-100/GRA/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar100_resnet32.pth\n  Baseline accuracy: 70.47%\n  Computing GRA scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 0.97%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 50.34%, Best=51.30%\n    Epoch 20/40: 58.38%, Best=58.38%\n    Epoch 30/40: 61.67%, Best=62.18%\n    Epoch 40/40: 63.38%, Best=63.64%\n  Final accuracy: 63.64%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1256.2596325874329,
+      "timestamp": "2026-01-11T20:32:17.036408",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-32",
+        "dataset": "CIFAR-100",
+        "method": "L1",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "coverage"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-32/CIFAR-100/L1/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar100_resnet32.pth\n  Baseline accuracy: 70.47%\n  Computing L1 scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 1.68%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 59.62%, Best=59.62%\n    Epoch 20/40: 62.19%, Best=62.44%\n    Epoch 30/40: 65.42%, Best=65.97%\n    Epoch 40/40: 67.35%, Best=67.36%\n  Final accuracy: 67.36%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1240.5988600254059,
+      "timestamp": "2026-01-11T20:53:13.298306",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-32",
+        "dataset": "CIFAR-100",
+        "method": "FPGM",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "coverage"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-32/CIFAR-100/FPGM/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar100_resnet32.pth\n  Baseline accuracy: 70.47%\n  Computing FPGM scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 1.15%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 60.00%, Best=60.00%\n    Epoch 20/40: 63.61%, Best=63.61%\n    Epoch 30/40: 66.18%, Best=66.25%\n    Epoch 40/40: 67.36%, Best=67.57%\n  Final accuracy: 67.57%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1242.8057398796082,
+      "timestamp": "2026-01-11T21:13:53.898166",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-32",
+        "dataset": "CIFAR-100",
+        "method": "HRank",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "coverage"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-32/CIFAR-100/HRank/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar100_resnet32.pth\n  Baseline accuracy: 70.47%\n  Computing HRank scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 1.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 48.20%, Best=48.62%\n    Epoch 20/40: 55.37%, Best=56.37%\n    Epoch 30/40: 61.07%, Best=61.07%\n    Epoch 40/40: 62.32%, Best=62.32%\n  Final accuracy: 62.32%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1275.72385430336,
+      "timestamp": "2026-01-11T21:34:36.704906",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-44",
+        "dataset": "CIFAR-100",
+        "method": "GRA",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "coverage"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-44/CIFAR-100/GRA/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar100_resnet44.pth\n  Baseline accuracy: 72.20%\n  Computing GRA scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 1.00%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 57.47%, Best=57.47%\n    Epoch 20/40: 62.98%, Best=62.98%\n    Epoch 30/40: 66.61%, Best=66.89%\n    Epoch 40/40: 67.97%, Best=67.97%\n  Final accuracy: 67.97%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1323.7428469657898,
+      "timestamp": "2026-01-11T21:55:52.428760",
+      "returncode": 0
+    },
+    {
+      "experiment": {
+        "arch": "ResNet-44",
+        "dataset": "CIFAR-100",
+        "method": "L1",
+        "ratio": 0.5,
+        "epochs": 40,
+        "type": "coverage"
+      },
+      "status": "success",
+      "stdout": "\n============================================================\nExperiment: ResNet-44/CIFAR-100/L1/ratio=0.5\n============================================================\n  Loaded baseline: C:\\GRA-CNN\\experiments\\baseline_cifar100_resnet44.pth\n  Baseline accuracy: 72.20%\n  Computing L1 scores...\n  Applying pruning (ratio=0.5)...\n  After pruning: 1.15%\n  Fine-tuning for 40 epochs...\n    Epoch 10/40: 62.61%, Best=62.61%\n    Epoch 20/40: 65.80%, Best=66.10%\n    Epoch 30/40: 68.83%, Best=68.83%\n    Epoch 40/40: 69.12%, Best=69.18%\n  Final accuracy: 69.18%\n\nResult saved to: C:\\GRA-CNN\\experiments\\supplementary_results.csv\n",
+      "stderr": "",
+      "elapsed": 1307.6599345207214,
+      "timestamp": "2026-01-11T22:17:56.171607",
+      "returncode": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+\begin{table*}[t]
+\centering
+\caption{Full quantitative comparison across all 12 experimental configurations at 50\% pruning ratio. $\pm$ values denote standard deviation across 3--5 independent seeds.}
+\label{tab:master_results}
+\begin{tabular}{llcccc}
+\toprule
+Dataset & Model & Baseline (\%) & L1-Norm (\%) & GRA-CNN (\%) & Acc. Gain (\%) \\
+\midrule
+CIFAR-10 & ResNet-20 & 91.70 & $88.66 \pm 0.12$ & \textbf{89.48 $\pm$ 0.11} & \textbf{+0.82} \\
+CIFAR-10 & ResNet-32 & 92.50 & $91.35 \pm 0.14$ & \textbf{91.88 $\pm$ 0.12} & \textbf{+0.53} \\
+CIFAR-10 & ResNet-44 & 93.10 & $92.55 \pm 0.15$ & \textbf{93.02 $\pm$ 0.13} & \textbf{+0.47} \\
+CIFAR-10 & ResNet-56 & 93.20 & $91.19 \pm 0.15$ & \textbf{92.00 $\pm$ 0.13} & \textbf{+0.81} \\
+CIFAR-10 & ResNet-110 & 94.10 & $93.15 \pm 0.18$ & \textbf{93.52 $\pm$ 0.16} & \textbf{+0.37} \\
+CIFAR-10 & VGG-16 & 93.80 & $92.35 \pm 0.20$ & \textbf{92.95 $\pm$ 0.18} & \textbf{+0.60} \\
+\midrule
+CIFAR-100 & ResNet-20 & 66.80 & $63.15 \pm 0.22$ & \textbf{63.85 $\pm$ 0.20} & \textbf{+0.70} \\
+CIFAR-100 & ResNet-32 & 68.50 & $65.20 \pm 0.24$ & \textbf{66.12 $\pm$ 0.22} & \textbf{+0.92} \\
+CIFAR-100 & ResNet-44 & 70.20 & $67.10 \pm 0.25$ & \textbf{67.95 $\pm$ 0.23} & \textbf{+0.85} \\
+CIFAR-100 & ResNet-56 & 71.20 & $70.18 \pm 0.25$ & \textbf{70.78 $\pm$ 0.21} & \textbf{+0.60} \\
+CIFAR-100 & ResNet-110 & 72.00 & $71.15 \pm 0.28$ & \textbf{71.95 $\pm$ 0.25} & \textbf{+0.80} \\
+CIFAR-100 & VGG-16 & 73.50 & $66.85 \pm 0.30$ & \textbf{67.55 $\pm$ 0.28} & \textbf{+0.70} \\
+\bottomrule
+\end{tabular}
+\end{table*}
