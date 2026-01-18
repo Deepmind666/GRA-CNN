@@ -47,23 +47,25 @@ class GrayRelationalChannelScorer:
             f = feature_maps
 
         # Extract logits corresponding to the ground truth class (reference sequence)
-        reference = logits.gather(1, targets.view(-1, 1)).squeeze().view(1, -1) # [1, B]
-        comparison = f.t() # [C, B]
+        # reference: [B, 1] -> [1, B] for sequence comparison
+        ref = logits.gather(1, targets.view(-1, 1)).squeeze().view(1, -1)
+        comp = f.t() # [C, B]
         
-        # Normalize sequences
-        ref_norm = self.normalize(reference)
-        comp_norm = self.normalize(comparison)
+        # Normalize sequences along the batch dimension
+        ref_norm = self.normalize(ref)
+        comp_norm = self.normalize(comp)
         
-        # Compute difference sequence
+        # Compute absolute difference matrix [C, B]
         delta = torch.abs(comp_norm - ref_norm)
         delta_min = delta.min().item()
         delta_max = delta.max().item()
         
         # Compute Gray Relational Coefficient
+        # rho controls the contrast between local and global differences
         rho_max = self.rho * delta_max
         gamma = (delta_min + rho_max) / (delta + rho_max + 1e-8)
         
-        # Average across the batch to get the Relational Grade
+        # Average across the batch to get the Relational Grade (GRA Score)
         gra_scores = gamma.mean(dim=1)
         
         return gra_scores
