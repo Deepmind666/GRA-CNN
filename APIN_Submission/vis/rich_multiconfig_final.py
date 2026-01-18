@@ -116,47 +116,50 @@ def main():
         print("No results!")
         return
     
-    # ========== 创建丰富的综合图 ==========
-    fig = plt.figure(figsize=(15, 12))
-    gs = fig.add_gridspec(2, 3, hspace=0.35, wspace=0.30)
+    # ========== 创建丰富的综合图 - 改进布局 ==========
+    fig = plt.figure(figsize=(14, 14))
+    gs = fig.add_gridspec(3, 2, hspace=0.35, wspace=0.30, height_ratios=[1, 1, 0.8])
     
-    # 4 个散点图
+    # 4 个散点图 (2x2 布局)
+    positions = [(0, 0), (0, 1), (1, 0), (1, 1)]
     for idx, r in enumerate(results[:4]):
-        row, col = idx // 2, idx % 2
+        row, col = positions[idx]
         ax = fig.add_subplot(gs[row, col])
         
-        ax.scatter(r['l1'], r['gra'], s=10, alpha=0.4, c='#D62728')
+        ax.scatter(r['l1'], r['gra'], s=12, alpha=0.5, c='#D62728')
         slope, intercept, rv, _, _ = stats.linregress(r['l1'], r['gra'])
         x_line = np.linspace(0, 1, 100)
         ax.plot(x_line, slope * x_line + intercept, 'b--', linewidth=2.5)
         
-        ax.set_xlabel('L1 Score (Weight Magnitude)', fontsize=10)
-        ax.set_ylabel('GRA Score (Semantic Alignment)', fontsize=10)
-        ax.set_title(f"{r['name']}\nn = {r['n']}, r = {r['r']:.3f}", fontweight='bold', fontsize=11)
+        ax.set_xlabel('L1 Score (Weight Magnitude)', fontsize=11)
+        ax.set_ylabel('GRA Score (Semantic Alignment)', fontsize=11)
+        ax.set_title(f"{r['name']}\nn = {r['n']}, r = {r['r']:.3f}", fontweight='bold', fontsize=12)
         ax.grid(True, alpha=0.3)
         ax.set_xlim(-0.05, 1.05)
     
-    # 右侧: 相关系数柱状图
-    ax_bar = fig.add_subplot(gs[0, 2])
-    names = [r['name'].replace('\n', '/') for r in results]
+    # 底部左侧: 相关系数柱状图
+    ax_bar = fig.add_subplot(gs[2, 0])
+    names = [r['name'].replace('\n', ' / ') for r in results]
     corrs = [r['r'] for r in results]
-    colors = ['#E74C3C' if c < 0.15 else '#F39C12' if c < 0.3 else '#27AE60' for c in corrs]
+    colors = ['#E74C3C' if abs(c) < 0.05 else '#F39C12' if abs(c) < 0.15 else '#27AE60' for c in corrs]
     
-    bars = ax_bar.barh(range(len(corrs)), corrs, color=colors, edgecolor='black', height=0.6)
+    bars = ax_bar.barh(range(len(corrs)), corrs, color=colors, edgecolor='black', height=0.5)
     ax_bar.set_yticks(range(len(names)))
-    ax_bar.set_yticklabels(names, fontsize=10)
-    ax_bar.set_xlabel('Pearson Correlation (r)', fontsize=11)
-    ax_bar.set_title('GRA-L1 Correlation\nAcross Configurations', fontweight='bold', fontsize=11)
-    ax_bar.axvline(x=0.3, color='gray', linestyle='--', linewidth=1.5, alpha=0.7, label='Weak threshold')
-    ax_bar.set_xlim(0, max(corrs)*1.5 + 0.05)
+    ax_bar.set_yticklabels(names, fontsize=11)
+    ax_bar.set_xlabel('Pearson Correlation (r)', fontsize=12)
+    ax_bar.set_title('GRA-L1 Correlation Across Configurations', fontweight='bold', fontsize=12)
+    ax_bar.axvline(x=0, color='black', linewidth=1)
+    ax_bar.axvline(x=0.15, color='gray', linestyle='--', linewidth=1.5, alpha=0.7)
+    ax_bar.axvline(x=-0.15, color='gray', linestyle='--', linewidth=1.5, alpha=0.7)
+    ax_bar.set_xlim(-0.1, 0.1)
     ax_bar.grid(True, alpha=0.3, axis='x')
     
     # 添加数值标签
     for i, (bar, c) in enumerate(zip(bars, corrs)):
-        ax_bar.text(c + 0.01, i, f'{c:.3f}', va='center', fontsize=10, fontweight='bold')
+        ax_bar.text(c + 0.005 if c >= 0 else c - 0.02, i, f'{c:.3f}', va='center', fontsize=11, fontweight='bold')
     
-    # 统计摘要
-    ax_summary = fig.add_subplot(gs[1, 2])
+    # 底部右侧: 统计摘要
+    ax_summary = fig.add_subplot(gs[2, 1])
     ax_summary.axis('off')
     
     total_channels = sum(r['n'] for r in results)
