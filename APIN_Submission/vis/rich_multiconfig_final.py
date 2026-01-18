@@ -1,12 +1,13 @@
 """
-丰富的多配置综合分析图 - 简化直接版
-=====================================
-直接内联执行，避免模块导入问题
+GRA vs L1 正交性分析 - 2×3 标准学术图表布局
+==============================================
+6个图表面板，无纯文字区域
 """
 
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
 import numpy as np
 import torch
 import torch.nn as nn
@@ -17,6 +18,11 @@ from scipy import stats
 
 sys.path.insert(0, r'C:\GRA-CNN')
 from models.resnet_cifar import resnet20, resnet56
+
+# 设置学术期刊字体
+plt.rcParams['font.family'] = 'serif'
+plt.rcParams['font.serif'] = ['Times New Roman']
+plt.rcParams['font.size'] = 11
 
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 DATA_DIR = r'C:\GRA-CNN\data'
@@ -62,6 +68,8 @@ def analyze_config(model_fn, num_classes, dataset_cls, mean, std, name):
     logits_norm = (all_logits - all_logits.min()) / (all_logits.max() - all_logits.min() + 1e-8)
     
     all_gra, all_l1 = [], []
+    layer_corrs = []
+    
     for n, m in conv_layers:
         acts = torch.cat(all_acts[n], dim=0).numpy()
         weights = m.weight.data.cpu().numpy()
@@ -76,21 +84,28 @@ def analyze_config(model_fn, num_classes, dataset_cls, mean, std, name):
             xi = (delta.min() + 0.5 * delta.max()) / (delta + 0.5 * delta.max() + 1e-8)
             gra[c] = xi.mean()
         
+        # 计算该层的相关系数
+        if len(gra) > 2:
+            layer_r = np.corrcoef(gra, l1)[0, 1]
+            layer_corrs.append(layer_r if not np.isnan(layer_r) else 0)
+        
         all_gra.extend(gra)
         all_l1.extend(l1)
     
     all_gra, all_l1 = np.array(all_gra), np.array(all_l1)
     r = np.corrcoef(all_gra, all_l1)[0, 1]
     
-    return {'gra': all_gra, 'l1': all_l1, 'r': r, 'n': len(all_gra), 'name': name}
+    return {
+        'gra': all_gra, 'l1': all_l1, 'r': r, 'n': len(all_gra), 
+        'name': name, 'layer_corrs': np.array(layer_corrs)
+    }
 
 
 def main():
     print("=" * 60)
-    print("多配置 GRA vs L1 综合分析")
+    print("GRA vs L1 正交性分析 - 2×3 标准学术布局")
     print("=" * 60)
     
-    # CIFAR-10/100 配置
     configs = [
         (resnet20, 10, torchvision.datasets.CIFAR10, 
          (0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010), 'ResNet-20\nCIFAR-10'),
@@ -116,121 +131,84 @@ def main():
         print("No results!")
         return
     
-    # ========== 创建丰富的综合图 - 改进布局 ==========
-    fig = plt.figure(figsize=(14, 16))  # 增大高度
-    gs = fig.add_gridspec(3, 2, hspace=0.30, wspace=0.30, height_ratios=[1, 1, 1.2])  # 增大底部区域
+    # ========== 创建 2×3 标准学术图表布局 ==========
+    fig = plt.figure(figsize=(15, 10))
+    gs = fig.add_gridspec(2, 3, hspace=0.35, wspace=0.30)
     
-    # 4 个散点图 (2x2 布局) - 统一 Y 轴范围
-    positions = [(0, 0), (0, 1), (1, 0), (1, 1)]
-    
-    # 先计算所有 GRA 分数的范围以统一 Y 轴
+    # 统一 Y 轴范围
     all_gra_values = np.concatenate([r['gra'] for r in results])
     y_min = max(0.45, np.percentile(all_gra_values, 1) - 0.05)
     y_max = min(0.85, np.percentile(all_gra_values, 99) + 0.05)
+    
+    # ===== 面板 (a)-(d): 4个散点图 =====
+    positions = [(0, 0), (0, 1), (1, 0), (1, 1)]
+    labels = ['(a)', '(b)', '(c)', '(d)']
     
     for idx, r in enumerate(results[:4]):
         row, col = positions[idx]
         ax = fig.add_subplot(gs[row, col])
         
-        ax.scatter(r['l1'], r['gra'], s=12, alpha=0.5, c='#D62728')
+        ax.scatter(r['l1'], r['gra'], s=12, alpha=0.5, c='#D62728', edgecolors='none')
         slope, intercept, rv, _, _ = stats.linregress(r['l1'], r['gra'])
         x_line = np.linspace(0, 1, 100)
-        ax.plot(x_line, slope * x_line + intercept, 'b--', linewidth=2.5)
+        ax.plot(x_line, slope * x_line + intercept, 'b--', linewidth=2)
         
-        ax.set_xlabel('L1 Score (Weight Magnitude)', fontsize=11)
-        ax.set_ylabel('GRA Score (Semantic Alignment)', fontsize=11)
-        ax.set_title(f"{r['name']}\nn = {r['n']}, r = {r['r']:.3f}", fontweight='bold', fontsize=12)
-        ax.grid(True, alpha=0.3)
+        ax.set_xlabel('L1 Score (Weight Magnitude)')
+        ax.set_ylabel('GRA Score (Semantic Alignment)')
+        ax.set_title(f"{labels[idx]} {r['name']}\nn = {r['n']}, r = {r['r']:.3f}", fontweight='bold')
+        ax.grid(True, alpha=0.3, linestyle='--')
         ax.set_xlim(-0.05, 1.05)
-        ax.set_ylim(y_min, y_max)  # 统一 Y 轴范围
+        ax.set_ylim(y_min, y_max)
     
-    # 底部左侧: 相关系数柱状图
-    ax_bar = fig.add_subplot(gs[2, 0])
-    names = [r['name'].replace('\n', ' / ') for r in results]
+    # ===== 面板 (e): 相关系数柱状图 =====
+    ax_bar = fig.add_subplot(gs[0, 2])
+    names = [r['name'].replace('\n', '/') for r in results]
     corrs = [r['r'] for r in results]
-    colors = ['#E74C3C' if abs(c) < 0.05 else '#F39C12' if abs(c) < 0.15 else '#27AE60' for c in corrs]
+    colors = ['#E74C3C' if abs(c) < 0.05 else '#F39C12' for c in corrs]
     
-    bars = ax_bar.barh(range(len(corrs)), corrs, color=colors, edgecolor='black', height=0.5)
+    bars = ax_bar.barh(range(len(corrs)), corrs, color=colors, edgecolor='black', height=0.6)
     ax_bar.set_yticks(range(len(names)))
-    ax_bar.set_yticklabels(names, fontsize=11)
-    ax_bar.set_xlabel('Pearson Correlation (r)', fontsize=12)
-    ax_bar.set_title('GRA-L1 Correlation Across Configurations', fontweight='bold', fontsize=12)
-    ax_bar.axvline(x=0, color='black', linewidth=1)
-    ax_bar.axvline(x=0.15, color='gray', linestyle='--', linewidth=1.5, alpha=0.7)
-    ax_bar.axvline(x=-0.15, color='gray', linestyle='--', linewidth=1.5, alpha=0.7)
-    ax_bar.set_xlim(-0.1, 0.1)
-    ax_bar.grid(True, alpha=0.3, axis='x')
+    ax_bar.set_yticklabels(names)
+    ax_bar.set_xlabel('Pearson Correlation (r)')
+    ax_bar.set_title('(e) GRA-L1 Correlation\nAcross Configurations', fontweight='bold')
+    ax_bar.axvline(x=0, color='black', linewidth=0.8)
+    ax_bar.axvline(x=0.1, color='gray', linestyle='--', linewidth=1, alpha=0.7)
+    ax_bar.axvline(x=-0.1, color='gray', linestyle='--', linewidth=1, alpha=0.7)
+    ax_bar.set_xlim(-0.15, 0.15)
+    ax_bar.grid(True, alpha=0.3, axis='x', linestyle='--')
     
-    # 添加数值标签
-    for i, (bar, c) in enumerate(zip(bars, corrs)):
-        ax_bar.text(c + 0.005 if c >= 0 else c - 0.02, i, f'{c:.3f}', va='center', fontsize=11, fontweight='bold')
+    for i, c in enumerate(corrs):
+        ax_bar.text(c + 0.008 if c >= 0 else c - 0.03, i, f'{c:.3f}', va='center', fontweight='bold', fontsize=10)
     
-    # 底部右侧: 统计摘要 - 精简版学术风格
-    ax_summary = fig.add_subplot(gs[2, 1])
-    ax_summary.axis('off')
+    # ===== 面板 (f): 逐层相关系数分布直方图 =====
+    ax_hist = fig.add_subplot(gs[1, 2])
+    all_layer_corrs = np.concatenate([r['layer_corrs'] for r in results])
     
-    total_channels = sum(r['n'] for r in results)
-    mean_corr = np.mean(corrs)
-    
-    # 使用更大的行间距
-    y_pos = 0.95
-    line_height = 0.06
-    
-    # 标题
-    ax_summary.text(0.5, y_pos, 'STATISTICAL SUMMARY', fontsize=13, fontweight='bold',
-                    ha='center', transform=ax_summary.transAxes, fontfamily='serif')
-    y_pos -= line_height * 1.8
-    
-    # 基本信息（精简为2行）
-    ax_summary.text(0.05, y_pos, f"Models: ResNet-20, ResNet-56", fontsize=11, ha='left',
-                    transform=ax_summary.transAxes, fontfamily='serif')
-    y_pos -= line_height
-    ax_summary.text(0.05, y_pos, f"Datasets: CIFAR-10, CIFAR-100", fontsize=11, ha='left',
-                    transform=ax_summary.transAxes, fontfamily='serif')
-    y_pos -= line_height
-    ax_summary.text(0.05, y_pos, f"Total: {len(results)} configs, {total_channels} channels", fontsize=11, ha='left',
-                    transform=ax_summary.transAxes, fontfamily='serif')
-    y_pos -= line_height * 1.5
-    
-    # 相关性分析（精简）
-    ax_summary.text(0.5, y_pos, 'Correlation Analysis', fontsize=12, fontweight='bold',
-                    ha='center', transform=ax_summary.transAxes, fontfamily='serif')
-    y_pos -= line_height * 1.3
-    
-    ax_summary.text(0.05, y_pos, f"Mean |r| = {abs(mean_corr):.3f}  (range: {min(corrs):.3f} to {max(corrs):.3f})", 
-                    fontsize=11, ha='left', transform=ax_summary.transAxes, fontfamily='serif')
-    y_pos -= line_height * 1.5
-    
-    # 关键发现（精简）
-    ax_summary.text(0.5, y_pos, 'Key Finding', fontsize=12, fontweight='bold',
-                    ha='center', transform=ax_summary.transAxes, fontfamily='serif')
-    y_pos -= line_height * 1.3
-    
-    ax_summary.text(0.5, y_pos, "All configurations show |r| ≈ 0", fontsize=11, ha='center',
-                    transform=ax_summary.transAxes, fontfamily='serif')
-    y_pos -= line_height
-    ax_summary.text(0.5, y_pos, "GRA and L1 select DIFFERENT channels", fontsize=11, ha='center',
-                    transform=ax_summary.transAxes, fontfamily='serif', fontweight='bold')
-    y_pos -= line_height * 1.2
-    ax_summary.text(0.5, y_pos, "Weight magnitude ≠ Semantic importance", fontsize=11, ha='center',
-                    transform=ax_summary.transAxes, fontfamily='serif', style='italic')
-    y_pos -= line_height
-    ax_summary.text(0.5, y_pos, "[CONFIRMED]", fontsize=12, ha='center',
-                    transform=ax_summary.transAxes, fontfamily='serif', fontweight='bold', color='#006400')
+    ax_hist.hist(all_layer_corrs, bins=20, color='#3498DB', edgecolor='black', alpha=0.7)
+    ax_hist.axvline(x=0, color='red', linewidth=2, linestyle='-', label='r = 0')
+    ax_hist.axvline(x=np.mean(all_layer_corrs), color='green', linewidth=2, linestyle='--', 
+                    label=f'Mean = {np.mean(all_layer_corrs):.3f}')
+    ax_hist.set_xlabel('Layer-wise Correlation (r)')
+    ax_hist.set_ylabel('Number of Layers')
+    ax_hist.set_title(f'(f) Distribution of Layer-wise\nGRA-L1 Correlation (n={len(all_layer_corrs)} layers)', fontweight='bold')
+    ax_hist.legend(loc='upper right', fontsize=9)
+    ax_hist.grid(True, alpha=0.3, axis='y', linestyle='--')
     
     # 数据来源标注
-    fig.text(0.02, 0.01, 
+    total_channels = sum(r['n'] for r in results)
+    fig.text(0.5, 0.01, 
              f'Data: Real analysis on {total_channels} channels from CIFAR-10/100 test sets (512 images per config)',
-             fontsize=9, style='italic', color='gray', fontfamily='serif')
+             fontsize=9, style='italic', color='gray', ha='center')
     
     plt.savefig(r'C:\GRA-CNN\APIN_Submission\fig_rich_multiconfig.pdf', dpi=300, bbox_inches='tight')
     plt.savefig(r'C:\GRA-CNN\APIN_Submission\fig_rich_multiconfig.png', dpi=150, bbox_inches='tight')
     plt.close()
     
     print("\n" + "=" * 60)
-    print(f"完成: {len(results)} 配置, {total_channels} 通道")
-    print(f"平均 r = {mean_corr:.4f}")
-    print("保存: fig_rich_multiconfig.pdf/png")
+    print(f"完成: 2×3 标准学术布局")
+    print(f"- 4个散点图 (a-d)")
+    print(f"- 1个柱状图 (e)")
+    print(f"- 1个直方图 (f)")
     print("=" * 60)
 
 
