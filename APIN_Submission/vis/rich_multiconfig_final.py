@@ -165,46 +165,46 @@ def main():
     for i, (bar, c) in enumerate(zip(bars, corrs)):
         ax_bar.text(c + 0.005 if c >= 0 else c - 0.02, i, f'{c:.3f}', va='center', fontsize=11, fontweight='bold')
     
-    # 底部右侧: 统计摘要
+    # 底部右侧: 统计摘要 - 使用更紧凑的格式
     ax_summary = fig.add_subplot(gs[2, 1])
     ax_summary.axis('off')
     
     total_channels = sum(r['n'] for r in results)
     mean_corr = np.mean(corrs)
     
-    summary = f"""
-╔══════════════════════════════════════╗
-║      COMPREHENSIVE RESULTS           ║
-╠══════════════════════════════════════╣
-║                                      ║
-║  Architectures: ResNet-20, ResNet-56 ║
-║  Datasets: CIFAR-10, CIFAR-100       ║
-║  Configurations: {len(results)}                   ║
-║  Total Channels: {total_channels}                ║
-║                                      ║
-║  ════════════════════════════════    ║
-║  CORRELATION ANALYSIS:               ║
-║                                      ║
-║  Mean r = {mean_corr:.4f}                      ║
-║  Max r = {max(corrs):.4f}                       ║
-║  Min r = {min(corrs):.4f}                       ║
-║                                      ║
-║  ════════════════════════════════    ║
-║  KEY FINDING:                        ║
-║                                      ║
-║  ALL configurations show r < 0.15    ║
-║  (very weak correlation)             ║
-║                                      ║
-║  GRA and L1 identify COMPLETELY      ║
-║  DIFFERENT channels as important     ║
-║                                      ║
-║  "Weight magnitude ≠ Semantic        ║
-║   importance"  ✓ CONFIRMED           ║
-╚══════════════════════════════════════╝
-"""
-    ax_summary.text(0, 1, summary, fontsize=9.5, verticalalignment='top',
+    # 使用简洁的表格格式
+    summary_lines = [
+        "COMPREHENSIVE RESULTS",
+        "=" * 35,
+        "",
+        f"Architectures: ResNet-20, ResNet-56",
+        f"Datasets: CIFAR-10, CIFAR-100",
+        f"Configurations: {len(results)}",
+        f"Total Channels: {total_channels}",
+        "",
+        "CORRELATION ANALYSIS:",
+        "-" * 35,
+        f"Mean r = {mean_corr:.4f}",
+        f"Max  r = {max(corrs):.4f}",
+        f"Min  r = {min(corrs):.4f}",
+        "",
+        "KEY FINDING:",
+        "-" * 35,
+        "ALL configs show |r| < 0.1",
+        "(nearly zero correlation)",
+        "",
+        "GRA and L1 identify COMPLETELY",
+        "DIFFERENT channels as important",
+        "",
+        "Weight magnitude != Semantic",
+        "importance  [CONFIRMED]",
+    ]
+    
+    summary = "\n".join(summary_lines)
+    ax_summary.text(0.05, 0.95, summary, fontsize=10, verticalalignment='top',
                     fontfamily='monospace', transform=ax_summary.transAxes,
-                    bbox=dict(boxstyle='round', facecolor='#FFF8DC', alpha=0.9))
+                    bbox=dict(boxstyle='round,pad=0.5', facecolor='#FFF8DC', 
+                              edgecolor='#8B4513', linewidth=2, alpha=0.95))
     
     # 数据来源标注
     fig.text(0.02, 0.01, 
