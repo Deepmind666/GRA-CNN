@@ -120,8 +120,14 @@ def main():
     fig = plt.figure(figsize=(14, 14))
     gs = fig.add_gridspec(3, 2, hspace=0.35, wspace=0.30, height_ratios=[1, 1, 0.8])
     
-    # 4 个散点图 (2x2 布局)
+    # 4 个散点图 (2x2 布局) - 统一 Y 轴范围
     positions = [(0, 0), (0, 1), (1, 0), (1, 1)]
+    
+    # 先计算所有 GRA 分数的范围以统一 Y 轴
+    all_gra_values = np.concatenate([r['gra'] for r in results])
+    y_min = max(0.45, np.percentile(all_gra_values, 1) - 0.05)
+    y_max = min(0.85, np.percentile(all_gra_values, 99) + 0.05)
+    
     for idx, r in enumerate(results[:4]):
         row, col = positions[idx]
         ax = fig.add_subplot(gs[row, col])
@@ -136,6 +142,7 @@ def main():
         ax.set_title(f"{r['name']}\nn = {r['n']}, r = {r['r']:.3f}", fontweight='bold', fontsize=12)
         ax.grid(True, alpha=0.3)
         ax.set_xlim(-0.05, 1.05)
+        ax.set_ylim(y_min, y_max)  # 统一 Y 轴范围
     
     # 底部左侧: 相关系数柱状图
     ax_bar = fig.add_subplot(gs[2, 0])
