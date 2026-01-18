@@ -1,0 +1,1871 @@
+[
+  {
+    "timestamp": "2026-01-19T01:51:57.784835",
+    "type": "INIT",
+    "message": "通宵实验套件启动 @ 2026-01-19T01:51:57.784835",
+    "data": null
+  },
+  {
+    "timestamp": "2026-01-19T01:51:57.785338",
+    "type": "CONFIG",
+    "message": "预计运行时间: 10小时 (RTX 5090 全功率)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-01-19T01:51:57.785847",
+    "type": "MATRIX",
+    "message": "实验矩阵包含 117 个实验",
+    "data": null
+  },
+  {
+    "timestamp": "2026-01-19T01:51:57.785847",
+    "type": "BATCH",
+    "message": "开始优先级 1 批次 (84 个实验)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-01-19T01:51:57.791511",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_gra_0.3",
+    "data": {
+      "id": "fig3_cifar10_resnet20_gra_0.3",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "GRA",
+      "ratio": 0.3,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:51:57.791511",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_gra_0.4",
+    "data": {
+      "id": "fig3_cifar10_resnet20_gra_0.4",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "GRA",
+      "ratio": 0.4,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:00.722365",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_gra_0.5",
+    "data": {
+      "id": "fig3_cifar10_resnet20_gra_0.5",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "GRA",
+      "ratio": 0.5,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:00.807617",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_gra_0.6",
+    "data": {
+      "id": "fig3_cifar10_resnet20_gra_0.6",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "GRA",
+      "ratio": 0.6,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:03.428724",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_gra_0.7",
+    "data": {
+      "id": "fig3_cifar10_resnet20_gra_0.7",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "GRA",
+      "ratio": 0.7,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:03.445911",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_gra_0.8",
+    "data": {
+      "id": "fig3_cifar10_resnet20_gra_0.8",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "GRA",
+      "ratio": 0.8,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:06.189964",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_l1_0.3",
+    "data": {
+      "id": "fig3_cifar10_resnet20_l1_0.3",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "L1",
+      "ratio": 0.3,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:06.261971",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_l1_0.4",
+    "data": {
+      "id": "fig3_cifar10_resnet20_l1_0.4",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "L1",
+      "ratio": 0.4,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:08.960457",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_l1_0.5",
+    "data": {
+      "id": "fig3_cifar10_resnet20_l1_0.5",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "L1",
+      "ratio": 0.5,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:09.054936",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_l1_0.6",
+    "data": {
+      "id": "fig3_cifar10_resnet20_l1_0.6",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "L1",
+      "ratio": 0.6,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:11.717820",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_l1_0.7",
+    "data": {
+      "id": "fig3_cifar10_resnet20_l1_0.7",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "L1",
+      "ratio": 0.7,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:11.748359",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_l1_0.8",
+    "data": {
+      "id": "fig3_cifar10_resnet20_l1_0.8",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "L1",
+      "ratio": 0.8,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:14.413979",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_fpgm_0.3",
+    "data": {
+      "id": "fig3_cifar10_resnet20_fpgm_0.3",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "FPGM",
+      "ratio": 0.3,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:14.482314",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_fpgm_0.4",
+    "data": {
+      "id": "fig3_cifar10_resnet20_fpgm_0.4",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "FPGM",
+      "ratio": 0.4,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:17.201077",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_fpgm_0.5",
+    "data": {
+      "id": "fig3_cifar10_resnet20_fpgm_0.5",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "FPGM",
+      "ratio": 0.5,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:17.239547",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_fpgm_0.6",
+    "data": {
+      "id": "fig3_cifar10_resnet20_fpgm_0.6",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "FPGM",
+      "ratio": 0.6,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:19.885074",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_fpgm_0.7",
+    "data": {
+      "id": "fig3_cifar10_resnet20_fpgm_0.7",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "FPGM",
+      "ratio": 0.7,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:19.985191",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_fpgm_0.8",
+    "data": {
+      "id": "fig3_cifar10_resnet20_fpgm_0.8",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "FPGM",
+      "ratio": 0.8,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:22.662386",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_hrank_0.3",
+    "data": {
+      "id": "fig3_cifar10_resnet20_hrank_0.3",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "HRank",
+      "ratio": 0.3,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:22.712596",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_hrank_0.4",
+    "data": {
+      "id": "fig3_cifar10_resnet20_hrank_0.4",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "HRank",
+      "ratio": 0.4,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:25.410869",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_hrank_0.5",
+    "data": {
+      "id": "fig3_cifar10_resnet20_hrank_0.5",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "HRank",
+      "ratio": 0.5,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:25.508858",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_hrank_0.6",
+    "data": {
+      "id": "fig3_cifar10_resnet20_hrank_0.6",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "HRank",
+      "ratio": 0.6,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:28.128431",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_hrank_0.7",
+    "data": {
+      "id": "fig3_cifar10_resnet20_hrank_0.7",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "HRank",
+      "ratio": 0.7,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:28.167709",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet20_hrank_0.8",
+    "data": {
+      "id": "fig3_cifar10_resnet20_hrank_0.8",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-20",
+      "method": "HRank",
+      "ratio": 0.8,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:30.891054",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_gra_0.3",
+    "data": {
+      "id": "fig3_cifar10_resnet56_gra_0.3",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.3,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:30.970365",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_gra_0.4",
+    "data": {
+      "id": "fig3_cifar10_resnet56_gra_0.4",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.4,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:33.705438",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_gra_0.5",
+    "data": {
+      "id": "fig3_cifar10_resnet56_gra_0.5",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:33.788518",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_gra_0.6",
+    "data": {
+      "id": "fig3_cifar10_resnet56_gra_0.6",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.6,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:37.013094",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_gra_0.7",
+    "data": {
+      "id": "fig3_cifar10_resnet56_gra_0.7",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.7,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:37.042213",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_gra_0.8",
+    "data": {
+      "id": "fig3_cifar10_resnet56_gra_0.8",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.8,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:40.440232",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_l1_0.3",
+    "data": {
+      "id": "fig3_cifar10_resnet56_l1_0.3",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "L1",
+      "ratio": 0.3,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:40.471221",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_l1_0.4",
+    "data": {
+      "id": "fig3_cifar10_resnet56_l1_0.4",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "L1",
+      "ratio": 0.4,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:43.731709",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_l1_0.5",
+    "data": {
+      "id": "fig3_cifar10_resnet56_l1_0.5",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "L1",
+      "ratio": 0.5,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:43.823169",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_l1_0.6",
+    "data": {
+      "id": "fig3_cifar10_resnet56_l1_0.6",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "L1",
+      "ratio": 0.6,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:47.118779",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_l1_0.7",
+    "data": {
+      "id": "fig3_cifar10_resnet56_l1_0.7",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "L1",
+      "ratio": 0.7,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:47.189139",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_l1_0.8",
+    "data": {
+      "id": "fig3_cifar10_resnet56_l1_0.8",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "L1",
+      "ratio": 0.8,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:50.548405",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_fpgm_0.3",
+    "data": {
+      "id": "fig3_cifar10_resnet56_fpgm_0.3",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "FPGM",
+      "ratio": 0.3,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:50.573596",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_fpgm_0.4",
+    "data": {
+      "id": "fig3_cifar10_resnet56_fpgm_0.4",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "FPGM",
+      "ratio": 0.4,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:53.908001",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_fpgm_0.5",
+    "data": {
+      "id": "fig3_cifar10_resnet56_fpgm_0.5",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "FPGM",
+      "ratio": 0.5,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:53.942115",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_fpgm_0.6",
+    "data": {
+      "id": "fig3_cifar10_resnet56_fpgm_0.6",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "FPGM",
+      "ratio": 0.6,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:57.231650",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_fpgm_0.7",
+    "data": {
+      "id": "fig3_cifar10_resnet56_fpgm_0.7",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "FPGM",
+      "ratio": 0.7,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:52:57.294475",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_fpgm_0.8",
+    "data": {
+      "id": "fig3_cifar10_resnet56_fpgm_0.8",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "FPGM",
+      "ratio": 0.8,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:00.613093",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_hrank_0.3",
+    "data": {
+      "id": "fig3_cifar10_resnet56_hrank_0.3",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "HRank",
+      "ratio": 0.3,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:00.641161",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_hrank_0.4",
+    "data": {
+      "id": "fig3_cifar10_resnet56_hrank_0.4",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "HRank",
+      "ratio": 0.4,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:03.990304",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_hrank_0.5",
+    "data": {
+      "id": "fig3_cifar10_resnet56_hrank_0.5",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "HRank",
+      "ratio": 0.5,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:04.056194",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_hrank_0.6",
+    "data": {
+      "id": "fig3_cifar10_resnet56_hrank_0.6",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "HRank",
+      "ratio": 0.6,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:07.390134",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_hrank_0.7",
+    "data": {
+      "id": "fig3_cifar10_resnet56_hrank_0.7",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "HRank",
+      "ratio": 0.7,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:07.464093",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet56_hrank_0.8",
+    "data": {
+      "id": "fig3_cifar10_resnet56_hrank_0.8",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "HRank",
+      "ratio": 0.8,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:10.843587",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet110_gra_0.3",
+    "data": {
+      "id": "fig3_cifar10_resnet110_gra_0.3",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-110",
+      "method": "GRA",
+      "ratio": 0.3,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:10.905113",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet110_gra_0.5",
+    "data": {
+      "id": "fig3_cifar10_resnet110_gra_0.5",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-110",
+      "method": "GRA",
+      "ratio": 0.5,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:14.249098",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet110_gra_0.7",
+    "data": {
+      "id": "fig3_cifar10_resnet110_gra_0.7",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-110",
+      "method": "GRA",
+      "ratio": 0.7,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:14.282504",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet110_l1_0.3",
+    "data": {
+      "id": "fig3_cifar10_resnet110_l1_0.3",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-110",
+      "method": "L1",
+      "ratio": 0.3,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:17.601617",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet110_l1_0.5",
+    "data": {
+      "id": "fig3_cifar10_resnet110_l1_0.5",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-110",
+      "method": "L1",
+      "ratio": 0.5,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:17.630096",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet110_l1_0.7",
+    "data": {
+      "id": "fig3_cifar10_resnet110_l1_0.7",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-110",
+      "method": "L1",
+      "ratio": 0.7,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:20.931846",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet110_fpgm_0.3",
+    "data": {
+      "id": "fig3_cifar10_resnet110_fpgm_0.3",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-110",
+      "method": "FPGM",
+      "ratio": 0.3,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:20.964823",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet110_fpgm_0.5",
+    "data": {
+      "id": "fig3_cifar10_resnet110_fpgm_0.5",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-110",
+      "method": "FPGM",
+      "ratio": 0.5,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:24.306128",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_resnet110_fpgm_0.7",
+    "data": {
+      "id": "fig3_cifar10_resnet110_fpgm_0.7",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-110",
+      "method": "FPGM",
+      "ratio": 0.7,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:24.363551",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_vgg16_gra_0.3",
+    "data": {
+      "id": "fig3_cifar10_vgg16_gra_0.3",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "VGG-16",
+      "method": "GRA",
+      "ratio": 0.3,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:27.582014",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_vgg16_gra_0.5",
+    "data": {
+      "id": "fig3_cifar10_vgg16_gra_0.5",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "VGG-16",
+      "method": "GRA",
+      "ratio": 0.5,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:27.609127",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_vgg16_gra_0.7",
+    "data": {
+      "id": "fig3_cifar10_vgg16_gra_0.7",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "VGG-16",
+      "method": "GRA",
+      "ratio": 0.7,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:30.948311",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_vgg16_l1_0.3",
+    "data": {
+      "id": "fig3_cifar10_vgg16_l1_0.3",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "VGG-16",
+      "method": "L1",
+      "ratio": 0.3,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:31.038796",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_vgg16_l1_0.5",
+    "data": {
+      "id": "fig3_cifar10_vgg16_l1_0.5",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "VGG-16",
+      "method": "L1",
+      "ratio": 0.5,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:34.285491",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_vgg16_l1_0.7",
+    "data": {
+      "id": "fig3_cifar10_vgg16_l1_0.7",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "VGG-16",
+      "method": "L1",
+      "ratio": 0.7,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:34.394771",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_vgg16_fpgm_0.3",
+    "data": {
+      "id": "fig3_cifar10_vgg16_fpgm_0.3",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "VGG-16",
+      "method": "FPGM",
+      "ratio": 0.3,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:37.650131",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_vgg16_fpgm_0.5",
+    "data": {
+      "id": "fig3_cifar10_vgg16_fpgm_0.5",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "VGG-16",
+      "method": "FPGM",
+      "ratio": 0.5,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:37.699542",
+    "type": "START",
+    "message": "开始实验 fig3_cifar10_vgg16_fpgm_0.7",
+    "data": {
+      "id": "fig3_cifar10_vgg16_fpgm_0.7",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-10",
+      "arch": "VGG-16",
+      "method": "FPGM",
+      "ratio": 0.7,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:41.120620",
+    "type": "START",
+    "message": "开始实验 fig3_cifar100_resnet56_gra_0.3",
+    "data": {
+      "id": "fig3_cifar100_resnet56_gra_0.3",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.3,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:41.203197",
+    "type": "START",
+    "message": "开始实验 fig3_cifar100_resnet56_gra_0.5",
+    "data": {
+      "id": "fig3_cifar100_resnet56_gra_0.5",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:44.495973",
+    "type": "START",
+    "message": "开始实验 fig3_cifar100_resnet56_gra_0.7",
+    "data": {
+      "id": "fig3_cifar100_resnet56_gra_0.7",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.7,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:44.555806",
+    "type": "START",
+    "message": "开始实验 fig3_cifar100_resnet56_l1_0.3",
+    "data": {
+      "id": "fig3_cifar100_resnet56_l1_0.3",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "L1",
+      "ratio": 0.3,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:47.967751",
+    "type": "START",
+    "message": "开始实验 fig3_cifar100_resnet56_l1_0.5",
+    "data": {
+      "id": "fig3_cifar100_resnet56_l1_0.5",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "L1",
+      "ratio": 0.5,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:48.025637",
+    "type": "START",
+    "message": "开始实验 fig3_cifar100_resnet56_l1_0.7",
+    "data": {
+      "id": "fig3_cifar100_resnet56_l1_0.7",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "L1",
+      "ratio": 0.7,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:51.401801",
+    "type": "START",
+    "message": "开始实验 fig3_cifar100_resnet56_fpgm_0.3",
+    "data": {
+      "id": "fig3_cifar100_resnet56_fpgm_0.3",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "FPGM",
+      "ratio": 0.3,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:51.446068",
+    "type": "START",
+    "message": "开始实验 fig3_cifar100_resnet56_fpgm_0.5",
+    "data": {
+      "id": "fig3_cifar100_resnet56_fpgm_0.5",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "FPGM",
+      "ratio": 0.5,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:54.883340",
+    "type": "START",
+    "message": "开始实验 fig3_cifar100_resnet56_fpgm_0.7",
+    "data": {
+      "id": "fig3_cifar100_resnet56_fpgm_0.7",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "FPGM",
+      "ratio": 0.7,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:54.965762",
+    "type": "START",
+    "message": "开始实验 fig3_cifar100_resnet56_hrank_0.3",
+    "data": {
+      "id": "fig3_cifar100_resnet56_hrank_0.3",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "HRank",
+      "ratio": 0.3,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:58.249399",
+    "type": "START",
+    "message": "开始实验 fig3_cifar100_resnet56_hrank_0.5",
+    "data": {
+      "id": "fig3_cifar100_resnet56_hrank_0.5",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "HRank",
+      "ratio": 0.5,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:53:58.317853",
+    "type": "START",
+    "message": "开始实验 fig3_cifar100_resnet56_hrank_0.7",
+    "data": {
+      "id": "fig3_cifar100_resnet56_hrank_0.7",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "HRank",
+      "ratio": 0.7,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:01.608459",
+    "type": "START",
+    "message": "开始实验 fig3_cifar100_resnet110_gra_0.5",
+    "data": {
+      "id": "fig3_cifar100_resnet110_gra_0.5",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-110",
+      "method": "GRA",
+      "ratio": 0.5,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:01.638601",
+    "type": "START",
+    "message": "开始实验 fig3_cifar100_resnet110_gra_0.7",
+    "data": {
+      "id": "fig3_cifar100_resnet110_gra_0.7",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-110",
+      "method": "GRA",
+      "ratio": 0.7,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:05.011268",
+    "type": "START",
+    "message": "开始实验 fig3_cifar100_resnet110_l1_0.5",
+    "data": {
+      "id": "fig3_cifar100_resnet110_l1_0.5",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-110",
+      "method": "L1",
+      "ratio": 0.5,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:05.141639",
+    "type": "START",
+    "message": "开始实验 fig3_cifar100_resnet110_l1_0.7",
+    "data": {
+      "id": "fig3_cifar100_resnet110_l1_0.7",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-110",
+      "method": "L1",
+      "ratio": 0.7,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:08.464655",
+    "type": "START",
+    "message": "开始实验 fig3_cifar100_resnet110_fpgm_0.5",
+    "data": {
+      "id": "fig3_cifar100_resnet110_fpgm_0.5",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-110",
+      "method": "FPGM",
+      "ratio": 0.5,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:08.515902",
+    "type": "START",
+    "message": "开始实验 fig3_cifar100_resnet110_fpgm_0.7",
+    "data": {
+      "id": "fig3_cifar100_resnet110_fpgm_0.7",
+      "type": "fig3_flops",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-110",
+      "method": "FPGM",
+      "ratio": 0.7,
+      "epochs": 40,
+      "priority": 1
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:11.949447",
+    "type": "BATCH_DONE",
+    "message": "优先级 1 完成: 0 成功, 84 失败",
+    "data": null
+  },
+  {
+    "timestamp": "2026-01-19T01:54:11.950988",
+    "type": "BATCH",
+    "message": "开始优先级 2 批次 (11 个实验)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-01-19T01:54:11.952520",
+    "type": "START",
+    "message": "开始实验 fig4_cifar10_resnet56_gra_0.5",
+    "data": {
+      "id": "fig4_cifar10_resnet56_gra_0.5",
+      "type": "fig4_convergence",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "epochs": 60,
+      "priority": 2
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:11.952520",
+    "type": "START",
+    "message": "开始实验 fig4_cifar10_resnet56_gra_0.7",
+    "data": {
+      "id": "fig4_cifar10_resnet56_gra_0.7",
+      "type": "fig4_convergence",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.7,
+      "epochs": 60,
+      "priority": 2
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:15.393184",
+    "type": "START",
+    "message": "开始实验 fig4_cifar10_resnet56_l1_0.5",
+    "data": {
+      "id": "fig4_cifar10_resnet56_l1_0.5",
+      "type": "fig4_convergence",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "L1",
+      "ratio": 0.5,
+      "epochs": 60,
+      "priority": 2
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:15.411766",
+    "type": "START",
+    "message": "开始实验 fig4_cifar10_resnet56_l1_0.7",
+    "data": {
+      "id": "fig4_cifar10_resnet56_l1_0.7",
+      "type": "fig4_convergence",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "L1",
+      "ratio": 0.7,
+      "epochs": 60,
+      "priority": 2
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:18.815643",
+    "type": "START",
+    "message": "开始实验 fig4_cifar10_resnet56_fpgm_0.5",
+    "data": {
+      "id": "fig4_cifar10_resnet56_fpgm_0.5",
+      "type": "fig4_convergence",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "FPGM",
+      "ratio": 0.5,
+      "epochs": 60,
+      "priority": 2
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:18.921535",
+    "type": "START",
+    "message": "开始实验 fig4_cifar10_resnet56_fpgm_0.7",
+    "data": {
+      "id": "fig4_cifar10_resnet56_fpgm_0.7",
+      "type": "fig4_convergence",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "FPGM",
+      "ratio": 0.7,
+      "epochs": 60,
+      "priority": 2
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:22.251990",
+    "type": "START",
+    "message": "开始实验 fig4_cifar10_resnet56_hrank_0.5",
+    "data": {
+      "id": "fig4_cifar10_resnet56_hrank_0.5",
+      "type": "fig4_convergence",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "HRank",
+      "ratio": 0.5,
+      "epochs": 60,
+      "priority": 2
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:22.313306",
+    "type": "START",
+    "message": "开始实验 fig4_cifar10_resnet56_hrank_0.7",
+    "data": {
+      "id": "fig4_cifar10_resnet56_hrank_0.7",
+      "type": "fig4_convergence",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "HRank",
+      "ratio": 0.7,
+      "epochs": 60,
+      "priority": 2
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:25.803826",
+    "type": "START",
+    "message": "开始实验 fig4_cifar100_resnet56_gra_0.5",
+    "data": {
+      "id": "fig4_cifar100_resnet56_gra_0.5",
+      "type": "fig4_convergence",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "epochs": 60,
+      "priority": 2
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:25.856574",
+    "type": "START",
+    "message": "开始实验 fig4_cifar100_resnet56_l1_0.5",
+    "data": {
+      "id": "fig4_cifar100_resnet56_l1_0.5",
+      "type": "fig4_convergence",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "L1",
+      "ratio": 0.5,
+      "epochs": 60,
+      "priority": 2
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:29.306015",
+    "type": "START",
+    "message": "开始实验 fig4_cifar100_resnet56_fpgm_0.5",
+    "data": {
+      "id": "fig4_cifar100_resnet56_fpgm_0.5",
+      "type": "fig4_convergence",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "FPGM",
+      "ratio": 0.5,
+      "epochs": 60,
+      "priority": 2
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:32.765738",
+    "type": "BATCH_DONE",
+    "message": "优先级 2 完成: 0 成功, 11 失败",
+    "data": null
+  },
+  {
+    "timestamp": "2026-01-19T01:54:32.767254",
+    "type": "BATCH",
+    "message": "开始优先级 3 批次 (22 个实验)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-01-19T01:54:32.769347",
+    "type": "START",
+    "message": "开始实验 fig5_cifar10_resnet56_rho01",
+    "data": {
+      "id": "fig5_cifar10_resnet56_rho01",
+      "type": "fig5_rho",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "rho": 0.1,
+      "epochs": 30,
+      "priority": 3
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:32.769347",
+    "type": "START",
+    "message": "开始实验 fig5_cifar10_resnet56_rho02",
+    "data": {
+      "id": "fig5_cifar10_resnet56_rho02",
+      "type": "fig5_rho",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "rho": 0.2,
+      "epochs": 30,
+      "priority": 3
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:36.203618",
+    "type": "START",
+    "message": "开始实验 fig5_cifar10_resnet56_rho03",
+    "data": {
+      "id": "fig5_cifar10_resnet56_rho03",
+      "type": "fig5_rho",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "rho": 0.3,
+      "epochs": 30,
+      "priority": 3
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:36.228686",
+    "type": "START",
+    "message": "开始实验 fig5_cifar10_resnet56_rho04",
+    "data": {
+      "id": "fig5_cifar10_resnet56_rho04",
+      "type": "fig5_rho",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "rho": 0.4,
+      "epochs": 30,
+      "priority": 3
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:39.760401",
+    "type": "START",
+    "message": "开始实验 fig5_cifar10_resnet56_rho045",
+    "data": {
+      "id": "fig5_cifar10_resnet56_rho045",
+      "type": "fig5_rho",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "rho": 0.45,
+      "epochs": 30,
+      "priority": 3
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:39.825613",
+    "type": "START",
+    "message": "开始实验 fig5_cifar10_resnet56_rho05",
+    "data": {
+      "id": "fig5_cifar10_resnet56_rho05",
+      "type": "fig5_rho",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "rho": 0.5,
+      "epochs": 30,
+      "priority": 3
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:43.308191",
+    "type": "START",
+    "message": "开始实验 fig5_cifar10_resnet56_rho055",
+    "data": {
+      "id": "fig5_cifar10_resnet56_rho055",
+      "type": "fig5_rho",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "rho": 0.55,
+      "epochs": 30,
+      "priority": 3
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:43.415149",
+    "type": "START",
+    "message": "开始实验 fig5_cifar10_resnet56_rho06",
+    "data": {
+      "id": "fig5_cifar10_resnet56_rho06",
+      "type": "fig5_rho",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "rho": 0.6,
+      "epochs": 30,
+      "priority": 3
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:46.659377",
+    "type": "START",
+    "message": "开始实验 fig5_cifar10_resnet56_rho07",
+    "data": {
+      "id": "fig5_cifar10_resnet56_rho07",
+      "type": "fig5_rho",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "rho": 0.7,
+      "epochs": 30,
+      "priority": 3
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:46.711136",
+    "type": "START",
+    "message": "开始实验 fig5_cifar10_resnet56_rho08",
+    "data": {
+      "id": "fig5_cifar10_resnet56_rho08",
+      "type": "fig5_rho",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "rho": 0.8,
+      "epochs": 30,
+      "priority": 3
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:50.161111",
+    "type": "START",
+    "message": "开始实验 fig5_cifar10_resnet56_rho09",
+    "data": {
+      "id": "fig5_cifar10_resnet56_rho09",
+      "type": "fig5_rho",
+      "dataset": "CIFAR-10",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "rho": 0.9,
+      "epochs": 30,
+      "priority": 3
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:50.207664",
+    "type": "START",
+    "message": "开始实验 fig5_cifar100_resnet56_rho01",
+    "data": {
+      "id": "fig5_cifar100_resnet56_rho01",
+      "type": "fig5_rho",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "rho": 0.1,
+      "epochs": 30,
+      "priority": 3
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:53.699786",
+    "type": "START",
+    "message": "开始实验 fig5_cifar100_resnet56_rho02",
+    "data": {
+      "id": "fig5_cifar100_resnet56_rho02",
+      "type": "fig5_rho",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "rho": 0.2,
+      "epochs": 30,
+      "priority": 3
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:53.718067",
+    "type": "START",
+    "message": "开始实验 fig5_cifar100_resnet56_rho03",
+    "data": {
+      "id": "fig5_cifar100_resnet56_rho03",
+      "type": "fig5_rho",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "rho": 0.3,
+      "epochs": 30,
+      "priority": 3
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:57.166216",
+    "type": "START",
+    "message": "开始实验 fig5_cifar100_resnet56_rho04",
+    "data": {
+      "id": "fig5_cifar100_resnet56_rho04",
+      "type": "fig5_rho",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "rho": 0.4,
+      "epochs": 30,
+      "priority": 3
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:54:57.244381",
+    "type": "START",
+    "message": "开始实验 fig5_cifar100_resnet56_rho045",
+    "data": {
+      "id": "fig5_cifar100_resnet56_rho045",
+      "type": "fig5_rho",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "rho": 0.45,
+      "epochs": 30,
+      "priority": 3
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:55:00.620151",
+    "type": "START",
+    "message": "开始实验 fig5_cifar100_resnet56_rho05",
+    "data": {
+      "id": "fig5_cifar100_resnet56_rho05",
+      "type": "fig5_rho",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "rho": 0.5,
+      "epochs": 30,
+      "priority": 3
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:55:00.645141",
+    "type": "START",
+    "message": "开始实验 fig5_cifar100_resnet56_rho055",
+    "data": {
+      "id": "fig5_cifar100_resnet56_rho055",
+      "type": "fig5_rho",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "rho": 0.55,
+      "epochs": 30,
+      "priority": 3
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:55:04.122935",
+    "type": "START",
+    "message": "开始实验 fig5_cifar100_resnet56_rho06",
+    "data": {
+      "id": "fig5_cifar100_resnet56_rho06",
+      "type": "fig5_rho",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "rho": 0.6,
+      "epochs": 30,
+      "priority": 3
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:55:04.161132",
+    "type": "START",
+    "message": "开始实验 fig5_cifar100_resnet56_rho07",
+    "data": {
+      "id": "fig5_cifar100_resnet56_rho07",
+      "type": "fig5_rho",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "rho": 0.7,
+      "epochs": 30,
+      "priority": 3
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:55:07.666317",
+    "type": "START",
+    "message": "开始实验 fig5_cifar100_resnet56_rho08",
+    "data": {
+      "id": "fig5_cifar100_resnet56_rho08",
+      "type": "fig5_rho",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "rho": 0.8,
+      "epochs": 30,
+      "priority": 3
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:55:07.717989",
+    "type": "START",
+    "message": "开始实验 fig5_cifar100_resnet56_rho09",
+    "data": {
+      "id": "fig5_cifar100_resnet56_rho09",
+      "type": "fig5_rho",
+      "dataset": "CIFAR-100",
+      "arch": "ResNet-56",
+      "method": "GRA",
+      "ratio": 0.5,
+      "rho": 0.9,
+      "epochs": 30,
+      "priority": 3
+    }
+  },
+  {
+    "timestamp": "2026-01-19T01:55:11.365536",
+    "type": "BATCH_DONE",
+    "message": "优先级 3 完成: 0 成功, 22 失败",
+    "data": null
+  },
+  {
+    "timestamp": "2026-01-19T01:55:11.368093",
+    "type": "FIGURES",
+    "message": "开始生成增强版图表...",
+    "data": null
+  },
+  {
+    "timestamp": "2026-01-19T01:55:13.485910",
+    "type": "FIGURE",
+    "message": "图表生成完成: generate_fig3_enhanced.py",
+    "data": null
+  },
+  {
+    "timestamp": "2026-01-19T01:55:14.827846",
+    "type": "FIGURE",
+    "message": "图表生成完成: generate_fig4_convergence.py",
+    "data": null
+  },
+  {
+    "timestamp": "2026-01-19T01:55:23.994345",
+    "type": "FIGURE",
+    "message": "图表生成完成: rho_sensitivity_analysis.py",
+    "data": null
+  },
+  {
+    "timestamp": "2026-01-19T01:55:23.996358",
+    "type": "COMPLETE",
+    "message": "通宵实验完成!",
+    "data": {
+      "start_time": "2026-01-19T01:51:57.784835",
+      "end_time": "2026-01-19T01:55:23.996358",
+      "elapsed_hours": 0.06,
+      "total_experiments": 117,
+      "successful": 0,
+      "failed": 117,
+      "success_rate": "0.0%"
+    }
+  }
+]

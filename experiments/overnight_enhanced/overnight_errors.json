@@ -1,0 +1,704 @@
+[
+  {
+    "timestamp": "2026-01-19T01:52:00.721854",
+    "experiment_id": "fig3_cifar10_resnet20_gra_0.3",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_gra_0.3\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:00.807617",
+    "experiment_id": "fig3_cifar10_resnet20_gra_0.4",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_gra_0.4\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:03.428222",
+    "experiment_id": "fig3_cifar10_resnet20_gra_0.6",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_gra_0.6\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:03.444908",
+    "experiment_id": "fig3_cifar10_resnet20_gra_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_gra_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:06.189964",
+    "experiment_id": "fig3_cifar10_resnet20_gra_0.8",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_gra_0.8\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:06.261971",
+    "experiment_id": "fig3_cifar10_resnet20_gra_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_gra_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:08.959947",
+    "experiment_id": "fig3_cifar10_resnet20_l1_0.3",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_l1_0.3\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:09.053910",
+    "experiment_id": "fig3_cifar10_resnet20_l1_0.4",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_l1_0.4\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:11.716773",
+    "experiment_id": "fig3_cifar10_resnet20_l1_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_l1_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:11.747844",
+    "experiment_id": "fig3_cifar10_resnet20_l1_0.6",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_l1_0.6\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:14.412773",
+    "experiment_id": "fig3_cifar10_resnet20_l1_0.8",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_l1_0.8\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:14.481805",
+    "experiment_id": "fig3_cifar10_resnet20_l1_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_l1_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:17.200074",
+    "experiment_id": "fig3_cifar10_resnet20_fpgm_0.3",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_fpgm_0.3\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:17.239033",
+    "experiment_id": "fig3_cifar10_resnet20_fpgm_0.4",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_fpgm_0.4\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:19.884047",
+    "experiment_id": "fig3_cifar10_resnet20_fpgm_0.6",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_fpgm_0.6\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:19.985191",
+    "experiment_id": "fig3_cifar10_resnet20_fpgm_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_fpgm_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:22.662386",
+    "experiment_id": "fig3_cifar10_resnet20_fpgm_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_fpgm_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:22.712086",
+    "experiment_id": "fig3_cifar10_resnet20_fpgm_0.8",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_fpgm_0.8\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:25.409866",
+    "experiment_id": "fig3_cifar10_resnet20_hrank_0.4",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_hrank_0.4\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:25.508351",
+    "experiment_id": "fig3_cifar10_resnet20_hrank_0.3",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_hrank_0.3\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:28.126925",
+    "experiment_id": "fig3_cifar10_resnet20_hrank_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_hrank_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:28.166590",
+    "experiment_id": "fig3_cifar10_resnet20_hrank_0.6",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_hrank_0.6\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:30.890544",
+    "experiment_id": "fig3_cifar10_resnet20_hrank_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_hrank_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:30.969335",
+    "experiment_id": "fig3_cifar10_resnet20_hrank_0.8",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet20_hrank_0.8\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:33.704928",
+    "experiment_id": "fig3_cifar10_resnet56_gra_0.4",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_gra_0.4\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:33.788003",
+    "experiment_id": "fig3_cifar10_resnet56_gra_0.3",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_gra_0.3\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:37.012090",
+    "experiment_id": "fig3_cifar10_resnet56_gra_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_gra_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:37.041176",
+    "experiment_id": "fig3_cifar10_resnet56_gra_0.6",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_gra_0.6\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:40.439204",
+    "experiment_id": "fig3_cifar10_resnet56_gra_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_gra_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:40.470217",
+    "experiment_id": "fig3_cifar10_resnet56_gra_0.8",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_gra_0.8\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:43.730705",
+    "experiment_id": "fig3_cifar10_resnet56_l1_0.4",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_l1_0.4\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:43.822666",
+    "experiment_id": "fig3_cifar10_resnet56_l1_0.3",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_l1_0.3\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:47.117773",
+    "experiment_id": "fig3_cifar10_resnet56_l1_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_l1_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:47.188632",
+    "experiment_id": "fig3_cifar10_resnet56_l1_0.6",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_l1_0.6\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:50.547396",
+    "experiment_id": "fig3_cifar10_resnet56_l1_0.8",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_l1_0.8\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:50.572582",
+    "experiment_id": "fig3_cifar10_resnet56_l1_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_l1_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:53.906494",
+    "experiment_id": "fig3_cifar10_resnet56_fpgm_0.3",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_fpgm_0.3\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:53.941111",
+    "experiment_id": "fig3_cifar10_resnet56_fpgm_0.4",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_fpgm_0.4\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:57.230143",
+    "experiment_id": "fig3_cifar10_resnet56_fpgm_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_fpgm_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:52:57.293428",
+    "experiment_id": "fig3_cifar10_resnet56_fpgm_0.6",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_fpgm_0.6\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:00.612443",
+    "experiment_id": "fig3_cifar10_resnet56_fpgm_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_fpgm_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:00.640148",
+    "experiment_id": "fig3_cifar10_resnet56_fpgm_0.8",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_fpgm_0.8\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:03.990304",
+    "experiment_id": "fig3_cifar10_resnet56_hrank_0.4",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_hrank_0.4\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:04.056194",
+    "experiment_id": "fig3_cifar10_resnet56_hrank_0.3",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_hrank_0.3\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:07.389620",
+    "experiment_id": "fig3_cifar10_resnet56_hrank_0.6",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_hrank_0.6\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:07.463075",
+    "experiment_id": "fig3_cifar10_resnet56_hrank_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_hrank_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:10.842570",
+    "experiment_id": "fig3_cifar10_resnet56_hrank_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_hrank_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:10.903582",
+    "experiment_id": "fig3_cifar10_resnet56_hrank_0.8",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet56_hrank_0.8\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:14.248095",
+    "experiment_id": "fig3_cifar10_resnet110_gra_0.3",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet110_gra_0.3\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:14.281417",
+    "experiment_id": "fig3_cifar10_resnet110_gra_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet110_gra_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:17.600583",
+    "experiment_id": "fig3_cifar10_resnet110_l1_0.3",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet110_l1_0.3\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:17.629083",
+    "experiment_id": "fig3_cifar10_resnet110_gra_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet110_gra_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:20.931343",
+    "experiment_id": "fig3_cifar10_resnet110_l1_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet110_l1_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:20.964823",
+    "experiment_id": "fig3_cifar10_resnet110_l1_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet110_l1_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:24.304522",
+    "experiment_id": "fig3_cifar10_resnet110_fpgm_0.3",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet110_fpgm_0.3\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:24.362036",
+    "experiment_id": "fig3_cifar10_resnet110_fpgm_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet110_fpgm_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:27.579759",
+    "experiment_id": "fig3_cifar10_vgg16_gra_0.3",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_vgg16_gra_0.3\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:27.608103",
+    "experiment_id": "fig3_cifar10_resnet110_fpgm_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_resnet110_fpgm_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:30.947279",
+    "experiment_id": "fig3_cifar10_vgg16_gra_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_vgg16_gra_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:31.037774",
+    "experiment_id": "fig3_cifar10_vgg16_gra_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_vgg16_gra_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:34.284459",
+    "experiment_id": "fig3_cifar10_vgg16_l1_0.3",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_vgg16_l1_0.3\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:34.393766",
+    "experiment_id": "fig3_cifar10_vgg16_l1_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_vgg16_l1_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:37.648558",
+    "experiment_id": "fig3_cifar10_vgg16_l1_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_vgg16_l1_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:37.698035",
+    "experiment_id": "fig3_cifar10_vgg16_fpgm_0.3",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_vgg16_fpgm_0.3\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:41.119604",
+    "experiment_id": "fig3_cifar10_vgg16_fpgm_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_vgg16_fpgm_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:41.202156",
+    "experiment_id": "fig3_cifar10_vgg16_fpgm_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar10_vgg16_fpgm_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:44.494817",
+    "experiment_id": "fig3_cifar100_resnet56_gra_0.3",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar100_resnet56_gra_0.3\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:44.554300",
+    "experiment_id": "fig3_cifar100_resnet56_gra_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar100_resnet56_gra_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:47.966244",
+    "experiment_id": "fig3_cifar100_resnet56_l1_0.3",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar100_resnet56_l1_0.3\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:48.025130",
+    "experiment_id": "fig3_cifar100_resnet56_gra_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar100_resnet56_gra_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:51.401299",
+    "experiment_id": "fig3_cifar100_resnet56_l1_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar100_resnet56_l1_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:51.445049",
+    "experiment_id": "fig3_cifar100_resnet56_l1_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar100_resnet56_l1_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:54.881813",
+    "experiment_id": "fig3_cifar100_resnet56_fpgm_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar100_resnet56_fpgm_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:54.965762",
+    "experiment_id": "fig3_cifar100_resnet56_fpgm_0.3",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar100_resnet56_fpgm_0.3\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:58.248395",
+    "experiment_id": "fig3_cifar100_resnet56_fpgm_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar100_resnet56_fpgm_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:53:58.317853",
+    "experiment_id": "fig3_cifar100_resnet56_hrank_0.3",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar100_resnet56_hrank_0.3\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:01.607410",
+    "experiment_id": "fig3_cifar100_resnet56_hrank_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar100_resnet56_hrank_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:01.637018",
+    "experiment_id": "fig3_cifar100_resnet56_hrank_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar100_resnet56_hrank_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:05.009709",
+    "experiment_id": "fig3_cifar100_resnet110_gra_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar100_resnet110_gra_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:05.140119",
+    "experiment_id": "fig3_cifar100_resnet110_gra_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar100_resnet110_gra_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:08.463604",
+    "experiment_id": "fig3_cifar100_resnet110_l1_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar100_resnet110_l1_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:08.514820",
+    "experiment_id": "fig3_cifar100_resnet110_l1_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar100_resnet110_l1_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:11.900854",
+    "experiment_id": "fig3_cifar100_resnet110_fpgm_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar100_resnet110_fpgm_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:11.947900",
+    "experiment_id": "fig3_cifar100_resnet110_fpgm_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig3_cifar100_resnet110_fpgm_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:15.392669",
+    "experiment_id": "fig4_cifar10_resnet56_gra_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig4_cifar10_resnet56_gra_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:15.410736",
+    "experiment_id": "fig4_cifar10_resnet56_gra_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig4_cifar10_resnet56_gra_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:18.814231",
+    "experiment_id": "fig4_cifar10_resnet56_l1_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig4_cifar10_resnet56_l1_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:18.919992",
+    "experiment_id": "fig4_cifar10_resnet56_l1_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig4_cifar10_resnet56_l1_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:22.251050",
+    "experiment_id": "fig4_cifar10_resnet56_fpgm_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig4_cifar10_resnet56_fpgm_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:22.312168",
+    "experiment_id": "fig4_cifar10_resnet56_fpgm_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig4_cifar10_resnet56_fpgm_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:25.802494",
+    "experiment_id": "fig4_cifar10_resnet56_hrank_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig4_cifar10_resnet56_hrank_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:25.855051",
+    "experiment_id": "fig4_cifar10_resnet56_hrank_0.7",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig4_cifar10_resnet56_hrank_0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:29.303400",
+    "experiment_id": "fig4_cifar100_resnet56_gra_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig4_cifar100_resnet56_gra_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:29.368446",
+    "experiment_id": "fig4_cifar100_resnet56_l1_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig4_cifar100_resnet56_l1_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:32.764217",
+    "experiment_id": "fig4_cifar100_resnet56_fpgm_0.5",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig4_cifar100_resnet56_fpgm_0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:36.203618",
+    "experiment_id": "fig5_cifar10_resnet56_rho01",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig5_cifar10_resnet56_rho01 --rho 0.1\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:36.227180",
+    "experiment_id": "fig5_cifar10_resnet56_rho02",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig5_cifar10_resnet56_rho02 --rho 0.2\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:39.759082",
+    "experiment_id": "fig5_cifar10_resnet56_rho04",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig5_cifar10_resnet56_rho04 --rho 0.4\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:39.825110",
+    "experiment_id": "fig5_cifar10_resnet56_rho03",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig5_cifar10_resnet56_rho03 --rho 0.3\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:43.305142",
+    "experiment_id": "fig5_cifar10_resnet56_rho045",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig5_cifar10_resnet56_rho045 --rho 0.45\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:43.413619",
+    "experiment_id": "fig5_cifar10_resnet56_rho05",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig5_cifar10_resnet56_rho05 --rho 0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:46.658820",
+    "experiment_id": "fig5_cifar10_resnet56_rho055",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig5_cifar10_resnet56_rho055 --rho 0.55\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:46.711136",
+    "experiment_id": "fig5_cifar10_resnet56_rho06",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig5_cifar10_resnet56_rho06 --rho 0.6\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:50.159605",
+    "experiment_id": "fig5_cifar10_resnet56_rho08",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig5_cifar10_resnet56_rho08 --rho 0.8\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:50.205764",
+    "experiment_id": "fig5_cifar10_resnet56_rho07",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig5_cifar10_resnet56_rho07 --rho 0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:53.699125",
+    "experiment_id": "fig5_cifar100_resnet56_rho01",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig5_cifar100_resnet56_rho01 --rho 0.1\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:53.717063",
+    "experiment_id": "fig5_cifar10_resnet56_rho09",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig5_cifar10_resnet56_rho09 --rho 0.9\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:57.165135",
+    "experiment_id": "fig5_cifar100_resnet56_rho02",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig5_cifar100_resnet56_rho02 --rho 0.2\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:54:57.242855",
+    "experiment_id": "fig5_cifar100_resnet56_rho03",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig5_cifar100_resnet56_rho03 --rho 0.3\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:55:00.618142",
+    "experiment_id": "fig5_cifar100_resnet56_rho04",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig5_cifar100_resnet56_rho04 --rho 0.4\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:55:00.643619",
+    "experiment_id": "fig5_cifar100_resnet56_rho045",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig5_cifar100_resnet56_rho045 --rho 0.45\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:55:04.121909",
+    "experiment_id": "fig5_cifar100_resnet56_rho055",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig5_cifar100_resnet56_rho055 --rho 0.55\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:55:04.160095",
+    "experiment_id": "fig5_cifar100_resnet56_rho05",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig5_cifar100_resnet56_rho05 --rho 0.5\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:55:07.665312",
+    "experiment_id": "fig5_cifar100_resnet56_rho06",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig5_cifar100_resnet56_rho06 --rho 0.6\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:55:07.716450",
+    "experiment_id": "fig5_cifar100_resnet56_rho07",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig5_cifar100_resnet56_rho07 --rho 0.7\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:55:11.272231",
+    "experiment_id": "fig5_cifar100_resnet56_rho09",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig5_cifar100_resnet56_rho09 --rho 0.9\n"
+  },
+  {
+    "timestamp": "2026-01-19T01:55:11.364029",
+    "experiment_id": "fig5_cifar100_resnet56_rho08",
+    "error": "Exit code 2",
+    "traceback": "usage: run_real_pruning.py [-h] [--arch ARCH] [--dataset DATASET]\n                           [--method METHOD] [--ratio RATIO] [--epochs EPOCHS]\n                           [--batch]\nrun_real_pruning.py: error: unrecognized arguments: --output-dir C:\\GRA-CNN\\experiments\\overnight_enhanced\\fig5_cifar100_resnet56_rho08 --rho 0.8\n"
+  }
+]
