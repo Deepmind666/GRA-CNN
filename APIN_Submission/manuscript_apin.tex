@@ -331,7 +331,7 @@ Specifically, the quadrant analysis (High GRA, Low L1) highlights channels that 
 \begin{figure}[t!]
 \centering
 \includegraphics[width=0.95\textwidth]{fig_orthogonality.pdf}
-\caption{Cross-metric correlation analysis between L1-Norm (structural) and GRA score (semantic) on ResNet-56. Each point represents a single convolutional channel. The near-zero Pearson correlation coefficient ($r = 0.015$) indicates that the two metrics are nearly orthogonal. The quadrant analysis reveals 28\% of channels as ``hidden semantic'' (Low L1, High GRA) that would be incorrectly pruned by magnitude-based methods, and 22\% as ``false positives'' (High L1, Low GRA) that would be incorrectly preserved.}
+\caption{Comprehensive cross-metric correlation analysis between L1-Norm (structural) and GRA score (semantic) across 4 configurations: ResNet-20 and ResNet-56 on CIFAR-10 and CIFAR-100. Each scatter plot shows all channels ($n=5824$ total). The near-zero Pearson correlation across all configurations (Mean $r = 0.007$, Max $|r| < 0.04$) demonstrates that the two metrics are nearly orthogonal regardless of architecture or dataset complexity. This strongly supports our hypothesis that weight magnitude does not equal semantic importance.}
 \label{fig:correlation}
 \end{figure}
 
