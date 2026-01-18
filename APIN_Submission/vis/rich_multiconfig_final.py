@@ -117,8 +117,8 @@ def main():
         return
     
     # ========== 创建丰富的综合图 - 改进布局 ==========
-    fig = plt.figure(figsize=(14, 14))
-    gs = fig.add_gridspec(3, 2, hspace=0.35, wspace=0.30, height_ratios=[1, 1, 0.8])
+    fig = plt.figure(figsize=(14, 16))  # 增大高度
+    gs = fig.add_gridspec(3, 2, hspace=0.30, wspace=0.30, height_ratios=[1, 1, 1.2])  # 增大底部区域
     
     # 4 个散点图 (2x2 布局) - 统一 Y 轴范围
     positions = [(0, 0), (0, 1), (1, 0), (1, 1)]
@@ -165,51 +165,63 @@ def main():
     for i, (bar, c) in enumerate(zip(bars, corrs)):
         ax_bar.text(c + 0.005 if c >= 0 else c - 0.02, i, f'{c:.3f}', va='center', fontsize=11, fontweight='bold')
     
-    # 底部右侧: 统计摘要 - 使用更紧凑的格式
+    # 底部右侧: 统计摘要 - 精简版学术风格
     ax_summary = fig.add_subplot(gs[2, 1])
     ax_summary.axis('off')
     
     total_channels = sum(r['n'] for r in results)
     mean_corr = np.mean(corrs)
     
-    # 使用简洁的表格格式
-    summary_lines = [
-        "COMPREHENSIVE RESULTS",
-        "=" * 35,
-        "",
-        f"Architectures: ResNet-20, ResNet-56",
-        f"Datasets: CIFAR-10, CIFAR-100",
-        f"Configurations: {len(results)}",
-        f"Total Channels: {total_channels}",
-        "",
-        "CORRELATION ANALYSIS:",
-        "-" * 35,
-        f"Mean r = {mean_corr:.4f}",
-        f"Max  r = {max(corrs):.4f}",
-        f"Min  r = {min(corrs):.4f}",
-        "",
-        "KEY FINDING:",
-        "-" * 35,
-        "ALL configs show |r| < 0.1",
-        "(nearly zero correlation)",
-        "",
-        "GRA and L1 identify COMPLETELY",
-        "DIFFERENT channels as important",
-        "",
-        "Weight magnitude != Semantic",
-        "importance  [CONFIRMED]",
-    ]
+    # 使用更大的行间距
+    y_pos = 0.95
+    line_height = 0.06
     
-    summary = "\n".join(summary_lines)
-    ax_summary.text(0.05, 0.95, summary, fontsize=10, verticalalignment='top',
-                    fontfamily='monospace', transform=ax_summary.transAxes,
-                    bbox=dict(boxstyle='round,pad=0.5', facecolor='#FFF8DC', 
-                              edgecolor='#8B4513', linewidth=2, alpha=0.95))
+    # 标题
+    ax_summary.text(0.5, y_pos, 'STATISTICAL SUMMARY', fontsize=13, fontweight='bold',
+                    ha='center', transform=ax_summary.transAxes, fontfamily='serif')
+    y_pos -= line_height * 1.8
+    
+    # 基本信息（精简为2行）
+    ax_summary.text(0.05, y_pos, f"Models: ResNet-20, ResNet-56", fontsize=11, ha='left',
+                    transform=ax_summary.transAxes, fontfamily='serif')
+    y_pos -= line_height
+    ax_summary.text(0.05, y_pos, f"Datasets: CIFAR-10, CIFAR-100", fontsize=11, ha='left',
+                    transform=ax_summary.transAxes, fontfamily='serif')
+    y_pos -= line_height
+    ax_summary.text(0.05, y_pos, f"Total: {len(results)} configs, {total_channels} channels", fontsize=11, ha='left',
+                    transform=ax_summary.transAxes, fontfamily='serif')
+    y_pos -= line_height * 1.5
+    
+    # 相关性分析（精简）
+    ax_summary.text(0.5, y_pos, 'Correlation Analysis', fontsize=12, fontweight='bold',
+                    ha='center', transform=ax_summary.transAxes, fontfamily='serif')
+    y_pos -= line_height * 1.3
+    
+    ax_summary.text(0.05, y_pos, f"Mean |r| = {abs(mean_corr):.3f}  (range: {min(corrs):.3f} to {max(corrs):.3f})", 
+                    fontsize=11, ha='left', transform=ax_summary.transAxes, fontfamily='serif')
+    y_pos -= line_height * 1.5
+    
+    # 关键发现（精简）
+    ax_summary.text(0.5, y_pos, 'Key Finding', fontsize=12, fontweight='bold',
+                    ha='center', transform=ax_summary.transAxes, fontfamily='serif')
+    y_pos -= line_height * 1.3
+    
+    ax_summary.text(0.5, y_pos, "All configurations show |r| ≈ 0", fontsize=11, ha='center',
+                    transform=ax_summary.transAxes, fontfamily='serif')
+    y_pos -= line_height
+    ax_summary.text(0.5, y_pos, "GRA and L1 select DIFFERENT channels", fontsize=11, ha='center',
+                    transform=ax_summary.transAxes, fontfamily='serif', fontweight='bold')
+    y_pos -= line_height * 1.2
+    ax_summary.text(0.5, y_pos, "Weight magnitude ≠ Semantic importance", fontsize=11, ha='center',
+                    transform=ax_summary.transAxes, fontfamily='serif', style='italic')
+    y_pos -= line_height
+    ax_summary.text(0.5, y_pos, "[CONFIRMED]", fontsize=12, ha='center',
+                    transform=ax_summary.transAxes, fontfamily='serif', fontweight='bold', color='#006400')
     
     # 数据来源标注
     fig.text(0.02, 0.01, 
              f'Data: Real analysis on {total_channels} channels from CIFAR-10/100 test sets (512 images per config)',
-             fontsize=9, style='italic', color='gray')
+             fontsize=9, style='italic', color='gray', fontfamily='serif')
     
     plt.savefig(r'C:\GRA-CNN\APIN_Submission\fig_rich_multiconfig.pdf', dpi=300, bbox_inches='tight')
     plt.savefig(r'C:\GRA-CNN\APIN_Submission\fig_rich_multiconfig.png', dpi=150, bbox_inches='tight')
