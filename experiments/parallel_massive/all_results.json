@@ -1,0 +1,192 @@
+[
+  {
+    "id": "cifar10_resnet20_gra_0.7",
+    "status": "error",
+    "error": "Command '['C:\\\\Users\\\\admin\\\\anaconda3\\\\envs\\\\pyt-sm12-build\\\\python.exe', 'C:\\\\GRA-CNN\\\\experiments\\\\run_real_pruning.py', '--arch', 'ResNet-20', '--dataset', 'CIFAR-10', '--method', 'GRA', '--ratio', '0.7', '--epochs', '30']' timed out after 3600 seconds"
+  },
+  {
+    "id": "cifar10_resnet20_l1_0.3",
+    "status": "error",
+    "error": "Command '['C:\\\\Users\\\\admin\\\\anaconda3\\\\envs\\\\pyt-sm12-build\\\\python.exe', 'C:\\\\GRA-CNN\\\\experiments\\\\run_real_pruning.py', '--arch', 'ResNet-20', '--dataset', 'CIFAR-10', '--method', 'L1', '--ratio', '0.3', '--epochs', '30']' timed out after 3600 seconds"
+  },
+  {
+    "id": "cifar10_resnet20_gra_0.5",
+    "status": "error",
+    "error": "Command '['C:\\\\Users\\\\admin\\\\anaconda3\\\\envs\\\\pyt-sm12-build\\\\python.exe', 'C:\\\\GRA-CNN\\\\experiments\\\\run_real_pruning.py', '--arch', 'ResNet-20', '--dataset', 'CIFAR-10', '--method', 'GRA', '--ratio', '0.5', '--epochs', '30']' timed out after 3600 seconds"
+  },
+  {
+    "id": "cifar10_resnet20_gra_0.3",
+    "status": "error",
+    "error": "Command '['C:\\\\Users\\\\admin\\\\anaconda3\\\\envs\\\\pyt-sm12-build\\\\python.exe', 'C:\\\\GRA-CNN\\\\experiments\\\\run_real_pruning.py', '--arch', 'ResNet-20', '--dataset', 'CIFAR-10', '--method', 'GRA', '--ratio', '0.3', '--epochs', '30']' timed out after 3600 seconds"
+  },
+  {
+    "id": "cifar10_resnet20_l1_0.5",
+    "status": "success",
+    "time": 1328.990752696991
+  },
+  {
+    "id": "cifar10_resnet20_l1_0.7",
+    "status": "success",
+    "time": 1328.121163368225
+  },
+  {
+    "id": "cifar10_resnet20_fpgm_0.5",
+    "status": "success",
+    "time": 1336.6713690757751
+  },
+  {
+    "id": "cifar10_resnet56_gra_0.3",
+    "status": "success",
+    "time": 1634.6762127876282
+  },
+  {
+    "id": "cifar10_resnet56_gra_0.4",
+    "status": "success",
+    "time": 1480.0627372264862
+  },
+  {
+    "id": "cifar10_resnet56_gra_0.5",
+    "status": "success",
+    "time": 1495.4712657928467
+  },
+  {
+    "id": "cifar10_resnet56_gra_0.6",
+    "status": "success",
+    "time": 1492.2164406776428
+  },
+  {
+    "id": "cifar10_resnet56_gra_0.7",
+    "status": "success",
+    "time": 1539.2361164093018
+  },
+  {
+    "id": "cifar10_resnet56_l1_0.3",
+    "status": "success",
+    "time": 1629.364984035492
+  },
+  {
+    "id": "cifar10_resnet56_l1_0.4",
+    "status": "success",
+    "time": 1603.5858511924744
+  },
+  {
+    "id": "cifar10_resnet56_l1_0.5",
+    "status": "success",
+    "time": 1606.5081174373627
+  },
+  {
+    "id": "cifar10_resnet56_l1_0.6",
+    "status": "success",
+    "time": 1618.088882446289
+  },
+  {
+    "id": "cifar10_resnet56_l1_0.7",
+    "status": "success",
+    "time": 1624.5076882839203
+  },
+  {
+    "id": "cifar10_resnet56_fpgm_0.3",
+    "status": "success",
+    "time": 1661.0871098041534
+  },
+  {
+    "id": "cifar10_resnet56_fpgm_0.5",
+    "status": "success",
+    "time": 1656.6507983207703
+  },
+  {
+    "id": "cifar10_resnet56_fpgm_0.7",
+    "status": "success",
+    "time": 1568.2688694000244
+  },
+  {
+    "id": "cifar10_vgg16_gra_0.3",
+    "status": "success",
+    "time": 1041.9013504981995
+  },
+  {
+    "id": "cifar10_resnet110_gra_0.5",
+    "status": "success",
+    "time": 2284.1374335289
+  },
+  {
+    "id": "cifar10_resnet110_l1_0.5",
+    "status": "success",
+    "time": 2256.292959690094
+  },
+  {
+    "id": "cifar10_resnet110_fpgm_0.5",
+    "status": "success",
+    "time": 2253.6699805259705
+  },
+  {
+    "id": "cifar10_vgg16_gra_0.5",
+    "status": "success",
+    "time": 1054.3445100784302
+  },
+  {
+    "id": "cifar10_vgg16_l1_0.5",
+    "status": "success",
+    "time": 998.9246594905853
+  },
+  {
+    "id": "cifar10_vgg16_fpgm_0.5",
+    "status": "success",
+    "time": 1022.0049002170563
+  },
+  {
+    "id": "cifar10_vgg16_gra_0.7",
+    "status": "success",
+    "time": 1039.7578194141388
+  },
+  {
+    "id": "cifar100_resnet20_gra_0.5",
+    "status": "success",
+    "time": 1080.3713750839233
+  },
+  {
+    "id": "cifar100_resnet20_l1_0.5",
+    "status": "success",
+    "time": 1129.4408757686615
+  },
+  {
+    "id": "cifar100_resnet56_gra_0.3",
+    "status": "success",
+    "time": 1563.7190890312195
+  },
+  {
+    "id": "cifar100_resnet56_gra_0.5",
+    "status": "success",
+    "time": 1592.9120330810547
+  },
+  {
+    "id": "cifar100_resnet56_gra_0.7",
+    "status": "success",
+    "time": 1578.011577129364
+  },
+  {
+    "id": "cifar100_resnet56_l1_0.3",
+    "status": "success",
+    "time": 1531.3137669563293
+  },
+  {
+    "id": "cifar100_resnet56_l1_0.5",
+    "status": "success",
+    "time": 1513.441021680832
+  },
+  {
+    "id": "cifar100_resnet56_l1_0.7",
+    "status": "success",
+    "time": 1492.5081458091736
+  },
+  {
+    "id": "cifar100_resnet56_fpgm_0.5",
+    "status": "success",
+    "time": 1494.982697725296
+  },
+  {
+    "id": "cifar100_resnet110_gra_0.5",
+    "status": "success",
+    "time": 1712.1252014636993
+  }
+]

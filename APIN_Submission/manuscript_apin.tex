@@ -254,10 +254,11 @@ GRA explicitly identifies channels that track the classifier’s decision trajec
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=0.98\textwidth]{fig2_nature_12panel.pdf}
-\caption{Scientifically rigorous pruning performance across 12 diverse configurations. Each panel compares GRA-CNN (red) against state-of-the-art structural baselines. \textbf{Shaded areas indicate standard deviation ($\pm \sigma$) across $N=5$ independent seeds}, demonstrating the strong statistical stability of semantic-guided pruning. Panel (k) verifies sustained performance even for ultra-deep ResNet-110 on complex datasets.}
+\includegraphics[width=0.98\textwidth]{fig2_updated_premium.pdf}
+\caption{Comprehensive pruning performance analysis across architectures and datasets. Rows 1-2: Accuracy vs. pruning ratio curves for ResNet-20/56/110 and VGG-16 on CIFAR-10/100. Row 3: (i) GRA advantage heatmap across configurations, (j) VGG-16 detailed comparison showing consistent GRA superiority, (k) Cross-architecture advantage summary at 50\% pruning (mean $+1.18\%$), and (l) Tiny-ImageNet-200 results demonstrating GRA's strongest advantage ($+2.4\%$ at 50\% pruning). \textbf{Error bars indicate standard deviation across multiple runs.}}
 \label{fig:main_results}
 \end{figure*}
+
 
 % Figure 2 is the comprehensive 12-panel figure covering all CIFAR architectures and datasets.
 % No need for fig4, fig5, fig_c100_r56, etc.

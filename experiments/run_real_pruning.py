@@ -129,7 +129,13 @@ def compute_l1_scores(model):
     return scores
 
 def compute_gra_scores(model, dataloader, num_batches=5, rho=0.5):
-    """GRA: 灰色关联分析"""
+    """
+    GRA: 灰色关联分析 (修正版)
+    
+    关键修复：
+    1. 使用 Min-Max 标准化（而非 Z-score）
+    2. 使用正确类别的 logit 作为参考序列（而非 max logit）
+    """
     model.eval()
     activations = {}
     hooks = []
@@ -148,35 +154,43 @@ def compute_gra_scores(model, dataloader, num_batches=5, rho=0.5):
             hooks.append(module.register_forward_hook(hook_fn(name)))
     
     logits_list = []
+    targets_list = []
     with torch.no_grad():
         for i, (inputs, targets) in enumerate(dataloader):
             if i >= num_batches:
                 break
             inputs = inputs.to(DEVICE)
+            targets = targets.to(DEVICE)
             outputs = model(inputs)
             logits_list.append(outputs.detach())
+            targets_list.append(targets.detach())
     
     for h in hooks:
         h.remove()
     
     # 计算GRA分数
     all_logits = torch.cat(logits_list, dim=0)  # (N, num_classes)
+    all_targets = torch.cat(targets_list, dim=0)  # (N,)
     
     scores = {}
     for name, act_list in activations.items():
         all_acts = torch.cat(act_list, dim=0)  # (N, C)
         C = all_acts.size(1)
         
-        # 参考序列: 正确类别的logit值 (简化版本用最大logit)
-        ref = all_logits.max(dim=1)[0]  # (N,)
+        # 修复1: 使用正确类别的logit作为参考序列
+        ref = all_logits.gather(1, all_targets.view(-1, 1)).squeeze()  # (N,)
+        
+        # 修复2: 使用 Min-Max 标准化
+        ref_min, ref_max = ref.min(), ref.max()
+        ref_norm = (ref - ref_min) / (ref_max - ref_min + 1e-8)
         
         channel_scores = []
         for c in range(C):
             act_c = all_acts[:, c]  # (N,)
             
-            # 标准化
-            act_norm = (act_c - act_c.mean()) / (act_c.std() + 1e-8)
-            ref_norm = (ref - ref.mean()) / (ref.std() + 1e-8)
+            # Min-Max 标准化
+            act_min, act_max = act_c.min(), act_c.max()
+            act_norm = (act_c - act_min) / (act_max - act_min + 1e-8)
             
             # 计算差值
             delta = (act_norm - ref_norm).abs()

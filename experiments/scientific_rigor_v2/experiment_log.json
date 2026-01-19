@@ -1,0 +1,291 @@
+[
+  {
+    "time": "2026-01-19T02:06:44.893171",
+    "msg": "科学严谨性补充实验启动 @ 02:06:44",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T02:06:44.895183",
+    "msg": "共 18 个实验 (全部基于明确理论依据)",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T02:06:44.895692",
+    "msg": "开始: cifar10_resnet56_gra_0.5",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T02:46:25.001951",
+    "msg": "成功: cifar10_resnet56_gra_0.5 (39.7min)",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T02:46:25.016859",
+    "msg": "进度: 1/18, 成功率: 1/1",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T02:46:25.093455",
+    "msg": "开始: cifar10_resnet56_l1_0.5",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T04:02:09.995696",
+    "msg": "成功: cifar10_resnet56_l1_0.5 (75.7min)",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T04:02:09.996730",
+    "msg": "进度: 2/18, 成功率: 2/2",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T04:02:09.997258",
+    "msg": "开始: cifar10_resnet56_fpgm_0.5",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T04:35:51.280402",
+    "msg": "成功: cifar10_resnet56_fpgm_0.5 (33.7min)",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T04:35:51.280906",
+    "msg": "进度: 3/18, 成功率: 3/3",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T04:35:51.281911",
+    "msg": "开始: cifar100_resnet56_gra_0.5",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T05:12:41.006089",
+    "msg": "成功: cifar100_resnet56_gra_0.5 (36.8min)",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T05:12:41.007093",
+    "msg": "进度: 4/18, 成功率: 4/4",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T05:12:41.007597",
+    "msg": "开始: cifar10_resnet20_gra_0.5",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T05:38:09.437015",
+    "msg": "成功: cifar10_resnet20_gra_0.5 (25.5min)",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T05:38:09.438019",
+    "msg": "进度: 5/18, 成功率: 5/5",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T05:38:09.438522",
+    "msg": "开始: cifar10_resnet110_gra_0.5",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T06:21:04.787765",
+    "msg": "成功: cifar10_resnet110_gra_0.5 (42.9min)",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T06:21:04.788279",
+    "msg": "进度: 6/18, 成功率: 6/6",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T06:21:04.789304",
+    "msg": "开始: cifar10_vgg16_gra_0.5",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T06:43:08.027984",
+    "msg": "成功: cifar10_vgg16_gra_0.5 (22.1min)",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T06:43:08.027984",
+    "msg": "进度: 7/18, 成功率: 7/7",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T06:43:08.029529",
+    "msg": "开始: cifar10_vgg16_l1_0.5",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T07:04:37.041188",
+    "msg": "成功: cifar10_vgg16_l1_0.5 (21.5min)",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T07:04:37.042836",
+    "msg": "进度: 8/18, 成功率: 8/8",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T07:04:37.042836",
+    "msg": "开始: cifar10_resnet56_gra_0.4",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T07:30:33.015994",
+    "msg": "成功: cifar10_resnet56_gra_0.4 (25.9min)",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T07:30:33.016540",
+    "msg": "进度: 9/18, 成功率: 9/9",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T07:30:33.017049",
+    "msg": "开始: cifar10_resnet56_gra_0.6",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T07:54:24.910618",
+    "msg": "成功: cifar10_resnet56_gra_0.6 (23.9min)",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T07:54:24.911127",
+    "msg": "进度: 10/18, 成功率: 10/10",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T07:54:24.911673",
+    "msg": "开始: cifar10_resnet56_l1_0.4",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T08:17:57.810156",
+    "msg": "成功: cifar10_resnet56_l1_0.4 (23.5min)",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T08:17:57.810673",
+    "msg": "进度: 11/18, 成功率: 11/11",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T08:17:57.811914",
+    "msg": "开始: cifar10_resnet56_l1_0.6",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T10:18:02.688455",
+    "msg": "异常: cifar10_resnet56_l1_0.6",
+    "data": {
+      "error": "Command '['C:\\\\Users\\\\admin\\\\anaconda3\\\\envs\\\\pyt-sm12-build\\\\python.exe', 'C:\\\\GRA-CNN\\\\experiments\\\\run_real_pruning.py', '--arch', 'ResNet-56', '--dataset', 'CIFAR-10', '--method', 'L1', '--ratio', '0.6', '--epochs', '40']' timed out after 7200 seconds"
+    }
+  },
+  {
+    "time": "2026-01-19T10:18:02.689960",
+    "msg": "进度: 12/18, 成功率: 11/12",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T10:18:02.690610",
+    "msg": "开始: cifar10_resnet56_fpgm_0.4",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T10:48:23.295106",
+    "msg": "成功: cifar10_resnet56_fpgm_0.4 (30.3min)",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T10:48:23.296126",
+    "msg": "进度: 13/18, 成功率: 12/13",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T10:48:23.297130",
+    "msg": "开始: cifar10_resnet56_fpgm_0.6",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T11:21:02.122065",
+    "msg": "成功: cifar10_resnet56_fpgm_0.6 (32.6min)",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T11:21:02.123102",
+    "msg": "进度: 14/18, 成功率: 13/14",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T11:21:02.123102",
+    "msg": "开始: cifar100_resnet56_l1_0.5",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T11:50:49.834537",
+    "msg": "成功: cifar100_resnet56_l1_0.5 (29.8min)",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T11:50:49.835059",
+    "msg": "进度: 15/18, 成功率: 14/15",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T11:50:49.836095",
+    "msg": "开始: cifar100_resnet56_fpgm_0.5",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T11:50:52.249836",
+    "msg": "失败: cifar100_resnet56_fpgm_0.5",
+    "data": {
+      "error": "Traceback (most recent call last):\n  File \"C:\\GRA-CNN\\experiments\\run_real_pruning.py\", line 17, in <module>\n    import torch\n  File \"C:\\Users\\admin\\anaconda3\\envs\\pyt-sm12-build\\Lib\\site-packages\\torch\\__init__.py\", line 281, in <module>\n    _load_dll_libraries()\n  File \"C:\\Users\\admin\\anaconda3\\en"
+    }
+  },
+  {
+    "time": "2026-01-19T11:50:52.250358",
+    "msg": "进度: 16/18, 成功率: 14/16",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T11:50:52.251489",
+    "msg": "开始: cifar100_resnet56_gra_0.3",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T12:25:49.006626",
+    "msg": "成功: cifar100_resnet56_gra_0.3 (34.9min)",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T12:25:49.007133",
+    "msg": "进度: 17/18, 成功率: 15/17",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T12:25:49.008638",
+    "msg": "开始: cifar100_resnet56_gra_0.7",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T13:01:04.650745",
+    "msg": "成功: cifar100_resnet56_gra_0.7 (35.3min)",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T13:01:04.651763",
+    "msg": "进度: 18/18, 成功率: 16/18",
+    "data": null
+  },
+  {
+    "time": "2026-01-19T13:01:04.653294",
+    "msg": "完成! 成功率: 88.9%",
+    "data": null
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "start": "2026-01-19T02:31:52.380607",
+  "end": "2026-01-19T07:20:47.036904",
+  "elapsed_hours": 4.82,
+  "total": 38,
+  "success": 34,
+  "rate": "89.5%",
+  "parallel_workers": 4
+}
