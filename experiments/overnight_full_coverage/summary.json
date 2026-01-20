@@ -1,0 +1,10 @@
+{
+  "start_time": "2026-01-19T23:06:08.593730",
+  "end_time": "2026-01-20T15:21:43.160019",
+  "elapsed_hours": 16.26,
+  "total_experiments": 120,
+  "successful": 115,
+  "failed": 5,
+  "success_rate": "95.8%",
+  "parallel_workers": 4
+}
