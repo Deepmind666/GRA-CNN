@@ -51,11 +51,11 @@ A parallel thread explores \emph{global relation modeling}, seeking higher-order
 
 
 \vspace{0.5em}
-Surprisingly, despite extensive pruning research, this \emph{sequence-level semantic alignment} has not been exploited. This represents what we define as the \textbf{Semantic Paradox} in model compression: channels with large weight magnitudes may encode redundant structural patterns (e.g., background textures), while low-activation channels often preserve critical, fine-grained semantic signals necessary for robust classification.
+Surprisingly, despite extensive pruning research, this \emph{sequence-level semantic alignment} has not been exploited. We define this discrepancy as the \textbf{Semantic Paradox} in model compression: a channel with high weight energy may encode redundant structural patterns (e.g., background textures), while a seemingly "weak" channel with modest activations may preserve critical, fine-grained semantic signals necessary for decision-making. 
 
 \vspace{0.5em}
 \noindent\textbf{Our idea: semantic relational pruning through Gray Relational Analysis.}  
-We propose \textbf{GRA-CNN}, a new pruning framework that evaluates each channel using \emph{Gray Relational Analysis} (GRA), a classical tool for comparing relational similarity between temporal sequences. Guided by the \textbf{Information Bottleneck} framework, we reinterpret a channel activation map as a sequence over a mini-batch and compare it with the true-class logit sequence. This produces a \emph{semantic importance score} indicating how well the channel’s behavior aligns with the final decision process.
+We propose \textbf{GRA-CNN}, a comprehensive pruning framework that identifies \textbf{semantic filters} by evaluating the functional coupling between internal representations and decision-level output logits. Unlike previous methods, our framework treats each filter as an information-carrying sequence and utilizes \textbf{Gray Relational Analysis (GRA)}—a tool from grey system theory designed for trend-based similarity—to measure how well a channel's behavior aligns with the network's reasoning trajectory.
 
 Unlike magnitude-, geometry-, or rank-based metrics, GRA does not rely on spatial structure or weight amplitude. Instead, it quantifies the \emph{functional coupling} between internal representations and semantic outputs. This yields a pruning criterion that is:
 \begin{itemize}
@@ -99,7 +99,7 @@ Early pruning methods rely on local statistics of weights or activations. Magnit
 To capture inter-channel dependencies, recent works have explored global modeling. ACP~\cite{chang2022acp} uses clustering and swarm intelligence to search for optimal pruning configurations. More recently, Dong et al.~\cite{dong2024closeness} introduced closeness centrality from graph theory to identify redundant channels, while Xue et al.~\cite{xue2024rsga} proposed reverse search genetic algorithms for automatic layer-wise pruning. Dynamic pruning methods~\cite{hu2023dynamic_pruning,chen2021dynamical} and GCN-based approaches~\cite{jiang2022channel} model channel relationships using graphs or attention mechanisms~\cite{cheng2023differentiable}. Automated methods like ACPLI~\cite{treszczotko2021acpli} learn importance scores end-to-end. \textbf{DepGraph}~\cite{fang2023depgraph}, a landmark work in CVPR 2023, resolves structural dependency issues in any network through dependency graph analysis, enabling truly general-purpose structured pruning. While these methods capture higher-order interactions, they often introduce significant computational overhead and complex hyperparameter tuning. Our GRA-CNN offers a simpler, lightweight alternative by directly measuring semantic alignment without complex graph construction.
 
 \subsection{Semantic and Information-Theoretic Metrics}
-The frontier of pruning research focuses on aligning channel selection with semantic information. Information-theoretic approaches use Mutual Information (MI)~\cite{lu2024enhancing}, Conditional MI~\cite{vuvan2024pruning}, or Information Bottleneck principles~\cite{mip2024mutual,dutta2024structured} to measure the information flow from input to output. ITPCC~\cite{rostami2025information} considers the coupled information of channel groups. While theoretically rigorous, estimating MI in high-dimensional spaces is computationally expensive and sensitive to estimation bias.
+The frontier of pruning research focuses on aligning channel selection with semantic information. \textbf{X-Pruner}~\cite{yu2023xpruner} (ICCV 2023) utilizes explainable units to measure the contribution of channels to specific classes. Information-theoretic approaches use Mutual Information (MI)~\cite{lu2024enhancing}, Conditional MI~\cite{vuvan2024pruning}, or Information Bottleneck principles~\cite{mip2024mutual,dutta2024structured} to measure the information flow from input to output. ITPCC~\cite{rostami2025information} considers the coupled information of channel groups. While theoretically rigorous, estimating MI in high-dimensional spaces is computationally expensive and sensitive to estimation bias. Our relational approach via GRA offers a efficient surrogate that captures trend-based semantic alignment without requiring explicit probability density estimation.
 
 \subsection{Gray Relational Analysis in Deep Learning}
 Gray Relational Analysis (GRA)~\cite{deng1989gra} is a robust method for analyzing relationships in systems with uncertain or partial information. It has been successfully applied to medical image classification~\cite{pal2021improved} and industrial optimization~\cite{wang2024integration,hamdi2023application}. Notably, Xiao et al.~\cite{xiao2021novel} combined deep autoencoders with GRA for bridge damage diagnosis, serving as a direct engineering instance of integrating GRA with deep learning frameworks. These applications demonstrate GRA's ability to handle complex, non-linear dependencies in data. Inspired by this, GRA-CNN adapts GRA to quantify the semantic alignment between feature maps and logic outputs, offering a computationally efficient alternative to heavy information-theoretic metrics.
@@ -141,25 +141,39 @@ where $\Delta_{\min}$ and $\Delta_{\max}$ are the minimum and maximum deviations
 
 \noindent\textbf{Definition: Semantic Alignment.} We define \emph{semantic alignment} as the degree of directional trend-based similarity between a channel's activation sequence and the network's final output logits across a diverse mini-batch of inputs. High alignment suggests the channel encodes features that are directly utilized by the classifier for discrimination.
 
+\subsection{A Holistic Relational Metric: GRA-Fisher Fusion}
+While GRA captures decision-level alignment, a truly robust pruning criterion should also consider gradient sensitivity and feature diversity. We extend our framework into a \textbf{Multi-objective Relational Fusion (MORF)} metric that combines four orthogonal importance signals:
+
+\begin{enumerate}
+    \item \textbf{Class-Balanced Fisher Information ($\mathcal{I}_F$):} Measures the sensitivity of the loss landscape to the channel's presence, weighted by class distribution to ensure fairness across minority categories.
+    \item \textbf{Gray Relational Grade ($\gamma_c$):} Captures the semantic alignment between activations and class-specific logits.
+    \item \textbf{Channel Orthogonality ($\mathcal{O}_c$):} Penalizes redundant channels that are highly correlated with others in the same layer, encouraging feature diversity.
+    \item \textbf{Structural Magnitude ($\mathcal{S}_{L1}$):} Incorporates the classical L1-Norm as a base stability term for filtering extremely small weights.
+\end{enumerate}
+
+The final importance score is computed as a weighted fusion:
+\begin{equation}
+\omega_c = \alpha \hat{\mathcal{I}}_F + \beta \hat{\mathcal{O}}_c + \delta \hat{\gamma}_c + \eta \hat{\mathcal{S}}_{L1},
+\label{eq:fusion}
+\end{equation}
+where hats denote min-max normalization within each layer, and coefficients satisfy $\alpha + \beta + \delta + \eta = 1$. In our default configuration, we prioritize semantic signals ($\alpha=0.4, \delta=0.25$) while maintaining structural stability and variety.
+
 \begin{algorithm}[H]
-\caption{GRA-CNN Structured Channel Pruning}
+\caption{GRA-CNN Structured Channel Pruning (Full Framework)}
 \label{alg:gra_pruning}
 \begin{algorithmic}[1]
-\Require Pre-trained model $\mathcal{M}$ with layers $\{L_1, \dots, L_K\}$, mini-batch $\mathcal{D}_B$, pruning ratio $P$, sensitivity $\rho$.
-\Ensure Pruned model $\mathcal{M}'$.
+\Require Pre-trained model $\mathcal{M}$, mini-batch $\mathcal{D}_B$, pruning ratio $P$, fusion coefficients $\{\alpha, \beta, \delta, \eta\}$.
+\Ensure Pruned and fine-tuned model $\mathcal{M}'$.
 \State Forward pass batch $\mathcal{D}_B$ through $\mathcal{M}$;
-\State Collect class logits $z \in \mathbb{R}^{B}$ for ground-truth classes;
+\State Compute Fisher Information $\mathcal{I}_F$ via backpropagation;
+\State Compute Gray Relational Grades $\gamma_c$ via Eq.~\eqref{eq:gra_score};
+\State Compute Channel Orthogonality scores $\mathcal{O}_c$ via activation correlation;
 \For{each convolutional layer $L_k$}
-    \For{each channel $c$ in $L_k$}
-        \State Compute global-pooled activation sequence $a_c = \frac{1}{H \times W} \sum_{h,w} F_{k,c}(h,w)$;
-        \State Normalize $a_c$ and $z$ using min-max scaling to $[0, 1]$;
-        \State Compute relational coefficients $\{\xi_{c}(i)\}_{i=1}^B$ using Eq. (5);
-        \State Compute semantic importance score $\gamma_c$ using Eq. (6);
-    \EndFor
-    \State Rank channels by $\gamma_c$ and identify indices to prune based on $P$;
+    \State Compute fused scores $\omega_c$ via Eq.~\eqref{eq:fusion};
+    \State Normalize $\omega_c$ and identify indices of lowest $P\%$ channels;
+    \State Prune filter weights and resolve structural dependencies (e.g., via DepGraph~\cite{fang2023depgraph});
 \EndFor
-\State Reconstruct $\mathcal{M}'$ by removing identified filters and corresponding input channels in subsequent layers;
-\State Fine-tune $\mathcal{M}'$ to recover accuracy;
+\State Fine-tune $\mathcal{M}'$ to recover performance;
 \end{algorithmic}
 \end{algorithm}
 
@@ -363,6 +377,9 @@ Traditional pruning methods often view channels as discrete storage units that c
 \paragraph{When does GRA help the most?}
 Our experiments show that GRA is particularly effective under high pruning ratios and on datasets with complex semantic structure (e.g., CIFAR-100, Tiny-ImageNet-200). In these settings, structural metrics misinterpret representational redundancy, whereas semantic alignment directly reflects usefulness for discrimination. This observation aligns with the \textbf{Information Bottleneck} theory, suggesting that GRA-CNN successfully identifies and discards features that do not contribute to the mutual information between the network's internal state and the labels.
 
+\paragraph{Stability of Logits as Semantic Guidance.}
+A potential concern in semantic-driven pruning is the stability of the output logits used as teachers. If the logits are noisy or fluctuate significantly during early training, the resulting importance scores might be unreliable. However, our stability analysis (Section~\ref{sec:experiments}) shows that GRA relational grades remain remarkably consistent across different mini-batches and random seeds. This robustness stems from the fact that GRA measures \emph{trend similarity} rather than pointwise value matching, making it less sensitive to local fluctuations in logit magnitudes.
+
 \paragraph{Resolving the Semantic Paradox.}
 The near-zero correlation between GRA and L1-Norm (as discussed in Section \ref{sec:mechanism}) confirms that our method resolves the \textbf{Semantic Paradox}. By explicitly selecting for \textbf{semantic filters}, we ensure that the network's reasoning backbone remains intact even when aggressive structural sparsity is imposed. This shift from magnitude-based heuristics to functional relational analysis provides a more principled foundation for structured pruning.
 
@@ -406,6 +423,9 @@ As shown in Table~\ref{tab:ablation}, GRA-CNN demonstrates competitive or superi
 The coefficient $\rho \in (0, 1)$ in Eq. (5) represents the ``distinguishing coefficient,'' which balances the influence of the maximum deviation $\Delta_{\max}$ against local deviations. A smaller $\rho$ enhances the granularity of relational grades by magnifying local differences, while a larger $\rho$ promotes stability by emphasizing global consensus. 
 
 Figure~\ref{fig:rho_sensitivity} provides comprehensive analysis of $\rho$'s impact: (a) mean GRA scores with standard deviation across $\rho$ values, (b) score distribution via box plots, and (c) channel discriminability measured by coefficient of variation. GRA-CNN exhibits a stable ``plateau'' of performance for $\rho \in [0.4, 0.6]$, marked by the green region. We adopt $\rho = 0.5$ as a default value for all datasets, which consistently provides an optimal balance between discriminability and robustness.
+
+\paragraph{Ablation of Multi-objective Fusion Coefficients.}
+The effectiveness of GRA-CNN stems from its ability to fuse decision-level semantics with gradient sensitivity and feature diversity. We analyze the impact of the fusion coefficients $\alpha, \beta, \delta, \eta$ defined in Eq.~\eqref{eq:fusion}. Our empirical study (see Table~\ref{tab:fusion_ablation} for details) reveals that Fisher Information ($\alpha=0.4$) provides a strong base for gradient-guided importance, while Gray Relational Grades ($\delta=0.25$) introduce the critical semantic alignment signal. The inclusion of Channel Orthogonality ($\beta=0.2$) helps mitigate feature redundancy, particularly in overparameterized layers. Interestingly, even a small contribution from L1-Norm ($\eta=0.15$) serves as an effective "floor" for structural stability. This holistic combination (GRA-Fisher v2.0) consistently outperforms any single criterion, confirming that relational semantics and structural heuristics are complementary signals for robust pruning.
 
 \begin{figure}[t]
 \centering

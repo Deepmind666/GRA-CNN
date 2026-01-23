@@ -45,16 +45,42 @@ def get_dataloaders(dataset, batch_size=128):
         mean, std = (0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)
         num_classes = 10
         DatasetClass = torchvision.datasets.CIFAR10
+        input_size = 32
     elif dataset_lower == 'cifar100':
         mean, std = (0.5071, 0.4867, 0.4408), (0.2675, 0.2565, 0.2761)
         num_classes = 100
         DatasetClass = torchvision.datasets.CIFAR100
-    else:
-        raise ValueError(f"Unknown dataset: {dataset}")
-    
+        input_size = 32
+    elif dataset_lower == 'tinyimagenet':
+        mean, std = (0.485, 0.456, 0.406), (0.229, 0.224, 0.225)
+        num_classes = 200
+        # 假设 Tiny-ImageNet 已经准备在 DATA_DIR/tiny-imagenet-200
+        from torchvision.datasets import ImageFolder
+        train_dir = os.path.join(DATA_DIR, 'tiny-imagenet-200', 'train')
+        test_dir = os.path.join(DATA_DIR, 'tiny-imagenet-200', 'val')
+        input_size = 64
+        
+        train_transform = transforms.Compose([
+            transforms.RandomRotation(20),
+            transforms.RandomHorizontalFlip(),
+            transforms.ToTensor(),
+            transforms.Normalize(mean, std),
+        ])
+        test_transform = transforms.Compose([
+            transforms.ToTensor(),
+            transforms.Normalize(mean, std),
+        ])
+        
+        train_ds = ImageFolder(train_dir, transform=train_transform)
+        test_ds = ImageFolder(test_dir, transform=test_transform)
+        
+        train_loader = torch.utils.data.DataLoader(train_ds, batch_size=batch_size, shuffle=True, num_workers=4)
+        test_loader = torch.utils.data.DataLoader(test_ds, batch_size=batch_size, shuffle=False, num_workers=4)
+        return train_loader, test_loader, num_classes
+
     train_transform = transforms.Compose([
         transforms.RandomHorizontalFlip(),
-        transforms.RandomCrop(32, padding=4),
+        transforms.RandomCrop(input_size, padding=4),
         transforms.ToTensor(),
         transforms.Normalize(mean, std),
     ])
@@ -82,15 +108,18 @@ def get_model(arch, num_classes):
     elif arch == 'resnet32':
         from models.resnet_cifar import resnet32
         return resnet32(num_classes=num_classes)
-    elif arch == 'resnet44':
-        from models.resnet_cifar import resnet44
-        return resnet44(num_classes=num_classes)
     elif arch == 'resnet56':
         return resnet56(num_classes=num_classes)
     elif arch == 'resnet110':
         return resnet110(num_classes=num_classes)
     elif arch == 'vgg16':
         return vgg16(num_classes=num_classes)
+    elif arch == 'mobilenetv2':
+        from models.mobilenetv2 import mobilenetv2_cifar, mobilenetv2_tiny
+        # 根据数据集判断输入尺寸
+        if num_classes == 200:
+            return mobilenetv2_tiny(num_classes=num_classes)
+        return mobilenetv2_cifar(num_classes=num_classes)
     else:
         raise ValueError(f"Unknown architecture: {arch}")
 
