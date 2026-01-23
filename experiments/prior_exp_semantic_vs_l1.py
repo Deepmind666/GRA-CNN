@@ -194,7 +194,7 @@ def analyze_score_correlation(l1_scores, gra_scores, save_dir):
     }
 
 def main():
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    device = torch.device('cpu')
     print(f"Using device: {device}")
     
     # Create save directory
