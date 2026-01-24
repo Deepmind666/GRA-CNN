@@ -1,32 +1,79 @@
-# GRA-CNN: Structured Channel Pruning of CNNs via Gray Relational Analysis
+# GRA-CNN: Global Relevant Analysis for Lightweight Model Pruning
 
-[![Paper](https://img.shields.io/badge/Paper-APIN--Submission-blue)](APIN_Submission/manuscript_apin_final.pdf)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
+![CUDA](https://img.shields.io/badge/CUDA-12.8-85C000.svg?style=for-the-badge&logo=NVIDIA&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-RTX_5090_(Blackwell)-85C000.svg?style=for-the-badge&logo=NVIDIA&logoColor=white)
 
-**GRA-CNN** is a structured pruning framework that optimizes Deep Convolutional Neural Networks by prioritizing **Semantic Alignment**. By leveraging Gray Relational Analysis (GRA), we preserve channels that are functionally coupled with the model's decision-making logic, rather than just high-magnitude weights.
+This repository contains the official implementation of **GRA-CNN** (Global Relevant Analysis), a novel filter pruning method that preserves global semantic information during model compression.
 
-## 🌟 Key Features
-- **Semantic Filtering**: Identifies indispensable channels using decision-level logit correlation.
-- **Superior Performance**: Achieves **+2.42% accuracy gain** over L1-Norm on Tiny-ImageNet-200 at 50% pruning.
-- **Robustness**: Guided by the $\rho$ parameter for stable ranking across diverse architectures (ResNet, VGG).
-- **Efficiency**: Modular implementation compatible with CUDA 12 and modern GPUs like RTX 5090.
+## 🚀 Features
 
-## 📈 Quick Results
-| Dataset | Architecture | Ratio | GRA-CNN (Ours) | Baseline (L1) | Gain |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| Tiny-ImageNet-200 | ResNet-18 | 50% | **58.12%** | 55.70% | +2.42% |
-| CIFAR-100 | ResNet-56 | 70% | **59.84%** | 58.52% | +1.32% |
+- **Global Relevant Analysis (GRA)**: A metric that correlates filter activations with class-wise margins to identify semantically critical neurons.
+- **MORF Fusion**: Multi-Objective Relevant Fusion strategy combining Fisher information, Orthogonality, and GRA scores.
+- **Turbo Mode**: Optimized for NVIDIA RTX 5090, supporting 8x parallel experiment execution.
+- **Broad Architecture Support**: ResNet-20/56/110, VGG-16, MobileNetV2.
 
-## 🛠️ Usage
-Please refer to [reproduction_guide.md](reproduction_guide.md) for detailed instructions on environment setup and running experiments.
+## 🛠️ Environment Setup
 
-## 📚 Citation
-If you find this work useful, please cite our APIN submission:
+### Prerequisites
+- Python 3.11+
+- CUDA 12.8 (Required for Blackwell / sm_120 support)
+
+### Installation
+
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/YourUsername/GRA-CNN.git
+    cd GRA-CNN
+    ```
+
+2.  **Install Dependencies**
+    Note: For RTX 5090, you **must** use the PyTorch Nightly build.
+    ```bash
+    pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128
+    pip install pandas numpy scipy matplotlib tabulate tqdm
+    ```
+
+## ⚡ Quick Start (Turbo Mode)
+
+We provide a high-throughput runner optimized for high-end GPUs (e.g., RTX 4090/5090).
+
+**To run the full experiment matrix (98+ configs):**
+
+```bash
+python experiments/master_experiment_runner.py
+```
+
+*   **Default**: 8x Parallelization (Configured for 24GB+ VRAM).
+*   **Output**: Results are saved to `experiments/supplementary_results.csv` and `experiments/master_run_log.txt`.
+
+**To run a single pruning experiment:**
+
+```bash
+python experiments/run_real_pruning.py --arch resnet56 --dataset cifar10 --method gra --ratio 0.5
+```
+
+## 📊 Directory Structure
+
+- `experiments/`: Core experiment scripts and runners.
+- `models/`: Model definitions (ResNet, VGG, MobileNet).
+- `pruning/`: Implementations of GRA, L1, FPGM, and HRank prune methods.
+- `docs/`: Detailed logs and environmental setup notes.
+- `APIN_Submission/`: LaTeX source for the manuscript.
+
+## 📝 Citation
+
+If you find this work useful, please consider citing:
+
 ```bibtex
-@article{gra_cnn2024,
-  title={GRA-CNN: Structured Channel Pruning of CNNs via Gray Relational Analysis},
-  author={GDUT-Automation},
-  journal={Applied Intelligence},
-  year={2024}
+@article{gra_cnn_2026,
+  title={GRA-CNN: Global Relevant Analysis for Lightweight Model Pruning},
+  author={Your Name and Collaborators},
+  journal={arXiv preprint},
+  year={2026}
 }
 ```
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

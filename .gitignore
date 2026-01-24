@@ -26,6 +26,10 @@ experiments/resnet*/
 experiments/tiny*/
 experiments/prior_experiments/
 checkpoints/
+pytorch-src/
+.venv/
+.env
+env/
 
 # LaTeX temporary files
 *.aux

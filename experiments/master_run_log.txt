@@ -1,0 +1,203 @@
+--- High Intensity Run 2026-01-24 00:07:52.928707 ---
+[2026-01-24 00:07:52] === Parallel Master Runner Started (Workers: 8) ===
+[2026-01-24 00:07:52] Total experiments in queue: 98
+[2026-01-24 00:35:38] SUCCESS [1/98]: resnet20@cifar10 l1 0.7 | Time: 27.76m
+[2026-01-24 00:35:38] Progress: 1/98 | ETA: 2026-01-25 21:28:47
+[2026-01-24 00:35:40] SUCCESS [2/98]: resnet20@cifar10 fpgm 0.7 | Time: 27.78m
+[2026-01-24 00:35:40] Progress: 2/98 | ETA: 2026-01-24 22:49:43
+[2026-01-24 00:36:02] SUCCESS [3/98]: resnet20@cifar10 fpgm 0.5 | Time: 28.15m
+[2026-01-24 00:36:02] Progress: 3/98 | ETA: 2026-01-24 15:27:33
+[2026-01-24 00:36:04] SUCCESS [4/98]: resnet20@cifar10 l1 0.5 | Time: 28.18m
+[2026-01-24 00:36:04] Progress: 4/98 | ETA: 2026-01-24 11:38:32
+[2026-01-24 00:36:05] SUCCESS [5/98]: resnet20@cifar10 gra 0.5 | Time: 28.20m
+[2026-01-24 00:36:05] Progress: 5/98 | ETA: 2026-01-24 09:20:42
+[2026-01-24 00:36:05] SUCCESS [6/98]: resnet20@cifar10 gra 0.7 | Time: 28.20m
+[2026-01-24 00:36:05] Progress: 6/98 | ETA: 2026-01-24 07:48:35
+[2026-01-24 00:36:38] SUCCESS [7/98]: resnet20@cifar10 hrank 0.7 | Time: 28.75m
+[2026-01-24 00:36:38] Progress: 7/98 | ETA: 2026-01-24 06:50:33
+[2026-01-24 00:36:39] SUCCESS [8/98]: resnet20@cifar10 hrank 0.5 | Time: 28.76m
+[2026-01-24 00:36:39] Progress: 8/98 | ETA: 2026-01-24 06:00:21
+[2026-01-24 01:03:19] SUCCESS [9/98]: resnet20@cifar100 l1 0.5 | Time: 27.29m
+[2026-01-24 01:03:19] Progress: 9/98 | ETA: 2026-01-24 10:11:38
+[2026-01-24 01:03:20] SUCCESS [10/98]: resnet20@cifar100 l1 0.7 | Time: 27.27m
+[2026-01-24 01:03:20] Progress: 10/98 | ETA: 2026-01-24 09:11:21
+[2026-01-24 01:03:25] SUCCESS [11/98]: resnet20@cifar100 fpgm 0.5 | Time: 27.33m
+[2026-01-24 01:03:25] Progress: 11/98 | ETA: 2026-01-24 08:22:39
+[2026-01-24 01:03:53] SUCCESS [12/98]: resnet20@cifar100 fpgm 0.7 | Time: 27.80m
+[2026-01-24 01:03:53] Progress: 12/98 | ETA: 2026-01-24 07:45:16
+[2026-01-24 01:03:57] SUCCESS [13/98]: resnet20@cifar100 gra 0.5 | Time: 28.31m
+[2026-01-24 01:03:57] Progress: 13/98 | ETA: 2026-01-24 07:10:33
+[2026-01-24 01:03:59] SUCCESS [14/98]: resnet20@cifar100 gra 0.7 | Time: 28.31m
+[2026-01-24 01:03:59] Progress: 14/98 | ETA: 2026-01-24 06:40:36
+[2026-01-24 01:05:01] SUCCESS [15/98]: resnet20@cifar100 hrank 0.7 | Time: 28.36m
+[2026-01-24 01:05:01] Progress: 15/98 | ETA: 2026-01-24 06:21:09
+[2026-01-24 01:05:15] SUCCESS [16/98]: resnet20@cifar100 hrank 0.5 | Time: 28.61m
+[2026-01-24 01:05:15] Progress: 16/98 | ETA: 2026-01-24 05:59:17
+[2026-01-24 01:49:30] SUCCESS [17/98]: resnet56@cifar10 l1 0.5 | Time: 46.08m
+[2026-01-24 01:49:30] Progress: 17/98 | ETA: 2026-01-24 09:53:41
+[2026-01-24 01:49:31] SUCCESS [18/98]: resnet56@cifar10 l1 0.7 | Time: 45.64m
+[2026-01-24 01:49:31] Progress: 18/98 | ETA: 2026-01-24 09:21:17
+[2026-01-24 01:49:37] SUCCESS [19/98]: resnet56@cifar10 gra 0.7 | Time: 46.28m
+[2026-01-24 01:49:37] Progress: 19/98 | ETA: 2026-01-24 08:52:38
+[2026-01-24 01:49:43] SUCCESS [20/98]: resnet56@cifar10 gra 0.5 | Time: 46.39m
+[2026-01-24 01:49:43] Progress: 20/98 | ETA: 2026-01-24 08:26:54
+[2026-01-24 01:49:54] SUCCESS [21/98]: resnet56@cifar10 fpgm 0.5 | Time: 45.95m
+[2026-01-24 01:49:54] Progress: 21/98 | ETA: 2026-01-24 08:03:58
+[2026-01-24 01:50:05] SUCCESS [22/98]: resnet56@cifar10 fpgm 0.7 | Time: 46.11m
+[2026-01-24 01:50:05] Progress: 22/98 | ETA: 2026-01-24 07:43:12
+[2026-01-24 01:52:06] SUCCESS [23/98]: resnet56@cifar10 hrank 0.5 | Time: 47.09m
+[2026-01-24 01:52:06] Progress: 23/98 | ETA: 2026-01-24 07:31:57
+[2026-01-24 01:53:15] SUCCESS [24/98]: resnet56@cifar10 hrank 0.7 | Time: 48.00m
+[2026-01-24 01:53:15] Progress: 24/98 | ETA: 2026-01-24 07:18:09
+[2026-01-24 02:33:41] SUCCESS [25/98]: resnet56@cifar100 l1 0.5 | Time: 44.07m
+[2026-01-24 02:33:41] Progress: 25/98 | ETA: 2026-01-24 09:39:27
+[2026-01-24 02:34:42] SUCCESS [26/98]: resnet56@cifar100 l1 0.7 | Time: 44.98m
+[2026-01-24 02:34:42] Progress: 26/98 | ETA: 2026-01-24 09:21:17
+[2026-01-24 02:34:48] SUCCESS [27/98]: resnet56@cifar100 fpgm 0.5 | Time: 44.90m
+[2026-01-24 02:34:48] Progress: 27/98 | ETA: 2026-01-24 09:01:09
+[2026-01-24 02:34:49] SUCCESS [28/98]: resnet56@cifar100 gra 0.5 | Time: 45.32m
+[2026-01-24 02:34:49] Progress: 28/98 | ETA: 2026-01-24 08:42:11
+[2026-01-24 02:34:52] SUCCESS [29/98]: resnet56@cifar100 fpgm 0.7 | Time: 44.77m
+[2026-01-24 02:34:52] Progress: 29/98 | ETA: 2026-01-24 08:24:36
+[2026-01-24 02:35:24] SUCCESS [30/98]: resnet56@cifar100 gra 0.7 | Time: 45.87m
+[2026-01-24 02:35:24] Progress: 30/98 | ETA: 2026-01-24 08:09:47
+[2026-01-24 02:40:42] SUCCESS [31/98]: resnet56@cifar100 hrank 0.5 | Time: 48.60m
+[2026-01-24 02:40:42] Progress: 31/98 | ETA: 2026-01-24 08:10:59
+[2026-01-24 02:42:03] SUCCESS [32/98]: resnet56@cifar100 hrank 0.7 | Time: 48.80m
+[2026-01-24 02:42:03] Progress: 32/98 | ETA: 2026-01-24 08:00:02
+[2026-01-24 04:00:25] SUCCESS [33/98]: resnet110@cifar10 l1 0.5 | Time: 85.62m
+[2026-01-24 04:00:25] Progress: 33/98 | ETA: 2026-01-24 11:38:28
+[2026-01-24 04:00:49] SUCCESS [34/98]: resnet110@cifar10 l1 0.7 | Time: 86.00m
+[2026-01-24 04:00:49] Progress: 34/98 | ETA: 2026-01-24 11:19:17
+[2026-01-24 04:00:58] SUCCESS [35/98]: resnet110@cifar10 fpgm 0.5 | Time: 86.11m
+[2026-01-24 04:00:58] Progress: 35/98 | ETA: 2026-01-24 11:00:32
+[2026-01-24 04:01:11] SUCCESS [36/98]: resnet110@cifar10 gra 0.7 | Time: 86.49m
+[2026-01-24 04:01:11] Progress: 36/98 | ETA: 2026-01-24 10:43:00
+[2026-01-24 04:01:17] SUCCESS [37/98]: resnet110@cifar10 fpgm 0.7 | Time: 85.88m
+[2026-01-24 04:01:17] Progress: 37/98 | ETA: 2026-01-24 10:26:04
+[2026-01-24 04:12:32] SUCCESS [38/98]: resnet110@cifar10 hrank 0.5 | Time: 91.84m
+[2026-01-24 04:12:32] Progress: 38/98 | ETA: 2026-01-24 10:38:50
+[2026-01-24 04:14:13] SUCCESS [39/98]: resnet110@cifar10 hrank 0.7 | Time: 92.16m
+[2026-01-24 04:14:13] Progress: 39/98 | ETA: 2026-01-24 10:26:52
+[2026-01-24 05:16:19] SUCCESS [40/98]: resnet110@cifar100 l1 0.5 | Time: 75.35m
+[2026-01-24 05:16:19] Progress: 40/98 | ETA: 2026-01-24 12:43:33
+[2026-01-24 05:17:09] SUCCESS [41/98]: resnet110@cifar100 gra 0.5 | Time: 76.74m
+[2026-01-24 05:17:09] Progress: 41/98 | ETA: 2026-01-24 12:27:08
+[2026-01-24 05:17:39] SUCCESS [42/98]: resnet110@cifar100 l1 0.7 | Time: 76.46m
+[2026-01-24 05:17:39] Progress: 42/98 | ETA: 2026-01-24 12:10:40
+[2026-01-24 05:17:46] SUCCESS [43/98]: resnet110@cifar100 fpgm 0.5 | Time: 76.49m
+[2026-01-24 05:17:46] Progress: 43/98 | ETA: 2026-01-24 11:54:08
+[2026-01-24 05:17:54] SUCCESS [44/98]: resnet110@cifar100 gra 0.7 | Time: 77.08m
+[2026-01-24 05:17:54] Progress: 44/98 | ETA: 2026-01-24 11:38:23
+[2026-01-24 05:24:13] SUCCESS [45/98]: resnet110@cifar100 fpgm 0.7 | Time: 71.68m
+[2026-01-24 05:24:13] Progress: 45/98 | ETA: 2026-01-24 11:36:47
+[2026-01-24 05:27:53] SUCCESS [46/98]: resnet110@cifar100 hrank 0.5 | Time: 73.67m
+[2026-01-24 05:27:53] Progress: 46/98 | ETA: 2026-01-24 11:29:38
+[2026-01-24 05:39:36] SUCCESS [47/98]: vgg16@cifar10 gra 0.5 | Time: 22.44m
+[2026-01-24 05:39:36] Progress: 47/98 | ETA: 2026-01-24 11:39:34
+[2026-01-24 05:39:36] SUCCESS [48/98]: vgg16@cifar10 l1 0.5 | Time: 21.84m
+[2026-01-24 05:39:36] Progress: 48/98 | ETA: 2026-01-24 11:25:09
+[2026-01-24 05:40:39] SUCCESS [49/98]: vgg16@cifar10 gra 0.7 | Time: 23.01m
+[2026-01-24 05:40:39] Progress: 49/98 | ETA: 2026-01-24 11:13:26
+[2026-01-24 05:49:49] SUCCESS [50/98]: vgg16@cifar10 fpgm 0.7 | Time: 21.94m
+[2026-01-24 05:49:49] Progress: 50/98 | ETA: 2026-01-24 11:18:05
+[2026-01-24 05:55:27] SUCCESS [51/98]: resnet110@cifar100 hrank 0.7 | Time: 39.13m
+[2026-01-24 05:55:27] Progress: 51/98 | ETA: 2026-01-24 11:15:45
+[2026-01-24 06:02:06] SUCCESS [52/98]: vgg16@cifar100 gra 0.5 | Time: 21.45m
+[2026-01-24 06:02:06] Progress: 52/98 | ETA: 2026-01-24 11:15:28
+[2026-01-24 06:02:40] SUCCESS [53/98]: vgg16@cifar10 hrank 0.7 | Time: 23.07m
+[2026-01-24 06:02:40] Progress: 53/98 | ETA: 2026-01-24 11:03:55
+[2026-01-24 06:02:46] SUCCESS [54/98]: vgg16@cifar10 hrank 0.5 | Time: 23.16m
+[2026-01-24 06:02:46] Progress: 54/98 | ETA: 2026-01-24 10:51:56
+[2026-01-24 06:10:43] SUCCESS [55/98]: vgg16@cifar100 gra 0.7 | Time: 20.89m
+[2026-01-24 06:10:43] Progress: 55/98 | ETA: 2026-01-24 10:54:23
+[2026-01-24 06:16:08] SUCCESS [56/98]: vgg16@cifar100 l1 0.5 | Time: 20.69m
+[2026-01-24 06:16:08] Progress: 56/98 | ETA: 2026-01-24 10:52:20
+[2026-01-24 06:24:05] SUCCESS [57/98]: vgg16@cifar100 l1 0.7 | Time: 21.97m
+[2026-01-24 06:24:05] Progress: 57/98 | ETA: 2026-01-24 10:54:41
+[2026-01-24 06:24:09] SUCCESS [58/98]: mobilenetv2@cifar10 gra 0.5 | Time: 0.07m
+[2026-01-24 06:24:09] Progress: 58/98 | ETA: 2026-01-24 10:43:39
+[2026-01-24 06:24:13] SUCCESS [59/98]: mobilenetv2@cifar10 gra 0.7 | Time: 0.07m
+[2026-01-24 06:24:13] Progress: 59/98 | ETA: 2026-01-24 10:33:00
+[2026-01-24 06:24:19] SUCCESS [60/98]: mobilenetv2@cifar10 l1 0.5 | Time: 0.10m
+[2026-01-24 06:24:19] Progress: 60/98 | ETA: 2026-01-24 10:22:44
+[2026-01-24 06:24:25] SUCCESS [61/98]: mobilenetv2@cifar10 l1 0.7 | Time: 0.09m
+[2026-01-24 06:24:25] Progress: 61/98 | ETA: 2026-01-24 10:12:49
+[2026-01-24 06:24:29] SUCCESS [62/98]: mobilenetv2@cifar10 fpgm 0.5 | Time: 0.07m
+[2026-01-24 06:24:29] Progress: 62/98 | ETA: 2026-01-24 10:03:10
+[2026-01-24 06:24:34] SUCCESS [63/98]: mobilenetv2@cifar10 fpgm 0.7 | Time: 0.07m
+[2026-01-24 06:24:34] Progress: 63/98 | ETA: 2026-01-24 09:53:50
+[2026-01-24 06:24:38] SUCCESS [64/98]: vgg16@cifar100 fpgm 0.5 | Time: 21.96m
+[2026-01-24 06:24:38] Progress: 64/98 | ETA: 2026-01-24 09:44:47
+[2026-01-24 06:24:38] SUCCESS [65/98]: mobilenetv2@cifar10 hrank 0.5 | Time: 0.08m
+[2026-01-24 06:24:38] Progress: 65/98 | ETA: 2026-01-24 09:35:55
+[2026-01-24 06:24:42] SUCCESS [66/98]: mobilenetv2@cifar10 hrank 0.7 | Time: 0.07m
+[2026-01-24 06:24:42] Progress: 66/98 | ETA: 2026-01-24 09:27:24
+[2026-01-24 06:24:43] SUCCESS [67/98]: mobilenetv2@cifar100 gra 0.5 | Time: 0.07m
+[2026-01-24 06:24:43] Progress: 67/98 | ETA: 2026-01-24 09:19:04
+[2026-01-24 06:24:47] SUCCESS [68/98]: mobilenetv2@cifar100 gra 0.7 | Time: 0.08m
+[2026-01-24 06:24:47] Progress: 68/98 | ETA: 2026-01-24 09:11:03
+[2026-01-24 06:24:47] SUCCESS [69/98]: mobilenetv2@cifar100 l1 0.5 | Time: 0.08m
+[2026-01-24 06:24:47] Progress: 69/98 | ETA: 2026-01-24 09:03:12
+[2026-01-24 06:24:52] SUCCESS [70/98]: mobilenetv2@cifar100 l1 0.7 | Time: 0.09m
+[2026-01-24 06:24:52] Progress: 70/98 | ETA: 2026-01-24 08:55:40
+[2026-01-24 06:24:53] SUCCESS [71/98]: mobilenetv2@cifar100 fpgm 0.5 | Time: 0.09m
+[2026-01-24 06:24:53] Progress: 71/98 | ETA: 2026-01-24 08:48:15
+[2026-01-24 06:24:57] SUCCESS [72/98]: mobilenetv2@cifar100 fpgm 0.7 | Time: 0.08m
+[2026-01-24 06:24:57] Progress: 72/98 | ETA: 2026-01-24 08:41:06
+[2026-01-24 06:24:57] SUCCESS [73/98]: mobilenetv2@cifar100 hrank 0.5 | Time: 0.08m
+[2026-01-24 06:24:57] Progress: 73/98 | ETA: 2026-01-24 08:34:06
+[2026-01-24 06:25:01] SUCCESS [74/98]: vgg16@cifar100 fpgm 0.7 | Time: 22.26m
+[2026-01-24 06:25:01] Progress: 74/98 | ETA: 2026-01-24 08:27:20
+[2026-01-24 06:25:01] SUCCESS [75/98]: mobilenetv2@cifar100 hrank 0.7 | Time: 0.08m
+[2026-01-24 06:25:01] Progress: 75/98 | ETA: 2026-01-24 08:20:41
+[2026-01-24 06:33:53] SUCCESS [76/98]: vgg16@cifar100 hrank 0.5 | Time: 23.17m
+[2026-01-24 06:33:53] Progress: 76/98 | ETA: 2026-01-24 08:25:37
+[2026-01-24 06:38:42] SUCCESS [77/98]: vgg16@cifar100 hrank 0.7 | Time: 22.56m
+[2026-01-24 06:38:42] Progress: 77/98 | ETA: 2026-01-24 08:25:17
+[2026-01-24 06:58:15] SUCCESS [78/98]: resnet56@cifar10 gra 0.3 | Time: 33.29m
+[2026-01-24 06:58:15] Progress: 78/98 | ETA: 2026-01-24 08:43:28
+[2026-01-24 06:58:22] SUCCESS [79/98]: resnet56@cifar10 gra 0.4 | Time: 33.34m
+[2026-01-24 06:58:22] Progress: 79/98 | ETA: 2026-01-24 08:37:05
+[2026-01-24 06:58:28] SUCCESS [80/98]: resnet56@cifar10 gra 0.6 | Time: 33.44m
+[2026-01-24 06:58:28] Progress: 80/98 | ETA: 2026-01-24 08:30:50
+[2026-01-24 07:10:09] SUCCESS [81/98]: resnet56@cifar10 l1 0.4 | Time: 31.45m
+[2026-01-24 07:10:09] Progress: 81/98 | ETA: 2026-01-24 08:38:47
+[2026-01-24 07:19:04] SUCCESS [82/98]: vgg16@cifar10 gra 0.3 | Time: 20.70m
+[2026-01-24 07:19:04] Progress: 82/98 | ETA: 2026-01-24 08:43:12
+[2026-01-24 07:19:06] SUCCESS [83/98]: vgg16@cifar10 gra 0.4 | Time: 20.65m
+[2026-01-24 07:19:06] Progress: 83/98 | ETA: 2026-01-24 08:37:03
+[2026-01-24 07:24:18] SUCCESS [84/98]: resnet56@cifar10 l1 0.6 | Time: 26.05m
+[2026-01-24 07:24:18] Progress: 84/98 | ETA: 2026-01-24 08:37:02
+[2026-01-24 07:31:53] SUCCESS [85/98]: vgg16@cifar10 gra 0.6 | Time: 21.73m
+[2026-01-24 07:31:53] Progress: 85/98 | ETA: 2026-01-24 08:39:47
+[2026-01-24 07:31:58] FAILED [86/98]: resnet18@tinyimagenet gra 0.5 | Error: Traceback (most recent call last):
+  File "C:\GRA-CNN\experiments\run_real_pruning.py", line 582, in <module>
+    main()
+  File "C:\GRA-CNN\experiments\run_real_pruning.py", line 524, in main
+    resu...
+[2026-01-24 07:31:58] Progress: 86/98 | ETA: 2026-01-24 08:33:56
+[2026-01-24 07:32:01] FAILED [87/98]: resnet18@tinyimagenet l1 0.5 | Error: Traceback (most recent call last):
+  File "C:\GRA-CNN\experiments\run_real_pruning.py", line 582, in <module>
+    main()
+  File "C:\GRA-CNN\experiments\run_real_pruning.py", line 524, in main
+    resu...
+[2026-01-24 07:32:01] Progress: 87/98 | ETA: 2026-01-24 08:28:10
+[2026-01-24 07:32:04] FAILED [88/98]: resnet18@tinyimagenet fpgm 0.5 | Error: Traceback (most recent call last):
+  File "C:\GRA-CNN\experiments\run_real_pruning.py", line 582, in <module>
+    main()
+  File "C:\GRA-CNN\experiments\run_real_pruning.py", line 524, in main
+    resu...
+[2026-01-24 07:32:04] Progress: 88/98 | ETA: 2026-01-24 08:22:33
+[2026-01-24 07:32:09] SUCCESS [89/98]: mobilenetv2@tinyimagenet gra 0.5 | Time: 0.08m
+[2026-01-24 07:32:09] Progress: 89/98 | ETA: 2026-01-24 08:17:05
+[2026-01-24 07:32:13] SUCCESS [90/98]: mobilenetv2@tinyimagenet l1 0.5 | Time: 0.06m
+[2026-01-24 07:32:13] Progress: 90/98 | ETA: 2026-01-24 08:11:43
+[2026-01-24 07:32:16] SUCCESS [91/98]: mobilenetv2@tinyimagenet fpgm 0.5 | Time: 0.06m
+[2026-01-24 07:32:16] Progress: 91/98 | ETA: 2026-01-24 08:06:27
+[2026-01-24 07:40:00] SUCCESS [92/98]: vgg16@cifar10 l1 0.3 | Time: 20.94m
+[2026-01-24 07:40:00] Progress: 92/98 | ETA: 2026-01-24 08:09:29
+[2026-01-24 07:40:17] SUCCESS [93/98]: vgg16@cifar10 l1 0.4 | Time: 21.17m
+[2026-01-24 07:40:17] Progress: 93/98 | ETA: 2026-01-24 08:04:36
+[2026-01-24 07:44:23] SUCCESS [94/98]: vgg16@cifar10 l1 0.6 | Time: 20.09m
+[2026-01-24 07:44:23] Progress: 94/98 | ETA: 2026-01-24 08:03:48

@@ -257,12 +257,18 @@ def compute_gra_scores(model, dataloader, num_batches=10, rho=0.5):
     # 重新计算 margin 相关的 GRA
     model.eval()
     all_logits, all_targets = [], []
+    all_activations = {name: [] for name in activations}
+    
     with torch.no_grad():
         for i, (inputs, targets) in enumerate(dataloader):
             if i >= 4: break 
             inputs, targets = inputs.to(DEVICE), targets.to(DEVICE)
-            all_logits.append(model(inputs))
+            logits = model(inputs)
+            all_logits.append(logits)
             all_targets.append(targets)
+            # 捕获当前 batch 的激活值
+            for name in activations:
+                all_activations[name].append(activations[name].detach())
     
     logits = torch.cat(all_logits, dim=0)
     targets_cat = torch.cat(all_targets, dim=0)
@@ -273,9 +279,12 @@ def compute_gra_scores(model, dataloader, num_batches=10, rho=0.5):
     margin = (correct - max_wrong).detach()
     margin_norm = (margin - margin.min()) / (margin.max() - margin.min() + 1e-8)
 
+    # 合并激活值
+    final_activations = {name: torch.cat(all_activations[name], dim=0) for name in all_activations}
+
     gra_scores = {}
-    for name in activations:
-        act_c = activations[name].mean(dim=[2, 3]).detach() # [B, C]
+    for name in final_activations:
+        act_c = final_activations[name].mean(dim=[2, 3]).detach() # [B_total, C]
         c_scores = []
         for c in range(act_c.size(1)):
             a_norm = (act_c[:, c] - act_c[:, c].min()) / (act_c[:, c].max() - act_c[:, c].min() + 1e-8)
