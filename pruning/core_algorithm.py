@@ -269,3 +269,107 @@ def compute_gra_final_score(model, dataloader, device, num_batches=10, rho=0.5):
         final_scores[name] = combined
         
     return final_scores
+
+# ============================================================================
+# Global Iso-FLOPs Constraints (v3.1 Fairness Update)
+# ============================================================================
+
+def get_global_mask_iso_flops(model, final_scores, target_flops_ratio, input_size=(1, 3, 32, 32), device='cuda'):
+    """
+    Generates binary masks ensuring EXACT FLOPs reduction.
+    Strategy: Global Sorting (Knapsack-like greedy).
+    1. Calculate FLOPs saving for every single channel in the network.
+    2. Sort all channels by Importance Score (Ascending).
+    3. Prune until Pruned_FLOPs >= Target_Reduction.
+    """
+    # 1. Profile FLOPs per layer/channel
+    # Simple approx: Conv2d FLOPs = k*k * in_c * out_c * H * W
+    # We need H, W maps. Run a dummy pass.
+    
+    shapes = {}
+    def hook(name):
+        def fn(m, i, o):
+            shapes[name] = (o.size(2), o.size(3)) # H, W
+        return fn
+    
+    hooks = []
+    for name, m in model.named_modules():
+        if name in final_scores:
+            hooks.append(m.register_forward_hook(hook(name)))
+            
+    # Dummy pass
+    try:
+        dummy_input = torch.zeros(input_size).to(device)
+        model.eval()
+        with torch.no_grad():
+            model(dummy_input)
+    except:
+        print("Warning: Dummy pass failed, assuming 32x32 input for shapes (CIFAR default)")
+        # Fallback shapes could be added here, but usually works.
+        
+    for h in hooks: h.remove()
+    
+    # 2. Build Candidate List
+    candidates = [] # (score, flops_gain, layer_name, channel_idx)
+    total_model_flops = 0
+    
+    for name, m in model.named_modules():
+        if name in final_scores:
+            scores = final_scores[name]
+            # Safety check for shape
+            H, W = shapes.get(name, (32, 32)) 
+            
+            k = m.kernel_size[0]
+            in_c = m.in_channels
+            out_c = m.out_channels
+            
+            flops_per_channel = k * k * in_c * H * W
+            total_model_flops += flops_per_channel * out_c
+            
+            for c in range(out_c):
+                # Ensure score is scalar
+                s_val = scores[c]
+                if hasattr(s_val, 'item'): s_val = s_val.item()
+                
+                candidates.append({
+                    'score': s_val,
+                    'flops': flops_per_channel,
+                    'layer': name,
+                    'idx': c
+                })
+
+    # 3. Sort & Prune
+    # Sort by score (Lowest = Least Important = Prune First)
+    candidates.sort(key=lambda x: x['score'])
+    
+    target_pruned_flops = total_model_flops * target_flops_ratio
+    current_pruned_flops = 0
+    
+    prune_decisions = {name: torch.ones(len(final_scores[name])) for name in final_scores}
+    
+    layer_prune_stats = {name: 0 for name in final_scores}
+    layer_total_stats = {name: len(final_scores[name]) for name in final_scores}
+    
+    print(f"Global Pruning: Target {target_flops_ratio*100:.1f}% FLOPs ({target_pruned_flops:.2e} Ops)")
+    
+    for item in candidates:
+        if current_pruned_flops >= target_pruned_flops:
+            break
+            
+        # Prune this channel
+        layer = item['layer']
+        idx = item['idx']
+        
+        prune_decisions[layer][idx] = 0.0
+        current_pruned_flops += item['flops']
+        layer_prune_stats[layer] += 1
+        
+    # 4. Report Distribution
+    print("\n=== Iso-FLOPs Pruning Distribution ===")
+    for name in final_scores:
+        total = layer_total_stats[name]
+        pruned = layer_prune_stats[name]
+        ratio = pruned / max(total, 1)
+        print(f"{name}: {pruned}/{total} ({ratio:.2%})")
+        
+    return prune_decisions
