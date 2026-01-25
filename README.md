@@ -10,7 +10,8 @@ This repository serves as the official implementation of the paper **"GRA-CNN: S
 GRA-CNN introduces a novel pruning criterion based on **Semantic Alignment**. Instead of removing filters with small weights (Magnitude) or low rank (Geometric), GRA-CNN identifies filters that are functionally aligned with the network's final decision logic (logits).
 
 - **Core Metric**: Gray Relational Analysis (GRA) measuring trend similarity between activation sequences and output logits.
-- **Fusion Engine**: Combines GRA with Fisher Information and Orthogonality for robust selection.
+- **Adaptive Fusion (v3.0)**: Automatically adjusts importance weights based on network depth. Resolves the "Semantic Paradox" by suppressing noisy gradients in shallow layers and amplifying semantic signals in deep layers.
+- **Fusion Engine**: Dynamic combination of Fisher + Ortho + GRA + L1.
 - **Advantage**: Superior performance on **Deep Networks** (ResNet-110) and **High Sparsity** (90% pruning) regimes where traditional methods collapse.
 
 ## 📊 Performance Highlights
