@@ -163,62 +163,67 @@ def compute_gra_final_score(model, dataloader, device, num_batches=10, rho=0.5):
             w = module.weight.data
             l1_scores[name] = w.abs().view(w.size(0), -1).sum(dim=1).cpu().numpy()
 
-    # --- 4. Fusion (Adaptive v3.0) ---
-    print("Fusing Scores (Adaptive GRA v3.0)...")
+    # --- 4. Fusion (Stage-Aware Adaptive v3.1) ---
+    print("Fusing Scores (Stage-Aware v3.1)...")
     
-    def get_adaptive_weights(layer_idx, total_layers):
+    def get_stage_adaptive_weights(layer_name):
         """
-        Dynamically adjusts weights based on depth.
-        Shallow layers -> Trust L1/Fisher (Structural stability)
-        Deep layers -> Trust GRA (Semantic alignment)
+        Adaptive weights based on network stage (v3.1).
+        - Shallow stages: emphasize structural stability (L1, Fisher).
+        - Deep stages: emphasize semantic alignment (GRA).
         """
-        depth_ratio = layer_idx / max(total_layers - 1, 1)
-        
-        # Base weights
-        w_fish = 0.40
-        w_orth = 0.20
-        w_gra  = 0.25
-        w_l1   = 0.15
-        
-        # Dynamic Adjustment
-        # GRA gains +0.10 at deepest layer, L1 loses 0.10
-        # Rho moves from 0.1 (sensitive) to 1.0 (stable) ?? 
-        # Actually user prompt said: rho 0.1 -> 1.0. 
-        # Wait, user said: "rho_min=0.1, rho_max=1.0". 
-        # Note: small rho = high discrimination (sensitive to local diffs). 
-        # deep layers need to be "more bold" -> maybe higher rho to capture global trend?
-        # User prompt: "rho varies from 0.1 (shallow) to 1.0 (deep)"
-        
-        adj = 0.10 * depth_ratio
-        w_gra_new = w_gra + adj
-        w_l1_new  = max(w_l1 - adj, 0.0)
-        
-        # Normalize
-        total = w_fish + w_orth + w_gra_new + w_l1_new
-        return (w_fish/total, w_orth/total, w_gra_new/total, w_l1_new/total), 0.1 + 0.9*depth_ratio
+        # Default base weights
+        w_fish = 0.40; w_orth = 0.20; w_gra_base = 0.25; w_l1_base = 0.15
 
-    # Count total conv layers for ratio
-    conv_layers = [n for n, m in model.named_modules() if isinstance(m, nn.Conv2d)]
-    total_convs = len(conv_layers)
-    layer_map = {name: i for i, name in enumerate(conv_layers)}
+        # Determine stage index from layer_name (ResNet convention: 'layer1', 'layer2', ...)
+        stage_idx = 0
+        if "layer" in layer_name:
+            try:
+                # Extract first digit after 'layer'
+                part = layer_name.split('layer')[1]
+                stage_idx = int(part.split('.')[0])
+            except:
+                stage_idx = 0 
+        
+        # Stage-wise Adjustment (Non-linear step function)
+        # Stage 0 (Conv1): No change
+        # Stage 1: +0.00 GRA
+        # Stage 2: +0.05 GRA
+        # Stage 3: +0.08 GRA
+        # Stage 4: +0.10 GRA (Deepest)
+        stage_adjustments = {
+            0: 0.0,
+            1: 0.0,
+            2: 0.05,
+            3: 0.08,
+            4: 0.10
+        }
+        # Fallback to max stage if index is higher
+        adj = stage_adjustments.get(stage_idx, 0.10)
+
+        # Apply adjustment: boost GRA, reduce L1
+        w_gra_new = w_gra_base + adj
+        w_l1_new  = max(w_l1_base - adj, 0.0)
+        
+        # Normalize to keep sum=1
+        total = w_fish + w_orth + w_gra_new + w_l1_new
+        weights = (w_fish/total, w_orth/total, w_gra_new/total, w_l1_new/total)
+        
+        # Adaptive Rho also follows stage logic
+        # Stage 1 -> 0.1 (Sensitive)
+        # Stage 4 -> 1.0 (Stable)
+        rho = 0.1 + (0.9 * min(stage_idx, 4) / 4.0)
+        
+        return weights, rho
 
     def norm(x):
         return (x - x.min()) / (x.max() - x.min() + 1e-8)
     
     final_scores = {}
     
-    # Re-compute GRA with per-layer rho if needed?
-    # The previous GRA block used a fixed rho. We need to move GRA computation HERE or allow variable rho.
-    # CRITICAL: The user wants adaptive rho inside GRA too.
-    # Efficiency fix: We already have 'act_c' and 'margin_norm'. We can just re-calc GRA score here cheaply.
-    
-    # We need margin_norm from block 3. It's not in scope if I split the function?
-    # It is in scope (same function).
-    
     for name in fisher_accumulator:
-        # Get Adaptive Config
-        idx = layer_map.get(name, 0)
-        weights, adaptive_rho = get_adaptive_weights(idx, total_convs)
+        # Get Stage-Aware Config
+        weights, adaptive_rho = get_stage_adaptive_weights(name)
         wf, wo, wg, wl = weights
         
         # 1. Fisher
@@ -231,26 +236,18 @@ def compute_gra_final_score(model, dataloader, device, num_batches=10, rho=0.5):
         # 3. L1
         s_l = norm(l1_scores.get(name, s_f))
         
-        # 4. GRA (Re-calc with adaptive rho)
-        # We need to access the raw activations again? 
-        # To avoid massive overhead, let's look at how GRA was computed.
-        # It used: delta = (a_norm - margin_norm).abs()
-        # gamma = (min + rho*max) / (delta + rho*max)
-        # We can recycle the logic if we kept the data. 
-        # BUT 'all_activations' might be cleared to save RAM? No, it's there.
-        
-        # If 'gra_scores' already computed with fixed rho, we might want to update it.
-        # Let's perform a lightweight re-calc if possible, or just accept fixed rho for GRA part 
-        # and only do Weight adaptation. 
-        # User verification: "rho parameter also increases with layer depth".
-        # So we MUST re-calc GRA.
-        
-        # Check if we have data to re-calc
+        # 4. GRA (Re-calc with stage-aware rho)
         if name in all_activations and all_logits:
             logits_cat = torch.cat(all_logits, dim=0).to(device)
             targets_cat = torch.cat(all_targets, dim=0).to(device)
-            # Re-calc margin (safe to re-do or re-use?)
-            # Re-using margin_norm variable from above scope
+            
+            # Re-calc margin (using cached logic if possible, but fast enough to redo)
+            correct = logits_cat.gather(1, targets_cat.view(-1, 1)).squeeze()
+            mask = torch.ones_like(logits_cat, dtype=torch.bool)
+            mask.scatter_(1, targets_cat.view(-1, 1), False)
+            max_wrong = logits_cat.masked_fill(~mask, float('-inf')).max(dim=1)[0]
+            margin = (correct - max_wrong).detach()
+            margin_norm = (margin - margin.min()) / (margin.max() - margin.min() + 1e-8)
             
             act_cat = torch.cat(all_activations[name], dim=0).to(device)
             act_c = act_cat.mean(dim=[2, 3])
@@ -260,7 +257,7 @@ def compute_gra_final_score(model, dataloader, device, num_batches=10, rho=0.5):
                 a_channel = act_c[:, c]
                 a_norm = (a_channel - a_channel.min()) / (a_channel.max() - a_channel.min() + 1e-8)
                 delta = (a_norm - margin_norm).abs()
-                # ADAPTIVE RHO HERE
+                # ADAPTIVE RHO (Stage-Aware)
                 gamma = (delta.min() + adaptive_rho * delta.max()) / (delta + adaptive_rho * delta.max() + 1e-8)
                 c_scores.append(gamma.mean().item())
             s_g = norm(np.array(c_scores))
