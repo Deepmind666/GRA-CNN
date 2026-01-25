@@ -95,7 +95,7 @@ def get_dataloaders(dataset, batch_size=128, workers=4):
     train_loader = torch.utils.data.DataLoader(train_ds, batch_size=batch_size, shuffle=True, num_workers=workers, pin_memory=True)
     test_loader = torch.utils.data.DataLoader(test_ds, batch_size=batch_size, shuffle=False, num_workers=workers, pin_memory=True)
     
-    return train_loader, test_loader, num_classes
+    return train_loader, test_loader, num_classes, input_size
 
 # ============================================================================
 # 模型
@@ -340,7 +340,10 @@ def run_single_experiment(arch, dataset, method, ratio, rho=0.5, epochs=40, work
     print(f"{'='*60}")
     
     # 加载数据
-    train_loader, test_loader, num_classes = get_dataloaders(dataset, workers=workers)
+    train_loader, test_loader, num_classes, input_size_px = get_dataloaders(dataset, workers=workers)
+    
+    # define input_size tuple for dummy pass
+    dummy_shape = (1, 3, input_size_px, input_size_px)
     
     # 加载模型
     model = get_model(arch, num_classes).to(DEVICE)
@@ -370,8 +373,8 @@ def run_single_experiment(arch, dataset, method, ratio, rho=0.5, epochs=40, work
     print(f"  Applying pruning (ratio={ratio})...")
     if iso_flops and method.upper() == 'GRA':
         # Use Global Iso-FLOPs Mask (v3.1)
-        print("  [Fairness] Using Global Iso-FLOPs Constraint...")
-        masks = get_global_mask_iso_flops(model, scores, ratio, device=DEVICE)
+        print(f"  [Fairness] Using Global Iso-FLOPs Constraint (Input: {dummy_shape})...")
+        masks = get_global_mask_iso_flops(model, scores, ratio, input_size=dummy_shape, device=DEVICE)
         
         # Apply masks
         for name, module in model.named_modules():
