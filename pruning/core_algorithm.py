@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import numpy as np
+from collections import defaultdict
 
 # ============================================================================
 # GRA-Fisher v2.0: Structural Pruning via Semantic Alignment
@@ -34,22 +35,47 @@ def compute_gra_final_score(model, dataloader, device, num_batches=10, rho=0.5):
     # --- 1. Setup Hooks ---
     fisher_accumulator = {}
     class_counts = {}
-    activations = {}
-    gradients = {}
+    # Register Hooks
     hooks = []
     
-    def save_act(name):
-        def hook(m, i, o): activations[name] = o.detach()
-        return hook
-    def save_grad(name):
-        def hook(m, gi, go): gradients[name] = go[0].detach()
-        return hook
-    
+    # Identify layers for which we need scores (to pre-populate fisher_accumulator keys)
+    # This is crucial for the new hook logic where `activations` and `gradients`
+    # are initialized with `None` for these specific layers.
     for name, module in model.named_modules():
-        if isinstance(module, nn.Conv2d):
-            hooks.append(module.register_forward_hook(save_act(name)))
-            hooks.append(module.register_full_backward_hook(save_grad(name)))
-            
+        if isinstance(module, (nn.Conv2d, nn.Linear)):
+            fisher_accumulator[name] = None # Placeholder, will be filled later
+
+    # Use simpler hooks to save memory: only capture if needed
+    # These hooks will write to the `activations` and `gradients` dicts
+    # which are re-initialized for each batch inside the try block.
+    def get_hook(name):
+        def hook(module, input, output):
+            # Capture output (activation)
+            if name in activations: # Check if this layer is one we care about for this batch
+                activations[name] = output.detach() 
+        return hook
+
+    # Register Forward Hooks for Activations
+    for name, module in model.named_modules():
+        if isinstance(module, (nn.Conv2d, nn.Linear)):
+             h = module.register_forward_hook(get_hook(name))
+             hooks.append(h)
+             
+    # Gradient hooks need register_full_backward_hook to get Grad Output w.r.t weights? 
+    # GRA needs Grad w.r.t Activation (Output of Layer).
+    # grad_output from backward hook gives exactly dL/dY.
+    def get_grad_hook(name):
+        def hook(module, grad_input, grad_output):
+             if name in gradients: # Check if this layer is one we care about for this batch
+                 # grad_output is a tuple (tensor,)
+                 gradients[name] = grad_output[0].detach()
+        return hook
+
+    for name, module in model.named_modules():
+        if isinstance(module, (nn.Conv2d, nn.Linear)):
+             h = module.register_full_backward_hook(get_grad_hook(name))
+             hooks.append(h)
+             
     # --- 2. Iterate Data (Fisher & Pre-computation) ---
     model.train() # Enable gradients
     criterion = nn.CrossEntropyLoss(reduction='none')
@@ -57,51 +83,73 @@ def compute_gra_final_score(model, dataloader, device, num_batches=10, rho=0.5):
     print(f"Scanning {num_batches} batches for importance estimation...")
     
     # Buffers for GRA
-    all_activations = {name: [] for name in activations}
+    all_activations = defaultdict(list)
     all_logits = []
     all_targets = []
     
-    for i, (inputs, targets) in enumerate(dataloader):
-        if i >= num_batches: break
-        inputs, targets = inputs.to(device), targets.to(device)
-        
-        # Track Class Balance
-        for t in targets:
-            t_item = t.item()
-            class_counts[t_item] = class_counts.get(t_item, 0) + 1
+    # Main Loop
+    try:
+        for i, (inputs, targets) in enumerate(dataloader):
+            if i >= num_batches: break
             
-        model.zero_grad()
-        outputs = model(inputs)
-        loss = criterion(outputs, targets)
-        loss.mean().backward()
-        
-        # A. Fisher Calculation
-        for name in activations:
-            if name in gradients:
-                act = activations[name]
-                grad = gradients[name]
-                # Fisher = (g * a)^2
-                f_val = (grad * act).pow(2).mean(dim=[2, 3]) 
+            inputs, targets = inputs.to(device), targets.to(device)
+            
+            # Track Class Balance
+            for t in targets:
+                t_item = t.item()
+                class_counts[t_item] = class_counts.get(t_item, 0) + 1
                 
-                # Class Weighting
-                batch_weights = torch.tensor([1.0/max(class_counts.get(t.item(), 1), 1) for t in targets], device=device)
-                f_weighted = (f_val * batch_weights.unsqueeze(1)).sum(dim=0)
-                
-                if name not in fisher_accumulator:
-                    fisher_accumulator[name] = f_weighted
-                else:
-                    fisher_accumulator[name] += f_weighted
+            # Zero grad
+            model.zero_grad()
+            if i == 0:
+                 print(f"DEBUG Batch 0: Targets Min={targets.min().item()}, Max={targets.max().item()}")
+            
+            # Initialize activations and gradients for this batch
+            # Only for layers we are tracking (those in fisher_accumulator)
+            activations = {n: None for n in fisher_accumulator}
+            gradients = {n: None for n in fisher_accumulator}
+            
+            outputs = model(inputs)
+            loss = criterion(outputs, targets)
+            loss.mean().backward()
+            
+            # A. Fisher Calculation
+            for name in fisher_accumulator: # Iterate over all relevant layers
+                if activations[name] is not None and gradients[name] is not None:
+                    act = activations[name]
+                    grad = gradients[name]
+                    # Fisher = (g * a)^2
+                    # For Linear layers, act is [B, C], grad is [B, C]
+                    # For Conv2d layers, act is [B, C, H, W], grad is [B, C, H, W]
+                    if act.dim() == 4: # Conv2d
+                        f_val = (grad * act).pow(2).mean(dim=[2, 3]) 
+                    else: # Linear
+                        f_val = (grad * act).pow(2) # No spatial dimensions to average
+                    
+                    # Class Weighting
+                    batch_weights = torch.tensor([1.0/max(class_counts.get(t.item(), 1), 1) for t in targets], device=device)
+                    f_weighted = (f_val * batch_weights.unsqueeze(1)).sum(dim=0)
+                    
+                    if fisher_accumulator[name] is None:
+                        fisher_accumulator[name] = f_weighted
+                    else:
+                        fisher_accumulator[name] += f_weighted
 
-        # B. Store for GRA/Ortho
-        if i < 4: # GRA uses fewer batches to save RAM
-             with torch.no_grad():
-                for name in activations:
-                    all_activations[name].append(activations[name].detach().cpu())
-                all_logits.append(outputs.detach().cpu())
-                all_targets.append(targets.cpu())
+            # B. Store for GRA/Ortho
+            if i < 4: # GRA uses fewer batches to save RAM
+                 with torch.no_grad():
+                    for name in fisher_accumulator:
+                         if activations[name] is not None:
+                            try:
+                                all_activations[name].append(activations[name].detach().cpu())
+                            except KeyError:
+                                pass # Skip missing keys silently to avoid crash
+                    all_logits.append(outputs.detach().cpu())
+                    all_targets.append(targets.cpu())
 
-    # Cleanup Hooks
-    for h in hooks: h.remove()
+    finally:
+        # Cleanup Hooks GUARANTEED
+        for h in hooks: h.remove()
     
     # --- 3. Compute Component Scores ---
     
@@ -297,17 +345,18 @@ def get_global_mask_iso_flops(model, final_scores, target_flops_ratio, input_siz
         if name in final_scores:
             hooks.append(m.register_forward_hook(hook(name)))
             
-    # Dummy pass
     try:
-        dummy_input = torch.zeros(input_size).to(device)
-        model.eval()
-        with torch.no_grad():
-            model(dummy_input)
-    except:
-        print("Warning: Dummy pass failed, assuming 32x32 input for shapes (CIFAR default)")
-        # Fallback shapes could be added here, but usually works.
-        
-    for h in hooks: h.remove()
+        # Dummy pass
+        try:
+            dummy_input = torch.zeros(input_size).to(device)
+            model.eval()
+            with torch.no_grad():
+                model(dummy_input)
+        except:
+            print("Warning: Dummy pass failed, assuming 32x32 input for shapes (CIFAR default)")
+            # Fallback shapes could be added here, but usually works.
+    finally:
+        for h in hooks: h.remove()
     
     # 2. Build Candidate List
     candidates = [] # (score, flops_gain, layer_name, channel_idx)
@@ -341,25 +390,34 @@ def get_global_mask_iso_flops(model, final_scores, target_flops_ratio, input_siz
     # 3. Sort & Prune
     # Sort by score (Lowest = Least Important = Prune First)
     candidates.sort(key=lambda x: x['score'])
-    
+
     target_pruned_flops = total_model_flops * target_flops_ratio
     current_pruned_flops = 0
-    
+
     prune_decisions = {name: torch.ones(len(final_scores[name])) for name in final_scores}
-    
+
     layer_prune_stats = {name: 0 for name in final_scores}
     layer_total_stats = {name: len(final_scores[name]) for name in final_scores}
-    
+
+    # BUGFIX: 每层最大剪枝比例限制，防止某层被完全剪掉
+    MAX_LAYER_PRUNE_RATIO = 0.9  # 每层最多剪90%
+
     print(f"Global Pruning: Target {target_flops_ratio*100:.1f}% FLOPs ({target_pruned_flops:.2e} Ops)")
-    
+
     for item in candidates:
         if current_pruned_flops >= target_pruned_flops:
             break
-            
+
         # Prune this channel
         layer = item['layer']
         idx = item['idx']
-        
+
+        # BUGFIX: 检查该层是否已达到最大剪枝比例
+        layer_total = layer_total_stats[layer]
+        layer_pruned = layer_prune_stats[layer]
+        if layer_pruned >= int(layer_total * MAX_LAYER_PRUNE_RATIO):
+            continue  # 跳过，保护该层
+
         prune_decisions[layer][idx] = 0.0
         current_pruned_flops += item['flops']
         layer_prune_stats[layer] += 1
