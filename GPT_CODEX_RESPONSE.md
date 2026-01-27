@@ -17,17 +17,13 @@ GPT Codex 指出5个问题：
 
 **Codex意见**: 代码是5.2，摘要说5.3
 
-**回复**: ❌ **Codex判断有误**
+**回复**: ⚠️ **版本已更新，Codex判断对旧版本成立**
 
-实际验证结果：
-```bash
-$ grep -n "GRA_VERSION" pruning/core_algorithm_v5.py
-25:GRA_VERSION = "5.3"
-```
+**时间线澄清**:
+- Codex审查时基于旧版本，当时确实是5.2
+- 后续已更新为5.3，当前代码第25行: `GRA_VERSION = "5.3"`
 
-代码第25行明确定义 `GRA_VERSION = "5.3"`，文件头注释也写明 "v5.3 Fixes (2026-01-27)"。
-
-**证据**: 运行单元测试 `test_version()` 通过，断言 `GRA_VERSION == "5.3"`。
+**证据**: `test_version()` 通过，断言 `GRA_VERSION == "5.3"`
 
 ---
 
@@ -35,28 +31,17 @@ $ grep -n "GRA_VERSION" pruning/core_algorithm_v5.py
 
 **Codex意见**: 代码是"先BN.eval()，再model.train()"，model.train()会把BN重新切回训练态。
 
-**回复**: ❌ **Codex误读了代码结构**
+**回复**: ⚠️ **核心路径已实现，但测试覆盖不完整**
 
-实际代码逻辑（第575-610行）：
+**已验证**:
+- `collect_activations_margins_and_gradnorms()` 使用 `model.eval()` + finally恢复
+- 单元测试 `test_bn_freezing()` 验证 running_mean/var 不变
 
-```python
-original_training = model.training  # 保存原状态
-
-try:
-    model.eval()  # 第582行：在try块内冻结
-    # ... 数据收集循环 ...
-finally:
-    model.train(original_training)  # 第610行：只在finally中恢复
-```
-
-**关键点**: `model.train()` 在 **finally块** 中，只在函数结束时执行，不是在eval()之后立即调用。
-
-**单元测试验证**:
-```
-test_bn_freezing(): PASS
-- 验证 running_mean 变化 < 1e-6
-- 验证 running_var 变化 < 1e-6
-```
+**待补充**:
+- `compute_ngscs_per_layer()` 异常场景未测试
+- `estimate_hessian_diagonal_hutchinson()` 异常场景未测试
+- `compute_fisher_information()` 异常场景未测试
+- Dropout层影响未验证
 
 ---
 
@@ -64,18 +49,17 @@ test_bn_freezing(): PASS
 
 **Codex意见**: stride=2 conv使用的stage_sizes已是下采样后尺寸，estimate_layer_flops又除一次stride，双重下采样。
 
-**回复**: ⚠️ **需要澄清设计意图**
+**回复**: ⚠️ **CIFAR-ResNet已修复，ImageNet-ResNet仍不完整**
 
-v5.3的设计逻辑：
-- `stage_input_sizes` 存储的是每个stage的**输入**尺寸
-- `estimate_layer_flops(module, input_spatial, 1)` 接收输入尺寸
-- 内部计算 `h_out = input_size // stride`
+**已修复 (CIFAR-ResNet)**:
+- `stage_input_sizes` 存储INPUT尺寸
+- layer2 stride=2 conv: 输入32 → 输出16
 
-对于layer2的stride=2 conv：
-- 输入尺寸 = 32 (来自stage_input_sizes[2])
-- 输出尺寸 = 32 // 2 = 16
+**待修复 (ImageNet-ResNet)**:
+- stem层7x7 conv + maxpool未建模
+- 输入尺寸224的池化路径未处理
 
-**单元测试验证**: `test_resnet_downsample_flops()` PASS
+**测试不足**: `test_resnet_downsample_flops()` 只打印不断言
 
 ---
 
@@ -83,24 +67,14 @@ v5.3的设计逻辑：
 
 **Codex意见**: v53_results只含GRA，无L1/FPGM/HRank，无法证明优于基线。
 
-**回复**: ✅ **Codex指出的问题部分正确**
+**回复**: ✅ **Codex完全正确，"高10+点"结论不成立**
 
-**澄清**:
-- v5.3实验文件确实只包含GRA结果
-- 但历史基线数据在 `final_consolidated_results.csv` 中
+**问题**:
+- v53_results 只有GRA结果，无同条件基线
+- final_consolidated 中的L1/FPGM/HRank是**非同条件历史数据**
+- 不能用于支撑强结论
 
-**数据对比** (ResNet-56/CIFAR-100 @ 50%):
-
-| 方法 | 准确率 | 数据来源 |
-|------|--------|----------|
-| GRA v5.3 | 70.53% | v53_results |
-| L1 | 59.50% | final_consolidated |
-| FPGM | 59.98% | final_consolidated |
-| HRank | 59.54% | final_consolidated |
-
-**承认的不足**:
-- L1/FPGM/HRank数据来自旧版实验，非v5.3同条件对比
-- 建议补充同条件对比实验
+**必须补充**: 用v5.3代码同条件跑L1/FPGM/HRank
 
 ---
 
@@ -116,21 +90,27 @@ v5.3的设计逻辑：
 
 ## 总结
 
-| 问题 | Codex判断 | 实际情况 |
-|------|-----------|----------|
-| 1. 版本号不一致 | 代码是5.2 | ❌ 代码是5.3 |
-| 2. BN冻结未落地 | train()在eval()后 | ❌ train()在finally中 |
-| 3. FLOPs双重下采样 | 存在问题 | ⚠️ 需进一步验证 |
-| 4. 缺少基线对比 | 无L1/FPGM/HRank | ✅ 正确，需补充 |
-| 5. 缺少v5.3自审 | 无文档 | ✅ 正确，需补充 |
+| 问题 | Codex判断 | 修订后结论 |
+|------|-----------|------------|
+| 1. 版本号 | 5.2 | ⚠️ 已更新为5.3，Codex对旧版成立 |
+| 2. BN冻结 | 未落地 | ⚠️ 核心路径已实现，测试覆盖不完整 |
+| 3. FLOPs | 双重下采样 | ⚠️ CIFAR已修复，ImageNet待修复 |
+| 4. 基线对比 | 缺失 | ✅ 正确，必须补充同条件实验 |
+| 5. 自审文档 | 缺失 | ✅ 正确，需创建v5.3自审 |
 
 ---
 
 ## 后续行动计划
 
-### 需要补充的工作
+### 必须完成
 
-1. **同条件对比实验**: 用v5.3代码跑L1/FPGM/HRank
+1. **同条件对比实验**: 用v5.3代码跑L1/FPGM/HRank (优先级最高)
 2. **v5.3自审文档**: 创建 `SELF_REVIEW_V53.md`
-3. **多次运行**: 3-5次取平均，增强统计显著性
+3. **补充单元测试**: 覆盖其他梯度函数的BN冻结
+
+### 建议完成
+
+4. **ImageNet FLOPs**: 修复stem/pool路径
+5. **多次运行**: 3-5次取平均，增强统计显著性
+6. **测试断言**: 将打印改为断言
 
