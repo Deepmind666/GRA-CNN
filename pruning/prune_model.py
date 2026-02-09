@@ -288,3 +288,233 @@ def build_new_resnet(old_model, new_cfg, mask_dict, model_type='resnet20', num_c
                     print(f"Warning: Shape mismatch for {name}, skipping copy.")
 
     return new_model
+
+
+def _normalize_mask(mask, out_channels, layer_name=None):
+    """Normalize a mask to a boolean numpy array with safe fallbacks."""
+    if isinstance(mask, torch.Tensor):
+        mask = mask.detach().cpu().numpy()
+    mask = np.asarray(mask).astype(bool)
+    if mask.size != out_channels:
+        print(f"Warning: mask size mismatch for {layer_name} "
+              f"(got {mask.size}, expected {out_channels}). Keeping all channels.")
+        mask = np.ones(out_channels, dtype=bool)
+    if mask.sum() == 0:
+        # Safety: keep at least one channel
+        mask[0] = True
+    return mask
+
+
+def build_new_vgg_from_mask(old_model, mask_dict, model_type='vgg16'):
+    """
+    Build a new VGG model from channel masks (structured pruning).
+
+    mask_dict: dict[layer_name] -> binary mask (1=keep, 0=prune)
+    """
+    # Build cfg from masks
+    new_cfg = []
+    for name, module in old_model.features.named_children():
+        full_name = f"features.{name}"
+        if isinstance(module, nn.Conv2d):
+            mask = mask_dict.get(full_name, np.ones(module.out_channels, dtype=bool))
+            mask = _normalize_mask(mask, module.out_channels, full_name)
+            new_cfg.append(int(mask.sum()))
+        elif isinstance(module, nn.MaxPool2d):
+            new_cfg.append('M')
+
+    num_classes = old_model.classifier.out_features
+    new_model = vgg16(num_classes=num_classes, cfg=new_cfg)
+    new_model.to(next(old_model.parameters()).device)
+
+    # Copy weights
+    old_features = list(old_model.features.children())
+    new_features = list(new_model.features.children())
+    last_mask = None
+    last_mask_indices = None
+
+    for i, (old_m, new_m) in enumerate(zip(old_features, new_features)):
+        if isinstance(old_m, nn.Conv2d):
+            full_name = f"features.{i}"
+            mask = mask_dict.get(full_name, np.ones(old_m.out_channels, dtype=bool))
+            mask = _normalize_mask(mask, old_m.out_channels, full_name)
+            mask_indices = np.where(mask)[0]
+
+            if last_mask is None:
+                w = old_m.weight.data[mask_indices, :, :, :]
+            else:
+                w = old_m.weight.data[mask_indices][:, last_mask_indices, :, :]
+            new_m.weight.data = w
+            if old_m.bias is not None:
+                new_m.bias.data = old_m.bias.data[mask_indices]
+
+            last_mask = mask
+            last_mask_indices = mask_indices
+
+        elif isinstance(old_m, nn.BatchNorm2d):
+            if last_mask_indices is None:
+                continue
+            new_m.weight.data = old_m.weight.data[last_mask_indices]
+            new_m.bias.data = old_m.bias.data[last_mask_indices]
+            new_m.running_mean.data = old_m.running_mean.data[last_mask_indices]
+            new_m.running_var.data = old_m.running_var.data[last_mask_indices]
+
+    # Classifier
+    old_linear = old_model.classifier
+    new_linear = new_model.classifier
+    if last_mask_indices is None:
+        last_mask_indices = np.arange(old_linear.weight.data.size(1))
+    new_linear.weight.data = old_linear.weight.data[:, last_mask_indices]
+    new_linear.bias.data = old_linear.bias.data.clone()
+
+    return new_model
+
+
+def build_new_resnet_from_mask(old_model, mask_dict, model_type=None):
+    """
+    Build a new ResNet (CIFAR) model from channel masks.
+
+    Only conv1 inside BasicBlock is pruned; conv2 output channels stay unchanged.
+    """
+    # Determine model type if not provided
+    if model_type is None:
+        if hasattr(old_model, 'layer3'):
+            num_blocks = len(list(old_model.layer3))
+            if num_blocks >= 18:
+                model_type = 'resnet110'
+            elif num_blocks >= 9:
+                model_type = 'resnet56'
+            else:
+                model_type = 'resnet20'
+        else:
+            model_type = 'resnet20'
+
+    # Sanitize masks for conv1 in each block and build cfg in order
+    new_cfg = []
+    sanitized_masks = {}
+    for name, module in old_model.named_modules():
+        if isinstance(module, nn.Conv2d) and 'layer' in name and '.conv1' in name:
+            mask = mask_dict.get(name, np.ones(module.out_channels, dtype=bool))
+            mask = _normalize_mask(mask, module.out_channels, name)
+            sanitized_masks[name] = mask
+            new_cfg.append(int(mask.sum()))
+
+    num_classes = old_model.fc.out_features
+    return build_new_resnet(old_model, new_cfg, sanitized_masks, model_type, num_classes)
+
+
+# =============================================================================
+# 全网络剪枝接口 (Stage级统一通道剪枝)
+# =============================================================================
+
+def _copy_block_weights_mid_only(old_block, new_block, mask_idx):
+    """
+    复制BasicBlock权重 - 路径B: 只剪中间通道(mid_planes)
+
+    结构: x -> conv1 -> bn1 -> relu -> conv2 -> bn2 -> (+shortcut) -> out
+    - conv1: [inplanes -> mid_planes] 输出通道剪枝
+    - conv2: [mid_planes -> planes] 输入通道剪枝，输出保持不变
+    - shortcut/bn2/block输出: 保持原始维度不变
+    """
+    # conv1: 输入保持原样，输出按mask剪枝
+    new_block.conv1.weight.data = old_block.conv1.weight.data[mask_idx, :, :, :]
+
+    # bn1: 跟随conv1输出
+    new_block.bn1.weight.data = old_block.bn1.weight.data[mask_idx]
+    new_block.bn1.bias.data = old_block.bn1.bias.data[mask_idx]
+    new_block.bn1.running_mean.data = old_block.bn1.running_mean.data[mask_idx]
+    new_block.bn1.running_var.data = old_block.bn1.running_var.data[mask_idx]
+
+    # conv2: 输入通道剪枝(mask_idx)，输出通道保持原样(planes不变)
+    new_block.conv2.weight.data = old_block.conv2.weight.data[:, mask_idx, :, :]
+
+    # bn2: 保持原样(跟随conv2输出=planes)
+    new_block.bn2.weight.data = old_block.bn2.weight.data.clone()
+    new_block.bn2.bias.data = old_block.bn2.bias.data.clone()
+    new_block.bn2.running_mean.data = old_block.bn2.running_mean.data.clone()
+    new_block.bn2.running_var.data = old_block.bn2.running_var.data.clone()
+
+    # shortcut: 保持原样(不剪枝)
+    if old_block.downsample is not None:
+        for i, (old_m, new_m) in enumerate(zip(old_block.downsample, new_block.downsample)):
+            if hasattr(old_m, 'weight'):
+                new_m.weight.data = old_m.weight.data.clone()
+            if hasattr(old_m, 'bias') and old_m.bias is not None:
+                new_m.bias.data = old_m.bias.data.clone()
+            if hasattr(old_m, 'running_mean'):
+                new_m.running_mean.data = old_m.running_mean.data.clone()
+                new_m.running_var.data = old_m.running_var.data.clone()
+
+
+def build_resnet_stage_pruned(old_model, stage_masks, model_type='resnet20'):
+    """
+    路径B: 只剪中间通道(mid_planes)的结构化剪枝
+
+    保持ResNet结构不变:
+    - block输出通道(planes)不变: 16/32/64
+    - 只剪conv1输出 + conv2输入 (mid_planes)
+    - shortcut/fc保持原样
+
+    Args:
+        old_model: 原始模型
+        stage_masks: {stage_name: bool_array} 每个stage的mid_planes掩码
+        model_type: 架构类型
+
+    Returns:
+        new_model: 剪枝后的模型
+    """
+    num_classes = old_model.fc.out_features
+
+    # 确定每个stage的block数量
+    n_blocks = len(list(old_model.layer1))
+
+    # 构建cfg: 长度为3*n，每个block一个mid_planes值
+    new_cfg = []
+    for stage_name in ['layer1', 'layer2', 'layer3']:
+        mask = stage_masks.get(stage_name)
+        if mask is not None:
+            mid_ch = int(mask.sum())
+        else:
+            stage = getattr(old_model, stage_name)
+            mid_ch = stage[0].conv1.out_channels
+        # 该stage所有block使用相同的mid_planes
+        new_cfg.extend([mid_ch] * n_blocks)
+
+    # 创建新模型
+    if model_type == 'resnet20':
+        new_model = resnet20(num_classes=num_classes, cfg=new_cfg)
+    elif model_type == 'resnet56':
+        new_model = resnet56(num_classes=num_classes, cfg=new_cfg)
+    elif model_type == 'resnet110':
+        new_model = resnet110(num_classes=num_classes, cfg=new_cfg)
+    else:
+        raise ValueError(f"Unknown model type: {model_type}")
+
+    device = next(old_model.parameters()).device
+    new_model.to(device)
+
+    # 复制首层conv1权重(不剪枝)
+    new_model.conv1.weight.data = old_model.conv1.weight.data.clone()
+    new_model.bn1.weight.data = old_model.bn1.weight.data.clone()
+    new_model.bn1.bias.data = old_model.bn1.bias.data.clone()
+    new_model.bn1.running_mean.data = old_model.bn1.running_mean.data.clone()
+    new_model.bn1.running_var.data = old_model.bn1.running_var.data.clone()
+
+    # 复制各stage的权重
+    for stage_name in ['layer1', 'layer2', 'layer3']:
+        old_stage = getattr(old_model, stage_name)
+        new_stage = getattr(new_model, stage_name)
+        mask = stage_masks.get(stage_name)
+        if mask is None:
+            mask = np.ones(old_stage[0].conv1.out_channels, dtype=bool)
+        mask_idx = np.where(mask)[0]
+
+        for block_idx in range(len(old_stage)):
+            old_block = old_stage[block_idx]
+            new_block = new_stage[block_idx]
+            _copy_block_weights_mid_only(old_block, new_block, mask_idx)
+
+    # 复制fc层(不剪枝)
+    new_model.fc.weight.data = old_model.fc.weight.data.clone()
+    new_model.fc.bias.data = old_model.fc.bias.data.clone()
+
+    return new_model
