@@ -1,10 +1,15 @@
 ﻿"""Single-task launcher for GRA v5 experiments."""
-import sys
-sys.path.insert(0, r"C:\GRA-CNN")
-
 import argparse
 import json
+import sys
+from pathlib import Path
+
 import torch
+
+# Portable project-root import (local and remote Windows hosts).
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 from experiments.run_full_matrix_v5 import run_single_experiment_v5
 
@@ -35,4 +40,4 @@ if __name__ == "__main__":
         dataset=args.dataset,
         finetune_epochs=args.finetune_epochs,
     )
-    print("RESULT_JSON:" + json.dumps(result, ensure_ascii=False))
+    print("RESULT_JSON:" + json.dumps(result, ensure_ascii=False), flush=True)
