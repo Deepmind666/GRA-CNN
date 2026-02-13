@@ -54,7 +54,34 @@ def worker_init_fn(worker_id):
     torch.manual_seed(worker_seed)  # 修复: 添加torch种子
 
 
-def get_dataloaders(dataset='cifar10', batch_size=512, seed=42):
+def resolve_data_root(dataset='cifar10'):
+    """
+    Resolve dataset root for local/remote layouts.
+    Priority:
+    1) env GRA_DATA_ROOT
+    2) ./data
+    3) ../data (for server checkout under ...\\GRA-CNN\\project)
+    """
+    candidates = []
+    env_root = os.environ.get("GRA_DATA_ROOT")
+    if env_root:
+        candidates.append(env_root)
+    candidates.extend(["data", os.path.join("..", "data")])
+
+    def has_target(root_path):
+        if not os.path.isdir(root_path):
+            return False
+        if dataset == 'cifar10':
+            return os.path.isdir(os.path.join(root_path, "cifar-10-batches-py"))
+        return os.path.isdir(os.path.join(root_path, "cifar-100-python"))
+
+    for root in candidates:
+        if has_target(root):
+            return root
+    return "data"
+
+
+def get_dataloaders(dataset='cifar10', batch_size=2048, seed=42, workers=None):
     """获取训练和测试数据加载器（用于微调）- 大batch提高GPU利用率"""
     import torchvision
     import torchvision.transforms as transforms
@@ -79,26 +106,43 @@ def get_dataloaders(dataset='cifar10', batch_size=512, seed=42):
         transforms.Normalize(mean, std),
     ])
 
+    data_root = resolve_data_root(dataset)
+
     if dataset == 'cifar10':
         trainset = torchvision.datasets.CIFAR10(
-            root='data', train=True, download=True, transform=transform_train)
+            root=data_root, train=True, download=True, transform=transform_train)
         testset = torchvision.datasets.CIFAR10(
-            root='data', train=False, download=True, transform=transform_test)
+            root=data_root, train=False, download=True, transform=transform_test)
     else:
         trainset = torchvision.datasets.CIFAR100(
-            root='data', train=True, download=True, transform=transform_train)
+            root=data_root, train=True, download=True, transform=transform_train)
         testset = torchvision.datasets.CIFAR100(
-            root='data', train=False, download=True, transform=transform_test)
+            root=data_root, train=False, download=True, transform=transform_test)
 
     # 使用generator确保可复现性
     g = torch.Generator()
     g.manual_seed(seed)
 
+    if workers is None:
+        workers = int(os.environ.get("GRA_NUM_WORKERS", "1"))
+    workers = max(int(workers), 0)
+
     train_loader = torch.utils.data.DataLoader(
-        trainset, batch_size=batch_size, shuffle=True, num_workers=2,
-        worker_init_fn=worker_init_fn, generator=g, pin_memory=True)
+        trainset,
+        batch_size=batch_size,
+        shuffle=True,
+        num_workers=workers,
+        worker_init_fn=worker_init_fn if workers > 0 else None,
+        generator=g,
+        pin_memory=True,
+    )
     test_loader = torch.utils.data.DataLoader(
-        testset, batch_size=batch_size, shuffle=False, num_workers=2, pin_memory=True)
+        testset,
+        batch_size=batch_size,
+        shuffle=False,
+        num_workers=workers,
+        pin_memory=True,
+    )
 
     return train_loader, test_loader, num_classes
 
@@ -137,12 +181,14 @@ def get_scoring_dataloader(dataset='cifar10', batch_size=128, num_samples=2560, 
         transforms.Normalize(mean, std),
     ])
 
+    data_root = resolve_data_root(dataset)
+
     if dataset == 'cifar10':
         trainset = torchvision.datasets.CIFAR10(
-            root='data', train=True, download=True, transform=transform_scoring)
+            root=data_root, train=True, download=True, transform=transform_scoring)
     else:
         trainset = torchvision.datasets.CIFAR100(
-            root='data', train=True, download=True, transform=transform_scoring)
+            root=data_root, train=True, download=True, transform=transform_scoring)
 
     # 固定indices子集
     g = torch.Generator()
@@ -173,7 +219,7 @@ def evaluate(model, test_loader, device):
 
 def finetune(model, train_loader, test_loader, device, epochs=40):
     """微调剪枝后的模型 (混合精度加速)"""
-    optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9, weight_decay=1e-4)
+    optimizer = optim.SGD(model.parameters(), lr=0.04, momentum=0.9, weight_decay=1e-4)
     scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=epochs)
     criterion = nn.CrossEntropyLoss()
     scaler = torch.amp.GradScaler('cuda')
@@ -544,8 +590,8 @@ def run_single_experiment(arch, method, ratio, seed, device, pruning_scope='resn
         from models.resnet_cifar import resnet110
         model = resnet110(num_classes=num_classes)
     elif arch == 'vgg16':
-        from models.vgg_cifar import vgg16_bn
-        model = vgg16_bn(num_classes=num_classes)
+        from models.vgg_cifar import vgg16
+        model = vgg16(num_classes=num_classes)
     elif arch == 'mobilenetv2':
         from models.mobilenetv2 import mobilenetv2_cifar
         model = mobilenetv2_cifar(num_classes=num_classes)
