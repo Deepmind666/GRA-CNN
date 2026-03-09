@@ -1,0 +1,6 @@
+architecture,dataset,ratio,ablation_method,base_worst_class_acc,ablation_worst_class_acc,drop_base_minus_ablation
+resnet56,cifar100,0.7,GRA-CHIP-v4C-noProtect,39.0,39.0,0.0
+resnet56,cifar100,0.7,GRA-CHIP-v4C-fixedBudget,39.0,40.0,-1.0
+resnet56,cifar100,0.9,GRA-CHIP-v4C-fixedBudget,17.0,17.0,0.0
+vgg16,cifar100,0.7,GRA-CHIP-v4C-noProtect,36.0,31.0,5.0
+vgg16,cifar100,0.9,GRA-CHIP-v4C-fixedBudget,5.0,5.0,0.0

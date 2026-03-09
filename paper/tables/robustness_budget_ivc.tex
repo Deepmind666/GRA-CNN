@@ -1,0 +1,40 @@
+\begin{table}[!htbp]
+\caption{CIFAR-100 robustness-oriented statistical summaries. (a) Primary paired robustness statistics on ResNet-56 for the residual high-compression cells. (b) Iso-FLOPs comparison under matched computational budgets, with CHIP used as the reference within each cell.}
+\label{tab:robustness_budget_ivc}
+\centering
+\begin{minipage}[t]{0.98\textwidth}
+\centering
+\textbf{(a) Paired robustness statistics}\par\medskip
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lccccc}
+\toprule
+Baseline & Ratio & $\Delta$ & 95\% CI & Holm $p$ & $g$ \\
+\midrule
+CHIP & 0.7 & +0.51 & [+0.42, +0.60] & 0.0037 & +3.50 \\
+CHIP & 0.9 & +0.54 & [+0.40, +0.66] & 0.0100 & +2.56 \\
+L1 & 0.7 & -0.17 & [-0.38, -0.01] & 0.3605 & -0.58 \\
+L1 & 0.9 & +0.04 & [-0.15, +0.21] & 0.7452 & +0.12 \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+\vspace{0.8em}
+
+\begin{minipage}[t]{0.98\textwidth}
+\centering
+\textbf{(b) Iso-FLOPs comparison}\par\medskip
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llccccc}
+\toprule
+Architecture & Ratio & CHIP & GRA-CNN & L1 & $\Delta_G$ & $\Delta_L$ \\
+\midrule
+ResNet-56 & 0.7 & 64.64 & 65.52 & \textbf{65.93} & +0.88 & +1.29 \\
+ResNet-56 & 0.9 & \textbf{51.19} & 50.97 & 50.41 & -0.22 & -0.78 \\
+VGG-16 & 0.7 & 63.64 & \textbf{64.26} & 57.64 & +0.62 & -6.00 \\
+VGG-16 & 0.9 & 39.30 & \textbf{42.55} & 30.43 & +3.26 & -8.86 \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\end{table}

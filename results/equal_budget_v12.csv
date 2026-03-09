@@ -1,0 +1,13 @@
+architecture,dataset,ratio,seed,method,final_acc,iso_flops_target,iso_flops_actual,iso_flops_ratio
+resnet56,cifar100,0.7,123,CHIP,67.35,,,
+resnet56,cifar100,0.7,42,CHIP,67.24,,,
+resnet56,cifar100,0.7,456,CHIP,67.54,,,
+resnet56,cifar100,0.7,123,GRA-CHIP-v3,67.72,,,
+resnet56,cifar100,0.7,42,GRA-CHIP-v3,67.87,,,
+resnet56,cifar100,0.7,456,GRA-CHIP-v3,67.97,,,
+vgg16,cifar100,0.7,123,CHIP,64.34,,,
+vgg16,cifar100,0.7,42,CHIP,64.35,,,
+vgg16,cifar100,0.7,456,CHIP,64.34,,,
+vgg16,cifar100,0.7,123,GRA-CHIP-v3,64.11,,,
+vgg16,cifar100,0.7,42,GRA-CHIP-v3,64.39,,,
+vgg16,cifar100,0.7,456,GRA-CHIP-v3,63.95,,,

@@ -1,0 +1,48 @@
+{
+  "architecture": "vgg16",
+  "dataset": "cifar100",
+  "method": "GRA-CHIP-v4",
+  "mode": "oneshot",
+  "target_ratio": 0.7,
+  "seed": 42,
+  "epochs": 30,
+  "baseline_acc": 73.58,
+  "pruned_acc": 1.24,
+  "final_acc": 63.92,
+  "params_before": 14774436,
+  "params_after": 1349561,
+  "param_reduction_pct": 90.86556671266504,
+  "compression_ratio": 10.94758665966192,
+  "score_time_s": 68.69946765899658,
+  "total_time_s": 345.2,
+  "score_meta": {
+    "version": "GRA-CHIP-v4",
+    "method": "GRA-CHIP-v4",
+    "signals": [
+      "chip",
+      "taylor",
+      "fisher"
+    ],
+    "weights": {
+      "chip": 0.55,
+      "taylor": 0.25,
+      "fisher": 0.2
+    },
+    "n_layers": 13,
+    "score_time_s": 68.69946765899658
+  },
+  "method_version": "GRA-CHIP-v4",
+  "gate_on_rate": 0.0,
+  "semantic_applied_rate": 0.0,
+  "total_swaps": 0,
+  "avg_swaps_per_layer": 0.0,
+  "tau_candidate": 0.0,
+  "tau_dyn": 0.0,
+  "quality_mean": 0.0,
+  "anchor_weights": {},
+  "boundary_quantiles": [],
+  "iso_flops_target": null,
+  "iso_flops_actual": null,
+  "iso_flops_ratio": null,
+  "timestamp": "2026-02-26T00:40:35.944471"
+}

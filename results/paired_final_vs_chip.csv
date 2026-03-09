@@ -1,0 +1,5 @@
+architecture,dataset,ratio,method_a,method_b,n_pairs,mean_CHIP,mean_GRA-CHIP-v3,mean_diff_b_minus_a,std_diff,t_stat,p_t,wilcoxon_stat,p_wilcoxon,cohens_d,ci95_low,ci95_high
+resnet56,cifar100,0.7,CHIP,GRA-CHIP-v3,5,67.248,67.76,0.512,0.1171,9.7741,0.000614,0.0,0.0625,4.3711,0.4093,0.6147
+resnet56,cifar100,0.9,CHIP,GRA-CHIP-v3,5,56.972,57.51,0.538,0.1678,7.1676,0.002006,0.0,0.0625,3.2054,0.3909,0.6851
+vgg16,cifar100,0.7,CHIP,GRA-CHIP-v3,5,64.43,64.372,-0.058,0.3232,-0.4013,0.708746,6.0,0.8125,-0.1794,-0.3413,0.2253
+vgg16,cifar100,0.9,CHIP,GRA-CHIP-v3,5,42.694,42.842,0.148,1.0566,0.3132,0.769779,7.0,1.0,0.1401,-0.7782,1.0742

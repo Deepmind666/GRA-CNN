@@ -1,0 +1,9 @@
+dataset,method,ratio,n,mean_final_acc,std_final_acc
+cifar100,CHIP,0.7,10,65.839,1.4967
+cifar100,CHIP,0.9,10,49.833,7.5526
+cifar100,GRA-CHIP-v3,0.7,10,66.066,1.8044
+cifar100,GRA-CHIP-v3,0.9,10,50.176,7.736
+cifar100,L1,0.7,10,65.374,2.7406
+cifar100,L1,0.9,10,37.365,25.8886
+cifar100,Taylor,0.7,10,64.397,3.0645
+cifar100,Taylor,0.9,10,49.143,7.2489

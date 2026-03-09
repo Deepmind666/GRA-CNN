@@ -1,0 +1,17 @@
+{
+  "architecture": "resnet56",
+  "dataset": "cifar100",
+  "method": "Cosine-Semantic",
+  "target_ratio": 0.9,
+  "seed": 456,
+  "baseline_acc": 72.56,
+  "pruned_acc": 1.12,
+  "final_acc": 54.17,
+  "params_before": 861620,
+  "params_after": 102992,
+  "compression_ratio": 8.3659,
+  "total_time_s": 420.3,
+  "finetune_epochs": 40,
+  "scoring_metric": "cosine",
+  "timestamp": "2026-03-08T20:11:08"
+}

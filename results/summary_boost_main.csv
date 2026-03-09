@@ -1,0 +1,62 @@
+architecture,dataset,ratio,method,n,seeds,mean_final_acc,std_final_acc
+resnet56,cifar100,0.7,CHIP,5,"[42, 123, 456, 789, 1024]",67.248,0.2078
+resnet56,cifar100,0.7,FPGM,5,"[42, 123, 456, 789, 1024]",65.726,0.1309
+resnet56,cifar100,0.7,GRA-CHIP-v2,3,"[42, 123, 456]",65.82,3.6203
+resnet56,cifar100,0.7,GRA-CHIP-v3-noBoundary,1,[42],67.6,0.0
+resnet56,cifar100,0.7,GRA-CHIP-v3-noCA,1,[42],67.36,0.0
+resnet56,cifar100,0.7,GRA-CHIP-v3-noGate,1,[42],67.99,0.0
+resnet56,cifar100,0.7,GRA-CHIP-v3.1,3,"[42, 123, 456]",67.6133,0.0814
+resnet56,cifar100,0.7,GRA-CHIP-v3.2,3,"[42, 123, 456]",67.6,0.07
+resnet56,cifar100,0.7,GRA-CHIP-v4,2,"[42, 123]",67.595,0.1061
+resnet56,cifar100,0.7,GRA-CHIP-v4-noMargin,1,[42],67.91,0.0
+resnet56,cifar100,0.7,GRA-CHIP-v4C,3,"[42, 123, 456]",67.3833,0.2003
+resnet56,cifar100,0.7,GRA-CHIP-v4C-fixedBudget,1,[42],67.15,0.0
+resnet56,cifar100,0.7,GRA-CHIP-v4C-noProtect,3,"[42, 123, 456]",67.8333,0.2421
+resnet56,cifar100,0.7,GRA-CNN,5,"[42, 123, 456, 789, 1024]",67.76,0.171
+resnet56,cifar100,0.7,HRank,5,"[42, 123, 456, 789, 1024]",64.458,0.1687
+resnet56,cifar100,0.7,L1,5,"[42, 123, 456, 789, 1024]",67.934,0.1481
+resnet56,cifar100,0.7,Taylor,5,"[42, 123, 456, 789, 1024]",67.284,0.2402
+resnet56,cifar100,0.9,CHIP,5,"[42, 123, 456, 789, 1024]",56.972,0.089
+resnet56,cifar100,0.9,FPGM,5,"[42, 123, 456, 789, 1024]",50.358,0.4123
+resnet56,cifar100,0.9,GRA-CHIP-v3-noBoundary,1,[42],57.19,0.0
+resnet56,cifar100,0.9,GRA-CHIP-v3-noCA,1,[42],57.37,0.0
+resnet56,cifar100,0.9,GRA-CHIP-v3-noGate,1,[42],57.53,0.0
+resnet56,cifar100,0.9,GRA-CHIP-v3.1,3,"[42, 123, 456]",57.22,0.3381
+resnet56,cifar100,0.9,GRA-CHIP-v3.2,3,"[42, 123, 456]",57.5,0.0721
+resnet56,cifar100,0.9,GRA-CHIP-v4C,3,"[42, 123, 456]",55.99,0.1732
+resnet56,cifar100,0.9,GRA-CHIP-v4C-fixedBudget,1,[42],56.09,0.0
+resnet56,cifar100,0.9,GRA-CHIP-v4C-noProtect,1,[42],57.08,0.0
+resnet56,cifar100,0.9,GRA-CNN,5,"[42, 123, 456, 789, 1024]",57.51,0.1576
+resnet56,cifar100,0.9,HRank,5,"[42, 123, 456, 789, 1024]",47.428,0.8856
+resnet56,cifar100,0.9,L1,5,"[42, 123, 456, 789, 1024]",57.474,0.2961
+resnet56,cifar100,0.9,Taylor,5,"[42, 123, 456, 789, 1024]",56.008,0.3746
+vgg16,cifar100,0.7,CHIP,5,"[42, 123, 456, 789, 1024]",64.43,0.1847
+vgg16,cifar100,0.7,FPGM,5,"[42, 123, 456, 789, 1024]",57.686,1.063
+vgg16,cifar100,0.7,GRA-CHIP-v2,3,"[42, 123, 456]",63.8967,0.1286
+vgg16,cifar100,0.7,GRA-CHIP-v3-noBoundary,1,[42],64.29,0.0
+vgg16,cifar100,0.7,GRA-CHIP-v3-noCA,1,[42],63.94,0.0
+vgg16,cifar100,0.7,GRA-CHIP-v3-noGate,1,[42],63.82,0.0
+vgg16,cifar100,0.7,GRA-CHIP-v3.1,3,"[42, 123, 456]",64.1633,0.3508
+vgg16,cifar100,0.7,GRA-CHIP-v3.2,3,"[42, 123, 456]",64.1633,0.3508
+vgg16,cifar100,0.7,GRA-CHIP-v4,1,[42],63.92,0.0
+vgg16,cifar100,0.7,GRA-CHIP-v4C,3,"[42, 123, 456]",64.5233,0.0451
+vgg16,cifar100,0.7,GRA-CHIP-v4C-fixedBudget,1,[42],65.17,0.0
+vgg16,cifar100,0.7,GRA-CHIP-v4C-noProtect,3,"[42, 123, 456]",64.1233,0.4365
+vgg16,cifar100,0.7,GRA-CNN,5,"[42, 123, 456, 789, 1024]",64.372,0.3503
+vgg16,cifar100,0.7,HRank,5,"[42, 123, 456, 789, 1024]",59.56,0.9685
+vgg16,cifar100,0.7,L1,5,"[42, 123, 456, 789, 1024]",62.814,0.7029
+vgg16,cifar100,0.7,Taylor,5,"[42, 123, 456, 789, 1024]",61.51,0.4849
+vgg16,cifar100,0.9,CHIP,5,"[42, 123, 456, 789, 1024]",42.694,0.9614
+vgg16,cifar100,0.9,FPGM,5,"[42, 123, 456, 789, 1024]",34.518,1.7066
+vgg16,cifar100,0.9,GRA-CHIP-v3-noBoundary,1,[42],42.96,0.0
+vgg16,cifar100,0.9,GRA-CHIP-v3-noCA,1,[42],42.54,0.0
+vgg16,cifar100,0.9,GRA-CHIP-v3-noGate,1,[42],43.26,0.0
+vgg16,cifar100,0.9,GRA-CHIP-v3.1,3,"[42, 123, 456]",42.7233,0.6213
+vgg16,cifar100,0.9,GRA-CHIP-v3.2,3,"[42, 123, 456]",42.7233,0.6213
+vgg16,cifar100,0.9,GRA-CHIP-v4C,3,"[42, 123, 456]",42.3833,0.1595
+vgg16,cifar100,0.9,GRA-CHIP-v4C-fixedBudget,1,[42],42.98,0.0
+vgg16,cifar100,0.9,GRA-CHIP-v4C-noProtect,1,[42],42.98,0.0
+vgg16,cifar100,0.9,GRA-CNN,5,"[42, 123, 456, 789, 1024]",42.842,0.3971
+vgg16,cifar100,0.9,HRank,5,"[42, 123, 456, 789, 1024]",35.518,0.7086
+vgg16,cifar100,0.9,L1,5,"[42, 123, 456, 789, 1024]",17.256,22.293
+vgg16,cifar100,0.9,Taylor,5,"[42, 123, 456, 789, 1024]",42.278,0.52

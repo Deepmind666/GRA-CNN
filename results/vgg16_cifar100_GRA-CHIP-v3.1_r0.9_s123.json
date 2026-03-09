@@ -1,0 +1,69 @@
+{
+  "architecture": "vgg16",
+  "dataset": "cifar100",
+  "method": "GRA-CHIP-v3.1",
+  "mode": "oneshot",
+  "target_ratio": 0.9,
+  "seed": 123,
+  "epochs": 30,
+  "baseline_acc": 73.58,
+  "pruned_acc": 1.0,
+  "final_acc": 42.08,
+  "params_before": 14774436,
+  "params_after": 153364,
+  "param_reduction_pct": 98.96196375956416,
+  "compression_ratio": 96.3357502412561,
+  "score_time_s": 76.86672592163086,
+  "total_time_s": 339.7,
+  "score_meta": {
+    "version": "GRA-CHIP-v3.1",
+    "method": "GRA-CHIP-v3.1",
+    "architecture_profile": "vgg",
+    "anchor_weights": {
+      "chip": 0.6,
+      "taylor": 0.25,
+      "fisher": 0.15
+    },
+    "tau_candidate": 0.55,
+    "tau_dyn": 0.5018048702397189,
+    "gate_on_rate_candidate": 0.07692307692307693,
+    "boundary_quantiles": [
+      0.4,
+      0.6
+    ],
+    "gate_on_rate": 0.5384615384615384,
+    "semantic_applied_rate": 0.5384615384615384,
+    "total_swaps": 1,
+    "avg_swaps_per_layer": 0.07692307692307693,
+    "quality_mean": 0.49448174745974904,
+    "use_ca": true,
+    "enable_boundary": true,
+    "enable_quality_gate": true,
+    "enable_consensus": true,
+    "sem_margin": 0.05,
+    "consensus_margin": 0.02,
+    "gap_tol": 0.05,
+    "score_time_s": 76.86672592163086
+  },
+  "method_version": "GRA-CHIP-v3.1",
+  "gate_on_rate": 0.5384615384615384,
+  "semantic_applied_rate": 0.5384615384615384,
+  "total_swaps": 1,
+  "avg_swaps_per_layer": 0.07692307692307693,
+  "tau_candidate": 0.55,
+  "tau_dyn": 0.5018048702397189,
+  "quality_mean": 0.49448174745974904,
+  "anchor_weights": {
+    "chip": 0.6,
+    "taylor": 0.25,
+    "fisher": 0.15
+  },
+  "boundary_quantiles": [
+    0.4,
+    0.6
+  ],
+  "iso_flops_target": null,
+  "iso_flops_actual": null,
+  "iso_flops_ratio": null,
+  "timestamp": "2026-02-25T23:53:07.860913"
+}

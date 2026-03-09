@@ -1,0 +1,7 @@
+family,architecture,dataset,ratio,n_pairs,mean_delta_gra_minus_baseline,p_t,p_holm,significant_holm_p05,direction
+vs_CHIP,resnet56,cifar100,0.7,5,0.512,0.000614,0.003684,True,positive
+vs_CHIP,resnet56,cifar100,0.8,5,0.494,0.004287,0.017147,True,positive
+vs_CHIP,resnet56,cifar100,0.9,5,0.538,0.002006,0.010029,True,positive
+vs_L1,resnet56,cifar100,0.7,5,-0.174,0.180243,0.360486,False,negative
+vs_L1,resnet56,cifar100,0.8,5,-0.342,0.037176,0.111527,False,negative
+vs_L1,resnet56,cifar100,0.9,5,0.036,0.745206,0.745206,False,positive

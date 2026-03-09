@@ -1,0 +1,5 @@
+architecture,dataset,target_ratio,n_pairs,mean_Taylor,mean_CHIP,mean_diff,se,t_stat,sig_p05,winner
+resnet56,cifar100,0.7,3,67.3,67.38,0.08,0.163,0.47,no,CHIP
+resnet56,cifar100,0.9,3,56.11,56.99,0.88,0.237,3.69,YES,CHIP
+vgg16,cifar100,0.7,3,61.82,64.34,2.52,0.041,61.6,YES,CHIP
+vgg16,cifar100,0.9,3,42.17,42.82,0.65,1.049,0.62,no,CHIP

@@ -1,0 +1,9 @@
+architecture,dataset,ratio,compare,n_pairs,mean_diff,t_p,p_holm,significant_holm_p05,direction
+resnet56,cifar100,0.7,GRA-CHIP-v3-vs-CHIP,5,0.512,0.000614,0.004912,True,positive
+resnet56,cifar100,0.9,GRA-CHIP-v3-vs-CHIP,5,0.538,0.002006,0.01003,True,positive
+vgg16,cifar100,0.7,GRA-CHIP-v3-vs-CHIP,5,-0.058,0.708746,1.0,False,negative
+vgg16,cifar100,0.9,GRA-CHIP-v3-vs-CHIP,5,0.148,0.769779,1.0,False,positive
+resnet56,cifar100,0.7,GRA-CHIP-v3-vs-Taylor,5,0.476,0.040508,0.121524,False,positive
+resnet56,cifar100,0.9,GRA-CHIP-v3-vs-Taylor,5,1.502,0.000951,0.006657,True,positive
+vgg16,cifar100,0.7,GRA-CHIP-v3-vs-Taylor,5,2.862,0.001407,0.008442,True,positive
+vgg16,cifar100,0.9,GRA-CHIP-v3-vs-Taylor,5,0.564,0.015533,0.062132,False,positive

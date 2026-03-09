@@ -1,0 +1,17 @@
+{
+  "architecture": "resnet56",
+  "dataset": "cifar100",
+  "method": "Correlation-Semantic",
+  "target_ratio": 0.9,
+  "seed": 1024,
+  "baseline_acc": 72.56,
+  "pruned_acc": 1.69,
+  "final_acc": 52.69,
+  "params_before": 861620,
+  "params_after": 102992,
+  "compression_ratio": 8.3659,
+  "total_time_s": 416.7,
+  "finetune_epochs": 40,
+  "scoring_metric": "correlation",
+  "timestamp": "2026-03-08T20:53:20"
+}

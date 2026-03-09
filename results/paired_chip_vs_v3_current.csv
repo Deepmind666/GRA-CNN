@@ -1,0 +1,5 @@
+architecture,dataset,target_ratio,n_pairs,mean_CHIP,mean_GRA-CHIP-v3,mean_diff,se,t_stat,sig_p05,winner
+resnet56,cifar100,0.7,3,67.38,67.85,0.48,0.079,6.06,YES,GRA-CHIP-v3
+resnet56,cifar100,0.9,3,56.99,57.61,0.63,0.073,8.63,YES,GRA-CHIP-v3
+vgg16,cifar100,0.7,3,64.34,64.15,-0.19,0.125,-1.54,no,CHIP
+vgg16,cifar100,0.9,3,42.82,42.78,-0.04,0.836,-0.05,no,tie

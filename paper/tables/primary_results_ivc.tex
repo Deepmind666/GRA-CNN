@@ -1,0 +1,18 @@
+\begin{table}[!htbp]
+\caption{Primary CIFAR-100 comparison at the two operating points emphasized in the main paper. Values are mean$\pm$std Top-1 accuracy (\%) over five seeds. Compression ratio (CR) and parameter reduction (PR) are shared within each architecture-ratio cell because all methods use the same dependency-safe retention profile.}
+\label{tab:primary_results_ivc}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llcccccccc}
+\toprule
+Architecture & Ratio & GRA-CNN & CHIP & L1 & Taylor & FPGM & HRank & CR ($\times$) & PR (\%) \\
+\midrule
+ResNet-56 & $p=0.7$ & 67.76$\pm$0.17 & 67.25$\pm$0.21 & \textbf{67.93$\pm$0.15} & 67.28$\pm$0.24 & 65.73$\pm$0.13 & 64.46$\pm$0.17 & 3.22 & 68.99 \\
+ResNet-56 & $p=0.9$ & \textbf{57.51$\pm$0.16} & 56.97$\pm$0.09 & 57.47$\pm$0.30 & 56.01$\pm$0.37 & 50.36$\pm$0.41 & 47.43$\pm$0.89 & 9.29 & 89.24 \\
+VGG-16 & $p=0.7$ & 64.37$\pm$0.35 & \textbf{64.43$\pm$0.18} & 62.81$\pm$0.70 & 61.51$\pm$0.48 & 57.69$\pm$1.06 & 59.56$\pm$0.97 & 10.95 & 90.87 \\
+VGG-16 & $p=0.9$ & \textbf{42.84$\pm$0.40} & 42.69$\pm$0.96 & 17.26$\pm$22.29 & 42.28$\pm$0.52 & 34.52$\pm$1.71 & 35.52$\pm$0.71 & 96.34 & 98.96 \\
+\bottomrule
+\end{tabular}
+\vspace{-0.2em}}
+\end{table}

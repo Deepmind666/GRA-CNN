@@ -1,0 +1,9 @@
+architecture,dataset,nominal_ratio,method,n_seeds,mean_acc,std_acc,mean_iso_flops_error_pct,max_iso_flops_error_pct,mean_flops_reduction_pct,mean_score_time_s,mean_total_time_s
+resnet56,cifar100,0.7,CHIP,5,67.31,0.19,0.0,0.0,68.87,95.21,524.4
+resnet56,cifar100,0.7,GRA-CHIP-v3,5,67.9,0.27,0.0,0.0,68.87,24.85,450.7
+resnet56,cifar100,0.9,CHIP,5,56.84,0.18,0.0,0.0,89.06,148.41,501.7
+resnet56,cifar100,0.9,GRA-CHIP-v3,5,57.36,0.43,0.0,0.0,89.06,12.98,364.8
+vgg16,cifar100,0.7,CHIP,5,64.51,0.17,0.0,0.0,90.91,84.02,373.9
+vgg16,cifar100,0.7,GRA-CHIP-v3,5,64.26,0.43,1.7,1.7,91.07,81.06,387.7
+vgg16,cifar100,0.9,CHIP,5,42.52,0.15,0.0,0.0,98.96,79.0,368.4
+vgg16,cifar100,0.9,GRA-CHIP-v3,5,42.55,0.51,1.37,1.37,98.94,81.48,368.9

@@ -1,0 +1,61 @@
+{
+  "architecture": "resnet56",
+  "dataset": "cifar100",
+  "method": "GRA-CHIP-v4",
+  "mode": "oneshot",
+  "target_ratio": 0.7,
+  "seed": 123,
+  "epochs": 30,
+  "baseline_acc": 72.56,
+  "pruned_acc": 1.08,
+  "final_acc": 67.52,
+  "params_before": 861620,
+  "params_after": 267224,
+  "param_reduction_pct": 68.98586383788677,
+  "compression_ratio": 3.224336137472682,
+  "score_time_s": 33.9116485118866,
+  "total_time_s": 470.1,
+  "score_meta": {
+    "version": "GRA-CHIP-v4",
+    "method": "GRA-CHIP-v4",
+    "signals": [
+      "chip",
+      "margin",
+      "taylor",
+      "fisher"
+    ],
+    "avg_critic_weights": [
+      0.3669730047726396,
+      0.3018637464040099,
+      0.3226789073389516,
+      0.00848433132688556
+    ],
+    "quality_mean": 0.9294324884915646,
+    "gate_tau0": 0.5,
+    "gate_beta": 0.2,
+    "gate_kappa": 10.0,
+    "w_margin_bounds": [
+      0.15,
+      0.5
+    ],
+    "enable_margin": true,
+    "enable_critic": true,
+    "enable_gate": true,
+    "n_layers": 27,
+    "score_time_s": 33.9116485118866
+  },
+  "method_version": "GRA-CHIP-v4",
+  "gate_on_rate": 0.0,
+  "semantic_applied_rate": 0.0,
+  "total_swaps": 0,
+  "avg_swaps_per_layer": 0.0,
+  "tau_candidate": 0.0,
+  "tau_dyn": 0.0,
+  "quality_mean": 0.9294324884915646,
+  "anchor_weights": {},
+  "boundary_quantiles": [],
+  "iso_flops_target": null,
+  "iso_flops_actual": null,
+  "iso_flops_ratio": null,
+  "timestamp": "2026-02-25T23:08:24.944903"
+}

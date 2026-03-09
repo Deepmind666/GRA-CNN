@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Local environments
+.venv/
+venv/
+env/
+.env
+
+# Local datasets and checkpoints
+data/
+checkpoints/*.pth
+checkpoints/*.pt
+checkpoints/*.ckpt
+
+# Generated outputs
+results/locks/
+results/*.log
+results/*.out
+results/*.err
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz

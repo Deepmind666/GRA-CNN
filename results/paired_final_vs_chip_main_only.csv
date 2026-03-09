@@ -1,0 +1,5 @@
+architecture,dataset,ratio,compare,n_pairs,mean_diff,t_p
+resnet56,cifar100,0.7,GRA-CHIP-v3-vs-CHIP,5,0.512,0.000614
+resnet56,cifar100,0.9,GRA-CHIP-v3-vs-CHIP,5,0.538,0.002006
+vgg16,cifar100,0.7,GRA-CHIP-v3-vs-CHIP,5,-0.058,0.708746
+vgg16,cifar100,0.9,GRA-CHIP-v3-vs-CHIP,5,0.148,0.769779

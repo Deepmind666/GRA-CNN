@@ -1,0 +1,7 @@
+architecture,dataset,ratio,ablation_method,base_acc,ablation_acc,drop_base_minus_ablation
+resnet56,cifar100,0.7,GRA-CHIP-v3-noCA,67.87,67.36,0.5100000000000051
+resnet56,cifar100,0.7,GRA-CHIP-v3-noBoundary,67.87,67.6,0.27000000000001023
+resnet56,cifar100,0.7,GRA-CHIP-v3-noGate,67.87,67.99,-0.11999999999999034
+vgg16,cifar100,0.7,GRA-CHIP-v3-noCA,64.39,63.94,0.45000000000000284
+vgg16,cifar100,0.7,GRA-CHIP-v3-noBoundary,64.39,64.29,0.09999999999999432
+vgg16,cifar100,0.7,GRA-CHIP-v3-noGate,64.39,63.82,0.5700000000000003

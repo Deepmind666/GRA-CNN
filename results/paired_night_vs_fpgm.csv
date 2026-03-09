@@ -1,0 +1,13 @@
+architecture,dataset,ratio,method_a,method_b,n_pairs,mean_FPGM,mean_GRA-CNN,mean_diff_b_minus_a,std_diff,t_stat,p_t,wilcoxon_stat,p_wilcoxon,cohens_d,ci95_low,ci95_high
+resnet110,cifar100,0.7,FPGM,GRA-CNN,0,,,,,,,,,,,
+resnet110,cifar100,0.9,FPGM,GRA-CNN,0,,,,,,,,,,,
+resnet18,tinyimagenet,0.7,FPGM,GRA-CNN,0,,,,,,,,,,,
+resnet18,tinyimagenet,0.9,FPGM,GRA-CNN,0,,,,,,,,,,,
+resnet56,cifar10,0.7,FPGM,GRA-CNN,0,,,,,,,,,,,
+resnet56,cifar10,0.9,FPGM,GRA-CNN,0,,,,,,,,,,,
+resnet56,cifar100,0.6,FPGM,GRA-CNN,0,,,,,,,,,,,
+resnet56,cifar100,0.7,FPGM,GRA-CNN,0,,,,,,,,,,,
+resnet56,cifar100,0.8,FPGM,GRA-CNN,0,,,,,,,,,,,
+resnet56,cifar100,0.9,FPGM,GRA-CNN,0,,,,,,,,,,,
+vgg16,cifar100,0.7,FPGM,GRA-CNN,0,,,,,,,,,,,
+vgg16,cifar100,0.9,FPGM,GRA-CNN,0,,,,,,,,,,,
