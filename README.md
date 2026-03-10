@@ -10,8 +10,16 @@ The repository matches the version submitted to **Image and Vision Computing** i
 - Junyi Lin
 - Xiaobo Zhang
 
-Corresponding author: **Xiaobo Zhang**  
-Contact: **zxb_leng@gdut.edu.cn**
+## Contact
+
+For code, reproducibility, repository maintenance, and implementation-related
+questions, please contact:
+
+**Kangrui Li**  
+**Email:** 1403073295@mails.gdut.edu.cn
+
+For formal manuscript-related correspondence, please refer to the
+corresponding-author information provided in the paper.
 
 ## Method Summary
 
