@@ -1,4 +1,4 @@
-# Project Handoff 2026-05-28
+﻿# Project Handoff 2026-05-28
 
 ## Purpose
 
@@ -33,5 +33,6 @@ writing, while freeing the original local workstation for the MoE project.
 
 ## Notes
 
-The original local working directory `C:\GRA-CNN` was not cleaned in place.
+The original local working directory was not cleaned in place.
 GitHub `main` is the curated handoff source.
+

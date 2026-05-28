@@ -1,4 +1,4 @@
-# IVC Final Submission Checklist
+﻿# IVC Final Submission Checklist
 
 ## Status Summary
 - `PASS` Main manuscript compiled: `manuscript_ivc.pdf` (`18` pages)
@@ -72,7 +72,8 @@
 - Folder:
   - `submission/ivc_final/`
 - Original local source before curation:
-  - `C:\GRA-CNN\IVC_Submission_v3_techcheck\submission_package_final`
+  - local build folder, now represented by `submission/ivc_final/`
 - Zip:
-  - The original local zip was `C:\GRA-CNN\IVC_Submission_v3_techcheck\submission_package_final.zip`.
+  - The original local zip was unpacked before committing.
   - The GitHub release keeps the extracted package to avoid duplicate storage.
+
