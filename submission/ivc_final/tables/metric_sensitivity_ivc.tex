@@ -1,0 +1,19 @@
+\begin{table}[t]
+\caption{Auxiliary similarity-metric sensitivity study on ResNet-56/CIFAR-100 under a matched five-seed, 40-epoch recovery protocol. Cosine-Semantic stays close to the GRA-CNN baseline, whereas Correlation-Semantic is less stable at $p=0.9$.}
+\label{tab:metric_sensitivity_ivc}
+\scriptsize
+\begin{tabular*}{\linewidth}{@{\extracolsep\fill}lcc}
+\toprule
+Method & $p=0.7$ Top-1 (\%) & $p=0.9$ Top-1 (\%) \\
+\midrule
+GRA-CNN (baseline) & 66.16$\pm$0.23 & 54.27$\pm$0.44 \\
+Cosine-Semantic & 65.99$\pm$0.18 & 54.54$\pm$0.53 \\
+Correlation-Semantic & 65.93$\pm$0.18 & 52.15$\pm$1.25 \\
+\bottomrule
+\end{tabular*}
+\vspace{0.25em}
+
+\noindent\footnotesize
+GRA-CNN vs.\ Cosine-Semantic: no significant difference at either ratio.\\
+GRA-CNN vs.\ Correlation-Semantic: +2.12 pp at $p=0.9$ (paired $p=0.045$).
+\end{table}

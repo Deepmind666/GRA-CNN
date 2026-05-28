@@ -44,6 +44,9 @@ pruning/      GRA-CNN scoring logic, structural baselines, and pruning utilities
 experiments/  Public experiment entrypoints and benchmark utilities
 paper/        Submitted manuscript PDF, supplement PDF, and paper figures/tables
 results/      Filtered run-level JSON records and derived result tables
+submission/   Complete extracted IVC submission package
+docs/handoff/ Patent-writing memory, rules, and cross-machine handoff prompt
+data/         Dataset layout note; raw datasets are intentionally untracked
 ```
 
 ## Environment
@@ -59,6 +62,8 @@ pip install -r requirements.txt
 ## Data Preparation
 
 The code expects datasets under a local `data/` directory by default.
+CIFAR-10 and CIFAR-100 are downloaded by `torchvision` when the runner is used.
+Tiny-ImageNet must be prepared locally.
 
 Recommended layout:
 
@@ -72,6 +77,7 @@ data/
 ```
 
 For Tiny-ImageNet, scripts also accept an explicit `--data-dir` argument.
+See `data/README.md` for the expected layout.
 
 ## Checkpoints
 
@@ -93,16 +99,15 @@ Inspect the public experiment CLI:
 python experiments/run_real_pruning.py --help
 ```
 
+`experiments/run_real_pruning.py` delegates to `experiments/run_chip_worker.py`.
+The submitted `GRA-CNN` method is implemented by `score_gra_chip_v3` in that
+worker and combines the structural anchor, class-aware GRA redundancy, and
+quality-gated keep/prune boundary refinement.
+
 Example GRA-CNN run:
 
 ```bash
-python experiments/run_real_pruning.py ^
-  --arch resnet56 ^
-  --dataset cifar100 ^
-  --method GRA-CNN ^
-  --target_ratio 0.7 ^
-  --seed 42 ^
-  --epochs 30
+python experiments/run_real_pruning.py --arch resnet56 --dataset cifar100 --method GRA-CNN --target_ratio 0.7 --seed 42 --epochs 30
 ```
 
 Example metric-sensitivity run:
@@ -134,6 +139,14 @@ The accompanying publication figures and tables are stored under:
 
 - `paper/figures/`
 - `paper/tables/`
+- `paper/source_tools/`
+
+The complete extracted final IVC submission package is included in:
+
+- `submission/ivc_final/`
+
+This is the canonical package for portal upload checks and patent-writing
+source review.
 
 ## Results
 
@@ -145,6 +158,20 @@ The `results/` directory contains filtered run-level outputs used to support the
 - a small number of analysis summaries
 
 Raw launcher logs, lock files, and internal go/no-go notes are intentionally excluded from the public release.
+
+## Patent Handoff
+
+Cross-machine handoff material for patent drafting is stored in:
+
+- `docs/handoff/PROJECT_MEMORY.md`
+- `docs/handoff/AGENT_RULES.md`
+- `docs/handoff/GRA_PATENT_WRITING_PROMPT.md`
+- `docs/handoff/PROJECT_HANDOFF_20260528.md`
+
+Use these files together with the local `patent-disclosure-skill` on the new
+machine. The handoff prompt asks the patent writer to match the language level
+of the latest MoE patent document as a style reference only; it must not import
+MoE technical content into the GRA-CNN patent.
 
 ## Citation
 

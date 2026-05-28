@@ -1,0 +1,17 @@
+\begin{table}[t]
+\caption{Measured device-level change for representative GRA-CNN models on RTX 5090. Positive throughput change and negative latency change indicate improvement relative to the unpruned baseline of the same architecture and dataset.}
+\label{tab:latency_profile_local}
+\scriptsize
+\setlength{\tabcolsep}{3.2pt}
+\begin{tabular*}{\linewidth}{@{\extracolsep\fill}llcccc}
+\toprule
+Model & Ratio & Params $\downarrow$ & FLOPs $\downarrow$ & Latency $\Delta$ & Throughput $\Delta$ \\
+\midrule
+ResNet-56 / CIFAR-100 & $p=0.7$ & 68.99\% & 68.26\% & +10.36\% & -8.65\% \\
+ResNet-56 / CIFAR-100 & $p=0.9$ & 89.24\% & 88.25\% & -6.52\% & +8.66\% \\
+VGG-16 / CIFAR-100 & $p=0.7$ & 90.87\% & 90.84\% & -14.44\% & +40.70\% \\
+VGG-16 / CIFAR-100 & $p=0.9$ & 98.96\% & 98.93\% & -22.76\% & +38.67\% \\
+ResNet-18 / Tiny-ImageNet & $p=0.7$ & 68.19\% & 68.92\% & -23.63\% & +58.28\% \\
+\bottomrule
+\end{tabular*}
+\end{table}

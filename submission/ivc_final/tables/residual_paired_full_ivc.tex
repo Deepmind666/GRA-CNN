@@ -1,0 +1,17 @@
+\begin{table}[t]
+\caption{Full paired ResNet-56 residual comparison for GRA-CNN against CHIP and L1 across $p\in\{0.7,0.8,0.9\}$.}
+\label{tab:residual_paired_full_ivc}
+\scriptsize
+\begin{tabular*}{\linewidth}{@{\extracolsep\fill}lccccc}
+\toprule
+Baseline & Ratio & $\Delta$ (pp) & 95\% CI & $p_{\mathrm{Holm}}$ & Hedges' $g$ \\
+\midrule
+CHIP & $p=0.7$ & +0.51 & [+0.42, +0.60] & 0.0037 & +3.50 \\
+CHIP & $p=0.8$ & +0.49 & [+0.34, +0.65] & 0.0171 & +2.09 \\
+CHIP & $p=0.9$ & +0.54 & [+0.40, +0.66] & 0.0100 & +2.56 \\
+L1 & $p=0.7$ & -0.17 & [-0.38, -0.01] & 0.3605 & -0.58 \\
+L1 & $p=0.8$ & -0.34 & [-0.52, -0.13] & 0.1115 & -1.10 \\
+L1 & $p=0.9$ & +0.04 & [-0.15, +0.21] & 0.7452 & +0.12 \\
+\bottomrule
+\end{tabular*}
+\end{table}

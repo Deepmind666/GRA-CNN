@@ -11,7 +11,8 @@ env/
 .env
 
 # Local datasets and checkpoints
-data/
+data/*
+!data/README.md
 checkpoints/*.pth
 checkpoints/*.pt
 checkpoints/*.ckpt

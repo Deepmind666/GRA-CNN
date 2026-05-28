@@ -1,0 +1,16 @@
+\begin{table*}[t]
+\caption{Component ablation summary. Values are mean$\pm$std Top-1 accuracy over five seeds.}
+\label{tab:ablation_summary_ivc}
+\scriptsize
+\setlength{\tabcolsep}{4.0pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep\fill}llcccc}
+\toprule
+Architecture & Ratio & Full & w/o CA & w/o Boundary & w/o Gate \\
+\midrule
+ResNet-56 & $p=0.7$ & \textbf{67.76$\pm$0.17} & 65.59$\pm$0.28 & 65.71$\pm$0.10 & 66.02$\pm$0.11 \\
+ResNet-56 & $p=0.9$ & \textbf{57.51$\pm$0.16} & 51.46$\pm$0.23 & 51.62$\pm$0.16 & 51.70$\pm$0.41 \\
+VGG-16 & $p=0.7$ & \textbf{64.37$\pm$0.35} & 61.36$\pm$0.33 & 61.68$\pm$0.22 & 61.73$\pm$0.17 \\
+VGG-16 & $p=0.9$ & \textbf{42.84$\pm$0.40} & 35.53$\pm$0.61 & 36.11$\pm$0.28 & 33.83$\pm$1.75 \\
+\bottomrule
+\end{tabular*}
+\end{table*}

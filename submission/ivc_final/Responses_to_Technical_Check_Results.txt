@@ -1,0 +1,10 @@
+Responses to Technical Check Results
+
+Manuscript number: IMAVIS-D-26-00941
+Title: GRA-CNN: Semantic-Aware Structured Channel Pruning via Gray Relational Analysis
+
+Comment:
+Regular papers should be no shorter than 4500 words or longer than 7500 words (without including the reference section). Please revise.
+
+Response:
+We have revised and rechecked the manuscript using texcount with included tables. In the current version, the manuscript contains approximately 4,556 words before the References section, and therefore falls within the journal's required range of 4,500-7,500 words for regular papers. We have verified the resubmitted file accordingly.

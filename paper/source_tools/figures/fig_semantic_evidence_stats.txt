@@ -1,0 +1,3 @@
+spearman_r=0.093544
+semantic_priority_channels=[20, 15]
+structural_priority_channels=[43, 27]

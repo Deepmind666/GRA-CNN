@@ -1,0 +1,18 @@
+% Runtime profile table from CIFAR-100 main matrix (resnet56/vgg16)
+\begin{table}[t]
+\caption{Scoring-time profile on the CIFAR-100 main matrix (180 runs, five seeds). Runtime is measured as score computation only (excluding fine-tuning). Relative overhead is reported against CHIP.}
+\label{tab:runtime_profile}
+\small
+\begin{tabular*}{\linewidth}{@{\extracolsep\fill}lccc}
+\toprule
+Method & Mean score time (s) & Std (s) & Relative to CHIP \\
+\midrule
+L1 & 0.015 & 0.025 & $<0.001\times$ \\
+Taylor & 0.741 & 0.559 & $0.024\times$ \\
+FPGM & 0.094 & 0.034 & $0.003\times$ \\
+CHIP & 30.587 & 16.569 & $1.00\times$ \\
+GRA-CNN (Ours) & 39.272 & 21.554 & $1.28\times$ \\
+HRank & 706.009 & 746.465 & $23.08\times$ \\
+\bottomrule
+\end{tabular*}
+\end{table}

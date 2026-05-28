@@ -1,0 +1,4 @@
+- GRA models class-aware channel redundancy for structured channel pruning
+- Quality-gated boundary refinement complements structural anchor ranking
+- Robustness gains are clearest in high-compression residual CNN settings
+- Five-seed paired statistics and transfer sweeps support architecture-aware claims

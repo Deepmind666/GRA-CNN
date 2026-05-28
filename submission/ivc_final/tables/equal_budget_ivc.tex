@@ -1,0 +1,15 @@
+\begin{table}[t]
+\caption{Iso-FLOPs comparison under matched computational budgets. Mean accuracy (\%) is reported over five seeds; CHIP is the reference within each cell.}
+\label{tab:equal_budget_ivc}
+\scriptsize
+\begin{tabular*}{\linewidth}{@{\extracolsep\fill}llccccc}
+\toprule
+Architecture & Ratio & CHIP & GRA-CNN & L1 & $\Delta_{\mathrm{GRA}}$ & $\Delta_{\mathrm{L1}}$ \\
+\midrule
+ResNet-56 & $p=0.7$ & 64.64 & 65.52 & \textbf{65.93} & +0.88 & +1.29 \\
+ResNet-56 & $p=0.9$ & \textbf{51.19} & 50.97 & 50.41 & -0.22 & -0.78 \\
+VGG-16 & $p=0.7$ & 63.64 & \textbf{64.26} & 57.64 & +0.62 & -6.00 \\
+VGG-16 & $p=0.9$ & 39.30 & \textbf{42.55} & 30.43 & +3.26 & -8.86 \\
+\bottomrule
+\end{tabular*}
+\end{table}

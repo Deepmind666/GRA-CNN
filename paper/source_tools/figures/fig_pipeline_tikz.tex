@@ -1,0 +1,378 @@
+% GRA-CNN Pipeline — v4 (engineering-diagram style)
+% Tall layout (≈8cm), clean lines, minimal colour, large elements
+\begin{tikzpicture}[x=1cm, y=1cm,
+    % Palette: grey + one blue accent + green/red semantic
+    darkgrey/.style  = {draw={rgb,255:red,70;green,75;blue,85}},
+    midgrey/.style   = {draw={rgb,255:red,160;green,165;blue,170}},
+    acblue/.style    = {draw={rgb,255:red,45;green,95;blue,185}},
+    acbluefill/.style= {fill={rgb,255:red,45;green,95;blue,185}},
+    acbluetext/.style= {text={rgb,255:red,45;green,95;blue,185}},
+    gkeep/.style     = {fill={rgb,255:red,195;green,230;blue,205}, draw={rgb,255:red,55;green,155;blue,80}},
+    gprune/.style    = {fill={rgb,255:red,240;green,195;blue,195}, draw={rgb,255:red,195;green,55;blue,55}},
+    gbnd/.style      = {fill={rgb,255:red,255;green,240;blue,190}, draw={rgb,255:red,195;green,160;blue,55}},
+    dt/.style        = {text={rgb,255:red,70;green,75;blue,85}},      % dark text
+    lt/.style        = {text={rgb,255:red,140;green,140;blue,145}},    % light text
+    % Reusable
+    sboxstyle/.style = {
+        rounded corners=3pt, line width=0.65pt,
+        draw={rgb,255:red,70;green,75;blue,85}, fill=white,
+    },
+    btitle/.style = {
+        font=\sffamily\bfseries\small, dt, anchor=north, inner sep=0pt,
+    },
+    stlabel/.style = {
+        font=\sffamily\bfseries\scriptsize, lt, anchor=south, inner sep=0pt,
+    },
+    arr/.style = {
+        -{Stealth[length=2.5mm,width=2mm]}, line width=1pt,
+        draw={rgb,255:red,70;green,75;blue,85}, rounded corners=1mm,
+    },
+    bluearr/.style = {
+        -{Stealth[length=2.5mm,width=2mm]}, line width=1pt,
+        draw={rgb,255:red,45;green,95;blue,185}, rounded corners=1mm,
+    },
+    sarr/.style = {
+        -{Stealth[length=1.8mm,width=1.3mm]}, line width=0.5pt,
+    },
+]
+
+% ═══ Layout ═══
+% Row 1: Stage 0 → Stage 1 (two branches) → Stage 2
+% Row 2 continues: → Stage 3 → Stage 4
+% But keep single-row horizontal for simplicity, just make boxes taller
+
+\def\BH{7.5}  % box height — TALL
+\def\HH{3.45} % half height for Stage 1
+
+\pgfmathsetmacro{\Ax}{0}      \pgfmathsetmacro{\Aw}{2.8}
+\pgfmathsetmacro{\Bx}{3.35}   \pgfmathsetmacro{\Bw}{4.0}
+\pgfmathsetmacro{\Cx}{7.9}    \pgfmathsetmacro{\Cw}{3.6}
+\pgfmathsetmacro{\Dx}{12.05}  \pgfmathsetmacro{\Dw}{2.3}
+\pgfmathsetmacro{\Ex}{14.85}  \pgfmathsetmacro{\Ew}{2.3}
+
+% ════════ STAGE 0 ════════
+\node[stlabel] at ({\Ax+\Aw/2}, 0.2) {STAGE 0};
+\fill[sboxstyle] (\Ax, 0) rectangle +(\Aw, -\BH);
+\node[font=\sffamily\bfseries\scriptsize, dt, anchor=north] at ({\Ax+\Aw/2}, -0.3) {Pre-trained};
+\node[font=\sffamily\bfseries\scriptsize, dt, anchor=north] at ({\Ax+\Aw/2}, -0.6) {CNN};
+
+% CNN layers — large, clean, 3D-ish
+\begin{scope}[shift={({\Ax+0.25}, -1.85)}]
+    % 4 feature-map layers with offset stacking
+    \foreach \i/\w/\h/\g in {0/0.7/2.0/230, 0.85/0.6/1.7/210, 1.58/0.52/1.4/190, 2.2/0.38/1.0/170}{
+        \fill[fill={rgb,255:red,\g;green,\the\numexpr\g-10\relax;blue,255},
+              draw={rgb,255:red,70;green,100;blue,210}, line width=0.4pt, rounded corners=0.7pt]
+            (\i, {-\h/2}) rectangle +({\w}, {\h});
+    }
+    \foreach \a/\b in {0.7/0.85, 1.45/1.58, 2.1/2.2}{
+        \draw[sarr, draw={rgb,255:red,70;green,100;blue,210}] (\a, 0) -- (\b, 0);
+    }
+    \node[font=\scriptsize, dt, anchor=north] at (1.3, -1.15) {$f_\theta(\cdot)$};
+\end{scope}
+
+% Separator
+\draw[midgrey, line width=0.3pt] ({\Ax+0.2},-3.8) -- ({\Ax+\Aw-0.2},-3.8);
+
+% Calibration data — image grid
+\node[font=\sffamily\bfseries\scriptsize, dt, anchor=north] at ({\Ax+\Aw/2},-3.95) {Calibration Data};
+\begin{scope}[shift={({\Ax+0.4}, -4.55)}]
+    \foreach \r in {0,...,3}{
+        \foreach \c in {0,...,5}{
+            \pgfmathtruncatemacro{\sh}{ifthenelse(mod(\r+\c,2)==0,210,185)}
+            \fill[fill={rgb,255:red,\sh;green,\sh;blue,\sh},
+                  draw={rgb,255:red,170;green,170;blue,170}, line width=0.15pt]
+                ({\c*0.32}, {-\r*0.32}) rectangle +({0.28},{-0.28});
+        }
+    }
+    \node[font=\scriptsize, lt] at (2.15,-0.64) {$\cdots$};
+\end{scope}
+\node[font=\scriptsize\itshape, lt, anchor=north] at ({\Ax+\Aw/2},-6.2) {$B=1024$ samples};
+
+% ════════ STAGE 1 ════════
+\node[stlabel] at ({\Bx+\Bw/2}, 0.2) {STAGE 1};
+
+% --- 1a: Structural Anchor (top half) ---
+\fill[sboxstyle] (\Bx, 0) rectangle +(\Bw, -\HH);
+\node[btitle] at ({\Bx+\Bw/2}, -0.25) {Structural Anchor};
+
+\begin{scope}[shift={({\Bx+0.15}, -0.75)}]
+    % I_c — Independence
+    \draw[rounded corners=2pt, line width=0.4pt,
+          fill={rgb,255:red,250;green,248;blue,242},
+          draw={rgb,255:red,200;green,170;blue,70}]
+        (0, 0) rectangle +({1.15}, {-1.7});
+    \node[font=\Large, text={rgb,255:red,200;green,170;blue,70}]
+        at (0.575, -0.55) {$\perp$};
+    \node[font=\footnotesize\bfseries, dt]
+        at (0.575, -1.3) {$I_c$};
+
+    % T_c — Taylor
+    \draw[rounded corners=2pt, line width=0.4pt,
+          fill={rgb,255:red,250;green,248;blue,242},
+          draw={rgb,255:red,60;green,160;blue,90}]
+        (1.28, 0) rectangle +({1.15}, {-1.7});
+    \node[font=\Large, text={rgb,255:red,60;green,160;blue,90}]
+        at (1.855, -0.55) {$\nabla$};
+    \node[font=\footnotesize\bfseries, dt]
+        at (1.855, -1.3) {$T_c$};
+
+    % F_c — Fisher
+    \draw[rounded corners=2pt, line width=0.4pt,
+          fill={rgb,255:red,250;green,248;blue,242},
+          draw={rgb,255:red,160;green,60;blue,150}]
+        (2.56, 0) rectangle +({1.15}, {-1.7});
+    \node[font=\Large, text={rgb,255:red,160;green,60;blue,150}]
+        at (3.135, -0.55) {$\mathcal{F}$};
+    \node[font=\footnotesize\bfseries, dt]
+        at (3.135, -1.3) {$F_c$};
+\end{scope}
+
+\node[font=\scriptsize, lt, anchor=north]
+    at ({\Bx+\Bw/2}, -2.65)
+    {$A_c = 0.60\,\hat{I}_c + 0.25\,\hat{T}_c + 0.15\,\hat{F}_c$};
+
+% --- 1b: GRA Semantic Branch (bottom half) ---
+\pgfmathsetmacro{\SBt}{-\HH - 0.15}
+\fill[sboxstyle, draw={rgb,255:red,45;green,95;blue,185}] (\Bx, \SBt) rectangle +(\Bw, -\HH);
+\node[btitle, acbluetext] at ({\Bx+\Bw/2}, {\SBt-0.25}) {GRA Semantic Branch};
+
+\begin{scope}[shift={({\Bx+0.15}, {\SBt-0.7})}]
+    % Class k1
+    \fill[fill={rgb,255:red,225;green,238;blue,255}, draw={rgb,255:red,100;green,155;blue,225},
+          line width=0.35pt, rounded corners=1.5pt]
+        (0, 0) rectangle (1.6, -0.7);
+    \node[font=\footnotesize, text={rgb,255:red,40;green,75;blue,170}] at (0.8, -0.35) {Class $k_1$};
+
+    % Class k2
+    \fill[fill={rgb,255:red,210;green,220;blue,250}, draw={rgb,255:red,100;green,110;blue,210},
+          line width=0.35pt, rounded corners=1.5pt]
+        (0, -0.9) rectangle (1.6, -1.6);
+    \node[font=\footnotesize, text={rgb,255:red,55;green,55;blue,185}] at (0.8, -1.25) {Class $k_2$};
+
+    % GRA bidirectional
+    \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},
+          draw={rgb,255:red,45;green,95;blue,185}, line width=0.7pt]
+        (1.85, -0.35) -- (1.85, -1.25);
+    \node[font=\sffamily\bfseries\scriptsize, acbluetext, anchor=west] at (1.95, -0.8) {GRA};
+
+    % Formulas (compact)
+    \node[font=\tiny, dt, anchor=west] at (2.15, -0.4) {$R^{\text{CA}}_c\!=\!\min_k R^{(k)}_c$};
+    \node[font=\tiny\bfseries, dt, anchor=west] at (2.15, -1.15) {$s_c\!=\!1 - R^{\text{CA}}_c$};
+\end{scope}
+
+% ════════ STAGE 2 ════════
+\node[stlabel] at ({\Cx+\Cw/2}, 0.2) {STAGE 2};
+\fill[sboxstyle] (\Cx, 0) rectangle +(\Cw, -\BH);
+\node[btitle] at ({\Cx+\Cw/2}, -0.25) {Quality-Gated};
+\node[btitle] at ({\Cx+\Cw/2}, -0.65) {Refinement};
+
+% Channel ranking bar
+\begin{scope}[shift={({\Cx+0.2}, -1.6)}]
+    \node[font=\sffamily\scriptsize\bfseries, dt, anchor=west] at (0, 0.22) {Channel Ranking};
+    \fill[gkeep, line width=0.3pt, rounded corners=0.8pt]
+        (0, -0.18) rectangle (1.3, 0.12);
+    \node[font=\footnotesize, text={rgb,255:red,35;green,110;blue,55}] at (0.65, -0.03) {keep};
+    \fill[gbnd, line width=0.3pt, densely dashed, rounded corners=0.8pt]
+        (1.3, -0.18) rectangle (2.1, 0.12);
+    \node[font=\footnotesize, text={rgb,255:red,155;green,125;blue,30}] at (1.7, -0.03) {bnd};
+    \fill[gprune, line width=0.3pt, rounded corners=0.8pt]
+        (2.1, -0.18) rectangle (3.2, 0.12);
+    \node[font=\footnotesize, text={rgb,255:red,170;green,45;blue,45}] at (2.65, -0.03) {prune};
+\end{scope}
+
+% Quality gate — LARGE diamond
+\node[diamond, fill=white, draw={rgb,255:red,200;green,155;blue,35}, line width=0.7pt,
+      minimum width=16mm, minimum height=12mm, inner sep=0pt,
+      font=\small\bfseries, dt]
+    (gate) at ({\Cx+\Cw/2}, -2.35) {$Q \!\geq\! \tau$?};
+
+% Yes / No
+\draw[sarr, draw={rgb,255:red,40;green,150;blue,70}, line width=0.6pt]
+    (gate.south) -- ++(0,-0.35);
+\node[font=\sffamily\footnotesize\bfseries, text={rgb,255:red,40;green,150;blue,70}, anchor=west]
+    at ($(gate.south)+(0.1,-0.15)$) {Yes};
+
+\draw[sarr, draw={rgb,255:red,195;green,55;blue,55}, line width=0.5pt]
+    (gate.east) -- ++(0.6,0);
+\node[font=\sffamily\footnotesize\bfseries, text={rgb,255:red,195;green,55;blue,55}, anchor=south west]
+    at ($(gate.east)+(0.05,0.05)$) {No};
+
+% Boundary Swap — clean box
+\begin{scope}[shift={({\Cx+0.15}, -3.5)}]
+    \draw[rounded corners=2pt, line width=0.4pt, midgrey, fill={rgb,255:red,253;green,252;blue,248}]
+        (0, 0) rectangle (3.3, -3.5);
+    \node[font=\sffamily\footnotesize\bfseries, dt, anchor=north west]
+        at (0.1, -0.1) {Boundary Swap};
+
+    % Kept / pruned — large bars
+    \fill[gkeep, line width=0.3pt, rounded corners=1.5pt]
+        (0.15, -0.6) rectangle (1.3, -1.15);
+    \node[font=\footnotesize, text={rgb,255:red,35;green,110;blue,55}] at (0.725, -0.875) {kept};
+
+    \fill[gprune, line width=0.3pt, rounded corners=1.5pt]
+        (2.0, -0.6) rectangle (3.15, -1.15);
+    \node[font=\footnotesize, text={rgb,255:red,170;green,45;blue,45}] at (2.575, -0.875) {pruned};
+
+    % Swap arrows
+    \draw[-{Stealth[length=1.3mm]}, draw={rgb,255:red,150;green,120;blue,40}, line width=0.5pt]
+        (1.35, -0.75) to[bend left=15] (1.95, -0.75);
+    \draw[-{Stealth[length=1.3mm]}, draw={rgb,255:red,150;green,120;blue,40}, line width=0.5pt]
+        (1.95, -1.0) to[bend left=15] (1.35, -1.0);
+
+    % Conditions
+    \node[font=\footnotesize, lt, anchor=north]
+        at (1.65, -1.4) {$s_{\text{in}} - s_{\text{out}} \geq \theta_s$};
+    \node[font=\footnotesize, lt, anchor=north]
+        at (1.65, -2.05) {$\wedge\; A_{\text{out}} - A_{\text{in}} \leq \theta_a$};
+\end{scope}
+
+% ════════ STAGE 3 ════════
+\node[stlabel] at ({\Dx+\Dw/2}, 0.2) {STAGE 3};
+\fill[sboxstyle] (\Dx, 0) rectangle +(\Dw, -\BH);
+\node[btitle] at ({\Dx+\Dw/2}, -0.25) {Structural};
+\node[btitle] at ({\Dx+\Dw/2}, -0.65) {Pruning};
+
+% Before: 6 channels — TALL, WIDE
+\begin{scope}[shift={({\Dx+0.15}, -1.15)}]
+    \foreach \i/\tp in {0/k, 1/k, 2/p, 3/k, 4/p, 5/k}{
+        \pgfmathsetmacro{\xp}{\i * 0.36}
+        \if\tp k
+            \fill[gkeep, line width=0.3pt]
+                (\xp, 0) rectangle +({0.30}, {-2.2});
+        \else
+            \fill[gprune, line width=0.3pt, densely dashed]
+                (\xp, 0) rectangle +({0.30}, {-2.2});
+            \draw[line width=0.9pt, draw={rgb,255:red,185;green,45;blue,45}]
+                ({\xp+0.04}, -0.15) -- ({\xp+0.26}, -2.05)
+                ({\xp+0.26}, -0.15) -- ({\xp+0.04}, -2.05);
+        \fi
+    }
+\end{scope}
+
+% Arrow down
+\draw[arr, draw={rgb,255:red,185;green,45;blue,45}]
+    ({\Dx+\Dw/2}, -3.6) -- ++(0, -0.5);
+
+% After: 4 channels
+\begin{scope}[shift={({\Dx+0.3}, -4.35)}]
+    \foreach \i in {0,...,3}{
+        \pgfmathsetmacro{\xp}{\i * 0.45}
+        \fill[gkeep, line width=0.3pt]
+            (\xp, 0) rectangle +({0.38}, {-1.8});
+    }
+\end{scope}
+
+\node[font=\scriptsize\itshape, lt, anchor=north]
+    at ({\Dx+\Dw/2}, -6.35) {Dep.-safe removal};
+
+% ════════ STAGE 4 ════════
+\node[stlabel] at ({\Ex+\Ew/2}, 0.2) {STAGE 4};
+\fill[sboxstyle] (\Ex, 0) rectangle +(\Ew, -\BH);
+\node[btitle] at ({\Ex+\Ew/2}, -0.25) {Fine-tune};
+\node[btitle] at ({\Ex+\Ew/2}, -0.65) {\& Evaluate};
+
+% Training curve — contained within box
+\begin{scope}[shift={({\Ex+0.3}, -2.5)}]
+    \draw[draw={rgb,255:red,180;green,180;blue,180}, line width=0.3pt, -{Stealth[length=1mm]}]
+        (0, 0) -- (0, 1.35);
+    \draw[draw={rgb,255:red,180;green,180;blue,180}, line width=0.3pt, -{Stealth[length=1mm]}]
+        (0, 0) -- (1.8, 0);
+    \node[font=\scriptsize, lt, anchor=east] at (-0.06, 1.15) {Acc};
+    \node[font=\scriptsize, lt, anchor=north] at (1.5, -0.06) {Epoch};
+    \draw[draw={rgb,255:red,45;green,140;blue,60}, line width=1pt]
+        (0.05, 0.1) .. controls (0.3, 0.48) and (0.55, 0.78) .. (0.8, 0.93)
+        .. controls (1.1, 1.03) and (1.3, 1.07) .. (1.65, 1.08);
+\end{scope}
+
+% Metrics
+\draw[midgrey, line width=0.3pt] ({\Ex+0.12},-3.55) -- ({\Ex+\Ew-0.12},-3.55);
+\node[font=\sffamily\bfseries\scriptsize, dt, anchor=north]
+    at ({\Ex+\Ew/2}, -3.7) {Evaluation};
+
+\begin{scope}[shift={({\Ex+0.12}, -4.15)}]
+    % Row 1 — primary (green)
+    \node[rounded corners=1.5pt,
+          fill={rgb,255:red,225;green,245;blue,230},
+          draw={rgb,255:red,80;green,175;blue,95}, line width=0.25pt,
+          font=\sffamily\bfseries\tiny, text={rgb,255:red,30;green,110;blue,50},
+          inner xsep=1.5mm, inner ysep=1mm, anchor=north west]
+        at (0, 0) {Top-1 Acc};
+    \node[rounded corners=1.5pt,
+          fill={rgb,255:red,225;green,245;blue,230},
+          draw={rgb,255:red,80;green,175;blue,95}, line width=0.25pt,
+          font=\sffamily\bfseries\tiny, text={rgb,255:red,30;green,110;blue,50},
+          inner xsep=1.5mm, inner ysep=1mm, anchor=north west]
+        at (1.1, 0) {Paired $\Delta$};
+
+    % Row 2 — grey
+    \node[rounded corners=1.5pt,
+          fill={rgb,255:red,242;green,243;blue,245},
+          draw={rgb,255:red,200;green,200;blue,200}, line width=0.25pt,
+          font=\sffamily\tiny, lt,
+          inner xsep=1.5mm, inner ysep=1mm, anchor=north west]
+        at (0, -0.6) {iso-FLOPs};
+    \node[rounded corners=1.5pt,
+          fill={rgb,255:red,242;green,243;blue,245},
+          draw={rgb,255:red,200;green,200;blue,200}, line width=0.25pt,
+          font=\sffamily\tiny, lt,
+          inner xsep=1.5mm, inner ysep=1mm, anchor=north west]
+        at (1.1, -0.6) {Holm $p$};
+
+    % Row 3 — grey
+    \node[rounded corners=1.5pt,
+          fill={rgb,255:red,242;green,243;blue,245},
+          draw={rgb,255:red,200;green,200;blue,200}, line width=0.25pt,
+          font=\sffamily\tiny, lt,
+          inner xsep=1.5mm, inner ysep=1mm, anchor=north west]
+        at (0, -1.2) {Hedges' $g$};
+    \node[rounded corners=1.5pt,
+          fill={rgb,255:red,242;green,243;blue,245},
+          draw={rgb,255:red,200;green,200;blue,200}, line width=0.25pt,
+          font=\sffamily\tiny, lt,
+          inner xsep=1.5mm, inner ysep=1mm, anchor=north west]
+        at (1.1, -1.2) {Wilcoxon};
+\end{scope}
+
+% ════════ FLOW ARROWS ════════
+% S0 → S1a
+\draw[arr] ({\Ax+\Aw+0.02}, -1.7) -- ({\Bx-0.02}, -1.7);
+
+% S0 → S1b
+\pgfmathsetmacro{\SBmid}{\SBt - \HH/2}
+\draw[bluearr] ({\Ax+\Aw+0.02}, {\SBmid}) -- ({\Bx-0.02}, {\SBmid});
+
+% S1a → S2
+\draw[arr] ({\Bx+\Bw+0.02}, -1.7) -- ({\Cx-0.02}, -1.7);
+
+% S1b → S2
+\draw[bluearr] ({\Bx+\Bw+0.02}, {\SBmid}) -- ({\Cx-0.02}, {\SBmid});
+
+% S2 → S3
+\draw[arr] ({\Cx+\Cw+0.02}, {-\BH/2}) -- ({\Dx-0.02}, {-\BH/2});
+
+% S3 → S4
+\draw[arr] ({\Dx+\Dw+0.02}, {-\BH/2}) -- ({\Ex-0.02}, {-\BH/2});
+
+% ════════ LEGEND ════════
+\begin{scope}[shift={(3.0, {-\BH - 0.3})}]
+    \fill[fill={rgb,255:red,252;green,252;blue,252}, draw={rgb,255:red,215;green,215;blue,215},
+          line width=0.25pt, rounded corners=1.5pt]
+        (-0.15, 0.2) rectangle (11.5, -0.35);
+
+    \draw[arr] (0,0) -- (0.55,0);
+    \node[font=\sffamily\scriptsize\bfseries, dt, anchor=west] at (0.65,0) {Structural path};
+
+    \draw[bluearr] (3.5,0) -- (4.05,0);
+    \node[font=\sffamily\scriptsize\bfseries, acbluetext, anchor=west] at (4.15,0) {Semantic path (GRA)};
+
+    \node[diamond, fill=white, draw={rgb,255:red,200;green,155;blue,35}, line width=0.4pt,
+          minimum width=2.5mm, minimum height=2.5mm, inner sep=0pt] at (8.2,0) {};
+    \node[font=\sffamily\scriptsize\bfseries, text={rgb,255:red,200;green,155;blue,35}, anchor=west]
+        at (8.4,0) {Quality gate};
+
+    \fill[gkeep, line width=0.2pt] (10.15,-0.12) rectangle ++(0.2,0.24);
+    \fill[gprune, line width=0.2pt] (10.4,-0.12) rectangle ++(0.2,0.24);
+    \node[font=\sffamily\scriptsize, dt, anchor=west] at (10.65,0) {Keep / Prune};
+\end{scope}
+
+\end{tikzpicture}
